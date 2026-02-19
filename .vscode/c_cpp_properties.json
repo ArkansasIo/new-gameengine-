@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Win64-OuterWorkspace",
+            "includePath": [
+                "${workspaceFolder}/godot-master/core",
+                "${workspaceFolder}/godot-master/core/**",
+                "${workspaceFolder}/godot-master/scene",
+                "${workspaceFolder}/godot-master/scene/**",
+                "${workspaceFolder}/godot-master/modules",
+                "${workspaceFolder}/godot-master/modules/**",
+                "${workspaceFolder}/godot-master/**"
+            ],
+            "defines": [
+                "TOOLS_ENABLED",
+                "WIN32",
+                "_WIN32"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}
