@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[node name="ContentBrowserPanel" type="Panel"]
+
+[node name="FileSystem" type="Tree" parent="."]
+rect_min_size = Vector2(400, 600)

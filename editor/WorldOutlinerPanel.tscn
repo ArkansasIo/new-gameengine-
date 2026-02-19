@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[node name="WorldOutlinerPanel" type="Panel"]
+
+[node name="Tree" type="Tree" parent="."]
+rect_min_size = Vector2(300, 600)

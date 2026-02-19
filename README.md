@@ -34,3 +34,11 @@ Pass extra SCons arguments:
 ```powershell
 .\compile_with_progress.ps1 -SconsArgs @("precision=double", "dev_build=yes")
 ```
+
+## SCons Build Command
+
+The SCons build command is:
+
+```powershell
+scons --debug=explain platform=windows target=editor arch=x86_64 d3d12=no dev_build=yes -j8
+```

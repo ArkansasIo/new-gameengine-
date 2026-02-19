@@ -4,7 +4,7 @@
 #define RT_MANIFEST 24
 #endif
 
-GODOT_ICON ICON platform/windows/test game engine.ico
+GODOT_ICON ICON "platform/windows/test game engine.ico"
 1 RT_MANIFEST "platform/windows/test game engine.manifest"
 
 1 VERSIONINFO
