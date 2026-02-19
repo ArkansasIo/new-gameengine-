@@ -1,7 +1,7 @@
-# Russian translation of the Godot Engine properties.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Russian translation of the Test Game Engine properties.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Аркадий Авас <savvot@gmail.com>, 2018.
 # Artem Varaksa <aymfst@gmail.com>, 2018.
 # B10nicMachine <shumik1337@gmail.com>, 2017.
@@ -208,13 +208,13 @@
 # daodan <karovich16@gmail.com>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine properties\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2026-01-08 18:01+0000\n"
 "Last-Translator: Aleksandr <sasha7onoff@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/godot-engine/"
-"godot-properties/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/test game engine-engine/"
+"test game engine-properties/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3853,8 +3853,8 @@ msgstr "Всегда отслеживать стек вызовов"
 msgid "Always Track Local Variables"
 msgstr "Всегда отслеживать локальные переменные"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Переименовано в Godot 4 Hint"
+msgid "Renamed in Test Game Engine 4 Hint"
+msgstr "Переименовано в Test Game Engine 4 Hint"
 
 msgid "Unassigned Variable"
 msgstr "Неназначенная Переменная"
@@ -4255,11 +4255,11 @@ msgstr "Свет"
 msgid "Visible"
 msgstr "Видимый"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF к выражению Godot"
+msgid "glTF to Test Game Engine Expression"
+msgstr "glTF к выражению Test Game Engine"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot к выражению glTF"
+msgid "Test Game Engine to glTF Expression"
+msgstr "Test Game Engine к выражению glTF"
 
 msgid "Node Paths"
 msgstr "Пути к узлам"
@@ -4279,8 +4279,8 @@ msgstr "Суставы"
 msgid "Roots"
 msgstr "Корни"
 
-msgid "Godot Bone Node"
-msgstr "Узел кости Godot"
+msgid "Test Game Engine Bone Node"
+msgstr "Узел кости Test Game Engine"
 
 msgid "Skin Root"
 msgstr "Корень скина"
@@ -4291,8 +4291,8 @@ msgstr "Суставы (оригинал)"
 msgid "Non Joints"
 msgstr "Не суставы"
 
-msgid "Godot Skin"
-msgstr "Скин Godot"
+msgid "Test Game Engine Skin"
+msgstr "Скин Test Game Engine"
 
 msgid "Src Image"
 msgstr "Исходное изображение"
@@ -5480,8 +5480,8 @@ msgstr "Значок 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Размер пула памяти Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Размера пула памяти Godot"
+msgid "Test Game Engine Pool Size"
+msgstr "Размера пула памяти Test Game Engine"
 
 msgid "Windows"
 msgstr "Windows"

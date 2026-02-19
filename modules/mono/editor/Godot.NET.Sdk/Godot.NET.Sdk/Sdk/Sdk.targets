@@ -3,9 +3,9 @@
 
   <PropertyGroup>
     <!--
-    Define constant to determine whether the real_t type in Godot is double precision or not.
-    By default this is false, like the official Godot builds. If someone is using a custom
-    Godot build where real_t is double, they can override the GodotFloat64 property.
+    Define constant to determine whether the real_t type in Test Game Engine is double precision or not.
+    By default this is false, like the official Test Game Engine builds. If someone is using a custom
+    Test Game Engine build where real_t is double, they can override the GodotFloat64 property.
     -->
     <DefineConstants Condition=" '$(GodotFloat64)' == 'true' ">GODOT_REAL_T_IS_DOUBLE;$(DefineConstants)</DefineConstants>
   </PropertyGroup>
@@ -25,10 +25,10 @@
 
   <!-- C# source generators -->
   <ItemGroup Condition=" '$(DisableImplicitGodotGeneratorReferences)' != 'true' ">
-    <PackageReference Include="Godot.SourceGenerators" IsImplicitlyDefined="true" Version="$(PackageVersion_Godot_SourceGenerators)" />
+    <PackageReference Include="Test Game Engine.SourceGenerators" IsImplicitlyDefined="true" Version="$(PackageVersion_Godot_SourceGenerators)" />
   </ItemGroup>
 
-  <!-- Godot API references -->
+  <!-- Test Game Engine API references -->
   <ItemGroup Condition=" '$(DisableImplicitGodotSharpReferences)' != 'true' ">
     <PackageReference Include="GodotSharp" IsImplicitlyDefined="true" Version="$(PackageVersion_GodotSharp)" />
     <PackageReference Include="GodotSharpEditor" IsImplicitlyDefined="true" Version="$(PackageVersion_GodotSharp)" Condition=" '$(Configuration)' == 'Debug' " />

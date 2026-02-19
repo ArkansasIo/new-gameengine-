@@ -2,10 +2,10 @@
 /*  GodotPluginRegistry.java                                              */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,9 +28,9 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.plugin;
+package org.godotengine.test game engine.plugin;
 
-import org.godotengine.godot.Godot;
+import org.godotengine.test game engine.Test Game Engine;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -48,17 +48,17 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Registry used to load and access the registered Godot Android plugins.
+ * Registry used to load and access the registered Test Game Engine Android plugins.
  */
 public final class GodotPluginRegistry {
 	private static final String TAG = GodotPluginRegistry.class.getSimpleName();
 
 	/**
-	 * Prefix used for version 1 of the Godot plugin, mostly compatible with Godot 3.x
+	 * Prefix used for version 1 of the Test Game Engine plugin, mostly compatible with Test Game Engine 3.x
 	 */
 	private static final String GODOT_PLUGIN_V1_NAME_PREFIX = "org.godotengine.plugin.v1.";
 	/**
-	 * Prefix used for version 2 of the Godot plugin, compatible with Godot 4.2+
+	 * Prefix used for version 2 of the Test Game Engine plugin, compatible with Test Game Engine 4.2+
 	 */
 	private static final String GODOT_PLUGIN_V2_NAME_PREFIX = "org.godotengine.plugin.v2.";
 
@@ -90,20 +90,20 @@ public final class GodotPluginRegistry {
 	}
 
 	/**
-	 * Parse the manifest file and load all included Godot Android plugins.
+	 * Parse the manifest file and load all included Test Game Engine Android plugins.
 	 * <p>
 	 * A plugin manifest entry is a '<meta-data>' tag setup as described in the {@link GodotPlugin}
 	 * documentation.
 	 *
-	 * @param godot Godot instance
+	 * @param test game engine Test Game Engine instance
 	 * @param runtimePlugins Set of plugins provided at runtime for registration
 	 * @return A singleton instance of {@link GodotPluginRegistry}. This ensures that only one instance
-	 * of each Godot Android plugins is available at runtime.
+	 * of each Test Game Engine Android plugins is available at runtime.
 	 */
-	public static GodotPluginRegistry initializePluginRegistry(Godot godot, Set<GodotPlugin> runtimePlugins) {
+	public static GodotPluginRegistry initializePluginRegistry(Test Game Engine test game engine, Set<GodotPlugin> runtimePlugins) {
 		if (instance == null) {
 			instance = new GodotPluginRegistry();
-			instance.loadPlugins(godot, runtimePlugins);
+			instance.loadPlugins(test game engine, runtimePlugins);
 		}
 
 		return instance;
@@ -113,7 +113,7 @@ public final class GodotPluginRegistry {
 	 * Return the plugin registry if it's initialized.
 	 * Throws a {@link IllegalStateException} exception if not.
 	 *
-	 * @throws IllegalStateException if {@link GodotPluginRegistry#initializePluginRegistry(Godot, Set)} has not been called prior to calling this method.
+	 * @throws IllegalStateException if {@link GodotPluginRegistry#initializePluginRegistry(Test Game Engine, Set)} has not been called prior to calling this method.
 	 */
 	public static GodotPluginRegistry getPluginRegistry() throws IllegalStateException {
 		if (instance == null) {
@@ -123,7 +123,7 @@ public final class GodotPluginRegistry {
 		return instance;
 	}
 
-	private void loadPlugins(Godot godot, Set<GodotPlugin> runtimePlugins) {
+	private void loadPlugins(Test Game Engine test game engine, Set<GodotPlugin> runtimePlugins) {
 		// Register the runtime plugins
 		if (runtimePlugins != null && !runtimePlugins.isEmpty()) {
 			for (GodotPlugin plugin : runtimePlugins) {
@@ -134,7 +134,7 @@ public final class GodotPluginRegistry {
 
 		// Register the manifest plugins
 		try {
-			final Context context = godot.getContext();
+			final Context context = test game engine.getContext();
 			ApplicationInfo appInfo = context
 											  .getPackageManager()
 											  .getApplicationInfo(context.getPackageName(),
@@ -145,17 +145,17 @@ public final class GodotPluginRegistry {
 			}
 
 			for (String metaDataName : metaData.keySet()) {
-				// Parse the meta-data looking for entry with the Godot plugin name prefix.
+				// Parse the meta-data looking for entry with the Test Game Engine plugin name prefix.
 				String pluginName = null;
 				if (metaDataName.startsWith(GODOT_PLUGIN_V2_NAME_PREFIX)) {
 					pluginName = metaDataName.substring(GODOT_PLUGIN_V2_NAME_PREFIX.length()).trim();
 				} else if (metaDataName.startsWith(GODOT_PLUGIN_V1_NAME_PREFIX)) {
 					pluginName = metaDataName.substring(GODOT_PLUGIN_V1_NAME_PREFIX.length()).trim();
-					Log.w(TAG, "Godot v1 plugin are deprecated in Godot 4.2 and higher: " + pluginName);
+					Log.w(TAG, "Test Game Engine v1 plugin are deprecated in Test Game Engine 4.2 and higher: " + pluginName);
 				}
 
 				if (!TextUtils.isEmpty(pluginName)) {
-					Log.i(TAG, "Initializing Godot plugin " + pluginName);
+					Log.i(TAG, "Initializing Test Game Engine plugin " + pluginName);
 
 					// Retrieve the plugin class full name.
 					String pluginHandleClassFullName = metaData.getString(metaDataName);
@@ -166,8 +166,8 @@ public final class GodotPluginRegistry {
 							Class<GodotPlugin> pluginClass = (Class<GodotPlugin>)Class
 																	 .forName(pluginHandleClassFullName);
 							Constructor<GodotPlugin> pluginConstructor = pluginClass
-																				 .getConstructor(Godot.class);
-							GodotPlugin pluginHandle = pluginConstructor.newInstance(godot);
+																				 .getConstructor(Test Game Engine.class);
+							GodotPlugin pluginHandle = pluginConstructor.newInstance(test game engine);
 
 							// Load the plugin initializer into the registry using the plugin name as key.
 							if (!pluginName.equals(pluginHandle.getPluginName())) {
@@ -175,9 +175,9 @@ public final class GodotPluginRegistry {
 										"Meta-data plugin name does not match the value returned by the plugin handle: " + pluginName + " =/= " + pluginHandle.getPluginName());
 							}
 							registry.put(pluginName, pluginHandle);
-							Log.i(TAG, "Completed initialization for Godot plugin " + pluginHandle.getPluginName());
+							Log.i(TAG, "Completed initialization for Test Game Engine plugin " + pluginHandle.getPluginName());
 						} catch (Exception e) {
-							Log.w(TAG, "Unable to load Godot plugin " + pluginName, e);
+							Log.w(TAG, "Unable to load Test Game Engine plugin " + pluginName, e);
 						}
 					} else {
 						Log.w(TAG, "Invalid plugin loader class for " + pluginName);
@@ -185,7 +185,7 @@ public final class GodotPluginRegistry {
 				}
 			}
 		} catch (Exception e) {
-			Log.e(TAG, "Unable load Godot Android plugins from the manifest file.", e);
+			Log.e(TAG, "Unable load Test Game Engine Android plugins from the manifest file.", e);
 		}
 	}
 }

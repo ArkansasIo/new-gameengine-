@@ -2,10 +2,10 @@
 /*  jolt_soft_body_3d.cpp                                                 */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -187,21 +187,21 @@ JPH::SoftBodySharedSettings *JoltSoftBody3D::_create_shared_settings() {
 	// of the constraints a bit.
 	pin_vertices(*this, pinned_vertices, mesh_to_physics, physics_vertices);
 
-	// Since Godot's stiffness is input as a coefficient between 0 and 1, and Jolt uses actual stiffness for its
+	// Since Test Game Engine's stiffness is input as a coefficient between 0 and 1, and Jolt uses actual stiffness for its
 	// edge constraints, we must map one to the other.
 	//
-	// Godot uses classic PBD edge constraints, which have a stiffness parameter k that is used in the position correction formula as follows:
+	// Test Game Engine uses classic PBD edge constraints, which have a stiffness parameter k that is used in the position correction formula as follows:
 	// delta_x1 = -k * w1 / (w1 + w2) * (l - l0) / l * (x2 - x1)
 	// where k is the stiffness, w1 and w2 are the inverse masses of the two vertices, l is the current length of the edge = |x2 - x1|, l0 is the rest length of the edge, and x1 and x2 are the vertex positions.
 	//
-	// Note that the actual formula used in Godot physics seems to use an approximation of this which avoids calculating the square root:
+	// Note that the actual formula used in Test Game Engine physics seems to use an approximation of this which avoids calculating the square root:
 	// delta_x1 = -k * w1 / (w1 + w2) * (l^2 - l0^2) / (l^2 + l0^2) * (x2 - x1)
 	//
 	// Jolt uses XPBD which goes as follows:
 	// delta_x1 = -w1 / (w1 + w2 + compliance / dt^2) * (l - l0) / l * (x2 - x1)
 	// where compliance is the inverse of stiffness and dt is the timestep.
 	//
-	// We can derive Jolt's compliance from Godot's stiffness by evaluating:
+	// We can derive Jolt's compliance from Test Game Engine's stiffness by evaluating:
 	// k * w1 / (w1 + w2) = w1 / (w1 + w2 + compliance / dt^2)
 	// which simplifies to:
 	// compliance = dt^2 * (1 / k - 1) * (w1 + w2)
@@ -639,12 +639,12 @@ void JoltSoftBody3D::set_linear_damping(float p_damping) {
 }
 
 float JoltSoftBody3D::get_drag() const {
-	// Drag is not a thing in Jolt, and not supported by Godot Physics either.
+	// Drag is not a thing in Jolt, and not supported by Test Game Engine Physics either.
 	return 0.0f;
 }
 
 void JoltSoftBody3D::set_drag(float p_drag) {
-	// Drag is not a thing in Jolt, and not supported by Godot Physics either.
+	// Drag is not a thing in Jolt, and not supported by Test Game Engine Physics either.
 }
 
 Variant JoltSoftBody3D::get_state(PhysicsServer3D::BodyState p_state) const {

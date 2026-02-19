@@ -4,10 +4,10 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Godot;
+using Test Game Engine;
 using GodotTools.Internals;
 using static GodotTools.Internals.Globals;
-using FileAccess = Godot.FileAccess;
+using FileAccess = Test Game Engine.FileAccess;
 
 namespace GodotTools.Build
 {
@@ -256,7 +256,7 @@ namespace GodotTools.Build
             {
                 var script = (Script)ResourceLoader.Load(file, typeHint: Internal.CSharpLanguageType);
 
-                // Godot's ScriptEditor.Edit is 0-based but the diagnostic lines are 1-based.
+                // Test Game Engine's ScriptEditor.Edit is 0-based but the diagnostic lines are 1-based.
                 if (script != null && Internal.ScriptEditorEdit(script, diagnostic.Line - 1, diagnostic.Column - 1))
                     Internal.EditorNodeShowScriptScreen();
             }

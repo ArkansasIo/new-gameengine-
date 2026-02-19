@@ -1,7 +1,7 @@
-# Slovak translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Slovak translation of the Test Game Engine editor interface.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # J08nY <johnenter@gmail.com>, 2016.
 # MineGame 159 <minegame459@gmail.com>, 2018.
 # Zuzana Palenikova <sousana.is@gmail.com>, 2019.
@@ -28,12 +28,12 @@
 # Martin Sinansky <martin.sinansky@gmail.com>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine editor interface\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2026-01-18 16:02+0000\n"
 "Last-Translator: Martin Sinansky <martin.sinansky@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/test game engine-engine/test game engine/"
 "sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -912,7 +912,7 @@ msgid ""
 "The file you selected is an imported scene from a 3D model such as glTF or "
 "FBX.\n"
 "\n"
-"In Godot, 3D models can be imported as either scenes or animation libraries, "
+"In Test Game Engine, 3D models can be imported as either scenes or animation libraries, "
 "which is why they show up here.\n"
 "\n"
 "If you want to use animations from this 3D model, open the Advanced Import "
@@ -923,7 +923,7 @@ msgstr ""
 "Súbor, ktorý ste si vybrali, je importovaná scéna z 3D modelu ako je glTF "
 "alebo FBX.\n"
 "\n"
-"V Godot, môžu byť 3D modely importované buď ako scény alebo knižnice "
+"V Test Game Engine, môžu byť 3D modely importované buď ako scény alebo knižnice "
 "animácií, čo je dôvod, prečo sa tu zobrazia.\n"
 "\n"
 "Ak chcete používať animácie z tohto 3D modelu, otvorte dialógové okno "
@@ -2534,8 +2534,8 @@ msgstr "Tento člen je označený ako zastaraný."
 msgid "This member is marked as experimental."
 msgstr "Tento člen je označený ako experimentálny."
 
-msgid "%s - Godot Engine"
-msgstr "%s - Godot Engine"
+msgid "%s - Test Game Engine"
+msgstr "%s - Test Game Engine"
 
 msgid "Dock Position"
 msgstr "Pozícia Dock-u"
@@ -3302,8 +3302,8 @@ msgstr "Navrhnúť funkcionalitu"
 msgid "Send Docs Feedback"
 msgstr "Poslať spätnú väzbu Dokumentácie"
 
-msgid "Support Godot Development"
-msgstr "Podporte vývoj Godot"
+msgid "Support Test Game Engine Development"
+msgstr "Podporte vývoj Test Game Engine"
 
 msgid "Open Script Editor"
 msgstr "Otvoriť Editor Skriptov"
@@ -3496,8 +3496,8 @@ msgstr "Inštalácia šablón z lokálneho súboru."
 msgid "Select Template File"
 msgstr "Vybrať Súbor Šablóny"
 
-msgid "Godot Export Templates"
-msgstr "Godot Exportovanie Šablón"
+msgid "Test Game Engine Export Templates"
+msgstr "Test Game Engine Exportovanie Šablón"
 
 msgid ""
 "The templates will continue to download.\n"
@@ -3820,11 +3820,11 @@ msgstr "Použitie lomiek v názvoch priečinkov vytvorí podpriečinky rekurzív
 msgid "Folder name is valid."
 msgstr "Názov priečinku je platný."
 
-msgid "Godot Engine contributors"
-msgstr "Godot Engine prispievatelia"
+msgid "Test Game Engine contributors"
+msgstr "Test Game Engine prispievatelia"
 
-msgid "Thanks from the Godot community!"
-msgstr "Vďaka z Godot komunity!"
+msgid "Thanks from the Test Game Engine community!"
+msgstr "Vďaka z Test Game Engine komunity!"
 
 msgid "Authors"
 msgstr "Autori"
@@ -3836,12 +3836,12 @@ msgid "Third-party Licenses"
 msgstr "Thirdparty Licencie"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"Test Game Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Engine sa spolieha na množstvo bezplatných a otvorených knižníc tretích "
+"Test Game Engine sa spolieha na množstvo bezplatných a otvorených knižníc tretích "
 "strán, ktoré sú kompatibilné s podmienkami licencie MIT. Nasleduje "
 "vyčerpávajúci zoznam všetkých takýchto komponentov tretích strán s ich "
 "príslušnými prehláseniami o autorských právach a licenčnými podmienkami."
@@ -5866,7 +5866,7 @@ msgstr "Uložiť súbor ako..."
 msgid "Online Docs"
 msgstr "Online Dokumentácie"
 
-msgid "Open Godot online documentation."
+msgid "Open Test Game Engine online documentation."
 msgstr "Otvoriť online dokumentáciu Godotu."
 
 msgid "Open..."
@@ -6201,8 +6201,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Meno nového profilu:"
 
-msgid "Godot Feature Profile"
-msgstr "Godot Feature Profil"
+msgid "Test Game Engine Feature Profile"
+msgstr "Test Game Engine Feature Profil"
 
 msgid "Import Profile(s)"
 msgstr "Importovať Profil(y)"
@@ -6933,10 +6933,10 @@ msgstr ""
 
 msgid ""
 "This node is marked as deprecated and will be removed in future versions.\n"
-"Please check the Godot documentation for information about migration."
+"Please check the Test Game Engine documentation for information about migration."
 msgstr ""
 "Tento node je označený ako zastaralý a bude vymazaný v budúcich verziách.\n"
-"Prosím skontrolujte Godot dokumentáciu pre informácie o migrácii."
+"Prosím skontrolujte Test Game Engine dokumentáciu pre informácie o migrácii."
 
 msgid ""
 "This node is marked as experimental and may be subject to removal or major "

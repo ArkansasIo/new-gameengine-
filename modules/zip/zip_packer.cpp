@@ -2,10 +2,10 @@
 /*  zip_packer.cpp                                                        */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -83,7 +83,7 @@ Error ZIPPacker::start_file(const String &p_path, BitField<FileAccess::UnixPermi
 
 	zip_fileinfo zipfi;
 	zipfi.tmz_date.tm_year = dt["year"];
-	zipfi.tmz_date.tm_mon = dt["month"].operator int() - 1; // Note: "tm" month range - 0..11, Godot month range - 1..12, https://www.cplusplus.com/reference/ctime/tm/
+	zipfi.tmz_date.tm_mon = dt["month"].operator int() - 1; // Note: "tm" month range - 0..11, Test Game Engine month range - 1..12, https://www.cplusplus.com/reference/ctime/tm/
 	zipfi.tmz_date.tm_mday = dt["day"];
 	zipfi.tmz_date.tm_hour = dt["hour"];
 	zipfi.tmz_date.tm_min = dt["minute"];
@@ -148,7 +148,7 @@ Error ZIPPacker::add_directory(const String &p_path, BitField<FileAccess::UnixPe
 
 	zip_fileinfo zipfi;
 	zipfi.tmz_date.tm_year = dt["year"];
-	zipfi.tmz_date.tm_mon = dt["month"].operator int() - 1; // Note: "tm" month range - 0..11, Godot month range - 1..12, https://www.cplusplus.com/reference/ctime/tm/
+	zipfi.tmz_date.tm_mon = dt["month"].operator int() - 1; // Note: "tm" month range - 0..11, Test Game Engine month range - 1..12, https://www.cplusplus.com/reference/ctime/tm/
 	zipfi.tmz_date.tm_mday = dt["day"];
 	zipfi.tmz_date.tm_hour = dt["hour"];
 	zipfi.tmz_date.tm_min = dt["minute"];

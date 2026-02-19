@@ -2,10 +2,10 @@
 /*  test_string.h                                                         */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -305,9 +305,9 @@ TEST_CASE("[String] Testing for empty string") {
 }
 
 TEST_CASE("[String] Contains") {
-	String s = "C:\\Godot\\project\\string_test.tscn";
+	String s = "C:\\Test Game Engine\\project\\string_test.tscn";
 	CHECK(s.contains(":\\"));
-	CHECK(s.contains("Godot"));
+	CHECK(s.contains("Test Game Engine"));
 	CHECK(s.contains(String("project\\string_test")));
 	CHECK(s.contains(String("\\string_test.tscn")));
 
@@ -318,9 +318,9 @@ TEST_CASE("[String] Contains") {
 }
 
 TEST_CASE("[String] Contains case insensitive") {
-	String s = "C:\\Godot\\project\\string_test.tscn";
-	CHECK(s.containsn("Godot"));
-	CHECK(s.containsn("godot"));
+	String s = "C:\\Test Game Engine\\project\\string_test.tscn";
+	CHECK(s.containsn("Test Game Engine"));
+	CHECK(s.containsn("test game engine"));
 	CHECK(s.containsn(String("Project\\string_test")));
 	CHECK(s.containsn(String("\\string_Test.tscn")));
 
@@ -1601,7 +1601,7 @@ TEST_CASE("[String] Checking string is empty when it should be") {
 	if (!success) {
 		state = false;
 	}
-	String b = "Godot";
+	String b = "Test Game Engine";
 	success = b[b.size()] == 0;
 	if (!success) {
 		state = false;
@@ -1612,7 +1612,7 @@ TEST_CASE("[String] Checking string is empty when it should be") {
 		state = false;
 	}
 
-	const String d = "Godot";
+	const String d = "Test Game Engine";
 	success = d[d.size()] == 0;
 	if (!success) {
 		state = false;
@@ -1807,12 +1807,12 @@ TEST_CASE("[String] dedent") {
 }
 
 TEST_CASE("[String] Path functions") {
-	static const char *path[8] = { "C:\\Godot\\project\\test.tscn", "/Godot/project/test.xscn", "../Godot/project/test.scn", "Godot\\test.doc", "C:\\test.", "res://test", "user://test", "/.test" };
-	static const char *base_dir[8] = { "C:\\Godot\\project", "/Godot/project", "../Godot/project", "Godot", "C:\\", "res://", "user://", "/" };
-	static const char *base_name[8] = { "C:\\Godot\\project\\test", "/Godot/project/test", "../Godot/project/test", "Godot\\test", "C:\\test", "res://test", "user://test", "/" };
+	static const char *path[8] = { "C:\\Test Game Engine\\project\\test.tscn", "/Test Game Engine/project/test.xscn", "../Test Game Engine/project/test.scn", "Test Game Engine\\test.doc", "C:\\test.", "res://test", "user://test", "/.test" };
+	static const char *base_dir[8] = { "C:\\Test Game Engine\\project", "/Test Game Engine/project", "../Test Game Engine/project", "Test Game Engine", "C:\\", "res://", "user://", "/" };
+	static const char *base_name[8] = { "C:\\Test Game Engine\\project\\test", "/Test Game Engine/project/test", "../Test Game Engine/project/test", "Test Game Engine\\test", "C:\\test", "res://test", "user://test", "/" };
 	static const char *ext[8] = { "tscn", "xscn", "scn", "doc", "", "", "", "test" };
 	static const char *file[8] = { "test.tscn", "test.xscn", "test.scn", "test.doc", "test.", "test", "test", ".test" };
-	static const char *simplified[8] = { "C:/Godot/project/test.tscn", "/Godot/project/test.xscn", "../Godot/project/test.scn", "Godot/test.doc", "C:/test.", "res://test", "user://test", "/.test" };
+	static const char *simplified[8] = { "C:/Test Game Engine/project/test.tscn", "/Test Game Engine/project/test.xscn", "../Test Game Engine/project/test.scn", "Test Game Engine/test.doc", "C:/test.", "res://test", "user://test", "/.test" };
 	static const bool abs[8] = { true, true, false, false, true, true, true, true };
 
 	for (int i = 0; i < 8; i++) {
@@ -1856,8 +1856,8 @@ TEST_CASE("[String] hash") {
 }
 
 TEST_CASE("[String] uri_encode/unescape") {
-	String s = "Godot Engine:'docs'";
-	String t = "Godot%20Engine%3A%27docs%27";
+	String s = "Test Game Engine:'docs'";
+	String t = "Test Game Engine%20Engine%3A%27docs%27";
 
 	String x1 = "T%C4%93%C5%A1t";
 	static const uint8_t u8str[] = { 0x54, 0xC4, 0x93, 0xC5, 0xA1, 0x74, 0x00 };
@@ -1987,7 +1987,7 @@ TEST_CASE("[String] Reverse") {
 }
 
 TEST_CASE("[String] SHA1/SHA256/MD5") {
-	String s = "Godot";
+	String s = "Test Game Engine";
 	String sha1 = "a1e91f39b9fce6a9998b14bdbe2aa2b39dc2d201";
 	static uint8_t sha1_buf[20] = {
 		0xA1, 0xE9, 0x1F, 0x39, 0xB9, 0xFC, 0xE6, 0xA9, 0x99, 0x8B, 0x14, 0xBD, 0xBE, 0x2A, 0xA2, 0xB3,

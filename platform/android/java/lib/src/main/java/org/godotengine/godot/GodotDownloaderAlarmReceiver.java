@@ -2,10 +2,10 @@
 /*  GodotDownloaderAlarmReceiver.java                                     */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot;
+package org.godotengine.test game engine;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -48,12 +48,12 @@ import com.google.android.vending.expansion.downloader.DownloaderClientMarshalle
 public class GodotDownloaderAlarmReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Log.d("GODOT", "Alarma recivida");
+		Log.d("TEST GAME ENGINE", "Alarma recivida");
 		try {
 			DownloaderClientMarshaller.startDownloadServiceIfRequired(context, intent, GodotDownloaderService.class);
 		} catch (NameNotFoundException e) {
 			e.printStackTrace();
-			Log.d("GODOT", "Exception: " + e.getClass().getName() + ":" + e.getMessage());
+			Log.d("TEST GAME ENGINE", "Exception: " + e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 }

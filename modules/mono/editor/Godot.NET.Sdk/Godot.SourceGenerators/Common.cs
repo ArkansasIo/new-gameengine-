@@ -1,7 +1,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     public static partial class Common
     {

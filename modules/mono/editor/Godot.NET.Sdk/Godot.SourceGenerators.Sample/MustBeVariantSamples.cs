@@ -1,8 +1,8 @@
 using System;
-using Godot.Collections;
-using Array = Godot.Collections.Array;
+using Test Game Engine.Collections;
+using Array = Test Game Engine.Collections.Array;
 
-namespace Godot.SourceGenerators.Sample;
+namespace Test Game Engine.SourceGenerators.Sample;
 
 public class MustBeVariantMethods
 {

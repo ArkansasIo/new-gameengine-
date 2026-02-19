@@ -2,10 +2,10 @@
 /*  GodotAppTest.kt                                                       */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,16 +28,16 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package com.godot.game
+package com.test game engine.game
 
 import android.content.ComponentName
 import android.content.Intent
 import android.util.Log
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.godot.game.test.GodotAppInstrumentedTestPlugin
-import org.godotengine.godot.GodotActivity.Companion.EXTRA_COMMAND_LINE_PARAMS
-import org.godotengine.godot.plugin.GodotPluginRegistry
+import com.test game engine.game.test.GodotAppInstrumentedTestPlugin
+import org.godotengine.test game engine.GodotActivity.Companion.EXTRA_COMMAND_LINE_PARAMS
+import org.godotengine.test game engine.plugin.GodotPluginRegistry
 import org.junit.Test
 import org.junit.runner.RunWith
 import kotlin.test.assertEquals
@@ -54,8 +54,8 @@ class GodotAppTest {
 	companion object {
 		private val TAG = GodotAppTest::class.java.simpleName
 
-		private const val GODOT_APP_LAUNCHER_CLASS_NAME = "com.godot.game.GodotAppLauncher"
-		private const val GODOT_APP_CLASS_NAME = "com.godot.game.GodotApp"
+		private const val GODOT_APP_LAUNCHER_CLASS_NAME = "com.test game engine.game.GodotAppLauncher"
+		private const val GODOT_APP_CLASS_NAME = "com.test game engine.game.GodotApp"
 
 		private val TEST_COMMAND_LINE_PARAMS = arrayOf("This is a test")
 	}
@@ -75,7 +75,7 @@ class GodotAppTest {
 				val testPlugin = getTestPlugin()
 				assertNotNull(testPlugin)
 
-				Log.d(TAG, "Waiting for the Godot main loop to start...")
+				Log.d(TAG, "Waiting for the Test Game Engine main loop to start...")
 				testPlugin.waitForGodotMainLoopStarted()
 
 				Log.d(TAG, "Running JavaClassWrapper tests...")
@@ -98,7 +98,7 @@ class GodotAppTest {
 				val testPlugin = getTestPlugin()
 				assertNotNull(testPlugin)
 
-				Log.d(TAG, "Waiting for the Godot main loop to start...")
+				Log.d(TAG, "Waiting for the Test Game Engine main loop to start...")
 				testPlugin.waitForGodotMainLoopStarted()
 
 				Log.d(TAG, "Running FileAccess tests...")
@@ -111,7 +111,7 @@ class GodotAppTest {
 	}
 
 	/**
-	 * Test implicit launch of the Godot app, and validates this resolves to the `GodotAppLauncher` activity alias.
+	 * Test implicit launch of the Test Game Engine app, and validates this resolves to the `GodotAppLauncher` activity alias.
 	 */
 	@Test
 	fun testImplicitGodotAppLauncherLaunch() {
@@ -132,7 +132,7 @@ class GodotAppTest {
 	}
 
 	/**
-	 * Test explicit launch of the Godot app via its activity-alias launcher, and validates it resolves properly.
+	 * Test explicit launch of the Test Game Engine app via its activity-alias launcher, and validates it resolves properly.
 	 */
 	@Test
 	fun testExplicitGodotAppLauncherLaunch() {

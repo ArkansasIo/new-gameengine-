@@ -2,10 +2,10 @@
 /*  library_godot_webxr.js                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -294,7 +294,7 @@ const GodotWebXR = {
 
 			gl.makeXRCompatible().then(function () {
 				const throwNoWebXRLayersError = () => {
-					throw new Error('This browser doesn\'t support WebXR Layers (which Godot requires) nor is the polyfill in use. If you are the developer of this application, please consider including the polyfill.');
+					throw new Error('This browser doesn\'t support WebXR Layers (which Test Game Engine requires) nor is the polyfill in use. If you are the developer of this application, please consider including the polyfill.');
 				};
 
 				try {
@@ -335,7 +335,7 @@ const GodotWebXR = {
 					GodotWebXR.pauseResumeMainLoop();
 
 					// Call in setTimeout() so that errors in the onstarted()
-					// callback don't bubble up here and cause Godot to try the
+					// callback don't bubble up here and cause Test Game Engine to try the
 					// next reference space.
 					window.setTimeout(function () {
 						const reference_space_c_str = GodotRuntime.allocString(reference_space_type);

@@ -1,4 +1,4 @@
-using Godot;
+using Test Game Engine;
 
 public class MustBeVariantGD0302
 {

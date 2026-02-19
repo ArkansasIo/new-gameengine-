@@ -19,12 +19,12 @@ afterEvaluate {
                 // Mostly self-explanatory metadata
                 pom {
                     name = DEBUG_PUBLISH_ARTIFACT_ID
-                    description = 'Godot Engine Android Library - (Debug) Template Build'
+                    description = 'Test Game Engine Android Library - (Debug) Template Build'
                     url = 'https://godotengine.org/'
                     licenses {
                         license {
                             name = 'MIT License'
-                            url = 'https://github.com/godotengine/godot/blob/master/LICENSE.txt'
+                            url = 'https://github.com/godotengine/test game engine/blob/master/LICENSE.txt'
                         }
                     }
                     developers {
@@ -45,7 +45,7 @@ afterEvaluate {
                         }
                         developer {
                             id = 'godotengine'
-                            name = 'Godot Engine contributors'
+                            name = 'Test Game Engine contributors'
                             email = 'contact@godotengine.org'
                         }
                     }
@@ -53,9 +53,9 @@ afterEvaluate {
                     // Version control info - if you're using GitHub, follow the
                     // format as seen here
                     scm {
-                        connection = 'scm:git:github.com/godotengine/godot.git'
-                        developerConnection = 'scm:git:ssh://github.com/godotengine/godot.git'
-                        url = 'https://github.com/godotengine/godot/tree/master'
+                        connection = 'scm:git:github.com/godotengine/test game engine.git'
+                        developerConnection = 'scm:git:ssh://github.com/godotengine/test game engine.git'
+                        url = 'https://github.com/godotengine/test game engine/tree/master'
                     }
                 }
             }
@@ -71,12 +71,12 @@ afterEvaluate {
                 // Mostly self-explanatory metadata
                 pom {
                     name = PUBLISH_ARTIFACT_ID
-                    description = 'Godot Engine Android Library - Template Build'
+                    description = 'Test Game Engine Android Library - Template Build'
                     url = 'https://godotengine.org/'
                     licenses {
                         license {
                             name = 'MIT License'
-                            url = 'https://github.com/godotengine/godot/blob/master/LICENSE.txt'
+                            url = 'https://github.com/godotengine/test game engine/blob/master/LICENSE.txt'
                         }
                     }
                     developers {
@@ -97,7 +97,7 @@ afterEvaluate {
                         }
                         developer {
                             id = 'godotengine'
-                            name = 'Godot Engine contributors'
+                            name = 'Test Game Engine contributors'
                             email = 'contact@godotengine.org'
                         }
                     }
@@ -105,9 +105,9 @@ afterEvaluate {
                     // Version control info - if you're using GitHub, follow the
                     // format as seen here
                     scm {
-                        connection = 'scm:git:github.com/godotengine/godot.git'
-                        developerConnection = 'scm:git:ssh://github.com/godotengine/godot.git'
-                        url = 'https://github.com/godotengine/godot/tree/master'
+                        connection = 'scm:git:github.com/godotengine/test game engine.git'
+                        developerConnection = 'scm:git:ssh://github.com/godotengine/test game engine.git'
+                        url = 'https://github.com/godotengine/test game engine/tree/master'
                     }
                 }
             }
@@ -123,12 +123,12 @@ afterEvaluate {
                 // Mostly self-explanatory metadata
                 pom {
                     name = TOOLS_PUBLISH_ARTIFACT_ID
-                    description = 'Godot Engine Tools Android Library - Editor Build'
+                    description = 'Test Game Engine Tools Android Library - Editor Build'
                     url = 'https://godotengine.org/'
                     licenses {
                         license {
                             name = 'MIT License'
-                            url = 'https://github.com/godotengine/godot/blob/master/LICENSE.txt'
+                            url = 'https://github.com/godotengine/test game engine/blob/master/LICENSE.txt'
                         }
                     }
                     developers {
@@ -149,7 +149,7 @@ afterEvaluate {
                         }
                         developer {
                             id = 'godotengine'
-                            name = 'Godot Engine contributors'
+                            name = 'Test Game Engine contributors'
                             email = 'contact@godotengine.org'
                         }
                     }
@@ -157,9 +157,9 @@ afterEvaluate {
                     // Version control info - if you're using GitHub, follow the
                     // format as seen here
                     scm {
-                        connection = 'scm:git:github.com/godotengine/godot.git'
-                        developerConnection = 'scm:git:ssh://github.com/godotengine/godot.git'
-                        url = 'https://github.com/godotengine/godot/tree/master'
+                        connection = 'scm:git:github.com/godotengine/test game engine.git'
+                        developerConnection = 'scm:git:ssh://github.com/godotengine/test game engine.git'
+                        url = 'https://github.com/godotengine/test game engine/tree/master'
                     }
                 }
             }

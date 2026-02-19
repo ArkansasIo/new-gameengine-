@@ -12,9 +12,9 @@ using System.Runtime.InteropServices;
 using System.Runtime.Loader;
 using System.Runtime.Serialization;
 using System.Text;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
-namespace Godot.Bridge
+namespace Test Game Engine.Bridge
 {
     // TODO: Make class internal once we replace LookupScriptsInAssembly (the only public member) with source generators
     public static partial class ScriptManagerBridge
@@ -531,7 +531,7 @@ namespace Godot.Bridge
 
             static string GetVirtualConstructedGenericTypeScriptPath(Type scriptType, string scriptPath)
             {
-                // Constructed generic types all have the same path which is not allowed by Godot
+                // Constructed generic types all have the same path which is not allowed by Test Game Engine
                 // (every Resource must have a unique path). So we create a unique "virtual" path
                 // for each type.
 
@@ -1184,7 +1184,7 @@ namespace Godot.Bridge
                 if (defaultValuesObj is Dictionary<StringName, object> defaultValuesLegacy)
                 {
                     // We have to support this for some time, otherwise this could cause data loss for projects
-                    // built with previous releases. Ideally, we should remove this before Godot 4.0 stable.
+                    // built with previous releases. Ideally, we should remove this before Test Game Engine 4.0 stable.
 
                     if (defaultValuesLegacy.Count <= 0)
                         return;

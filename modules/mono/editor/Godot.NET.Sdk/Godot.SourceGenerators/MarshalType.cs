@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public enum MarshalType
@@ -19,7 +19,7 @@ namespace Godot.SourceGenerators
         Double,
         String,
 
-        // Godot structs
+        // Test Game Engine structs
         Vector2,
         Vector2I,
         Rect2,

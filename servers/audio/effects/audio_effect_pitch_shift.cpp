@@ -2,10 +2,10 @@
 /*  audio_effect_pitch_shift.cpp                                          */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -33,7 +33,7 @@
 #include "core/math/math_funcs.h"
 #include "servers/audio/audio_server.h"
 
-/* Thirdparty code, so disable clang-format with Godot style */
+/* Thirdparty code, so disable clang-format with Test Game Engine style */
 /* clang-format off */
 
 /****************************************************************************
@@ -287,7 +287,7 @@ void SMBPitchShift::smbFft(float *fftBuffer, long fftFrameSize, long sign)
 }
 
 
-/* Godot code again */
+/* Test Game Engine code again */
 /* clang-format on */
 
 void AudioEffectPitchShiftInstance::process(const AudioFrame *p_src_frames, AudioFrame *p_dst_frames, int p_frame_count) {

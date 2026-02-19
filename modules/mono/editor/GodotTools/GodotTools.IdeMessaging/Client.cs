@@ -123,12 +123,12 @@ namespace GodotTools.IdeMessaging
             this.messageHandler = messageHandler;
             this.logger = logger;
 
-            string projectMetadataDir = Path.Combine(godotProjectDir, ".godot", "mono", "metadata");
+            string projectMetadataDir = Path.Combine(godotProjectDir, ".test game engine", "mono", "metadata");
             // FileSystemWatcher requires an existing directory
             if (!Directory.Exists(projectMetadataDir))
             {
                 // Check if the non hidden version exists
-                string nonHiddenProjectMetadataDir = Path.Combine(godotProjectDir, "godot", "mono", "metadata");
+                string nonHiddenProjectMetadataDir = Path.Combine(godotProjectDir, "test game engine", "mono", "metadata");
                 if (Directory.Exists(nonHiddenProjectMetadataDir))
                 {
                     projectMetadataDir = nonHiddenProjectMetadataDir;
@@ -282,18 +282,18 @@ namespace GodotTools.IdeMessaging
 
             try
             {
-                logger.LogInfo("Connecting to Godot Ide Server");
+                logger.LogInfo("Connecting to Test Game Engine Ide Server");
 
                 await tcpClient.ConnectAsync(IPAddress.Loopback, godotIdeMetadata.Port);
 
-                logger.LogInfo("Connection open with Godot Ide Server");
+                logger.LogInfo("Connection open with Test Game Engine Ide Server");
 
                 await AcceptClient(tcpClient);
             }
             catch (SocketException e)
             {
                 if (e.SocketErrorCode == SocketError.ConnectionRefused)
-                    logger.LogError("The connection to the Godot Ide Server was refused");
+                    logger.LogError("The connection to the Test Game Engine Ide Server was refused");
                 else
                     throw;
             }
@@ -317,7 +317,7 @@ namespace GodotTools.IdeMessaging
 
                 if (!File.Exists(MetaFilePath))
                 {
-                    logger.LogInfo("There is no Godot Ide Server running");
+                    logger.LogInfo("There is no Test Game Engine Ide Server running");
                     return;
                 }
 
@@ -330,7 +330,7 @@ namespace GodotTools.IdeMessaging
                 }
                 else
                 {
-                    logger.LogError("Failed to read Godot Ide metadata file");
+                    logger.LogError("Failed to read Test Game Engine Ide metadata file");
                 }
             }
         }
@@ -340,7 +340,7 @@ namespace GodotTools.IdeMessaging
         {
             if (!IsConnected)
             {
-                logger.LogError("Cannot write request. Not connected to the Godot Ide Server.");
+                logger.LogError("Cannot write request. Not connected to the Test Game Engine Ide Server.");
                 return null;
             }
 
@@ -353,7 +353,7 @@ namespace GodotTools.IdeMessaging
         {
             if (!IsConnected)
             {
-                logger.LogError("Cannot write request. Not connected to the Godot Ide Server.");
+                logger.LogError("Cannot write request. Not connected to the Test Game Engine Ide Server.");
                 return null;
             }
 

@@ -2,10 +2,10 @@
 /*  gltf_document.cpp                                                     */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -230,7 +230,7 @@ Error GLTFDocument::_serialize_gltf_extensions(Ref<GLTFState> p_state) const {
 }
 
 Error GLTFDocument::_serialize_scenes(Ref<GLTFState> p_state) {
-	// Godot only supports one scene per glTF file.
+	// Test Game Engine only supports one scene per glTF file.
 	Array scenes;
 	Dictionary scene_dict;
 	scenes.append(scene_dict);
@@ -669,7 +669,7 @@ void GLTFDocument::_compute_node_heights(Ref<GLTFState> p_state) {
 		}
 
 		if (_naming_version < 2) {
-			// This is incorrect, but required for compatibility with previous Godot versions.
+			// This is incorrect, but required for compatibility with previous Test Game Engine versions.
 			if (node->height == 0) {
 				p_state->root_nodes.push_back(node_i);
 			}
@@ -1450,7 +1450,7 @@ Error GLTFDocument::_parse_meshes(Ref<GLTFState> p_state) {
 			if (mesh_prim.has("mode")) {
 				const int mode = mesh_prim["mode"];
 				ERR_FAIL_INDEX_V(mode, 7, ERR_FILE_CORRUPT);
-				// Convert mesh.primitive.mode to Godot Mesh enum. See:
+				// Convert mesh.primitive.mode to Test Game Engine Mesh enum. See:
 				// https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#_mesh_primitive_mode
 				static const Mesh::PrimitiveType primitives2[7] = {
 					Mesh::PRIMITIVE_POINTS, // 0 POINTS
@@ -1616,7 +1616,7 @@ Error GLTFDocument::_parse_meshes(Ref<GLTFState> p_state) {
 				}
 				array[Mesh::ARRAY_BONES] = joints;
 			}
-			// glTF stores weights as a VEC4 array or multiple VEC4 arrays, but Godot's
+			// glTF stores weights as a VEC4 array or multiple VEC4 arrays, but Test Game Engine's
 			// ArrayMesh uses a flat array of either 4 or 8 floats per vertex.
 			// Therefore, decode up to two glTF VEC4 arrays as float arrays.
 			if (a.has("WEIGHTS_0") && !a.has("WEIGHTS_1")) {
@@ -2187,7 +2187,7 @@ void GLTFDocument::_parse_image_save_image(Ref<GLTFState> p_state, const Vector<
 	if (Engine::get_singleton()->is_editor_hint() && handling == GLTFState::HandleBinaryImageMode::HANDLE_BINARY_IMAGE_MODE_EXTRACT_TEXTURES) {
 		if (p_state->extract_path.is_empty()) {
 			WARN_PRINT("glTF: Couldn't extract image because the base and extract paths are empty. It will be loaded directly instead, uncompressed.");
-		} else if (p_state->extract_path.begins_with("res://.godot/imported")) {
+		} else if (p_state->extract_path.begins_with("res://.test game engine/imported")) {
 			WARN_PRINT(vformat("glTF: Extract path is in the imported directory. Image index '%d' will be loaded directly, uncompressed.", p_index));
 		} else {
 			if (p_image->get_name().is_empty()) {
@@ -2199,8 +2199,8 @@ void GLTFDocument::_parse_image_save_image(Ref<GLTFState> p_state, const Vector<
 			Vector<uint8_t> img_data = p_image->get_data();
 			Dictionary generator_parameters;
 			String file_path;
-			// If resource_uri is within res:// folder but outside of .godot/imported folder, use it.
-			if (!p_resource_uri.is_empty() && !p_resource_uri.begins_with("res://.godot/imported") && !p_resource_uri.begins_with("res://..")) {
+			// If resource_uri is within res:// folder but outside of .test game engine/imported folder, use it.
+			if (!p_resource_uri.is_empty() && !p_resource_uri.begins_with("res://.test game engine/imported") && !p_resource_uri.begins_with("res://..")) {
 				file_path = p_resource_uri;
 				must_import = true;
 				must_write = !FileAccess::exists(file_path);
@@ -2305,7 +2305,7 @@ Error GLTFDocument::_parse_images(Ref<GLTFState> p_state, const String &p_base_p
 		//  - a URI with embedded base64-encoded data, or
 		//  - a reference to a bufferView; in that case mimeType must be defined."
 		// Since mimeType is optional for external files and base64 data, we'll have to
-		// fall back on letting Godot parse the data to figure out if it's PNG or JPEG.
+		// fall back on letting Test Game Engine parse the data to figure out if it's PNG or JPEG.
 
 		// We'll assume that we use either URI or bufferView, so let's warn the user
 		// if their image somehow uses both. And fail if it has neither.
@@ -2354,7 +2354,7 @@ Error GLTFDocument::_parse_images(Ref<GLTFState> p_state, const String &p_base_p
 				// ResourceLoader will rely on the file extension to use the relevant loader.
 				// The spec says that if mimeType is defined, it should take precedence (e.g.
 				// there could be a `.png` image which is actually JPEG), but there's no easy
-				// API for that in Godot, so we'd have to load as a buffer (i.e. embedded in
+				// API for that in Test Game Engine, so we'd have to load as a buffer (i.e. embedded in
 				// the material), so we only do that only as fallback.
 				if (ResourceLoader::exists(resource_uri)) {
 					Ref<Texture2D> texture = ResourceLoader::load(resource_uri, "Texture2D");
@@ -3703,7 +3703,7 @@ Error GLTFDocument::_serialize_animations(Ref<GLTFState> p_state) {
 				sampler["input"] = GLTFAccessor::encode_new_accessor_from_float64s(p_state, pointer_track.times);
 				sampler["interpolation"] = interpolation_to_string(pointer_track.interpolation);
 				GLTFAccessor::GLTFComponentType component_type = obj_model_prop->get_component_type(pointer_track.values);
-				// TODO: This can be made faster after this pull request is merged: https://github.com/godotengine/godot/pull/109003
+				// TODO: This can be made faster after this pull request is merged: https://github.com/godotengine/test game engine/pull/109003
 				Array values_arr = GLTFTemplateConvert::to_array(pointer_track.values);
 				sampler["output"] = GLTFAccessor::encode_new_accessor_from_variants(p_state, values_arr, obj_model_prop->get_variant_type(), obj_model_prop->get_accessor_type(), component_type);
 				samplers.push_back(sampler);
@@ -3960,7 +3960,7 @@ void GLTFDocument::_parse_animation_pointer(Ref<GLTFState> p_state, const String
 	channel.interpolation = p_interp;
 	channel.times = p_times;
 	Array values_arr = _decode_accessor_as_variants(p_state, p_output_value_accessor_index, obj_model_prop->get_variant_type());
-	// TODO: This can be made faster after this pull request is merged: https://github.com/godotengine/godot/pull/109003
+	// TODO: This can be made faster after this pull request is merged: https://github.com/godotengine/test game engine/pull/109003
 	GLTFTemplateConvert::set_from_array(channel.values, values_arr);
 	anim_ptr_map[p_animation_json_pointer] = channel;
 }
@@ -4128,7 +4128,7 @@ Node3D *GLTFDocument::_generate_spatial(Ref<GLTFState> p_state, const GLTFNodeIn
 void GLTFDocument::_convert_scene_node(Ref<GLTFState> p_state, Node *p_current, const GLTFNodeIndex p_gltf_parent, const GLTFNodeIndex p_gltf_root) {
 #ifdef TOOLS_ENABLED
 	if (Engine::get_singleton()->is_editor_hint() && p_gltf_root != -1 && p_current->get_owner() == nullptr) {
-		WARN_VERBOSE("glTF export warning: Node '" + p_current->get_name() + "' has no owner. This is likely a temporary node generated by a @tool script. This would not be saved when saving the Godot scene, therefore it will not be exported to glTF.");
+		WARN_VERBOSE("glTF export warning: Node '" + p_current->get_name() + "' has no owner. This is likely a temporary node generated by a @tool script. This would not be saved when saving the Test Game Engine scene, therefore it will not be exported to glTF.");
 		return;
 	}
 #endif // TOOLS_ENABLED
@@ -4158,7 +4158,7 @@ void GLTFDocument::_convert_scene_node(Ref<GLTFState> p_state, Node *p_current, 
 	} else if (Object::cast_to<Skeleton3D>(p_current)) {
 		Skeleton3D *skel = Object::cast_to<Skeleton3D>(p_current);
 		_convert_skeleton_to_gltf(skel, p_state, p_gltf_parent, p_gltf_root, gltf_node);
-		// We ignore the Godot Engine node that is the skeleton.
+		// We ignore the Test Game Engine node that is the skeleton.
 		return;
 	} else if (Object::cast_to<MultiMeshInstance3D>(p_current)) {
 		MultiMeshInstance3D *multi = Object::cast_to<MultiMeshInstance3D>(p_current);
@@ -4497,7 +4497,7 @@ bool GLTFDocument::_does_skinned_mesh_require_placeholder_node(Ref<GLTFState> p_
 		}
 		// Edge case: If a child's skeleton is not yet in the tree, then we must add it as a child of this node.
 		// While the Skeleton3D node isn't a glTF node, it's still a case where we need a placeholder.
-		// This is required to handle this issue: https://github.com/godotengine/godot/issues/67773
+		// This is required to handle this issue: https://github.com/godotengine/test game engine/issues/67773
 		const GLTFSkeletonIndex skel_index = child->skeleton;
 		ERR_FAIL_INDEX_V(skel_index, p_state->skeletons.size(), false);
 		if (p_state->skeletons[skel_index]->godot_skeleton->get_parent() == nullptr) {
@@ -4523,7 +4523,7 @@ void GLTFDocument::_generate_scene_node(Ref<GLTFState> p_state, const GLTFNodeIn
 		if (gltf_node->mesh >= 0) {
 			current_node = _generate_mesh_instance(p_state, p_node_index);
 			// glTF specifies that skinned meshes should ignore their node transforms,
-			// only being controlled by the skeleton, so Godot will reparent a skinned
+			// only being controlled by the skeleton, so Test Game Engine will reparent a skinned
 			// mesh to its skeleton. However, we still need to ensure any child nodes
 			// keep their place in the tree, so if there are any child nodes, the skinned
 			// mesh must not be the base node, so generate an empty spatial base.
@@ -4551,7 +4551,7 @@ void GLTFDocument::_generate_scene_node(Ref<GLTFState> p_state, const GLTFNodeIn
 	// It is also possible that user code generates a Skeleton3D node, and this code also works for that case.
 	if (likely(!Object::cast_to<Skeleton3D>(current_node))) {
 		if (current_node) {
-			// Set the name of the Godot node to the name of the glTF node.
+			// Set the name of the Test Game Engine node to the name of the glTF node.
 			String gltf_node_name = gltf_node->get_name();
 			if (!gltf_node_name.is_empty()) {
 				current_node->set_name(gltf_node_name);
@@ -4569,10 +4569,10 @@ void GLTFDocument::_generate_scene_node(Ref<GLTFState> p_state, const GLTFNodeIn
 		_attach_node_to_skeleton(p_state, p_node_index, current_node, parent_skeleton, p_scene_root);
 		return;
 	}
-	// Not a skeleton bone, so definitely some kind of node that goes in the Godot scene tree.
+	// Not a skeleton bone, so definitely some kind of node that goes in the Test Game Engine scene tree.
 	if (current_node == nullptr) {
 		current_node = _generate_spatial(p_state, p_node_index);
-		// Set the name of the Godot node to the name of the glTF node.
+		// Set the name of the Test Game Engine node to the name of the glTF node.
 		String gltf_node_name = gltf_node->get_name();
 		if (!gltf_node_name.is_empty()) {
 			current_node->set_name(gltf_node_name);
@@ -4638,7 +4638,7 @@ void GLTFDocument::_attach_node_to_skeleton(Ref<GLTFState> p_state, const GLTFNo
 			attachment_godot_node = bone_attachment;
 		}
 		// By this point, `attachment_godot_node` is either a BoneAttachment3D or part of a BoneAttachment3D subtree.
-		// If the node is a plain non-joint, we should generate a Godot node for it.
+		// If the node is a plain non-joint, we should generate a Test Game Engine node for it.
 		if (p_current_node == nullptr) {
 			DEV_ASSERT(!gltf_node->joint);
 			p_current_node = _generate_spatial(p_state, p_node_index);
@@ -4649,8 +4649,8 @@ void GLTFDocument::_attach_node_to_skeleton(Ref<GLTFState> p_state, const GLTFNo
 		p_current_node->set_name(gltf_node->get_name());
 		attachment_godot_node->add_child(p_current_node, true);
 	} else {
-		// If this glTF is a plain joint, this glTF node only becomes a Godot bone.
-		// We refer to the skeleton itself as this glTF node's corresponding Godot node.
+		// If this glTF is a plain joint, this glTF node only becomes a Test Game Engine bone.
+		// We refer to the skeleton itself as this glTF node's corresponding Test Game Engine node.
 		// This may be overridden later if the joint has a non-joint as a child in need of an attachment.
 		p_current_node = p_godot_skeleton;
 	}
@@ -4662,7 +4662,7 @@ void GLTFDocument::_attach_node_to_skeleton(Ref<GLTFState> p_state, const GLTFNo
 	}
 }
 
-// Deprecated code used when naming_version is 0 or 1 (Godot 4.0 to 4.4).
+// Deprecated code used when naming_version is 0 or 1 (Test Game Engine 4.0 to 4.4).
 void GLTFDocument::_generate_scene_node_compat_4pt4(Ref<GLTFState> p_state, const GLTFNodeIndex p_node_index, Node *p_scene_parent, Node *p_scene_root) {
 	Ref<GLTFNode> gltf_node = p_state->nodes[p_node_index];
 
@@ -4709,7 +4709,7 @@ void GLTFDocument::_generate_scene_node_compat_4pt4(Ref<GLTFState> p_state, cons
 	if (!current_node) {
 		if (gltf_node->skin >= 0 && gltf_node->mesh >= 0 && !gltf_node->children.is_empty()) {
 			// glTF specifies that skinned meshes should ignore their node transforms,
-			// only being controlled by the skeleton, so Godot will reparent a skinned
+			// only being controlled by the skeleton, so Test Game Engine will reparent a skinned
 			// mesh to its skeleton. However, we still need to ensure any child nodes
 			// keep their place in the tree, so if there are any child nodes, the skinned
 			// mesh must not be the base node, so generate an empty spatial base.
@@ -4762,7 +4762,7 @@ void GLTFDocument::_generate_scene_node_compat_4pt4(Ref<GLTFState> p_state, cons
 	}
 }
 
-// Deprecated code used when naming_version is 0 or 1 (Godot 4.0 to 4.4).
+// Deprecated code used when naming_version is 0 or 1 (Test Game Engine 4.0 to 4.4).
 void GLTFDocument::_generate_skeleton_bone_node_compat_4pt4(Ref<GLTFState> p_state, const GLTFNodeIndex p_node_index, Node *p_scene_parent, Node *p_scene_root) {
 	Ref<GLTFNode> gltf_node = p_state->nodes[p_node_index];
 
@@ -5054,7 +5054,7 @@ Ref<GLTFObjectModelProperty> GLTFDocument::import_object_model_property(Ref<GLTF
 				ret->append_path_to_property(node_path, "blend_shapes/morph_" + weight_index_string);
 				ret->set_types(Variant::FLOAT, GLTFObjectModelProperty::GLTF_OBJECT_MODEL_TYPE_FLOAT);
 			}
-			// Else, Godot's MeshInstance3D does not expose the blend shape weights as one property.
+			// Else, Test Game Engine's MeshInstance3D does not expose the blend shape weights as one property.
 			// But that's fine, we handle this case in _parse_animation_pointer instead.
 		} else if (node_prop == "extensions") {
 			ERR_FAIL_COND_V(split.size() < 5, ret);
@@ -5122,7 +5122,7 @@ Ref<GLTFObjectModelProperty> GLTFDocument::import_object_model_property(Ref<GLTF
 					}
 				} else if (mat_prop == "occlusionTexture") {
 					if (sub_prop == "strength") {
-						// This is the closest thing Godot has to an occlusion strength property.
+						// This is the closest thing Test Game Engine has to an occlusion strength property.
 						ret->append_path_to_property(mat_path, "ao_light_affect");
 						ret->set_types(Variant::FLOAT, GLTFObjectModelProperty::GLTF_OBJECT_MODEL_TYPE_FLOAT);
 					}
@@ -5142,9 +5142,9 @@ Ref<GLTFObjectModelProperty> GLTFDocument::import_object_model_property(Ref<GLTF
 						const String &tex_ext_name = split[5];
 						const String &tex_ext_prop = split[6];
 						if (tex_ext_dict == "extensions" && tex_ext_name == "KHR_texture_transform") {
-							// Godot only supports UVs for the whole material, not per texture.
+							// Test Game Engine only supports UVs for the whole material, not per texture.
 							// We treat the albedo texture as the main texture, and import as UV1.
-							// Godot does not support texture rotation, only offset and scale.
+							// Test Game Engine does not support texture rotation, only offset and scale.
 							if (tex_ext_prop == "offset") {
 								ret->append_path_to_property(mat_path, "uv1_offset");
 								ret->set_types(Variant::VECTOR3, GLTFObjectModelProperty::GLTF_OBJECT_MODEL_TYPE_FLOAT2);
@@ -5224,7 +5224,7 @@ Ref<GLTFObjectModelProperty> GLTFDocument::import_object_model_property(Ref<GLTF
 		}
 		if (ret.is_null() || !ret->has_node_paths()) {
 			if (split.has("KHR_texture_transform")) {
-				WARN_VERBOSE(vformat("glTF: Texture transforms are only supported per material in Godot. All KHR_texture_transform properties will be ignored except for the albedo texture. Ignoring JSON pointer '%s'.", p_json_pointer));
+				WARN_VERBOSE(vformat("glTF: Texture transforms are only supported per material in Test Game Engine. All KHR_texture_transform properties will be ignored except for the albedo texture. Ignoring JSON pointer '%s'.", p_json_pointer));
 			} else {
 				WARN_PRINT(vformat("glTF: Animation contained JSON pointer '%s' which could not be resolved. This property will not be animated.", p_json_pointer));
 			}
@@ -5311,7 +5311,7 @@ Ref<GLTFObjectModelProperty> GLTFDocument::export_object_model_property(Ref<GLTF
 			}
 		}
 	} else {
-		// Properties directly on Godot nodes.
+		// Properties directly on Test Game Engine nodes.
 		Ref<GLTFNode> gltf_node = p_state->nodes[p_gltf_node_index];
 		if (Object::cast_to<Camera3D>(target_object) && gltf_node->camera >= 0) {
 			split_json_pointer.append("cameras");
@@ -5380,7 +5380,7 @@ Ref<GLTFObjectModelProperty> GLTFDocument::export_object_model_property(Ref<GLTF
 				split_json_pointer.append("translation");
 				ret->set_types(Variant::VECTOR3, GLTFObjectModelProperty::GLTF_OBJECT_MODEL_TYPE_FLOAT3);
 			} else if (target_prop == "quaternion") {
-				// Note: Only Quaternion rotation can be converted from Godot in this mapping.
+				// Note: Only Quaternion rotation can be converted from Test Game Engine in this mapping.
 				// Struct methods like from_euler are not accessible from the Expression class. :(
 				split_json_pointer.append("rotation");
 				ret->set_types(Variant::QUATERNION, GLTFObjectModelProperty::GLTF_OBJECT_MODEL_TYPE_FLOAT4);
@@ -5669,7 +5669,7 @@ void GLTFDocument::_import_animation(Ref<GLTFState> p_state, AnimationPlayer *p_
 			animation->track_set_path(track_idx, blend_path);
 			animation->track_set_imported(track_idx, true); //helps merging later
 
-			// Only LINEAR and STEP (NEAREST) can be supported out of the box by Godot's Animation,
+			// Only LINEAR and STEP (NEAREST) can be supported out of the box by Test Game Engine's Animation,
 			// the other modes have to be baked.
 			GLTFAnimation::Interpolation gltf_interp = track.weight_tracks[i].interpolation;
 			if (gltf_interp == GLTFAnimation::INTERP_LINEAR || gltf_interp == GLTFAnimation::INTERP_STEP) {
@@ -5718,7 +5718,7 @@ void GLTFDocument::_import_animation(Ref<GLTFState> p_state, AnimationPlayer *p_
 				anim_end = MAX(anim_end, channel.times[i]);
 			}
 		}
-		// Begin converting the glTF animation to a Godot animation.
+		// Begin converting the glTF animation to a Test Game Engine animation.
 		const Ref<Expression> gltf_to_godot_expr = prop->get_gltf_to_godot_expression();
 		const bool is_gltf_to_godot_expr_valid = gltf_to_godot_expr.is_valid();
 		for (const NodePath node_path : prop->get_node_paths()) {
@@ -6370,7 +6370,7 @@ void GLTFDocument::_convert_animation(Ref<GLTFState> p_state, AnimationPlayer *p
 		if (!animation->track_is_enabled(track_index)) {
 			continue;
 		}
-		// Get the Godot node and the glTF node index for the animation track.
+		// Get the Test Game Engine node and the glTF node index for the animation track.
 		const NodePath track_path = animation->track_get_path(track_index);
 		const NodePath root_node = p_animation_player->get_root_node();
 		const Node *anim_player_parent = p_animation_player->get_node_or_null(root_node);
@@ -6435,7 +6435,7 @@ void GLTFDocument::_convert_animation(Ref<GLTFState> p_state, AnimationPlayer *p
 		for (int32_t key_i = 0; key_i < anim_key_count; key_i++) {
 			times.write[key_i] = animation->track_get_key_time(track_index, key_i);
 		}
-		// Try converting the track to a TRS glTF node track. This will only succeed if the Godot animation is a TRS track.
+		// Try converting the track to a TRS glTF node track. This will only succeed if the Test Game Engine animation is a TRS track.
 		const HashMap<int, GLTFAnimation::NodeTrack>::Iterator node_track_iter = node_tracks.find(node_i);
 		GLTFAnimation::NodeTrack track;
 		if (node_track_iter) {
@@ -6459,7 +6459,7 @@ void GLTFDocument::_convert_animation(Ref<GLTFState> p_state, AnimationPlayer *p
 				case GLTFObjectModelProperty::GLTF_OBJECT_MODEL_TYPE_INT: {
 					channel.interpolation = GLTFAnimation::INTERP_STEP;
 					if (gltf_interpolation != GLTFAnimation::INTERP_STEP) {
-						WARN_PRINT(vformat("glTF export: Animation track %d on property %s is animating an int or bool, so it MUST use STEP interpolation (Godot \"Nearest\"), but the track in the Godot AnimationPlayer is using a different interpolation. Forcing STEP interpolation. Correct this track's interpolation in the source AnimationPlayer to avoid this warning.", track_index, String(track_path)));
+						WARN_PRINT(vformat("glTF export: Animation track %d on property %s is animating an int or bool, so it MUST use STEP interpolation (Test Game Engine \"Nearest\"), but the track in the Test Game Engine AnimationPlayer is using a different interpolation. Forcing STEP interpolation. Correct this track's interpolation in the source AnimationPlayer to avoid this warning.", track_index, String(track_path)));
 					}
 				} break;
 				default: {
@@ -6480,7 +6480,7 @@ void GLTFDocument::_convert_animation(Ref<GLTFState> p_state, AnimationPlayer *p
 					base_instance = resource.ptr();
 				}
 			}
-			// Convert the Godot animation values into glTF animation values (still Variant).
+			// Convert the Test Game Engine animation values into glTF animation values (still Variant).
 			for (int32_t key_i = 0; key_i < anim_key_count; key_i++) {
 				Variant value = animation->track_get_key_value(track_index, key_i);
 				if (is_godot_to_gltf_expr_valid) {
@@ -6566,7 +6566,7 @@ Dictionary _serialize_texture_transform_uv(Vector2 p_offset, Vector2 p_scale) {
 		texture_transform["scale"] = scale;
 	}
 	Dictionary extension;
-	// Note: Godot doesn't support texture rotation.
+	// Note: Test Game Engine doesn't support texture rotation.
 	if (is_offset || is_scaled) {
 		extension["KHR_texture_transform"] = texture_transform;
 	}
@@ -7039,7 +7039,7 @@ Node *GLTFDocument::generate_scene(Ref<GLTFState> p_state, float p_bake_fps, boo
 	ERR_FAIL_COND_V(p_state.is_null(), nullptr);
 	// The glTF file must have nodes, and have some marked as root nodes, in order to generate a scene.
 	if (p_state->nodes.is_empty()) {
-		WARN_PRINT("glTF: This glTF file has no nodes, the generated Godot scene will be empty.");
+		WARN_PRINT("glTF: This glTF file has no nodes, the generated Test Game Engine scene will be empty.");
 	}
 	// Now that we know that we have glTF nodes, we can begin generating a scene from the parsed glTF data.
 	Error err = OK;

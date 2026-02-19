@@ -2,10 +2,10 @@
 /*  os_log_logger.h                                                       */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -35,7 +35,7 @@
 #include <os/log.h>
 
 /**
- * @brief Apple unified logging system integration for Godot Engine.
+ * @brief Apple unified logging system integration for Test Game Engine.
  */
 class OsLogLogger : public Logger {
 	os_log_t log;

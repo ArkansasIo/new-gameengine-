@@ -4,9 +4,9 @@ plugins {
 }
 
 ext {
-    DEBUG_PUBLISH_ARTIFACT_ID = 'godot-debug'
-    PUBLISH_ARTIFACT_ID = 'godot'
-    TOOLS_PUBLISH_ARTIFACT_ID = 'godot-tools'
+    DEBUG_PUBLISH_ARTIFACT_ID = 'test game engine-debug'
+    PUBLISH_ARTIFACT_ID = 'test game engine'
+    TOOLS_PUBLISH_ARTIFACT_ID = 'test game engine-tools'
 }
 
 apply from: "../scripts/publish-module.gradle"
@@ -32,7 +32,7 @@ android {
         manifestPlaceholders = [godotLibraryVersion: getGodotLibraryVersionName()]
     }
 
-    namespace = "org.godotengine.godot"
+    namespace = "org.godotengine.test game engine"
 
     compileOptions {
         sourceCompatibility versions.javaVersion
@@ -117,7 +117,7 @@ android {
         // Update the name of the generated library
         def outputSuffix = "${sconsTarget}"
         variant.outputs.all { output ->
-            output.outputFileName = "godot-lib.${outputSuffix}.aar"
+            output.outputFileName = "test game engine-lib.${outputSuffix}.aar"
         }
 
         // Find scons' executable path

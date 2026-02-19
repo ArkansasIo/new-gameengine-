@@ -4,10 +4,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using Godot.SourceGenerators.Internal;
+using Test Game Engine.SourceGenerators.Internal;
 
 
-namespace Godot.NativeInterop
+namespace Test Game Engine.NativeInterop
 {
     /*
      * IMPORTANT:

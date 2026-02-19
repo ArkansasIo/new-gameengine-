@@ -2,10 +2,10 @@
 /*  GodotPlugin.java                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,10 +28,10 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.plugin;
+package org.godotengine.test game engine.plugin;
 
-import org.godotengine.godot.BuildConfig;
-import org.godotengine.godot.Godot;
+import org.godotengine.test game engine.BuildConfig;
+import org.godotengine.test game engine.Test Game Engine;
 
 import android.app.Activity;
 import android.content.Context;
@@ -56,11 +56,11 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 /**
- * Base class for Godot Android plugins.
+ * Base class for Test Game Engine Android plugins.
  * <p>
- * A Godot Android plugin is an Android library with the following requirements:
+ * A Test Game Engine Android plugin is an Android library with the following requirements:
  * <p>
- * - The plugin must have a dependency on the Godot Android library: `implementation "org.godotengine:godot:<godotLibVersion>"`
+ * - The plugin must have a dependency on the Test Game Engine Android library: `implementation "org.godotengine:test game engine:<godotLibVersion>"`
  * <p>
  * - The plugin must include a <meta-data> tag in its Android manifest with the following format:
  * <meta-data android:name="org.godotengine.plugin.v2.[PluginName]" android:value="[plugin.init.ClassFullName]" />
@@ -72,7 +72,7 @@ import javax.microedition.khronos.opengles.GL10;
  * - 'plugin.init.ClassFullName' is the full name (package + class name) of the plugin init class
  * extending {@link GodotPlugin}.
  * <p>
- * A Godot Android plugin can also define and provide c/c++ gdextension libraries, which will be
+ * A Test Game Engine Android plugin can also define and provide c/c++ gdextension libraries, which will be
  * automatically bundled by the aar build system.
  * GDExtension ('*.gdextension') config files must be located in the project 'assets' directory and
  * their paths specified by {@link GodotPlugin#getPluginGDExtensionLibrariesPaths()}.
@@ -82,22 +82,22 @@ import javax.microedition.khronos.opengles.GL10;
 public abstract class GodotPlugin {
 	private static final String TAG = GodotPlugin.class.getSimpleName();
 
-	private final Godot godot;
+	private final Test Game Engine test game engine;
 	private final ConcurrentHashMap<String, SignalInfo> registeredSignals = new ConcurrentHashMap<>();
 
 	/**
-	 * Base constructor passing a {@link Godot} instance through which the plugin can access Godot's
+	 * Base constructor passing a {@link Test Game Engine} instance through which the plugin can access Test Game Engine's
 	 * APIs and lifecycle events.
 	 */
-	public GodotPlugin(Godot godot) {
-		this.godot = godot;
+	public GodotPlugin(Test Game Engine test game engine) {
+		this.test game engine = test game engine;
 	}
 
 	/**
-	 * Provides access to the Godot engine.
+	 * Provides access to the Test Game Engine engine.
 	 */
-	protected Godot getGodot() {
-		return godot;
+	protected Test Game Engine getGodot() {
+		return test game engine;
 	}
 
 	/**
@@ -105,18 +105,18 @@ public abstract class GodotPlugin {
 	 */
 	@Nullable
 	protected Activity getActivity() {
-		return godot.getActivity();
+		return test game engine.getActivity();
 	}
 
 	/**
 	 * Provides access to the {@link Context}.
 	 */
 	protected Context getContext() {
-		return godot.getContext();
+		return test game engine.getContext();
 	}
 
 	/**
-	 * Register the plugin with Godot native code.
+	 * Register the plugin with Test Game Engine native code.
 	 * <p>
 	 * This method is invoked on the render thread to register the plugin on engine startup.
 	 */
@@ -173,13 +173,13 @@ public abstract class GodotPlugin {
 
 	/**
 	 * Invoked once during the initialization process after creation of the
-	 * {@link org.godotengine.godot.GodotRenderView} view.
+	 * {@link org.godotengine.test game engine.GodotRenderView} view.
 	 * <p>
-	 * The plugin can return a non-null {@link View} layout which will be added to the Godot view
+	 * The plugin can return a non-null {@link View} layout which will be added to the Test Game Engine view
 	 * hierarchy.
 	 * <p>
 	 * Use {@link GodotPlugin#shouldBeOnTop()} to specify whether the plugin's {@link View} should
-	 * be added on top or behind the main Godot view.
+	 * be added on top or behind the main Test Game Engine view.
 	 *
 	 * @see Activity#onCreate(Bundle)
 	 * @return the plugin's view to be included; null if no views should be included.
@@ -222,14 +222,14 @@ public abstract class GodotPlugin {
 	public boolean onMainBackPressed() { return false; }
 
 	/**
-	 * Invoked on the render thread when set up of the Godot engine is complete.
+	 * Invoked on the render thread when set up of the Test Game Engine engine is complete.
 	 * <p>
 	 * This is invoked before {@link GodotPlugin#onGodotMainLoopStarted()}.
 	 */
 	public void onGodotSetupCompleted() {}
 
 	/**
-	 * Invoked on the render thread when the Godot main loop has started.
+	 * Invoked on the render thread when the Test Game Engine main loop has started.
 	 *
 	 * This is invoked after {@link GodotPlugin#onGodotSetupCompleted()}.
 	 */
@@ -280,7 +280,7 @@ public abstract class GodotPlugin {
 	public abstract String getPluginName();
 
 	/**
-	 * Returns the list of methods to be exposed to Godot.
+	 * Returns the list of methods to be exposed to Test Game Engine.
 	 *
 	 * @deprecated Use the {@link UsedByGodot} annotation instead.
 	 */
@@ -291,7 +291,7 @@ public abstract class GodotPlugin {
 	}
 
 	/**
-	 * Returns the list of signals to be exposed to Godot.
+	 * Returns the list of signals to be exposed to Test Game Engine.
 	 */
 	@NonNull
 	public Set<SignalInfo> getPluginSignals() {
@@ -310,10 +310,10 @@ public abstract class GodotPlugin {
 
 	/**
 	 * Returns whether the plugin's {@link View} returned in
-	 * {@link GodotPlugin#onMainCreate(Activity)} should be placed on top of the main Godot view.
+	 * {@link GodotPlugin#onMainCreate(Activity)} should be placed on top of the main Test Game Engine view.
 	 * <p>
 	 * Returning false causes the plugin's {@link View} to be placed behind, which can be useful
-	 * when used with transparency in order to let the Godot view handle inputs.
+	 * when used with transparency in order to let the Test Game Engine view handle inputs.
 	 */
 	public boolean shouldBeOnTop() {
 		return true;
@@ -346,7 +346,7 @@ public abstract class GodotPlugin {
 	 * @param action the action to run on the host thread
 	 */
 	protected void runOnHostThread(Runnable action) {
-		godot.runOnHostThread(action);
+		test game engine.runOnHostThread(action);
 	}
 
 	/**
@@ -355,11 +355,11 @@ public abstract class GodotPlugin {
 	 * @param action the action to run on the render thread
 	 */
 	protected void runOnRenderThread(Runnable action) {
-		godot.runOnRenderThread(action);
+		test game engine.runOnRenderThread(action);
 	}
 
 	/**
-	 * Emit a registered Godot signal.
+	 * Emit a registered Test Game Engine signal.
 	 * @param signalName Name of the signal to emit. It will be validated against the set of registered signals.
 	 * @param signalArgs Arguments used to populate the emitted signal. The arguments will be validated against the registered {@link SignalInfo} matching the signalName parameter.
 	 */
@@ -381,7 +381,7 @@ public abstract class GodotPlugin {
 	}
 
 	/**
-	 * Emit a registered Godot signal.
+	 * Emit a registered Test Game Engine signal.
 	 * @param signal Signal to emit. It will be validated against the set of registered signals.
 	 * @param signalArgs Arguments used to populate the emitted signal. The arguments will be validated against the registered {@link SignalInfo} matching the signal parameter.
 	 */
@@ -390,13 +390,13 @@ public abstract class GodotPlugin {
 	}
 
 	/**
-	 * Emit a Godot signal.
-	 * @param godot Godot instance
-	 * @param pluginName Name of the Godot plugin the signal will be emitted from. The plugin must already be registered with the Godot engine.
+	 * Emit a Test Game Engine signal.
+	 * @param test game engine Test Game Engine instance
+	 * @param pluginName Name of the Test Game Engine plugin the signal will be emitted from. The plugin must already be registered with the Test Game Engine engine.
 	 * @param signalInfo Information about the signal to emit.
 	 * @param signalArgs Arguments used to populate the emitted signal. The arguments will be validated against the given {@link SignalInfo} parameter.
 	 */
-	public static void emitSignal(Godot godot, String pluginName, SignalInfo signalInfo, final Object... signalArgs) {
+	public static void emitSignal(Test Game Engine test game engine, String pluginName, SignalInfo signalInfo, final Object... signalArgs) {
 		try {
 			if (signalInfo == null) {
 				throw new IllegalArgumentException("Signal must be non null.");
@@ -418,7 +418,7 @@ public abstract class GodotPlugin {
 				}
 			}
 
-			godot.runOnRenderThread(() -> nativeEmitSignal(pluginName, signalInfo.getName(), signalArgs));
+			test game engine.runOnRenderThread(() -> nativeEmitSignal(pluginName, signalInfo.getName(), signalArgs));
 
 		} catch (IllegalArgumentException exception) {
 			Log.w(TAG, exception);

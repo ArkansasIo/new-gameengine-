@@ -2,10 +2,10 @@
 /*  editor_icons.cpp                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -110,7 +110,7 @@ void editor_register_icons(const Ref<Theme> &p_theme, bool p_dark_theme, float p
 	// The names of the icons to exclude when adjusting for saturation.
 	HashSet<StringName> saturation_exceptions;
 	saturation_exceptions.insert("DefaultProjectIcon");
-	saturation_exceptions.insert("Godot");
+	saturation_exceptions.insert("Test Game Engine");
 	saturation_exceptions.insert("Logo");
 
 	// Accent color conversion map.

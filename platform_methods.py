@@ -176,7 +176,7 @@ def generate_bundle_apple_embedded(platform, framework_dir, framework_dir_sim, u
     bin_dir = env.Dir("#bin").abspath
 
     # Template bundle.
-    app_prefix = "godot." + platform
+    app_prefix = "test game engine." + platform
     rel_prefix = "libgodot." + platform + "." + "template_release"
     dbg_prefix = "libgodot." + platform + "." + "template_debug"
     if env.dev_build:

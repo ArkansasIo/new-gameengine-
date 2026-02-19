@@ -2,10 +2,10 @@
 /*  BaseGodotEditor.kt                                                    */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -59,29 +59,29 @@ import org.godotengine.editor.embed.EmbeddedGodotGame
 import org.godotengine.editor.embed.GameMenuFragment
 import org.godotengine.editor.utils.signApk
 import org.godotengine.editor.utils.verifyApk
-import org.godotengine.godot.BuildProvider
-import org.godotengine.godot.Godot
-import org.godotengine.godot.GodotActivity
-import org.godotengine.godot.GodotLib
-import org.godotengine.godot.editor.utils.EditorUtils
-import org.godotengine.godot.editor.utils.GameMenuUtils
-import org.godotengine.godot.editor.utils.GameMenuUtils.GameEmbedMode
-import org.godotengine.godot.editor.utils.GameMenuUtils.fetchGameEmbedMode
-import org.godotengine.godot.error.Error
-import org.godotengine.godot.utils.DialogUtils
-import org.godotengine.godot.utils.PermissionsUtil
-import org.godotengine.godot.utils.ProcessPhoenix
+import org.godotengine.test game engine.BuildProvider
+import org.godotengine.test game engine.Test Game Engine
+import org.godotengine.test game engine.GodotActivity
+import org.godotengine.test game engine.GodotLib
+import org.godotengine.test game engine.editor.utils.EditorUtils
+import org.godotengine.test game engine.editor.utils.GameMenuUtils
+import org.godotengine.test game engine.editor.utils.GameMenuUtils.GameEmbedMode
+import org.godotengine.test game engine.editor.utils.GameMenuUtils.fetchGameEmbedMode
+import org.godotengine.test game engine.error.Error
+import org.godotengine.test game engine.utils.DialogUtils
+import org.godotengine.test game engine.utils.PermissionsUtil
+import org.godotengine.test game engine.utils.ProcessPhoenix
 import org.godotengine.openxr.vendors.utils.*
 import java.io.File
 import kotlin.math.min
 import kotlin.text.indexOf
 
 /**
- * Base class for the Godot Android Editor activities.
+ * Base class for the Test Game Engine Android Editor activities.
  *
  * This provides the basic templates for the activities making up this application.
  * Each derived activity runs in its own process, which enable up to have several instances of
- * the Godot engine up and running at the same time.
+ * the Test Game Engine engine up and running at the same time.
  */
 abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListener {
 
@@ -190,7 +190,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 	} }
 	private val embeddedGameStateLabel: TextView? by lazy { findViewById<TextView?>(R.id.embedded_game_state_label)?.apply {
 		setOnClickListener {
-			godot?.runOnRenderThread {
+			test game engine?.runOnRenderThread {
 				GameMenuUtils.playMainScene()
 			}
 		}
@@ -281,7 +281,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 			// Override EXTRA_NEW_LAUNCH so the editor is not restarted
 			newIntent.putExtra(EXTRA_NEW_LAUNCH, false)
 
-			godot?.runOnRenderThread {
+			test game engine?.runOnRenderThread {
 				// Look for the scene, XR-mode, and hybrid data arguments.
 				var scene = ""
 				var xrMode = XR_MODE_DEFAULT
@@ -438,7 +438,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 
 		runOnUiThread {
 			// Enable long press, panning and scaling gestures
-			godotFragment?.godot?.renderView?.inputHandler?.apply {
+			godotFragment?.test game engine?.renderView?.inputHandler?.apply {
 				enableLongPress(longPressEnabled)
 				enablePanningAndScalingGestures(panScaleEnabled)
 				setOverrideVolumeButtons(overrideVolumeButtonsEnabled)
@@ -449,7 +449,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 	private fun updateWindowAppearance() {
 		val editorWindowInfo = getEditorWindowInfo()
 		if (editorWindowInfo == EDITOR_MAIN_INFO || editorWindowInfo == RUN_GAME_INFO) {
-			godot?.apply {
+			test game engine?.apply {
 				enableImmersiveMode(isInImmersiveMode(), true)
 				enableEdgeToEdge(isInEdgeToEdgeMode(), true)
 				setSystemBarsAppearance()
@@ -471,7 +471,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 		updateWindowAppearance()
 
 		if (getEditorWindowInfo() == EDITOR_MAIN_INFO &&
-			godot?.isEditorHint() == true &&
+			test game engine?.isEditorHint() == true &&
 			(editorMessageDispatcher.hasEditorConnection(EMBEDDED_RUN_GAME_INFO) ||
 				editorMessageDispatcher.hasEditorConnection(RUN_GAME_INFO))) {
 			// If this is the editor window, and this is not the project manager, and we have a running game, then show
@@ -542,7 +542,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 		}
 
 		// Project manager doesn't support embed mode.
-		if (godot?.isProjectManagerHint() == true) {
+		if (test game engine?.isProjectManagerHint() == true) {
 			return RUN_GAME_INFO
 		}
 
@@ -571,7 +571,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 		// This doesn't apply to the play / game window since for that window fullscreen is
 		// controlled by the game logic.
 		val updatedArgs = if ((editorWindowInfo == EDITOR_MAIN_INFO || editorWindowInfo == RUN_GAME_INFO) &&
-			godot?.isInImmersiveMode() == true &&
+			test game engine?.isInImmersiveMode() == true &&
 			!args.contains(FULLSCREEN_ARG) &&
 			!args.contains(FULLSCREEN_ARG_SHORT)
 		) {
@@ -617,8 +617,8 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 
 		val newInstance = getNewGodotInstanceIntent(editorWindowInfo, args)
 		newInstance.apply {
-			putExtra(EXTRA_EDITOR_HINT, godot?.isEditorHint() == true)
-			putExtra(EXTRA_PROJECT_MANAGER_HINT, godot?.isProjectManagerHint() == true)
+			putExtra(EXTRA_EDITOR_HINT, test game engine?.isEditorHint() == true)
+			putExtra(EXTRA_PROJECT_MANAGER_HINT, test game engine?.isProjectManagerHint() == true)
 			putExtra(EXTRA_GAME_MENU_STATE, gameMenuState)
 		}
 
@@ -634,7 +634,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 		return editorWindowInfo.windowId
 	}
 
-	override fun onGodotForceQuit(instance: Godot) {
+	override fun onGodotForceQuit(instance: Test Game Engine) {
 		if (!isRunningInInstrumentation()) {
 			// For instrumented tests, we disable force-quitting to allow the tests to complete successfully, otherwise
 			// they fail when the process crashes.
@@ -663,7 +663,7 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 		for (runningProcess in runningProcesses) {
 			if (runningProcess.processName == processName) {
 				// Killing process directly
-				Log.v(TAG, "Killing Godot process ${runningProcess.processName}")
+				Log.v(TAG, "Killing Test Game Engine process ${runningProcess.processName}")
 				Process.killProcess(runningProcess.pid)
 				return true
 			}
@@ -694,25 +694,25 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 	}
 
 	/**
-	 * The Godot Android Editor sets its own orientation via its AndroidManifest
+	 * The Test Game Engine Android Editor sets its own orientation via its AndroidManifest
 	 */
 	protected open fun overrideOrientationRequest() = true
 
 	protected open fun overrideVolumeButtons() = false
 
 	/**
-	 * Enable long press gestures for the Godot Android editor.
+	 * Enable long press gestures for the Test Game Engine Android editor.
 	 */
 	protected open fun enableLongPressGestures() =
 		java.lang.Boolean.parseBoolean(GodotLib.getEditorSetting("interface/touchscreen/enable_long_press_as_right_click"))
 
 	/**
-	 * Disable scroll deadzone for the Godot Android editor.
+	 * Disable scroll deadzone for the Test Game Engine Android editor.
 	 */
 	protected open fun disableScrollDeadzone() = true
 
 	/**
-	 * Enable pan and scale gestures for the Godot Android editor.
+	 * Enable pan and scale gestures for the Test Game Engine Android editor.
 	 */
 	protected open fun enablePanAndScaleGestures() =
 		java.lang.Boolean.parseBoolean(GodotLib.getEditorSetting("interface/touchscreen/enable_pan_and_scale_gestures"))
@@ -830,13 +830,13 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 		keystoreUser: String,
 		keystorePassword: String
 	): Error {
-		val godot = godot ?: return Error.ERR_UNCONFIGURED
-		return signApk(godot.fileAccessHandler, inputPath, outputPath, keystorePath, keystoreUser, keystorePassword)
+		val test game engine = test game engine ?: return Error.ERR_UNCONFIGURED
+		return signApk(test game engine.fileAccessHandler, inputPath, outputPath, keystorePath, keystoreUser, keystorePassword)
 	}
 
 	override fun verifyApk(apkPath: String): Error {
-		val godot = godot ?: return Error.ERR_UNCONFIGURED
-		return verifyApk(godot.fileAccessHandler, apkPath)
+		val test game engine = test game engine ?: return Error.ERR_UNCONFIGURED
+		return verifyApk(test game engine.fileAccessHandler, apkPath)
 	}
 
 	@CallSuper
@@ -980,88 +980,88 @@ abstract class BaseGodotEditor : GodotActivity(), GameMenuFragment.GameMenuListe
 
 	override fun suspendGame(suspended: Boolean) {
 		gameMenuState.putBoolean(GAME_MENU_ACTION_SET_SUSPEND, suspended)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.setSuspend(suspended)
 		}
 	}
 
 	override fun dispatchNextFrame() {
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.nextFrame()
 		}
 	}
 
 	override fun toggleSelectionVisibility(enabled: Boolean) {
 		gameMenuState.putBoolean(GAME_MENU_ACTION_SET_SELECTION_VISIBLE, enabled)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.setSelectionVisible(enabled)
 		}
 	}
 
 	override fun overrideCamera(enabled: Boolean) {
 		gameMenuState.putBoolean(GAME_MENU_ACTION_SET_CAMERA_OVERRIDE, enabled)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.setCameraOverride(enabled)
 		}
 	}
 
 	override fun selectRuntimeNode(nodeType: GameMenuFragment.GameMenuListener.NodeType) {
 		gameMenuState.putSerializable(GAME_MENU_ACTION_SET_NODE_TYPE, nodeType)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.setNodeType(nodeType.ordinal)
 		}
 	}
 
 	override fun selectRuntimeNodeSelectMode(selectMode: GameMenuFragment.GameMenuListener.SelectMode) {
 		gameMenuState.putSerializable(GAME_MENU_ACTION_SET_SELECT_MODE, selectMode)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.setSelectMode(selectMode.ordinal)
 		}
 	}
 
 	override fun reset2DCamera() {
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.resetCamera2DPosition()
 		}
 	}
 
 	override fun reset3DCamera() {
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.resetCamera3DPosition()
 		}
 	}
 
 	override fun manipulateCamera(mode: GameMenuFragment.GameMenuListener.CameraMode) {
 		gameMenuState.putSerializable(GAME_MENU_ACTION_SET_CAMERA_MANIPULATE_MODE, mode)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.setCameraManipulateMode(mode.ordinal)
 		}
 	}
 
 	override fun muteAudio(enabled: Boolean) {
 		gameMenuState.putBoolean(GAME_MENU_ACTION_SET_DEBUG_MUTE_AUDIO, enabled)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.setDebugMuteAudio(enabled)
 		}
 	}
 
 	override fun resetTimeScale() {
 		gameMenuState.putDouble(GAME_MENU_ACTION_SET_TIME_SCALE, 1.0)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.resetTimeScale()
 		}
 	}
 
 	override fun setTimeScale(scale: Double) {
 		gameMenuState.putDouble(GAME_MENU_ACTION_SET_TIME_SCALE, scale)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			GameMenuUtils.setTimeScale(scale)
 		}
 	}
 
 	override fun embedGameOnPlay(embedded: Boolean) {
 		gameMenuState.putBoolean(GAME_MENU_ACTION_EMBED_GAME_ON_PLAY, embedded)
-		godot?.runOnRenderThread {
+		test game engine?.runOnRenderThread {
 			val gameEmbedMode = if (embedded) GameEmbedMode.ENABLED else GameEmbedMode.DISABLED
 			GameMenuUtils.saveGameEmbedMode(gameEmbedMode)
 		}

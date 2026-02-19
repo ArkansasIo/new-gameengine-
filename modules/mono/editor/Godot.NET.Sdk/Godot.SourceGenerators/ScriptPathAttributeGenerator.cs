@@ -7,7 +7,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     [Generator]
     public class ScriptPathAttributeGenerator : ISourceGenerator
@@ -121,13 +121,13 @@ namespace Godot.SourceGenerators
 
             var source = new StringBuilder();
 
-            // using Godot;
+            // using Test Game Engine;
             // namespace {classNs} {
             //     {attributesBuilder}
             //     partial class {className} { }
             // }
 
-            source.Append("using Godot;\n");
+            source.Append("using Test Game Engine;\n");
 
             if (hasNamespace)
             {

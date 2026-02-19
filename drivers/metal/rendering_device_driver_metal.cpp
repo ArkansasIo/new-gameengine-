@@ -2,10 +2,10 @@
 /*  rendering_device_driver_metal.cpp                                     */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -2500,7 +2500,7 @@ uint64_t RenderingDeviceDriverMetal::get_total_memory_used() {
 }
 
 uint64_t RenderingDeviceDriverMetal::get_lazily_memory_used() {
-	return 0; // TODO: Track this (grep for memoryless in Godot's Metal backend).
+	return 0; // TODO: Track this (grep for memoryless in Test Game Engine's Metal backend).
 }
 
 uint64_t RenderingDeviceDriverMetal::limit_get(Limit p_limit) {
@@ -2736,7 +2736,7 @@ Error RenderingDeviceDriverMetal::_create_device() {
 	device = context_driver->get_metal_device();
 
 	device_scope = NS::TransferPtr(MTL::CaptureManager::sharedCaptureManager()->newCaptureScope(device));
-	device_scope->setLabel(MTLSTR("Godot Frame"));
+	device_scope->setLabel(MTLSTR("Test Game Engine Frame"));
 	device_scope->beginScope(); // Allow Xcode to capture the first frame, if desired.
 
 	return OK;
@@ -2854,7 +2854,7 @@ Error RenderingDeviceDriverMetal::_initialize(uint32_t p_device_index, uint32_t 
 
 	// The Metal renderer requires Apple4 family. This is 2017 era A11 chips and newer.
 	if (device_properties->features.highestFamily < MTL::GPUFamilyApple4) {
-		String error_string = vformat("Your Apple GPU does not support the following features, which are required to use Metal-based renderers in Godot:\n\n");
+		String error_string = vformat("Your Apple GPU does not support the following features, which are required to use Metal-based renderers in Test Game Engine:\n\n");
 		if (!device_properties->features.imageCubeArray) {
 			error_string += "- No support for image cube arrays.\n";
 		}

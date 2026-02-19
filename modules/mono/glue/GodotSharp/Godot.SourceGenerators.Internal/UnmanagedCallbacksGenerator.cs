@@ -5,7 +5,7 @@ using Microsoft.CodeAnalysis.Text;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Godot.SourceGenerators.Internal;
+namespace Test Game Engine.SourceGenerators.Internal;
 
 [Generator]
 public class UnmanagedCallbacksGenerator : ISourceGenerator
@@ -73,7 +73,7 @@ public class UnmanagedCallbacksGenerator : ISourceGenerator
     {
         string source = @"using System;
 
-namespace Godot.SourceGenerators.Internal
+namespace Test Game Engine.SourceGenerators.Internal
 {
 internal class GenerateUnmanagedCallbacksAttribute : Attribute
 {
@@ -111,8 +111,8 @@ internal class GenerateUnmanagedCallbacksAttribute : Attribute
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Godot.Bridge;
-using Godot.NativeInterop;
+using Test Game Engine.Bridge;
+using Test Game Engine.NativeInterop;
 
 #pragma warning disable CA1707 // Disable warning: Identifiers should not contain underscores
 
@@ -292,7 +292,7 @@ using Godot.NativeInterop;
 
         source.Append(
             @"using System.Runtime.InteropServices;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
 #pragma warning disable CA1707 // Disable warning: Identifiers should not contain underscores
 
@@ -454,25 +454,25 @@ using Godot.NativeInterop;
 
     private static readonly string[] _godotInteropStructs =
     {
-        "Godot.NativeInterop.godot_ref",
-        "Godot.NativeInterop.godot_variant_call_error",
-        "Godot.NativeInterop.godot_variant",
-        "Godot.NativeInterop.godot_string",
-        "Godot.NativeInterop.godot_string_name",
-        "Godot.NativeInterop.godot_node_path",
-        "Godot.NativeInterop.godot_signal",
-        "Godot.NativeInterop.godot_callable",
-        "Godot.NativeInterop.godot_array",
-        "Godot.NativeInterop.godot_dictionary",
-        "Godot.NativeInterop.godot_packed_byte_array",
-        "Godot.NativeInterop.godot_packed_int32_array",
-        "Godot.NativeInterop.godot_packed_int64_array",
-        "Godot.NativeInterop.godot_packed_float32_array",
-        "Godot.NativeInterop.godot_packed_float64_array",
-        "Godot.NativeInterop.godot_packed_string_array",
-        "Godot.NativeInterop.godot_packed_vector2_array",
-        "Godot.NativeInterop.godot_packed_vector3_array",
-        "Godot.NativeInterop.godot_packed_vector4_array",
-        "Godot.NativeInterop.godot_packed_color_array",
+        "Test Game Engine.NativeInterop.godot_ref",
+        "Test Game Engine.NativeInterop.godot_variant_call_error",
+        "Test Game Engine.NativeInterop.godot_variant",
+        "Test Game Engine.NativeInterop.godot_string",
+        "Test Game Engine.NativeInterop.godot_string_name",
+        "Test Game Engine.NativeInterop.godot_node_path",
+        "Test Game Engine.NativeInterop.godot_signal",
+        "Test Game Engine.NativeInterop.godot_callable",
+        "Test Game Engine.NativeInterop.godot_array",
+        "Test Game Engine.NativeInterop.godot_dictionary",
+        "Test Game Engine.NativeInterop.godot_packed_byte_array",
+        "Test Game Engine.NativeInterop.godot_packed_int32_array",
+        "Test Game Engine.NativeInterop.godot_packed_int64_array",
+        "Test Game Engine.NativeInterop.godot_packed_float32_array",
+        "Test Game Engine.NativeInterop.godot_packed_float64_array",
+        "Test Game Engine.NativeInterop.godot_packed_string_array",
+        "Test Game Engine.NativeInterop.godot_packed_vector2_array",
+        "Test Game Engine.NativeInterop.godot_packed_vector3_array",
+        "Test Game Engine.NativeInterop.godot_packed_vector4_array",
+        "Test Game Engine.NativeInterop.godot_packed_color_array",
     };
 }

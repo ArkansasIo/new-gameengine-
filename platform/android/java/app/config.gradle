@@ -26,11 +26,11 @@ ext.versions = [
 ]
 
 ext.getExportPackageName = { ->
-    // Retrieve the app id from the project property set by the Godot build command.
+    // Retrieve the app id from the project property set by the Test Game Engine build command.
     String appId = project.hasProperty("export_package_name") ? project.property("export_package_name") : ""
     // Check if the app id is valid, otherwise use the default.
     if (appId == null || appId.isEmpty()) {
-        appId = "com.godot.game"
+        appId = "com.test game engine.game"
     }
     return appId
 }
@@ -396,7 +396,7 @@ ext.shouldUseLegacyPackaging = { ->
 
     if (getExportMinSdkVersion() <= 29) {
         // Use legacy packaging for compatibility with device running api <= 29.
-        // See https://github.com/godotengine/godot/issues/108842 for reference.
+        // See https://github.com/godotengine/test game engine/issues/108842 for reference.
         return true
     }
 

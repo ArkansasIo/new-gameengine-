@@ -169,7 +169,7 @@ def get_opts():
     # Direct3D 12 SDK dependencies folder.
     d3d12_deps_folder = os.getenv("LOCALAPPDATA")
     if d3d12_deps_folder:
-        d3d12_deps_folder = os.path.join(d3d12_deps_folder, "Godot", "build_deps")
+        d3d12_deps_folder = os.path.join(d3d12_deps_folder, "Test Game Engine", "build_deps")
     else:
         # Cross-compiling, the deps install script puts things in `bin`.
         # Getting an absolute path to it is a bit hacky in Python.
@@ -510,7 +510,7 @@ def configure_msvc(env: "SConsEnvironment"):
             env.AppendUnique(LINKFLAGS=["/LTCG"])
         env.AppendUnique(ARFLAGS=["/LTCG"])
 
-    env.Append(LINKFLAGS=["/NATVIS:platform\\windows\\godot.natvis"])
+    env.Append(LINKFLAGS=["/NATVIS:platform\\windows\\test game engine.natvis"])
 
     if env["use_asan"]:
         env.AppendUnique(LINKFLAGS=["/STACK:" + str(STACK_SIZE_SANITIZERS)])

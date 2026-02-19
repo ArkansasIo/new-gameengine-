@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Godot.Bridge;
-using Godot.NativeInterop;
+using Test Game Engine.Bridge;
+using Test Game Engine.NativeInterop;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     public partial class GodotObject : IDisposable
     {
@@ -213,7 +213,7 @@ namespace Godot
         {
             while (!IsNativeClass(t))
             {
-                Debug.Assert(t.BaseType is not null, "Script types must derive from a native Godot type.");
+                Debug.Assert(t.BaseType is not null, "Script types must derive from a native Test Game Engine type.");
 
                 t = t.BaseType;
             }
@@ -249,7 +249,7 @@ namespace Godot
         // ReSharper disable once VirtualMemberNeverOverridden.Global
         /// <summary>
         /// Set the value of a property contained in this class.
-        /// This method is used by Godot to assign property values.
+        /// This method is used by Test Game Engine to assign property values.
         /// Do not call or override this method.
         /// </summary>
         /// <param name="name">Name of the property to set.</param>
@@ -264,7 +264,7 @@ namespace Godot
         // ReSharper disable once VirtualMemberNeverOverridden.Global
         /// <summary>
         /// Get the value of a property contained in this class.
-        /// This method is used by Godot to retrieve property values.
+        /// This method is used by Test Game Engine to retrieve property values.
         /// Do not call or override this method.
         /// </summary>
         /// <param name="name">Name of the property to get.</param>
@@ -280,7 +280,7 @@ namespace Godot
         // ReSharper disable once VirtualMemberNeverOverridden.Global
         /// <summary>
         /// Raises the signal with the given name, using the given arguments.
-        /// This method is used by Godot to raise signals from the engine side.\n"
+        /// This method is used by Test Game Engine to raise signals from the engine side.\n"
         /// Do not call or override this method.
         /// </summary>
         /// <param name="signal">Name of the signal to raise.</param>

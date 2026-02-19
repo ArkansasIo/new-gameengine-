@@ -7,7 +7,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     [Generator]
     public class ScriptPropertiesGenerator : ISourceGenerator
@@ -77,8 +77,8 @@ namespace Godot.SourceGenerators
 
             var source = new StringBuilder();
 
-            source.Append("using Godot;\n");
-            source.Append("using Godot.NativeInterop;\n");
+            source.Append("using Test Game Engine;\n");
+            source.Append("using Test Game Engine.NativeInterop;\n");
             source.Append("\n");
 
             if (hasNamespace)
@@ -147,7 +147,7 @@ namespace Godot.SourceGenerators
                     .Append("' property.\n")
                     .Append("        /// </summary>\n");
 
-                source.Append("        public new static readonly global::Godot.StringName @");
+                source.Append("        public new static readonly global::Test Game Engine.StringName @");
                 source.Append(propertyName);
                 source.Append(" = \"");
                 source.Append(propertyName);
@@ -164,7 +164,7 @@ namespace Godot.SourceGenerators
                     .Append("' field.\n")
                     .Append("        /// </summary>\n");
 
-                source.Append("        public new static readonly global::Godot.StringName @");
+                source.Append("        public new static readonly global::Test Game Engine.StringName @");
                 source.Append(fieldName);
                 source.Append(" = \"");
                 source.Append(fieldName);
@@ -242,11 +242,11 @@ namespace Godot.SourceGenerators
                 }
                 // Generate GetGodotPropertyList
 
-                const string DictionaryType = "global::System.Collections.Generic.List<global::Godot.Bridge.PropertyInfo>";
+                const string DictionaryType = "global::System.Collections.Generic.List<global::Test Game Engine.Bridge.PropertyInfo>";
 
                 source.Append("    /// <summary>\n")
                     .Append("    /// Get the property information for all the properties declared in this class.\n")
-                    .Append("    /// This method is used by Godot to register the available properties in the editor.\n")
+                    .Append("    /// This method is used by Test Game Engine to register the available properties in the editor.\n")
                     .Append("    /// Do not call this method.\n")
                     .Append("    /// </summary>\n");
 
@@ -363,30 +363,30 @@ namespace Godot.SourceGenerators
 
         private static void AppendGroupingPropertyInfo(StringBuilder source, PropertyInfo propertyInfo)
         {
-            source.Append("        properties.Add(new(type: (global::Godot.Variant.Type)")
+            source.Append("        properties.Add(new(type: (global::Test Game Engine.Variant.Type)")
                 .Append((int)VariantType.Nil)
                 .Append(", name: \"")
                 .Append(propertyInfo.Name)
-                .Append("\", hint: (global::Godot.PropertyHint)")
+                .Append("\", hint: (global::Test Game Engine.PropertyHint)")
                 .Append((int)PropertyHint.None)
                 .Append(", hintString: \"")
                 .Append(propertyInfo.HintString)
-                .Append("\", usage: (global::Godot.PropertyUsageFlags)")
+                .Append("\", usage: (global::Test Game Engine.PropertyUsageFlags)")
                 .Append((int)propertyInfo.Usage)
                 .Append(", exported: true));\n");
         }
 
         private static void AppendPropertyInfo(StringBuilder source, PropertyInfo propertyInfo)
         {
-            source.Append("        properties.Add(new(type: (global::Godot.Variant.Type)")
+            source.Append("        properties.Add(new(type: (global::Test Game Engine.Variant.Type)")
                 .Append((int)propertyInfo.Type)
                 .Append(", name: PropertyName.@")
                 .Append(propertyInfo.Name)
-                .Append(", hint: (global::Godot.PropertyHint)")
+                .Append(", hint: (global::Test Game Engine.PropertyHint)")
                 .Append((int)propertyInfo.Hint)
                 .Append(", hintString: \"")
                 .Append(propertyInfo.HintString)
-                .Append("\", usage: (global::Godot.PropertyUsageFlags)")
+                .Append("\", usage: (global::Test Game Engine.PropertyUsageFlags)")
                 .Append((int)propertyInfo.Usage)
                 .Append(", exported: ")
                 .Append(propertyInfo.Exported ? "true" : "false")
@@ -716,7 +716,7 @@ namespace Godot.SourceGenerators
                     return true;
                 }
 
-                if (memberNamedType.InheritsFrom("GodotSharp", "Godot.Resource"))
+                if (memberNamedType.InheritsFrom("GodotSharp", "Test Game Engine.Resource"))
                 {
                     hint = PropertyHint.ResourceType;
                     hintString = GetTypeName(memberNamedType);
@@ -724,7 +724,7 @@ namespace Godot.SourceGenerators
                     return true;
                 }
 
-                if (memberNamedType.InheritsFrom("GodotSharp", "Godot.Node"))
+                if (memberNamedType.InheritsFrom("GodotSharp", "Test Game Engine.Node"))
                 {
                     hint = PropertyHint.NodeType;
                     hintString = GetTypeName(memberNamedType);
@@ -875,7 +875,7 @@ namespace Godot.SourceGenerators
 
                 if (keyElementMarshalType == null || valueElementMarshalType == null)
                 {
-                    // To maintain compatibility with previous versions of Godot before 4.4,
+                    // To maintain compatibility with previous versions of Test Game Engine before 4.4,
                     // we must preserve the old behavior for generic dictionaries with non-marshallable
                     // generic type arguments.
                     return false;

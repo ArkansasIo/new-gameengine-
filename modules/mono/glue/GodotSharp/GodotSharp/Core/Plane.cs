@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// Plane represents a normalized plane equation.

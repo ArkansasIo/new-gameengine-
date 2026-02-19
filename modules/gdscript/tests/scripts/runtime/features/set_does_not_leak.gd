@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/90086
+# https://github.com/godotengine/test game engine/issues/90086
 
 class MyObj:
 	var obj : WeakRef

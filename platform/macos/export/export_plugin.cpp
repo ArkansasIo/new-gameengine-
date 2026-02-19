@@ -2,10 +2,10 @@
 /*  export_plugin.cpp                                                     */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -1018,7 +1018,7 @@ Error EditorExportPlatformMacOS::_export_liquid_glass_icon(const Ref<EditorExpor
 }
 
 /**
- * If we're running the macOS version of the Godot editor we'll:
+ * If we're running the macOS version of the Test Game Engine editor we'll:
  * - export our application bundle to a temporary folder
  * - attempt to code sign it
  * - and then wrap it up in a DMG
@@ -1773,7 +1773,7 @@ Error EditorExportPlatformMacOS::export_project(const Ref<EditorExportPreset> &p
 
 	const String project_name = get_project_setting(p_preset, "application/config/name");
 	const Dictionary appnames = get_project_setting(p_preset, "application/config/name_localized");
-	const StringName domain_name = "godot.project_name_localization";
+	const StringName domain_name = "test game engine.project_name_localization";
 	Ref<TranslationDomain> domain = TranslationServer::get_singleton()->get_or_add_domain(domain_name);
 	TranslationServer::get_singleton()->load_project_translations(domain);
 	const Vector<String> locales = domain->get_loaded_locales();

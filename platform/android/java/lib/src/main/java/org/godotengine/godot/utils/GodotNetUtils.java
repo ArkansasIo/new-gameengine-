@@ -2,10 +2,10 @@
 /*  GodotNetUtils.java                                                    */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.utils;
+package org.godotengine.test game engine.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -61,7 +61,7 @@ public class GodotNetUtils {
 
 	/**
 	 * Acquire the multicast lock. This is required on some devices to receive broadcast/multicast packets.
-	 * This is done automatically by Godot when enabling broadcast or joining a multicast group on a socket.
+	 * This is done automatically by Test Game Engine when enabling broadcast or joining a multicast group on a socket.
 	 */
 	public void multicastLockAcquire() {
 		if (multicastLock == null)
@@ -69,13 +69,13 @@ public class GodotNetUtils {
 		try {
 			multicastLock.acquire();
 		} catch (RuntimeException e) {
-			Log.e("Godot", "Exception during multicast lock acquire: " + e);
+			Log.e("Test Game Engine", "Exception during multicast lock acquire: " + e);
 		}
 	}
 
 	/**
 	 * Release the multicast lock.
-	 * This is done automatically by Godot when the lock is no longer needed by a socket.
+	 * This is done automatically by Test Game Engine when the lock is no longer needed by a socket.
 	 */
 	public void multicastLockRelease() {
 		if (multicastLock == null)
@@ -83,7 +83,7 @@ public class GodotNetUtils {
 		try {
 			multicastLock.release();
 		} catch (RuntimeException e) {
-			Log.e("Godot", "Exception during multicast lock release: " + e);
+			Log.e("Test Game Engine", "Exception during multicast lock release: " + e);
 		}
 	}
 
@@ -112,7 +112,7 @@ public class GodotNetUtils {
 			}
 			return writer.toString();
 		} catch (Exception e) {
-			Log.e("Godot", "Exception while reading CA certificates: " + e);
+			Log.e("Test Game Engine", "Exception while reading CA certificates: " + e);
 			return "";
 		}
 	}

@@ -1,6 +1,6 @@
 # Non functional cmake build file used to provide Android Studio editor support to the project.
 cmake_minimum_required(VERSION 3.10)
-project(godot)
+project(test game engine)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

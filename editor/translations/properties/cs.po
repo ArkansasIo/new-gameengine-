@@ -1,7 +1,7 @@
-# Czech translation of the Godot Engine properties.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Czech translation of the Test Game Engine properties.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Fadex <vitekpaulik@gmail.com>, 2017.
 # Jan 'spl!te' Kondelík <j.kondelik@centrum.cz>, 2016, 2018.
 # Jiri Hysek <contact@jirihysek.com>, 2017.
@@ -48,12 +48,12 @@
 # Pixeluted <pixeluted@proton.me>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine properties\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-09-14 16:20+0000\n"
 "Last-Translator: Pixeluted <pixeluted@proton.me>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: Czech <https://hosted.weblate.org/projects/test game engine-engine/test game engine-"
 "properties/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -3300,7 +3300,7 @@ msgstr "GDScript"
 msgid "Max Call Stack"
 msgstr "Maximální velikost zásobníku volání"
 
-msgid "Renamed in Godot 4 Hint"
+msgid "Renamed in Test Game Engine 4 Hint"
 msgstr "Nápověda přejmenování v Godotu 4"
 
 msgid "Language Server"
@@ -3561,11 +3561,11 @@ msgstr "Světlo"
 msgid "Visible"
 msgstr "Viditelný"
 
-msgid "glTF to Godot Expression"
+msgid "glTF to Test Game Engine Expression"
 msgstr "glTF na výraz Godotu"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot na výraz glTF"
+msgid "Test Game Engine to glTF Expression"
+msgstr "Test Game Engine na výraz glTF"
 
 msgid "Node Paths"
 msgstr "Cesty k uzlům"
@@ -3585,7 +3585,7 @@ msgstr "Klouby"
 msgid "Roots"
 msgstr "Kořeny"
 
-msgid "Godot Bone Node"
+msgid "Test Game Engine Bone Node"
 msgstr "Uzel kosti Godotu"
 
 msgid "Skin Root"
@@ -3597,7 +3597,7 @@ msgstr "Původní klouby"
 msgid "Non Joints"
 msgstr "Ne klouby"
 
-msgid "Godot Skin"
+msgid "Test Game Engine Skin"
 msgstr "Slupka Godotu"
 
 msgid "Src Image"

@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
-namespace Godot.Bridge
+namespace Test Game Engine.Bridge
 {
     [StructLayout(LayoutKind.Sequential)]
     public unsafe struct ManagedCallbacks

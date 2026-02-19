@@ -2,10 +2,10 @@
 /*  text_server_fb.h                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -38,7 +38,7 @@
 #ifdef GDEXTENSION
 // Headers for building as GDExtension plug-in.
 
-#include <godot_cpp/godot.hpp>
+#include <godot_cpp/test game engine.hpp>
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/ext_wrappers.gen.inc>
@@ -74,7 +74,7 @@
 #include <godot_cpp/templates/safe_refcount.hpp>
 #include <godot_cpp/templates/vector.hpp>
 
-using namespace godot;
+using namespace test game engine;
 
 #elif defined(GODOT_MODULE)
 // Headers for building as built-in module.

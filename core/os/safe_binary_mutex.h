@@ -2,10 +2,10 @@
 /*  safe_binary_mutex.h                                                   */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -44,7 +44,7 @@ GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wundefined-var-template")
 // - Must have recursive semnantics (or simulate, as this one does).
 // The implementation keeps the lock count in TS. Therefore, only
 // one object of each version of the template can exists; hence the Tag argument.
-// Tags must be unique across the Godot codebase.
+// Tags must be unique across the Test Game Engine codebase.
 // Also, don't forget to declare the thread_local variable on each use.
 template <int Tag>
 class SafeBinaryMutex {

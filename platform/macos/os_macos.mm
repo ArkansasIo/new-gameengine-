@@ -2,10 +2,10 @@
 /*  os_macos.mm                                                           */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -341,7 +341,7 @@ String OS_MacOS::get_version_alias() const {
 	} else {
 		macos_string += "Unknown";
 	}
-	// macOS versions older than 10.13 cannot run Godot.
+	// macOS versions older than 10.13 cannot run Test Game Engine.
 	return vformat("%s (%s)", macos_string, get_version());
 }
 

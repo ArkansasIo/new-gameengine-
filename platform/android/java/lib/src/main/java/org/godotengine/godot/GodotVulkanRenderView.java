@@ -2,10 +2,10 @@
 /*  GodotVulkanRenderView.java                                            */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,11 +28,11 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot;
+package org.godotengine.test game engine;
 
-import org.godotengine.godot.input.GodotInputHandler;
-import org.godotengine.godot.vulkan.VkRenderer;
-import org.godotengine.godot.vulkan.VkSurfaceView;
+import org.godotengine.test game engine.input.GodotInputHandler;
+import org.godotengine.test game engine.vulkan.VkRenderer;
+import org.godotengine.test game engine.vulkan.VkSurfaceView;
 
 import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
@@ -51,15 +51,15 @@ import androidx.annotation.Keep;
 import java.io.InputStream;
 
 class GodotVulkanRenderView extends VkSurfaceView implements GodotRenderView {
-	private final Godot godot;
+	private final Test Game Engine test game engine;
 	private final GodotInputHandler mInputHandler;
 	private final VkRenderer mRenderer;
 	private final SparseArray<PointerIcon> customPointerIcons = new SparseArray<>();
 
-	public GodotVulkanRenderView(Godot godot, GodotInputHandler inputHandler, boolean shouldBeTranslucent) {
-		super(godot.getContext());
+	public GodotVulkanRenderView(Test Game Engine test game engine, GodotInputHandler inputHandler, boolean shouldBeTranslucent) {
+		super(test game engine.getContext());
 
-		this.godot = godot;
+		this.test game engine = test game engine;
 		mInputHandler = inputHandler;
 		mRenderer = new VkRenderer();
 		setPointerIcon(PointerIcon.getSystemIcon(getContext(), PointerIcon.TYPE_DEFAULT));
@@ -154,7 +154,7 @@ class GodotVulkanRenderView extends VkSurfaceView implements GodotRenderView {
 	@Override
 	public boolean canCapturePointer() {
 		// Pointer capture is not supported on XR devices.
-		return !godot.isXrRuntime() && mInputHandler.canCapturePointer();
+		return !test game engine.isXrRuntime() && mInputHandler.canCapturePointer();
 	}
 	@Override
 	public void requestPointerCapture() {
@@ -187,10 +187,10 @@ class GodotVulkanRenderView extends VkSurfaceView implements GodotRenderView {
 		try {
 			Bitmap bitmap = null;
 			if (!TextUtils.isEmpty(imagePath)) {
-				if (godot.getDirectoryAccessHandler().filesystemFileExists(imagePath)) {
+				if (test game engine.getDirectoryAccessHandler().filesystemFileExists(imagePath)) {
 					// Try to load the bitmap from the file system
 					bitmap = BitmapFactory.decodeFile(imagePath);
-				} else if (godot.getDirectoryAccessHandler().assetsFileExists(imagePath)) {
+				} else if (test game engine.getDirectoryAccessHandler().assetsFileExists(imagePath)) {
 					// Try to load the bitmap from the assets directory
 					AssetManager am = getContext().getAssets();
 					InputStream imageInputStream = am.open(imagePath);

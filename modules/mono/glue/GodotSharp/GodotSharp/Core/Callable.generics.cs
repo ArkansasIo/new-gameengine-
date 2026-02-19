@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.CompilerServices;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
-namespace Godot;
+namespace Test Game Engine;
 
 #nullable enable
 

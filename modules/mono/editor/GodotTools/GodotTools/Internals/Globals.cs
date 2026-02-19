@@ -1,5 +1,5 @@
-using Godot;
-using Godot.NativeInterop;
+using Test Game Engine;
+using Test Game Engine.NativeInterop;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 

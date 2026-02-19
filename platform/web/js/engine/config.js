@@ -1,11 +1,11 @@
 /**
- * An object used to configure the Engine instance based on godot export options, and to override those in custom HTML
+ * An object used to configure the Engine instance based on test game engine export options, and to override those in custom HTML
  * templates if needed.
  *
  * @header Engine configuration
  * @summary The Engine configuration object. This is just a typedef, create it like a regular object, e.g.:
  *
- * ``const MyConfig = { executable: 'godot', unloadAfterInit: false }``
+ * ``const MyConfig = { executable: 'test game engine', unloadAfterInit: false }``
  *
  * @typedef {Object} EngineConfig
  */
@@ -37,7 +37,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 		 */
 		canvas: null,
 		/**
-		 * The name of the WASM file without the extension. (Set by Godot Editor export process).
+		 * The name of the WASM file without the extension. (Set by Test Game Engine Editor export process).
 		 *
 		 * @memberof EngineConfig
 		 * @default
@@ -64,14 +64,14 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 		 */
 		locale: null,
 		/**
-		 * The canvas resize policy determines how the canvas should be resized by Godot.
+		 * The canvas resize policy determines how the canvas should be resized by Test Game Engine.
 		 *
-		 * ``0`` means Godot won't do any resizing. This is useful if you want to control the canvas size from
+		 * ``0`` means Test Game Engine won't do any resizing. This is useful if you want to control the canvas size from
 		 * javascript code in your template.
 		 *
-		 * ``1`` means Godot will resize the canvas on start, and when changing window size via engine functions.
+		 * ``1`` means Test Game Engine will resize the canvas on start, and when changing window size via engine functions.
 		 *
-		 * ``2`` means Godot will adapt the canvas size to match the whole browser window.
+		 * ``2`` means Test Game Engine will adapt the canvas size to match the whole browser window.
 		 *
 		 * @memberof EngineConfig
 		 * @type {number}
@@ -144,12 +144,12 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 		 */
 		godotPoolSize: 4,
 		/**
-		 * A callback function for handling Godot's ``OS.execute`` calls.
+		 * A callback function for handling Test Game Engine's ``OS.execute`` calls.
 		 *
 		 * This is for example used in the Web Editor template to switch between project manager and editor, and for running the game.
 		 *
 		 * @callback EngineConfig.onExecute
-		 * @param {string} path The path that Godot's wants executed.
+		 * @param {string} path The path that Test Game Engine's wants executed.
 		 * @param {Array.<string>} args The arguments of the "command" to execute.
 		 */
 		/**
@@ -158,12 +158,12 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 		 */
 		onExecute: null,
 		/**
-		 * A callback function for being notified when the Godot instance quits.
+		 * A callback function for being notified when the Test Game Engine instance quits.
 		 *
 		 * **Note**: This function will not be called if the engine crashes or become unresponsive.
 		 *
 		 * @callback EngineConfig.onExit
-		 * @param {number} status_code The status code returned by Godot on exit.
+		 * @param {number} status_code The status code returned by Test Game Engine on exit.
 		 */
 		/**
 		 * @ignore
@@ -256,7 +256,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 		this.onPrint = parse('onPrint', this.onPrint);
 		this.onProgress = parse('onProgress', this.onProgress);
 
-		// Godot config
+		// Test Game Engine config
 		this.canvas = parse('canvas', this.canvas);
 		this.executable = parse('executable', this.executable);
 		this.mainPack = parse('mainPack', this.mainPack);
@@ -306,7 +306,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 				return {};
 			},
 			'locateFile': function (path) {
-				if (!path.startsWith('godot.')) {
+				if (!path.startsWith('test game engine.')) {
 					return path;
 				} else if (path.endsWith('.audio.worklet.js')) {
 					return `${loadPath}.audio.worklet.js`;
@@ -356,7 +356,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 		locale = locale.replace('-', '_');
 		const onExit = this.onExit;
 
-		// Godot configuration.
+		// Test Game Engine configuration.
 		return {
 			'canvas': this.canvas,
 			'canvasResizePolicy': this.canvasResizePolicy,

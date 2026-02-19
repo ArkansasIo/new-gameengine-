@@ -1,8 +1,8 @@
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// Allows a GodotObject to react to the serialization/deserialization
-    /// that occurs when Godot reloads assemblies.
+    /// that occurs when Test Game Engine reloads assemblies.
     /// </summary>
     public interface ISerializationListener
     {

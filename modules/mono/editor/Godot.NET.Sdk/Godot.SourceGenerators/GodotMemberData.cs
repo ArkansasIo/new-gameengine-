@@ -1,7 +1,7 @@
 using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     public readonly struct GodotMethodData
     {

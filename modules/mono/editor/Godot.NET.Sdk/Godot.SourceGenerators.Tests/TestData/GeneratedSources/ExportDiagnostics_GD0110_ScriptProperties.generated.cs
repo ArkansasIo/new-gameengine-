@@ -1,5 +1,5 @@
-using Godot;
-using Godot.NativeInterop;
+using Test Game Engine;
+using Test Game Engine.NativeInterop;
 
 partial class ExportDiagnostics_GD0110
 {
@@ -7,31 +7,31 @@ partial class ExportDiagnostics_GD0110
     /// <summary>
     /// Cached StringNames for the properties and fields contained in this class, for fast lookup.
     /// </summary>
-    public new class PropertyName : global::Godot.Node.PropertyName {
+    public new class PropertyName : global::Test Game Engine.Node.PropertyName {
         /// <summary>
         /// Cached name for the 'MyButton' property.
         /// </summary>
-        public new static readonly global::Godot.StringName @MyButton = "MyButton";
+        public new static readonly global::Test Game Engine.StringName @MyButton = "MyButton";
     }
     /// <inheritdoc/>
     [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
     protected override bool GetGodotClassPropertyValue(in godot_string_name name, out godot_variant value)
     {
         if (name == PropertyName.@MyButton) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<int>(this.@MyButton);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<int>(this.@MyButton);
             return true;
         }
         return base.GetGodotClassPropertyValue(name, out value);
     }
     /// <summary>
     /// Get the property information for all the properties declared in this class.
-    /// This method is used by Godot to register the available properties in the editor.
+    /// This method is used by Test Game Engine to register the available properties in the editor.
     /// Do not call this method.
     /// </summary>
     [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-    internal new static global::System.Collections.Generic.List<global::Godot.Bridge.PropertyInfo> GetGodotPropertyList()
+    internal new static global::System.Collections.Generic.List<global::Test Game Engine.Bridge.PropertyInfo> GetGodotPropertyList()
     {
-        var properties = new global::System.Collections.Generic.List<global::Godot.Bridge.PropertyInfo>();
+        var properties = new global::System.Collections.Generic.List<global::Test Game Engine.Bridge.PropertyInfo>();
         return properties;
     }
 #pragma warning restore CS0109

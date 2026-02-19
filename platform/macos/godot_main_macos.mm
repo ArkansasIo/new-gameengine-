@@ -2,10 +2,10 @@
 /*  godot_main_macos.mm                                                   */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -122,7 +122,7 @@ __attribute__((visibility("default"))) int main(int argc, char **argv) {
 #endif
 
 	if (is_embedded) {
-		// No dock icon for the embedded process, as it is hosted in the Godot editor.
+		// No dock icon for the embedded process, as it is hosted in the Test Game Engine editor.
 		ProcessSerialNumber psn = { 0, kCurrentProcess };
 		(void)TransformProcessType(&psn, kProcessTransformToBackgroundApplication);
 	}

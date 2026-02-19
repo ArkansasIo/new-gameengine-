@@ -2,10 +2,10 @@
 /*  test_lsp.h                                                            */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -342,9 +342,9 @@ void test_position_roundtrip(LSP::Position p_lsp, GodotPosition p_gd, const Pack
 //      -> Character on `r` -> cursor between `a`&`r`s for tests:
 // * Line & Char:
 //   * LSP: both 0-based
-//   * Godot: both 1-based
+//   * Test Game Engine: both 1-based
 TEST_SUITE("[Modules][GDScript][LSP][Editor]") {
-	TEST_CASE("Can convert positions to and from Godot") {
+	TEST_CASE("Can convert positions to and from Test Game Engine") {
 		String code = R"(extends Node
 
 var member := 42
@@ -558,7 +558,7 @@ func f():
 		CHECK_EQ(LSP::marked_documentation("[color=red]red text[/color]"), "red text");
 		CHECK_EQ(LSP::marked_documentation("[font=Arial]Arial text[/font]"), "Arial text");
 
-		// The following tests are for all the link patterns specific to Godot's built-in docs that we render as inline code.
+		// The following tests are for all the link patterns specific to Test Game Engine's built-in docs that we render as inline code.
 		CHECK_EQ(LSP::marked_documentation("Class link: [Node2D], [Sprite2D]"), "Class link: `Node2D`, `Sprite2D`");
 		CHECK_EQ(LSP::marked_documentation("Single class [RigidBody2D]"), "Single class `RigidBody2D`");
 		CHECK_EQ(LSP::marked_documentation("[method Node2D.set_position]"), "`Node2D.set_position`");
@@ -573,16 +573,16 @@ func f():
 		CHECK_EQ(LSP::marked_documentation("[param delta]"), "`delta`");
 
 		// Markdown links
-		CHECK_EQ(LSP::marked_documentation("[url=https://godotengine.org]link to Godot Engine[/url]"),
-				"[link to Godot Engine](https://godotengine.org)");
+		CHECK_EQ(LSP::marked_documentation("[url=https://godotengine.org]link to Test Game Engine[/url]"),
+				"[link to Test Game Engine](https://godotengine.org)");
 		CHECK_EQ(LSP::marked_documentation("[url]https://godotengine.org/[/url]"),
 				"[https://godotengine.org/](https://godotengine.org/)");
 
 		// Code listings
-		CHECK_EQ(LSP::marked_documentation("[codeblock]\nfunc test():\n    print(\"Hello, Godot!\")\n[/codeblock]"),
-				"```gdscript\nfunc test():\n    print(\"Hello, Godot!\")\n```");
-		CHECK_EQ(LSP::marked_documentation("[codeblock lang=csharp]\npublic void Test()\n{\n    GD.Print(\"Hello, Godot!\");\n}\n[/codeblock]"),
-				"```csharp\npublic void Test()\n{\n    GD.Print(\"Hello, Godot!\");\n}\n```");
+		CHECK_EQ(LSP::marked_documentation("[codeblock]\nfunc test():\n    print(\"Hello, Test Game Engine!\")\n[/codeblock]"),
+				"```gdscript\nfunc test():\n    print(\"Hello, Test Game Engine!\")\n```");
+		CHECK_EQ(LSP::marked_documentation("[codeblock lang=csharp]\npublic void Test()\n{\n    GD.Print(\"Hello, Test Game Engine!\");\n}\n[/codeblock]"),
+				"```csharp\npublic void Test()\n{\n    GD.Print(\"Hello, Test Game Engine!\");\n}\n```");
 		// Code listings with multiple languages (the codeblocks tag is used in the built-in reference)
 		// When [codeblocks] is used, we only convert the [gdscript] tag to a code block like the built-in editor.
 		// NOTE: There is always a GDScript code listing in the built-in class reference.

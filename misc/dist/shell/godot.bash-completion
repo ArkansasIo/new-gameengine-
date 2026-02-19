@@ -1,8 +1,8 @@
-# Bash completion for the Godot editor
+# Bash completion for the Test Game Engine editor
 # To use it, install this file in `/etc/bash_completion.d` then restart your shell.
 # You can also `source` this file directly in your shell startup file.
 #
-# Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md).
+# Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md).
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -106,7 +106,7 @@ _complete_godot_bash() {
   else
     local IFS=$'\n\t'
     # shellcheck disable=SC2207
-    COMPREPLY=($(compgen -f -X "!*.@(scn|tscn|escn|godot)" -- "$cur"))
+    COMPREPLY=($(compgen -f -X "!*.@(scn|tscn|escn|test game engine)" -- "$cur"))
   fi
 
   # If the array is accessed out of bounds (which will happen for the first argument),
@@ -145,4 +145,4 @@ _complete_godot_bash() {
   fi
 }
 
-complete -o filenames -F _complete_godot_bash godot
+complete -o filenames -F _complete_godot_bash test game engine

@@ -1,7 +1,7 @@
-using Godot;
+using Test Game Engine;
 
 public abstract partial class AbstractGenericNode<[MustBeVariant] T> : Node
 {
     [Export] // This should be included, but without type hints.
-    public Godot.Collections.Array<T> MyArray { get; set; } = new();
+    public Test Game Engine.Collections.Array<T> MyArray { get; set; } = new();
 }

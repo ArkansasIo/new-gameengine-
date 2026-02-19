@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/53640
+# https://github.com/godotengine/test game engine/issues/53640
 
 func test():
 	var arr := [0]

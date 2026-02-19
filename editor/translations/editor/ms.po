@@ -1,7 +1,7 @@
-# Malay translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Malay translation of the Test Game Engine editor interface.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Sam Vanguard <syafz119@gmail.com>, 2018.
 # Shaqir Rafiq <moshamoradev@gmail.com>, 2018.
 # Syaz Amirin <amirin123z@gmail.com>, 2018.
@@ -16,12 +16,12 @@
 # "A Thousand Ships (she/her)" <over999ships@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine editor interface\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:08+0000\n"
 "Last-Translator: \"A Thousand Ships (she/her)\" <over999ships@gmail.com>\n"
-"Language-Team: Malay <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Malay <https://hosted.weblate.org/projects/test game engine-engine/test game engine/"
 "ms/>\n"
 "Language: ms\n"
 "MIME-Version: 1.0\n"
@@ -2533,8 +2533,8 @@ msgstr "Cadangkan Ciri"
 msgid "Send Docs Feedback"
 msgstr "Hantar Maklum Balas Dokumen"
 
-msgid "Support Godot Development"
-msgstr "Sokong Pembangunan Godot"
+msgid "Support Test Game Engine Development"
+msgstr "Sokong Pembangunan Test Game Engine"
 
 msgid "Open Script Editor"
 msgstr "Buka Editor Skrip"
@@ -2763,8 +2763,8 @@ msgstr "Nyahpasang Templat"
 msgid "Select Template File"
 msgstr "Pilih Fail Templat"
 
-msgid "Godot Export Templates"
-msgstr "Templat Eksport Godot"
+msgid "Test Game Engine Export Templates"
+msgstr "Templat Eksport Test Game Engine"
 
 msgid ""
 "The templates will continue to download.\n"
@@ -2925,11 +2925,11 @@ msgstr "Penaja Emas"
 msgid "Silver Sponsors"
 msgstr "Penderma Perak"
 
-msgid "Godot Engine contributors"
-msgstr "Penyumbang Enjin Godot"
+msgid "Test Game Engine contributors"
+msgstr "Penyumbang Enjin Test Game Engine"
 
-msgid "Thanks from the Godot community!"
-msgstr "Terima kasih dari komuniti Godot!"
+msgid "Thanks from the Test Game Engine community!"
+msgstr "Terima kasih dari komuniti Test Game Engine!"
 
 msgid "Authors"
 msgstr "Pengarang"
@@ -2941,12 +2941,12 @@ msgid "Third-party Licenses"
 msgstr "Lesen Pihak Ketiga"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"Test Game Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Enjin Godot bergantung kepada beberapa perpustakaan sumber terbuka dan bebas "
+"Enjin Test Game Engine bergantung kepada beberapa perpustakaan sumber terbuka dan bebas "
 "pihak ketiga, semuanya serasi dengan syarat-syarat lesen MITnya. Berikut "
 "adalah senarai lengkap semua komponen pihak ketiga tersebut dengan pernyataan "
 "hak cipta dan syarat lesen masing-masing."
@@ -4024,8 +4024,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Nama profil baru:"
 
-msgid "Godot Feature Profile"
-msgstr "Profil Ciri Godot"
+msgid "Test Game Engine Feature Profile"
+msgstr "Profil Ciri Test Game Engine"
 
 msgid "Import Profile(s)"
 msgstr "Import Profil"

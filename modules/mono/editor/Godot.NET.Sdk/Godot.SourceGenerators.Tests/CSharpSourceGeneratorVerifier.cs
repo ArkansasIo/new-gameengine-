@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Testing;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Godot.SourceGenerators.Tests;
+namespace Test Game Engine.SourceGenerators.Tests;
 
 public static class CSharpSourceGeneratorVerifier<TSourceGenerator>
 where TSourceGenerator : ISourceGenerator, new()

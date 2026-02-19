@@ -1,10 +1,10 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     public partial class GodotObject
     {
@@ -69,7 +69,7 @@ namespace Godot
         /// </summary>
         /// <param name="obj">The object.</param>
         /// <returns>
-        /// The <see cref="Godot.WeakRef"/> reference to the object or <see langword="null"/>.
+        /// The <see cref="Test Game Engine.WeakRef"/> reference to the object or <see langword="null"/>.
         /// </returns>
         public static WeakRef? WeakRef(GodotObject? obj)
         {

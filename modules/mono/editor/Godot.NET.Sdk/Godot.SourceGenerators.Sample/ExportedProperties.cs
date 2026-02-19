@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 #pragma warning disable CS0169
 #pragma warning disable CS0414
 
-namespace Godot.SourceGenerators.Sample
+namespace Test Game Engine.SourceGenerators.Sample
 {
     [SuppressMessage("ReSharper", "BuiltInTypeReferenceStyle")]
     [SuppressMessage("ReSharper", "RedundantNameQualifier")]
@@ -115,7 +115,7 @@ namespace Godot.SourceGenerators.Sample
         [Export] private Double PropertyDouble { get; set; } = 10;
         [Export] private String PropertyString { get; set; } = "foo";
 
-        // Godot structs
+        // Test Game Engine structs
         [Export] private Vector2 PropertyVector2 { get; set; } = new(10f, 10f);
         [Export] private Vector2I PropertyVector2I { get; set; } = Vector2I.Up;
         [Export] private Rect2 PropertyRect2 { get; set; } = new(new Vector2(10f, 10f), new Vector2(10f, 10f));
@@ -178,25 +178,25 @@ namespace Godot.SourceGenerators.Sample
 
         // Classes
         [Export] private GodotObject PropertyGodotObjectOrDerived { get; set; }
-        [Export] private Godot.Texture PropertyGodotResourceTexture { get; set; }
+        [Export] private Test Game Engine.Texture PropertyGodotResourceTexture { get; set; }
         [Export] private StringName PropertyStringName { get; set; } = new StringName("foo");
         [Export] private NodePath PropertyNodePath { get; set; } = new NodePath("foo");
         [Export] private Rid PropertyRid { get; set; }
 
         [Export]
-        private Godot.Collections.Dictionary PropertyGodotDictionary { get; set; } =
+        private Test Game Engine.Collections.Dictionary PropertyGodotDictionary { get; set; } =
             new() { { "foo", 10 }, { Vector2.Up, Colors.Chocolate } };
 
         [Export]
-        private Godot.Collections.Array PropertyGodotArray { get; set; } =
+        private Test Game Engine.Collections.Array PropertyGodotArray { get; set; } =
             new() { "foo", 10, Vector2.Up, Colors.Chocolate };
 
         [Export]
-        private Godot.Collections.Dictionary<string, bool> PropertyGodotGenericDictionary { get; set; } =
+        private Test Game Engine.Collections.Dictionary<string, bool> PropertyGodotGenericDictionary { get; set; } =
             new() { { "foo", true }, { "bar", false } };
 
         [Export]
-        private Godot.Collections.Array<int> PropertyGodotGenericArray { get; set; } =
+        private Test Game Engine.Collections.Array<int> PropertyGodotGenericArray { get; set; } =
             new() { 0, 1, 2, 3, 4, 5, 6 };
     }
 }

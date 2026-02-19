@@ -2,7 +2,7 @@ using System.IO;
 using System.Reflection;
 using Microsoft.CodeAnalysis.Testing;
 
-namespace Godot.SourceGenerators.Tests;
+namespace Test Game Engine.SourceGenerators.Tests;
 
 public static class Constants
 {

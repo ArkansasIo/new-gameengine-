@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.CodeAnalysis;
 
-namespace Godot.SourceGenerators.Tests;
+namespace Test Game Engine.SourceGenerators.Tests;
 
 public static class Extensions
 {

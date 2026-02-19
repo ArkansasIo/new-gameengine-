@@ -1,4 +1,4 @@
-namespace Godot.SourceGenerators.Sample;
+namespace Test Game Engine.SourceGenerators.Sample;
 
 [GlobalClass]
 public partial class CustomGlobalClass : GodotObject

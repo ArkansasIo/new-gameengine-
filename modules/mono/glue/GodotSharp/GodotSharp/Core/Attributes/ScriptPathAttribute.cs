@@ -1,6 +1,6 @@
 using System;
 
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// An attribute that contains the path to the object's script.

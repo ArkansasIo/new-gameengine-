@@ -2,10 +2,10 @@
 /*  runtime_interop.cpp                                                   */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -329,7 +329,7 @@ void godotsharp_internal_editor_file_system_update_files(const PackedStringArray
 		efs->update_files(p_script_paths);
 	}
 #else
-	// EditorFileSystem is only available when running in the Godot editor.
+	// EditorFileSystem is only available when running in the Test Game Engine editor.
 	DEV_ASSERT(false);
 #endif
 }

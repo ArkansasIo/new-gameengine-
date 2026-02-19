@@ -4,12 +4,12 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using Godot.Collections;
+using Test Game Engine.Collections;
 
 
 #nullable enable
 
-namespace Godot.NativeInterop
+namespace Test Game Engine.NativeInterop
 {
     public static partial class VariantUtils
     {

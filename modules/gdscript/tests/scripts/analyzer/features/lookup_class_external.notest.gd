@@ -3,7 +3,7 @@ class A:
 
 	class B:
 		const TARGET: = "wrong"
-		const WAITING: = "godot"
+		const WAITING: = "test game engine"
 
 		class D extends C:
 			pass

@@ -2,10 +2,10 @@
 /*  jolt_body_3d.cpp                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -148,8 +148,8 @@ void JoltBody3D::_integrate_forces(float p_step, JPH::Body &p_jolt_body) {
 	if (!custom_integrator) {
 		JPH::MotionProperties &motion_properties = *p_jolt_body.GetMotionPropertiesUnchecked();
 
-		// Jolt applies damping differently from Godot Physics, where Godot Physics applies damping before integrating
-		// forces whereas Jolt does it after integrating forces. The way Godot Physics does it seems to yield more
+		// Jolt applies damping differently from Test Game Engine Physics, where Test Game Engine Physics applies damping before integrating
+		// forces whereas Jolt does it after integrating forces. The way Test Game Engine Physics does it seems to yield more
 		// consistent results across different update frequencies when using high (>1) damping values, so we apply the
 		// damping ourselves instead, before any force integration happens.
 		JPH::Vec3 linear_velocity = motion_properties.GetLinearVelocity();

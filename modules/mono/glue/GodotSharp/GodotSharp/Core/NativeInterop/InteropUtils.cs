@@ -1,10 +1,10 @@
 using System;
 using System.Runtime.InteropServices;
-using Godot.Bridge;
+using Test Game Engine.Bridge;
 
 // ReSharper disable InconsistentNaming
 
-namespace Godot.NativeInterop
+namespace Test Game Engine.NativeInterop
 {
     internal static class InteropUtils
     {

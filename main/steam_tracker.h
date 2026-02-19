@@ -2,10 +2,10 @@
 /*  steam_tracker.h                                                       */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -35,7 +35,7 @@
 #include "core/os/os.h"
 
 // SteamTracker is used to load SteamAPI dynamic library and initialize
-// the interface, this notifies Steam that Godot editor is running and
+// the interface, this notifies Steam that Test Game Engine editor is running and
 // allow tracking of the usage time of child instances of the engine
 // (e.g., opened projects).
 //

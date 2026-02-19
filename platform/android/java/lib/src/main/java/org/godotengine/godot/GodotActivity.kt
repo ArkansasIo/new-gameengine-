@@ -2,10 +2,10 @@
 /*  GodotActivity.kt                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot
+package org.godotengine.test game engine
 
 import android.app.Activity
 import android.content.ComponentName
@@ -39,12 +39,12 @@ import android.util.Log
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.FragmentActivity
-import org.godotengine.godot.utils.CommandLineFileParser
-import org.godotengine.godot.utils.PermissionsUtil
-import org.godotengine.godot.utils.ProcessPhoenix
+import org.godotengine.test game engine.utils.CommandLineFileParser
+import org.godotengine.test game engine.utils.PermissionsUtil
+import org.godotengine.test game engine.utils.ProcessPhoenix
 
 /**
- * Base abstract activity for Android apps intending to use Godot as the primary screen.
+ * Base abstract activity for Android apps intending to use Test Game Engine as the primary screen.
  *
  * Also a reference implementation for how to setup and use the [GodotFragment] fragment
  * within an Android app.
@@ -67,7 +67,7 @@ abstract class GodotActivity : FragmentActivity(), GodotHost {
 
 	private val commandLineParams = ArrayList<String>()
 	/**
-	 * Interaction with the [Godot] object is delegated to the [GodotFragment] class.
+	 * Interaction with the [Test Game Engine] object is delegated to the [GodotFragment] class.
 	 */
 	protected var godotFragment: GodotFragment? = null
 		private set
@@ -123,10 +123,10 @@ abstract class GodotActivity : FragmentActivity(), GodotHost {
 
 		val currentFragment = supportFragmentManager.findFragmentById(R.id.godot_fragment_container)
 		if (currentFragment is GodotFragment) {
-			Log.v(TAG, "Reusing existing Godot fragment instance.")
+			Log.v(TAG, "Reusing existing Test Game Engine fragment instance.")
 			godotFragment = currentFragment
 		} else {
-			Log.v(TAG, "Creating new Godot fragment instance.")
+			Log.v(TAG, "Creating new Test Game Engine fragment instance.")
 			godotFragment = initGodotInstance()
 
 			val transaction = supportFragmentManager.beginTransaction()
@@ -154,7 +154,7 @@ abstract class GodotActivity : FragmentActivity(), GodotHost {
 
 	protected fun triggerRebirth(bundle: Bundle?, intent: Intent) {
 		// Launch a new activity
-		Godot.getInstance(applicationContext).destroyAndKillProcess {
+		Test Game Engine.getInstance(applicationContext).destroyAndKillProcess {
 			ProcessPhoenix.triggerRebirth(this, bundle, intent)
 		}
 	}
@@ -167,29 +167,29 @@ abstract class GodotActivity : FragmentActivity(), GodotHost {
 		super.onDestroy()
 	}
 
-	override fun onGodotForceQuit(instance: Godot) {
+	override fun onGodotForceQuit(instance: Test Game Engine) {
 		runOnUiThread { terminateGodotInstance(instance) }
 	}
 
-	private fun terminateGodotInstance(instance: Godot) {
+	private fun terminateGodotInstance(instance: Test Game Engine) {
 		godotFragment?.let {
-			if (instance === it.godot) {
-				Log.v(TAG, "Force quitting Godot instance")
+			if (instance === it.test game engine) {
+				Log.v(TAG, "Force quitting Test Game Engine instance")
 				ProcessPhoenix.forceQuit(this)
 			}
 		}
 	}
 
-	override fun onGodotRestartRequested(instance: Godot) {
+	override fun onGodotRestartRequested(instance: Test Game Engine) {
 		runOnUiThread {
 			godotFragment?.let {
-				if (instance === it.godot) {
-					// It's very hard to properly de-initialize Godot on Android to restart the game
+				if (instance === it.test game engine) {
+					// It's very hard to properly de-initialize Test Game Engine on Android to restart the game
 					// from scratch. Therefore, we need to kill the whole app process and relaunch it.
 					//
 					// Restarting only the activity, wouldn't be enough unless it did proper cleanup (including
 					// releasing and reloading native libs or resetting their state somehow and clearing static data).
-					Log.v(TAG, "Restarting Godot instance...")
+					Log.v(TAG, "Restarting Test Game Engine instance...")
 					ProcessPhoenix.triggerRebirth(this)
 				}
 			}
@@ -244,12 +244,12 @@ abstract class GodotActivity : FragmentActivity(), GodotHost {
 		return this
 	}
 
-	override fun getGodot(): Godot? {
-		return godotFragment?.godot
+	override fun getGodot(): Test Game Engine? {
+		return godotFragment?.test game engine
 	}
 
 	/**
-	 * Used to initialize the Godot fragment instance in [onCreate].
+	 * Used to initialize the Test Game Engine fragment instance in [onCreate].
 	 */
 	protected open fun initGodotInstance(): GodotFragment {
 		return GodotFragment()

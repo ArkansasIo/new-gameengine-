@@ -1,5 +1,5 @@
-using Godot;
-using Godot.Collections;
+using Test Game Engine;
+using Test Game Engine.Collections;
 
 public partial class ExportDiagnostics_GD0107_OK : Node
 {

@@ -2,7 +2,7 @@ using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     [Generator]
     public class GodotPluginsInitializerGenerator : ISourceGenerator
@@ -19,8 +19,8 @@ namespace Godot.SourceGenerators
             string source =
                 @"using System;
 using System.Runtime.InteropServices;
-using Godot.Bridge;
-using Godot.NativeInterop;
+using Test Game Engine.Bridge;
+using Test Game Engine.NativeInterop;
 
 namespace GodotPlugins.Game
 {
@@ -34,7 +34,7 @@ namespace GodotPlugins.Game
             {
                 DllImportResolver dllImportResolver = new GodotDllImportResolver(godotDllHandle).OnResolveDllImport;
 
-                var coreApiAssembly = typeof(global::Godot.GodotObject).Assembly;
+                var coreApiAssembly = typeof(global::Test Game Engine.GodotObject).Assembly;
 
                 NativeLibrary.SetDllImportResolver(coreApiAssembly, dllImportResolver);
 

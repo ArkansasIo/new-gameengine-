@@ -2,10 +2,10 @@
 /*  resource_importer.cpp                                                 */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -140,7 +140,7 @@ Error ResourceFormatImporter::_get_path_and_type(const String &p_path, PathAndTy
 		return ERR_FILE_CORRUPT;
 	}
 	if (r_path_and_type.path.is_empty()) {
-		// Some importers may not write files to the .godot folder, so the path can be empty.
+		// Some importers may not write files to the .test game engine folder, so the path can be empty.
 		if (r_path_and_type.importer.is_empty()) {
 			return ERR_FILE_CORRUPT;
 		}
@@ -181,7 +181,7 @@ Ref<Resource> ResourceFormatImporter::load_internal(const String &p_path, Error 
 	}
 
 	if (p_silence_errors) {
-		// Note: Some importers do not create files in the .godot folder, so we need to check if the path is empty.
+		// Note: Some importers do not create files in the .test game engine folder, so we need to check if the path is empty.
 		if (!pat.path.is_empty() && !FileAccess::exists(pat.path)) {
 			return Ref<Resource>();
 		}

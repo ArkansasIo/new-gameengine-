@@ -2,10 +2,10 @@
 /*  pixel_formats.h                                                       */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -290,14 +290,14 @@ public:
 	/** Returns whether the specified Metal MTL::PixelFormat is a PVRTC format. */
 	bool isPVRTCFormat(MTL::PixelFormat p_format);
 
-	/** Returns the format type corresponding to the specified Godot pixel format, */
+	/** Returns the format type corresponding to the specified Test Game Engine pixel format, */
 	MTLFormatType getFormatType(DataFormat p_format);
 
 	/** Returns the format type corresponding to the specified Metal MTL::PixelFormat, */
 	MTLFormatType getFormatType(MTL::PixelFormat p_format);
 
 	/**
-	 * Returns the Metal MTL::PixelFormat corresponding to the specified Godot pixel
+	 * Returns the Metal MTL::PixelFormat corresponding to the specified Test Game Engine pixel
 	 * or returns MTL::PixelFormatInvalid if no corresponding MTL::PixelFormat exists.
 	 */
 	MTL::PixelFormat getMTLPixelFormat(DataFormat p_format);
@@ -309,7 +309,7 @@ public:
 	DataFormat getDataFormat(MTL::PixelFormat p_format);
 
 	/**
-	 * Returns the size, in bytes, of a texel block of the specified Godot pixel.
+	 * Returns the size, in bytes, of a texel block of the specified Test Game Engine pixel.
 	 * For uncompressed formats, the returned value corresponds to the size in bytes of a single texel.
 	 */
 	uint32_t getBytesPerBlock(DataFormat p_format);
@@ -327,7 +327,7 @@ public:
 	uint8_t getChromaSubsamplingComponentBits(DataFormat p_format);
 
 	/**
-	 * Returns the size, in bytes, of a texel of the specified Godot format.
+	 * Returns the size, in bytes, of a texel of the specified Test Game Engine format.
 	 * The returned value may be fractional for certain compressed formats.
 	 */
 	float getBytesPerTexel(DataFormat p_format);
@@ -339,7 +339,7 @@ public:
 	float getBytesPerTexel(MTL::PixelFormat p_format);
 
 	/**
-	 * Returns the size, in bytes, of a row of texels of the specified Godot pixel format.
+	 * Returns the size, in bytes, of a row of texels of the specified Test Game Engine pixel format.
 	 *
 	 * For compressed formats, this takes into consideration the compression block size,
 	 * and p_texels_per_row should specify the width in texels, not blocks. The result is rounded
@@ -357,7 +357,7 @@ public:
 	size_t getBytesPerRow(MTL::PixelFormat p_format, uint32_t p_texels_per_row);
 
 	/**
-	 * Returns the size, in bytes, of a texture layer of the specified Godot pixel format.
+	 * Returns the size, in bytes, of a texture layer of the specified Test Game Engine pixel format.
 	 *
 	 * For compressed formats, this takes into consideration the compression block size,
 	 * and p_texel_rows_per_layer should specify the height in texels, not blocks. The result is
@@ -373,10 +373,10 @@ public:
 	 */
 	size_t getBytesPerLayer(MTL::PixelFormat p_format, size_t p_bytes_per_row, uint32_t p_texel_rows_per_layer);
 
-	/** Returns whether or not the specified Godot format requires swizzling to use with Metal. */
+	/** Returns whether or not the specified Test Game Engine format requires swizzling to use with Metal. */
 	bool needsSwizzle(DataFormat p_format);
 
-	/** Returns the Metal format capabilities supported by the specified Godot format, without substitution. */
+	/** Returns the Metal format capabilities supported by the specified Test Game Engine format, without substitution. */
 	MTLFmtCaps getCapabilities(DataFormat p_format, bool p_extended = false);
 
 	/** Returns the Metal format capabilities supported by the specified Metal format. */

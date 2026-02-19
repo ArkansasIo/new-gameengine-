@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/50894
+# https://github.com/godotengine/test game engine/issues/50894
 
 func test():
 	print(await not_coroutine())

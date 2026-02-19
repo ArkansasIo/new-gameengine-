@@ -2,10 +2,10 @@
 /*  debug_adapter_parser.cpp                                              */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -176,8 +176,8 @@ Dictionary DebugAdapterParser::req_launch(const Dictionary &p_params) const {
 		return prepare_error_response(p_params, DAP::ErrorType::WRONG_PATH, variables);
 	}
 
-	if (args.has("godot/custom_data")) {
-		DebugAdapterProtocol::get_singleton()->get_current_peer()->supportsCustomData = args["godot/custom_data"];
+	if (args.has("test game engine/custom_data")) {
+		DebugAdapterProtocol::get_singleton()->get_current_peer()->supportsCustomData = args["test game engine/custom_data"];
 	}
 
 	DebugAdapterProtocol::get_singleton()->get_current_peer()->pending_launch = p_params;
@@ -312,7 +312,7 @@ Dictionary DebugAdapterParser::req_threads(const Dictionary &p_params) const {
 
 	DAP::Thread thread;
 
-	thread.id = 1; // Hardcoded because Godot only supports debugging one thread at the moment
+	thread.id = 1; // Hardcoded because Test Game Engine only supports debugging one thread at the moment
 	thread.name = "Main";
 	Array arr = { thread.to_json() };
 	body["threads"] = arr;
@@ -651,7 +651,7 @@ Dictionary DebugAdapterParser::ev_breakpoint(const DAP::Breakpoint &p_breakpoint
 
 Dictionary DebugAdapterParser::ev_custom_data(const String &p_msg, const Array &p_data) const {
 	Dictionary event = prepare_base_event(), body;
-	event["event"] = "godot/custom_data";
+	event["event"] = "test game engine/custom_data";
 	event["body"] = body;
 
 	body["message"] = p_msg;

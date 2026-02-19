@@ -2,7 +2,7 @@ using System;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// Exports the annotated <see cref="Callable"/> as a clickable button.

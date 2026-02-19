@@ -1,5 +1,5 @@
-using Godot;
-using Godot.NativeInterop;
+using Test Game Engine;
+using Test Game Engine.NativeInterop;
 
 partial class ExportDiagnostics_GD0111
 {
@@ -7,54 +7,54 @@ partial class ExportDiagnostics_GD0111
     /// <summary>
     /// Cached StringNames for the properties and fields contained in this class, for fast lookup.
     /// </summary>
-    public new class PropertyName : global::Godot.Node.PropertyName {
+    public new class PropertyName : global::Test Game Engine.Node.PropertyName {
         /// <summary>
         /// Cached name for the 'MyButtonGet' property.
         /// </summary>
-        public new static readonly global::Godot.StringName @MyButtonGet = "MyButtonGet";
+        public new static readonly global::Test Game Engine.StringName @MyButtonGet = "MyButtonGet";
         /// <summary>
         /// Cached name for the 'MyButtonGetSet' property.
         /// </summary>
-        public new static readonly global::Godot.StringName @MyButtonGetSet = "MyButtonGetSet";
+        public new static readonly global::Test Game Engine.StringName @MyButtonGetSet = "MyButtonGetSet";
         /// <summary>
         /// Cached name for the 'MyButtonGetWithBackingField' property.
         /// </summary>
-        public new static readonly global::Godot.StringName @MyButtonGetWithBackingField = "MyButtonGetWithBackingField";
+        public new static readonly global::Test Game Engine.StringName @MyButtonGetWithBackingField = "MyButtonGetWithBackingField";
         /// <summary>
         /// Cached name for the 'MyButtonGetSetWithBackingField' property.
         /// </summary>
-        public new static readonly global::Godot.StringName @MyButtonGetSetWithBackingField = "MyButtonGetSetWithBackingField";
+        public new static readonly global::Test Game Engine.StringName @MyButtonGetSetWithBackingField = "MyButtonGetSetWithBackingField";
         /// <summary>
         /// Cached name for the 'MyButtonOkWithCallableCreationExpression' property.
         /// </summary>
-        public new static readonly global::Godot.StringName @MyButtonOkWithCallableCreationExpression = "MyButtonOkWithCallableCreationExpression";
+        public new static readonly global::Test Game Engine.StringName @MyButtonOkWithCallableCreationExpression = "MyButtonOkWithCallableCreationExpression";
         /// <summary>
         /// Cached name for the 'MyButtonOkWithImplicitCallableCreationExpression' property.
         /// </summary>
-        public new static readonly global::Godot.StringName @MyButtonOkWithImplicitCallableCreationExpression = "MyButtonOkWithImplicitCallableCreationExpression";
+        public new static readonly global::Test Game Engine.StringName @MyButtonOkWithImplicitCallableCreationExpression = "MyButtonOkWithImplicitCallableCreationExpression";
         /// <summary>
         /// Cached name for the 'MyButtonOkWithCallableFromExpression' property.
         /// </summary>
-        public new static readonly global::Godot.StringName @MyButtonOkWithCallableFromExpression = "MyButtonOkWithCallableFromExpression";
+        public new static readonly global::Test Game Engine.StringName @MyButtonOkWithCallableFromExpression = "MyButtonOkWithCallableFromExpression";
         /// <summary>
         /// Cached name for the '_backingField' field.
         /// </summary>
-        public new static readonly global::Godot.StringName @_backingField = "_backingField";
+        public new static readonly global::Test Game Engine.StringName @_backingField = "_backingField";
     }
     /// <inheritdoc/>
     [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
     protected override bool SetGodotClassPropertyValue(in godot_string_name name, in godot_variant value)
     {
         if (name == PropertyName.@MyButtonGetSet) {
-            this.@MyButtonGetSet = global::Godot.NativeInterop.VariantUtils.ConvertTo<global::Godot.Callable>(value);
+            this.@MyButtonGetSet = global::Test Game Engine.NativeInterop.VariantUtils.ConvertTo<global::Test Game Engine.Callable>(value);
             return true;
         }
         if (name == PropertyName.@MyButtonGetSetWithBackingField) {
-            this.@MyButtonGetSetWithBackingField = global::Godot.NativeInterop.VariantUtils.ConvertTo<global::Godot.Callable>(value);
+            this.@MyButtonGetSetWithBackingField = global::Test Game Engine.NativeInterop.VariantUtils.ConvertTo<global::Test Game Engine.Callable>(value);
             return true;
         }
         if (name == PropertyName.@_backingField) {
-            this.@_backingField = global::Godot.NativeInterop.VariantUtils.ConvertTo<global::Godot.Callable>(value);
+            this.@_backingField = global::Test Game Engine.NativeInterop.VariantUtils.ConvertTo<global::Test Game Engine.Callable>(value);
             return true;
         }
         return base.SetGodotClassPropertyValue(name, value);
@@ -64,52 +64,52 @@ partial class ExportDiagnostics_GD0111
     protected override bool GetGodotClassPropertyValue(in godot_string_name name, out godot_variant value)
     {
         if (name == PropertyName.@MyButtonGet) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<global::Godot.Callable>(this.@MyButtonGet);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<global::Test Game Engine.Callable>(this.@MyButtonGet);
             return true;
         }
         if (name == PropertyName.@MyButtonGetSet) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<global::Godot.Callable>(this.@MyButtonGetSet);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<global::Test Game Engine.Callable>(this.@MyButtonGetSet);
             return true;
         }
         if (name == PropertyName.@MyButtonGetWithBackingField) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<global::Godot.Callable>(this.@MyButtonGetWithBackingField);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<global::Test Game Engine.Callable>(this.@MyButtonGetWithBackingField);
             return true;
         }
         if (name == PropertyName.@MyButtonGetSetWithBackingField) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<global::Godot.Callable>(this.@MyButtonGetSetWithBackingField);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<global::Test Game Engine.Callable>(this.@MyButtonGetSetWithBackingField);
             return true;
         }
         if (name == PropertyName.@MyButtonOkWithCallableCreationExpression) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<global::Godot.Callable>(this.@MyButtonOkWithCallableCreationExpression);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<global::Test Game Engine.Callable>(this.@MyButtonOkWithCallableCreationExpression);
             return true;
         }
         if (name == PropertyName.@MyButtonOkWithImplicitCallableCreationExpression) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<global::Godot.Callable>(this.@MyButtonOkWithImplicitCallableCreationExpression);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<global::Test Game Engine.Callable>(this.@MyButtonOkWithImplicitCallableCreationExpression);
             return true;
         }
         if (name == PropertyName.@MyButtonOkWithCallableFromExpression) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<global::Godot.Callable>(this.@MyButtonOkWithCallableFromExpression);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<global::Test Game Engine.Callable>(this.@MyButtonOkWithCallableFromExpression);
             return true;
         }
         if (name == PropertyName.@_backingField) {
-            value = global::Godot.NativeInterop.VariantUtils.CreateFrom<global::Godot.Callable>(this.@_backingField);
+            value = global::Test Game Engine.NativeInterop.VariantUtils.CreateFrom<global::Test Game Engine.Callable>(this.@_backingField);
             return true;
         }
         return base.GetGodotClassPropertyValue(name, out value);
     }
     /// <summary>
     /// Get the property information for all the properties declared in this class.
-    /// This method is used by Godot to register the available properties in the editor.
+    /// This method is used by Test Game Engine to register the available properties in the editor.
     /// Do not call this method.
     /// </summary>
     [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-    internal new static global::System.Collections.Generic.List<global::Godot.Bridge.PropertyInfo> GetGodotPropertyList()
+    internal new static global::System.Collections.Generic.List<global::Test Game Engine.Bridge.PropertyInfo> GetGodotPropertyList()
     {
-        var properties = new global::System.Collections.Generic.List<global::Godot.Bridge.PropertyInfo>();
-        properties.Add(new(type: (global::Godot.Variant.Type)25, name: PropertyName.@_backingField, hint: (global::Godot.PropertyHint)0, hintString: "", usage: (global::Godot.PropertyUsageFlags)4096, exported: false));
-        properties.Add(new(type: (global::Godot.Variant.Type)25, name: PropertyName.@MyButtonOkWithCallableCreationExpression, hint: (global::Godot.PropertyHint)39, hintString: "", usage: (global::Godot.PropertyUsageFlags)4, exported: true));
-        properties.Add(new(type: (global::Godot.Variant.Type)25, name: PropertyName.@MyButtonOkWithImplicitCallableCreationExpression, hint: (global::Godot.PropertyHint)39, hintString: "", usage: (global::Godot.PropertyUsageFlags)4, exported: true));
-        properties.Add(new(type: (global::Godot.Variant.Type)25, name: PropertyName.@MyButtonOkWithCallableFromExpression, hint: (global::Godot.PropertyHint)39, hintString: "", usage: (global::Godot.PropertyUsageFlags)4, exported: true));
+        var properties = new global::System.Collections.Generic.List<global::Test Game Engine.Bridge.PropertyInfo>();
+        properties.Add(new(type: (global::Test Game Engine.Variant.Type)25, name: PropertyName.@_backingField, hint: (global::Test Game Engine.PropertyHint)0, hintString: "", usage: (global::Test Game Engine.PropertyUsageFlags)4096, exported: false));
+        properties.Add(new(type: (global::Test Game Engine.Variant.Type)25, name: PropertyName.@MyButtonOkWithCallableCreationExpression, hint: (global::Test Game Engine.PropertyHint)39, hintString: "", usage: (global::Test Game Engine.PropertyUsageFlags)4, exported: true));
+        properties.Add(new(type: (global::Test Game Engine.Variant.Type)25, name: PropertyName.@MyButtonOkWithImplicitCallableCreationExpression, hint: (global::Test Game Engine.PropertyHint)39, hintString: "", usage: (global::Test Game Engine.PropertyUsageFlags)4, exported: true));
+        properties.Add(new(type: (global::Test Game Engine.Variant.Type)25, name: PropertyName.@MyButtonOkWithCallableFromExpression, hint: (global::Test Game Engine.PropertyHint)39, hintString: "", usage: (global::Test Game Engine.PropertyUsageFlags)4, exported: true));
         return properties;
     }
 #pragma warning restore CS0109

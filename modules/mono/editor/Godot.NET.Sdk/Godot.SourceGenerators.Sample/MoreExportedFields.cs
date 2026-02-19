@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 #pragma warning disable CS0169
 #pragma warning disable CS0414
 
-namespace Godot.SourceGenerators.Sample
+namespace Test Game Engine.SourceGenerators.Sample
 {
     [SuppressMessage("ReSharper", "BuiltInTypeReferenceStyle")]
     [SuppressMessage("ReSharper", "RedundantNameQualifier")]

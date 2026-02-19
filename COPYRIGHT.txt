@@ -1,8 +1,8 @@
 Files: *
-Copyright: Copyright (c) 2014-present Godot Engine contributors.
+Copyright: Copyright (c) 2014-present Test Game Engine contributors.
  Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 License: MIT
-Comment: Godot Engine
+Comment: Test Game Engine
 
 License: MIT
  Permission is hereby granted, free of charge, to any person obtaining a copy

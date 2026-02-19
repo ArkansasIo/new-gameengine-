@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// 4-element structure that can be used to represent 4D grid coordinates or sets of integers.

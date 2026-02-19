@@ -2,10 +2,10 @@
 /*  jolt_height_map_shape_3d.cpp                                          */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -79,7 +79,7 @@ JPH::ShapeRefC JoltHeightMapShape3D::_build_height_field() const {
 	const float offset_x = (float)-quad_count_x / 2.0f;
 	const float offset_y = (float)-quad_count_y / 2.0f;
 
-	// Jolt triangulates the height map differently from how Godot Physics does it, so we mirror the shape along the
+	// Jolt triangulates the height map differently from how Test Game Engine Physics does it, so we mirror the shape along the
 	// Z-axis to get the desired triangulation and reverse the rows to undo the mirroring.
 
 	LocalVector<float> heights_rev;
@@ -97,7 +97,7 @@ JPH::ShapeRefC JoltHeightMapShape3D::_build_height_field() const {
 		for (int x = 0; x < width; ++x) {
 			const real_t height = row[x];
 
-			// Godot has undocumented (accidental?) support for holes by passing NaN as the height value, whereas Jolt
+			// Test Game Engine has undocumented (accidental?) support for holes by passing NaN as the height value, whereas Jolt
 			// uses `FLT_MAX` instead, so we translate any NaN to `FLT_MAX` in order to be drop-in compatible.
 			row_rev[x] = Math::is_nan(height) ? FLT_MAX : (float)height;
 		}

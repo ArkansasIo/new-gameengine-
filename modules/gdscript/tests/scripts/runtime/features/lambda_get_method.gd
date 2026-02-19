@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/94074
+# https://github.com/godotengine/test game engine/issues/94074
 
 func foo():
 	pass

@@ -1,4 +1,4 @@
-using Godot;
+using Test Game Engine;
 using GodotTools.Core;
 using GodotTools.Export;
 using GodotTools.Utils;
@@ -269,7 +269,7 @@ namespace GodotTools
 
                     try
                     {
-                        if (Godot.OS.IsStdOutVerbose())
+                        if (Test Game Engine.OS.IsStdOutVerbose())
                             Console.WriteLine(
                                 $"Running: \"{command}\" {string.Join(" ", args.Select(a => $"\"{a}\""))}");
 
@@ -472,7 +472,7 @@ namespace GodotTools
             // correct version first, otherwise pick the latest.
             if (DotNetFinder.TryFindDotNetSdk(dotNetSdkSearchVersion, out var sdkVersion, out string? sdkPath))
             {
-                if (Godot.OS.IsStdOutVerbose())
+                if (Test Game Engine.OS.IsStdOutVerbose())
                     Console.WriteLine($"Found .NET Sdk version '{sdkVersion}': {sdkPath}");
 
                 ProjectUtils.MSBuildLocatorRegisterMSBuildPath(sdkPath);
@@ -482,12 +482,12 @@ namespace GodotTools
                 try
                 {
                     ProjectUtils.MSBuildLocatorRegisterLatest(out sdkVersion, out sdkPath);
-                    if (Godot.OS.IsStdOutVerbose())
+                    if (Test Game Engine.OS.IsStdOutVerbose())
                         Console.WriteLine($"Found .NET Sdk version '{sdkVersion}': {sdkPath}");
                 }
                 catch (InvalidOperationException e)
                 {
-                    if (Godot.OS.IsStdOutVerbose())
+                    if (Test Game Engine.OS.IsStdOutVerbose())
                         GD.PrintErr(e.ToString());
                     GD.PushError($".NET Sdk not found. The required version is '{dotNetSdkSearchVersion}'.");
                 }
@@ -584,7 +584,7 @@ namespace GodotTools
                                    $",Custom:{(int)ExternalEditorId.CustomEditor}";
             }
 
-            _editorSettings.AddPropertyInfo(new Godot.Collections.Dictionary
+            _editorSettings.AddPropertyInfo(new Test Game Engine.Collections.Dictionary
             {
                 ["type"] = (int)Variant.Type.Int,
                 ["name"] = Settings.ExternalEditor,
@@ -592,14 +592,14 @@ namespace GodotTools
                 ["hint_string"] = settingsHintStr
             });
 
-            _editorSettings.AddPropertyInfo(new Godot.Collections.Dictionary
+            _editorSettings.AddPropertyInfo(new Test Game Engine.Collections.Dictionary
             {
                 ["type"] = (int)Variant.Type.String,
                 ["name"] = Settings.CustomExecPath,
                 ["hint"] = (int)PropertyHint.GlobalFile,
             });
 
-            _editorSettings.AddPropertyInfo(new Godot.Collections.Dictionary
+            _editorSettings.AddPropertyInfo(new Test Game Engine.Collections.Dictionary
             {
                 ["type"] = (int)Variant.Type.String,
                 ["name"] = Settings.CustomExecPathArgs,
@@ -607,7 +607,7 @@ namespace GodotTools
             _editorSettings.SetInitialValue(Settings.CustomExecPathArgs, "{file}", false);
 
             var verbosityLevels = Enum.GetValues<VerbosityLevelId>().Select(level => $"{Enum.GetName(level)}:{(int)level}");
-            _editorSettings.AddPropertyInfo(new Godot.Collections.Dictionary
+            _editorSettings.AddPropertyInfo(new Test Game Engine.Collections.Dictionary
             {
                 ["type"] = (int)Variant.Type.Int,
                 ["name"] = Settings.VerbosityLevel,
@@ -615,7 +615,7 @@ namespace GodotTools
                 ["hint_string"] = string.Join(",", verbosityLevels),
             });
 
-            _editorSettings.AddPropertyInfo(new Godot.Collections.Dictionary
+            _editorSettings.AddPropertyInfo(new Test Game Engine.Collections.Dictionary
             {
                 ["type"] = (int)Variant.Type.Int,
                 ["name"] = Settings.ProblemsLayout,
@@ -735,13 +735,13 @@ namespace GodotTools
                 AppDomain.CurrentDomain
                     .GetAssemblies()
                     .First(x => x.GetName().Name == "GodotSharpEditor")
-                    .GetType("Godot.EditorConstructors")?
+                    .GetType("Test Game Engine.EditorConstructors")?
                     .GetMethod("AddEditorConstructors",
                         BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
 
             if (populateConstructorMethod == null)
             {
-                throw new MissingMethodException("Godot.EditorConstructors",
+                throw new MissingMethodException("Test Game Engine.EditorConstructors",
                     "AddEditorConstructors");
             }
 

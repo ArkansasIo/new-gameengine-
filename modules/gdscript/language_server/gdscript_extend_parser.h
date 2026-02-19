@@ -2,10 +2,10 @@
 /*  gdscript_extend_parser.h                                              */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -58,7 +58,7 @@ typedef HashMap<String, const LSP::DocumentSymbol *> ClassMembers;
  * →→var my_value = 42
  * ```
  * `_` is at:
- * * Godot: `column=12`
+ * * Test Game Engine: `column=12`
  * 	* using `indent/size=4`
  * 	* Note: counting starts at `1`
  * * LSP: `character=8`

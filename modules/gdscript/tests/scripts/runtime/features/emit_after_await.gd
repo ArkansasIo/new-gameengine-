@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/89439
+# https://github.com/godotengine/test game engine/issues/89439
 extends Node
 
 signal my_signal

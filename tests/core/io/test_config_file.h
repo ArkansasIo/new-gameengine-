@@ -2,10 +2,10 @@
 /*  test_config_file.h                                                    */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -46,7 +46,7 @@ TEST_CASE("[ConfigFile] Parsing well-formatted files") {
 name = "Unnamed Player"
 tagline="Waiting
 for
-Godot"
+Test Game Engine"
 
 color =Color(   0, 0.5,1, 1) ; Inline comment
 position= Vector2(
@@ -139,7 +139,7 @@ TEST_CASE("[ConfigFile] Saving file") {
 name="Unnamed Player"
 tagline="Waiting
 for
-Godot"
+Test Game Engine"
 color=Color(0, 0.5, 1, 1)
 position=Vector2(3, 4)
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// Allows the annotated class to execute in the editor.

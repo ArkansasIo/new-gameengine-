@@ -2,10 +2,10 @@
 /*  os_android.cpp                                                        */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -87,7 +87,7 @@ _FORCE_INLINE_ static GameViewPlugin *_get_game_view_plugin() {
 class AndroidLogger : public Logger {
 public:
 	virtual void logv(const char *p_format, va_list p_list, bool p_err) {
-		__android_log_vprint(p_err ? ANDROID_LOG_ERROR : ANDROID_LOG_INFO, "godot", p_format, p_list);
+		__android_log_vprint(p_err ? ANDROID_LOG_ERROR : ANDROID_LOG_INFO, "test game engine", p_format, p_list);
 	}
 
 	virtual ~AndroidLogger() {}

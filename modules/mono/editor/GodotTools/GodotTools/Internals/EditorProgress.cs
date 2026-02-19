@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
-using Godot;
-using Godot.NativeInterop;
+using Test Game Engine;
+using Test Game Engine.NativeInterop;
 
 namespace GodotTools.Internals
 {

@@ -1,7 +1,7 @@
-# Persian translation of the Godot Engine properties.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Persian translation of the Test Game Engine properties.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # alabd14313 <alabd14313@yahoo.com>, 2016.
 # Dante Marshal <Marshal.Devilhunter@gmail.com>, 2018.
 # hamed nasib <cghamed752@chmail.ir>, 2016.
@@ -52,13 +52,13 @@
 # نام <z.xp.xp.900@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine properties\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-23 01:01+0000\n"
 "Last-Translator: نام <z.xp.xp.900@gmail.com>\n"
-"Language-Team: Persian <https://hosted.weblate.org/projects/godot-engine/"
-"godot-properties/fa/>\n"
+"Language-Team: Persian <https://hosted.weblate.org/projects/test game engine-engine/"
+"test game engine-properties/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2053,7 +2053,7 @@ msgstr "نور"
 msgid "Roots"
 msgstr "ریشه‌ها"
 
-msgid "Godot Bone Node"
+msgid "Test Game Engine Bone Node"
 msgstr "گرهٔ استخوان گودوت"
 
 msgid "Min Filter"

@@ -2,10 +2,10 @@
 /*  EmbeddedGodotGame.kt                                                  */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -40,10 +40,10 @@ import android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
 import android.view.WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
 import org.godotengine.editor.GodotGame
 import org.godotengine.editor.R
-import org.godotengine.godot.editor.utils.GameMenuUtils
+import org.godotengine.test game engine.editor.utils.GameMenuUtils
 
 /**
- * Host the Godot game from the editor when the embedded mode is enabled.
+ * Host the Test Game Engine game from the editor when the embedded mode is enabled.
  */
 class EmbeddedGodotGame : GodotGame() {
 
@@ -143,7 +143,7 @@ class EmbeddedGodotGame : GodotGame() {
 	override fun isAlwaysOnTopSupported() = hasPiPSystemFeature()
 
 	override fun onFullScreenUpdated(enabled: Boolean) {
-		godot?.enableImmersiveMode(enabled)
+		test game engine?.enableImmersiveMode(enabled)
 		isFullscreen = enabled
 		if (enabled) {
 			layoutWidthInPx = FULL_SCREEN_WIDTH

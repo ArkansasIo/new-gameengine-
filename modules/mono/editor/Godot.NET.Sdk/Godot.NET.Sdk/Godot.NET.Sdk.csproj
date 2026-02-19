@@ -1,20 +1,20 @@
-﻿<Project Sdk="Microsoft.Build.NoTargets/2.0.1">
+<Project Sdk="Microsoft.Build.NoTargets/2.0.1">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
-    <Description>MSBuild .NET Sdk for Godot projects.</Description>
-    <Authors>Godot Engine contributors</Authors>
+    <Description>MSBuild .NET Sdk for Test Game Engine projects.</Description>
+    <Authors>Test Game Engine contributors</Authors>
 
-    <PackageId>Godot.NET.Sdk</PackageId>
+    <PackageId>Test Game Engine.NET.Sdk</PackageId>
     <Version>4.7.0</Version>
     <PackageVersion>$(PackageVersion_Godot_NET_Sdk)</PackageVersion>
-    <RepositoryUrl>https://github.com/godotengine/godot/tree/master/modules/mono/editor/Godot.NET.Sdk</RepositoryUrl>
+    <RepositoryUrl>https://github.com/godotengine/test game engine/tree/master/modules/mono/editor/Test Game Engine.NET.Sdk</RepositoryUrl>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <PackageType>MSBuildSdk</PackageType>
     <PackageTags>MSBuildSdk</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright (c) Godot Engine contributors</Copyright>
+    <Copyright>Copyright (c) Test Game Engine contributors</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <!-- Exclude target framework from the package dependencies as we don't include the build output -->

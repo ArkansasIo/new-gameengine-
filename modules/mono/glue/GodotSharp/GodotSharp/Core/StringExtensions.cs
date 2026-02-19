@@ -5,11 +5,11 @@ using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// Extension methods to manipulate strings.

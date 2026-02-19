@@ -2,10 +2,10 @@
 /*  joypad_sdl.cpp                                                        */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -66,7 +66,7 @@ Error JoypadSDL::initialize() {
 	SDL_SetHint(SDL_HINT_NO_SIGNAL_HANDLERS, "1");
 	ERR_FAIL_COND_V_MSG(!SDL_Init(SDL_INIT_JOYSTICK | SDL_INIT_GAMEPAD), FAILED, SDL_GetError());
 
-	// Add Godot's mapping database from memory
+	// Add Test Game Engine's mapping database from memory
 	int i = 0;
 	while (DefaultControllerMappings::mappings[i]) {
 		String mapping_string = DefaultControllerMappings::mappings[i++];
@@ -163,7 +163,7 @@ void JoypadSDL::process_events() {
 				sdl_instance_id_to_joypad_id.insert(sdl_event.jdevice.which, joy_id);
 
 				Dictionary joypad_info;
-				// Skip Godot's mapping system if SDL already handles the joypad's mapping.
+				// Skip Test Game Engine's mapping system if SDL already handles the joypad's mapping.
 				joypad_info["mapping_handled"] = SDL_IsGamepad(sdl_event.jdevice.which);
 				joypad_info["raw_name"] = String::utf8(SDL_GetJoystickName(joy));
 				joypad_info["vendor_id"] = itos(SDL_GetJoystickVendor(joy));
@@ -216,7 +216,7 @@ void JoypadSDL::process_events() {
 
 					Input::get_singleton()->joy_axis(
 							joy_id,
-							static_cast<JoyAxis>(sdl_event.jaxis.axis), // Godot joy axis constants are already intentionally the same as SDL's
+							static_cast<JoyAxis>(sdl_event.jaxis.axis), // Test Game Engine joy axis constants are already intentionally the same as SDL's
 							((sdl_event.jaxis.value - SDL_JOYSTICK_AXIS_MIN) / (float)(SDL_JOYSTICK_AXIS_MAX - SDL_JOYSTICK_AXIS_MIN) - 0.5f) * 2.0f);
 					break;
 
@@ -232,7 +232,7 @@ void JoypadSDL::process_events() {
 
 					Input::get_singleton()->joy_button(
 							joy_id,
-							static_cast<JoyButton>(sdl_event.jbutton.button), // Godot button constants are intentionally the same as SDL's, so we can just straight up use them
+							static_cast<JoyButton>(sdl_event.jbutton.button), // Test Game Engine button constants are intentionally the same as SDL's, so we can just straight up use them
 							sdl_event.jbutton.down);
 					break;
 
@@ -241,7 +241,7 @@ void JoypadSDL::process_events() {
 
 					Input::get_singleton()->joy_hat(
 							joy_id,
-							(HatMask)sdl_event.jhat.value // Godot hat masks are identical to SDL hat masks, so we can just use them as-is.
+							(HatMask)sdl_event.jhat.value // Test Game Engine hat masks are identical to SDL hat masks, so we can just use them as-is.
 					);
 					break;
 
@@ -259,7 +259,7 @@ void JoypadSDL::process_events() {
 
 					Input::get_singleton()->joy_axis(
 							joy_id,
-							static_cast<JoyAxis>(sdl_event.gaxis.axis), // Godot joy axis constants are already intentionally the same as SDL's
+							static_cast<JoyAxis>(sdl_event.gaxis.axis), // Test Game Engine joy axis constants are already intentionally the same as SDL's
 							axis_value);
 				} break;
 
@@ -268,7 +268,7 @@ void JoypadSDL::process_events() {
 				case SDL_EVENT_GAMEPAD_BUTTON_DOWN:
 					Input::get_singleton()->joy_button(
 							joy_id,
-							static_cast<JoyButton>(sdl_event.gbutton.button), // Godot button constants are intentionally the same as SDL's, so we can just straight up use them
+							static_cast<JoyButton>(sdl_event.gbutton.button), // Test Game Engine button constants are intentionally the same as SDL's, so we can just straight up use them
 							sdl_event.gbutton.down);
 					break;
 			}

@@ -6,7 +6,7 @@ using System.Text;
 
 #nullable enable
 
-namespace Godot;
+namespace Test Game Engine;
 
 internal class ReflectionUtils
 {

@@ -2,10 +2,10 @@
 /*  SAFData.kt                                                            */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.io.file
+package org.godotengine.test game engine.io.file
 
 import android.content.Context
 import android.net.Uri
@@ -112,7 +112,7 @@ internal class SAFData(context: Context, private val path: String, accessFlag: F
 		}
 
 		fun rename(context: Context, from: String, to: String): Boolean {
-			// See https://github.com/godotengine/godot/pull/112215#discussion_r2479311235
+			// See https://github.com/godotengine/test game engine/pull/112215#discussion_r2479311235
 			return false
 		}
 

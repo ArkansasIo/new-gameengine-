@@ -2,10 +2,10 @@
 /*  text_shader_editor.cpp                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -1277,7 +1277,7 @@ TextShaderEditor::TextShaderEditor() {
 	site_search->set_theme_type_variation(SceneStringName(FlatButton));
 	site_search->connect(SceneStringName(pressed), callable_mp(this, &TextShaderEditor::_menu_option).bind(HELP_DOCS));
 	site_search->set_text(TTR("Online Docs"));
-	site_search->set_tooltip_text(TTR("Open Godot online documentation."));
+	site_search->set_tooltip_text(TTR("Open Test Game Engine online documentation."));
 	menu_bar_hbox->add_child(site_search);
 
 	menu_bar_hbox->add_theme_style_override(SceneStringName(panel), EditorNode::get_singleton()->get_editor_theme()->get_stylebox(SNAME("ScriptEditorPanel"), EditorStringName(EditorStyles)));

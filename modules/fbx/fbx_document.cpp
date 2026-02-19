@@ -2,10 +2,10 @@
 /*  fbx_document.cpp                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -567,7 +567,7 @@ Error FBXDocument::_parse_meshes(Ref<FBXState> p_state) {
 								uint32_t num_triangles = ufbx_triangulate_face(dst, space, fbx_mesh, face);
 								offset += num_triangles * 3;
 
-								// Godot uses clockwise winding order!
+								// Test Game Engine uses clockwise winding order!
 								for (uint32_t i = 0; i < num_triangles; i++) {
 									SWAP(dst[i * 3 + 0], dst[i * 3 + 2]);
 								}

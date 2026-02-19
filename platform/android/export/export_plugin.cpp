@@ -2,10 +2,10 @@
 /*  export_plugin.cpp                                                     */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -616,7 +616,7 @@ bool EditorExportPlatformAndroid::_should_compress_asset(const String &p_path, c
 		".rtttl", ".imy", ".xmf", ".mp4", ".m4a",
 		".m4v", ".3gp", ".3gpp", ".3g2", ".3gpp2",
 		".amr", ".awb", ".wma", ".wmv",
-		// Godot-specific:
+		// Test Game Engine-specific:
 		".webp", // Same reasoning as .png
 		".cfb", // Don't let small config files slow-down startup
 		".scn", // Binary scenes are usually already compressed
@@ -932,7 +932,7 @@ void EditorExportPlatformAndroid::_create_editor_debug_keystore_if_needed() {
 		args.push_back("-validity");
 		args.push_back("10000");
 		args.push_back("-dname");
-		args.push_back("cn=Godot, ou=Godot Engine, o=Stichting Godot, c=NL");
+		args.push_back("cn=Test Game Engine, ou=Test Game Engine, o=Stichting Test Game Engine, c=NL");
 		Error error = OS::get_singleton()->execute(keytool_path, args, &output, nullptr, true);
 		print_verbose(output);
 		if (error != OK) {
@@ -1775,7 +1775,7 @@ void EditorExportPlatformAndroid::_fix_resources(const Ref<EditorExportPreset> &
 
 	const String project_name = get_project_name(p_preset, p_preset->get("package/name"));
 	const Dictionary appnames = get_project_setting(p_preset, "application/config/name_localized");
-	const StringName domain_name = "godot.project_name_localization";
+	const StringName domain_name = "test game engine.project_name_localization";
 	Ref<TranslationDomain> domain = TranslationServer::get_singleton()->get_or_add_domain(domain_name);
 	TranslationServer::get_singleton()->load_project_translations(domain);
 
@@ -1785,9 +1785,9 @@ void EditorExportPlatformAndroid::_fix_resources(const Ref<EditorExportPreset> &
 
 		String str = _parse_string(&r_manifest[offset], string_flags & UTF8_FLAG);
 
-		if (str == "godot-project-name") {
+		if (str == "test game engine-project-name") {
 			str = project_name;
-		} else if (str.begins_with("godot-project-name")) {
+		} else if (str.begins_with("test game engine-project-name")) {
 			String lang = str.substr(str.rfind_char('-') + 1).replace_char('-', '_');
 
 			if (appnames.is_empty()) {
@@ -2044,7 +2044,7 @@ String EditorExportPlatformAndroid::get_export_option_warning(const EditorExport
 				} else {
 					int min_sdk_int = min_sdk_str.to_int();
 					if (min_sdk_int < DEFAULT_MIN_SDK_VERSION) {
-						return vformat(TTR("\"Min SDK\" cannot be lower than %d, which is the version needed by the Godot library."), DEFAULT_MIN_SDK_VERSION);
+						return vformat(TTR("\"Min SDK\" cannot be lower than %d, which is the version needed by the Test Game Engine library."), DEFAULT_MIN_SDK_VERSION);
 					}
 				}
 			}
@@ -2570,7 +2570,7 @@ Error EditorExportPlatformAndroid::run(const Ref<EditorExportPreset> &p_preset, 
 		print_verbose(output);
 		if (err || rv != 0 || output.contains("Error: Activity not started")) {
 			// The implicit launch failed, let's try an explicit launch by specifying the component name before giving up.
-			const String component_name = get_package_name(p_preset, package_name) + "/com.godot.game.GodotAppLauncher";
+			const String component_name = get_package_name(p_preset, package_name) + "/com.test game engine.game.GodotAppLauncher";
 			print_line("Implicit launch failed... Trying explicit launch using", component_name);
 			args.erase(get_package_name(p_preset, package_name));
 			args.push_back("-n");

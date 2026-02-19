@@ -1,6 +1,6 @@
-namespace Godot.SourceGenerators.Internal;
+namespace Test Game Engine.SourceGenerators.Internal;
 
 internal static class GeneratorClasses
 {
-    public const string GenerateUnmanagedCallbacksAttr = "Godot.SourceGenerators.Internal.GenerateUnmanagedCallbacksAttribute";
+    public const string GenerateUnmanagedCallbacksAttr = "Test Game Engine.SourceGenerators.Internal.GenerateUnmanagedCallbacksAttribute";
 }

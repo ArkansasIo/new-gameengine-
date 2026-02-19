@@ -2,10 +2,10 @@
 /*  export_template_manager.cpp                                           */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -798,7 +798,7 @@ String ExportTemplateManager::get_android_source_zip(const Ref<EditorExportPrese
 }
 
 String ExportTemplateManager::get_android_template_identifier(const Ref<EditorExportPreset> &p_preset) {
-	// The template identifier is the Godot version for the default template, and the full path plus md5 hash for custom templates.
+	// The template identifier is the Test Game Engine version for the default template, and the full path plus md5 hash for custom templates.
 	if (p_preset.is_valid()) {
 		String android_source_zip = p_preset->get("gradle_build/android_source_template");
 		if (!android_source_zip.is_empty()) {
@@ -1168,7 +1168,7 @@ ExportTemplateManager::ExportTemplateManager() {
 	install_file_dialog->set_access(FileDialog::ACCESS_FILESYSTEM);
 	install_file_dialog->set_file_mode(FileDialog::FILE_MODE_OPEN_FILE);
 	install_file_dialog->set_current_dir(EDITOR_DEF("_export_template_download_directory", ""));
-	install_file_dialog->add_filter("*.tpz", TTR("Godot Export Templates"));
+	install_file_dialog->add_filter("*.tpz", TTR("Test Game Engine Export Templates"));
 	install_file_dialog->connect("file_selected", callable_mp(this, &ExportTemplateManager::_install_file_selected).bind(false));
 	add_child(install_file_dialog);
 

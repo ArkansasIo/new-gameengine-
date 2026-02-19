@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/41064
+# https://github.com/godotengine/test game engine/issues/41064
 var x = true
 
 func test():

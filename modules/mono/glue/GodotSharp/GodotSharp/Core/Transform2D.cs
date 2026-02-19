@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// 2×3 matrix (2 rows, 3 columns) used for 2D linear transformations.

@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/71172
+# https://github.com/godotengine/test game engine/issues/71172
 
 func test():
 	@warning_ignore("narrowing_conversion")

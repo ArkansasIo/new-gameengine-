@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading;
-using Godot;
-using Godot.NativeInterop;
+using Test Game Engine;
+using Test Game Engine.NativeInterop;
 using Microsoft.VisualStudio.SolutionPersistence;
 using Microsoft.VisualStudio.SolutionPersistence.Serializer;
 
@@ -79,7 +79,7 @@ namespace GodotTools.Internals
             else if (!slnParentDir.StartsWith("res://", StringComparison.Ordinal))
                 slnParentDir = "res://" + slnParentDir;
 
-            // The csproj should be in the same folder as project.godot.
+            // The csproj should be in the same folder as project.test game engine.
             string csprojParentDir = "res://";
 
             // Set csproj path first and use it to find the sln/slnx file with the assembly
@@ -117,7 +117,7 @@ namespace GodotTools.Internals
 
                 foreach (var project in solution.SolutionProjects)
                 {
-                    // Convert '\' path separators on Windows to '/' to match Godot's Unix style separators
+                    // Convert '\' path separators on Windows to '/' to match Test Game Engine's Unix style separators
                     var absoluteProjectFilePath = Path.GetFullPath(project.FilePath, solutionDirectory).Replace('\\', '/');
 
                     if (string.Equals(absoluteProjectFilePath, _projectCsProjPath, StringComparison.Ordinal))
@@ -182,7 +182,7 @@ namespace GodotTools.Internals
             {
                 if (_projectCsProjPath == null)
                     DetermineProjectLocation();
-                return Path.Combine(Path.GetDirectoryName(_projectCsProjPath)!, ".godot", "mono", "temp", "bin");
+                return Path.Combine(Path.GetDirectoryName(_projectCsProjPath)!, ".test game engine", "mono", "temp", "bin");
             }
         }
 

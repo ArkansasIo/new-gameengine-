@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace Godot.NativeInterop;
+namespace Test Game Engine.NativeInterop;
 
 #nullable enable
 
@@ -180,11 +180,11 @@ public partial class VariantUtils
         if (typeof(T) == typeof(Rid))
             return CreateFromRid(UnsafeAs<Rid>(from));
 
-        if (typeof(T) == typeof(Godot.Collections.Dictionary))
-            return CreateFromDictionary(UnsafeAs<Godot.Collections.Dictionary>(from));
+        if (typeof(T) == typeof(Test Game Engine.Collections.Dictionary))
+            return CreateFromDictionary(UnsafeAs<Test Game Engine.Collections.Dictionary>(from));
 
-        if (typeof(T) == typeof(Godot.Collections.Array))
-            return CreateFromArray(UnsafeAs<Godot.Collections.Array>(from));
+        if (typeof(T) == typeof(Test Game Engine.Collections.Array))
+            return CreateFromArray(UnsafeAs<Test Game Engine.Collections.Array>(from));
 
         if (typeof(T) == typeof(Variant))
             return NativeFuncs.godotsharp_variant_new_copy((godot_variant)UnsafeAs<Variant>(from).NativeVar);
@@ -381,10 +381,10 @@ public partial class VariantUtils
         if (typeof(T) == typeof(Rid))
             return UnsafeAsT(ConvertToRid(variant));
 
-        if (typeof(T) == typeof(Godot.Collections.Dictionary))
+        if (typeof(T) == typeof(Test Game Engine.Collections.Dictionary))
             return UnsafeAsT(ConvertToDictionary(variant));
 
-        if (typeof(T) == typeof(Godot.Collections.Array))
+        if (typeof(T) == typeof(Test Game Engine.Collections.Array))
             return UnsafeAsT(ConvertToArray(variant));
 
         if (typeof(T) == typeof(Variant))

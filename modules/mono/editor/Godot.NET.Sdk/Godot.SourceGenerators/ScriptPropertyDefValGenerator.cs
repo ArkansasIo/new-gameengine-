@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     [Generator]
     public class ScriptPropertyDefValGenerator : ISourceGenerator
@@ -152,7 +152,7 @@ namespace Godot.SourceGenerators
                 // TODO: We should still restore read-only properties after reloading assembly.
                 // Two possible ways: reflection or turn RestoreGodotObjectData into a constructor overload.
                 // Ignore properties without a getter, without a setter or with an init-only setter.
-                // Godot properties must be both readable and writable.
+                // Test Game Engine properties must be both readable and writable.
                 if (property.IsWriteOnly)
                 {
                     context.ReportDiagnostic(Diagnostic.Create(
@@ -292,7 +292,7 @@ namespace Godot.SourceGenerators
                 }
 
                 // TODO: We should still restore read-only fields after reloading assembly. Two possible ways: reflection or turn RestoreGodotObjectData into a constructor overload.
-                // Ignore properties without a getter or without a setter. Godot properties must be both readable and writable.
+                // Ignore properties without a getter or without a setter. Test Game Engine properties must be both readable and writable.
                 if (field.IsReadOnly)
                 {
                     context.ReportDiagnostic(Diagnostic.Create(
@@ -354,13 +354,13 @@ namespace Godot.SourceGenerators
                 source.Append("#pragma warning disable CS0109 // Disable warning about redundant 'new' keyword\n");
 
                 const string DictionaryType =
-                    "global::System.Collections.Generic.Dictionary<global::Godot.StringName, global::Godot.Variant>";
+                    "global::System.Collections.Generic.Dictionary<global::Test Game Engine.StringName, global::Test Game Engine.Variant>";
 
                 source.Append("#if TOOLS\n");
 
                 source.Append("    /// <summary>\n")
                     .Append("    /// Get the default values for all properties declared in this class.\n")
-                    .Append("    /// This method is used by Godot to determine the value that will be\n")
+                    .Append("    /// This method is used by Test Game Engine to determine the value that will be\n")
                     .Append("    /// used by the inspector when resetting properties.\n")
                     .Append("    /// Do not call this method.\n")
                     .Append("    /// </summary>\n");

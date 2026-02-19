@@ -2,10 +2,10 @@
 /*  gltf_node.cpp                                                         */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -230,7 +230,7 @@ NodePath GLTFNode::get_scene_node_path(Ref<GLTFState> p_state, bool p_handle_ske
 	while (true) {
 		const int parent_index = current_gltf_node->get_parent();
 		if (is_godot_single_root && parent_index == -1) {
-			// For GODOT_single_root scenes, the root glTF node becomes the Godot scene root, so it
+			// For GODOT_single_root scenes, the root glTF node becomes the Test Game Engine scene root, so it
 			// should not be included in the path. Ex: A/B/C, A is single root, we want B/C only.
 			break;
 		}

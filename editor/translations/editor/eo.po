@@ -1,7 +1,7 @@
-# Esperanto translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Esperanto translation of the Test Game Engine editor interface.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Scott Starkey <yekrats@gmail.com>, 2019.
 # AlexHoratio <yukithetupper@gmail.com>, 2019.
 # Teashrock <kajitsu22@gmail.com>, 2019.
@@ -27,12 +27,12 @@
 # "A Thousand Ships (she/her)" <over999ships@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine editor interface\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "PO-Revision-Date: 2026-01-18 16:02+0000\n"
 "Last-Translator: Julián Lacomba <julian_alberto93@yahoo.com.ar>\n"
-"Language-Team: Esperanto <https://hosted.weblate.org/projects/godot-engine/"
-"godot/eo/>\n"
+"Language-Team: Esperanto <https://hosted.weblate.org/projects/test game engine-engine/"
+"test game engine/eo/>\n"
 "Language: eo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -3143,11 +3143,11 @@ msgstr "Raporti cimon"
 msgid "Send Docs Feedback"
 msgstr "Sendi rimarkojn pri la dokumentaro"
 
-msgid "About Godot..."
-msgstr "Pri Godot..."
+msgid "About Test Game Engine..."
+msgstr "Pri Test Game Engine..."
 
-msgid "Support Godot Development"
-msgstr "Subteni Godot ellaboradon"
+msgid "Support Test Game Engine Development"
+msgstr "Subteni Test Game Engine ellaboradon"
 
 msgid "Open Script Editor"
 msgstr "Malfermi la kod-redaktilon"
@@ -3274,8 +3274,8 @@ msgstr "Malinstali"
 msgid "Select Template File"
 msgstr "Elekti ŝablonan dosieron"
 
-msgid "Godot Export Templates"
-msgstr "Eksportajn ŝablonojn de Godot"
+msgid "Test Game Engine Export Templates"
+msgstr "Eksportajn ŝablonojn de Test Game Engine"
 
 msgid "Advanced Options"
 msgstr "Specialaj opcioj"
@@ -3448,11 +3448,11 @@ msgstr "Arĝentaj Sponsoroj"
 msgid "Base path: %s"
 msgstr "Vojprefikso: %s"
 
-msgid "Godot Engine contributors"
-msgstr "Kontribuantoj de Godot Engine"
+msgid "Test Game Engine contributors"
+msgstr "Kontribuantoj de Test Game Engine"
 
-msgid "Thanks from the Godot community!"
-msgstr "Dankon de la komunumo de Godot!"
+msgid "Thanks from the Test Game Engine community!"
+msgstr "Dankon de la komunumo de Test Game Engine!"
 
 msgid "Authors"
 msgstr "Aŭtoroj"
@@ -3464,12 +3464,12 @@ msgid "Third-party Licenses"
 msgstr "Permesiloj de eksteraj liverantoj"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"Test Game Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Engine fidas al multe liberaj kaj malfermitkodaj bibliotekoj de ekstera "
+"Test Game Engine fidas al multe liberaj kaj malfermitkodaj bibliotekoj de ekstera "
 "liveranto, ĉio kongruas kun la kondiĉoj de ĝia MIT-permesilo. La jenoj estas "
 "elĉerpa listo de ĉiom tiaj komponantoj de ekstera liveranto kun iliaj "
 "kopirajtaj atentigoj kaj permesilaj kondiĉoj respektive."
@@ -3662,9 +3662,9 @@ msgid "It would be a good idea to name your project."
 msgstr "Nomi vian projekton estus konsilinde."
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
+"Invalid \".zip\" project file; it doesn't contain a \"project.test game engine\" file."
 msgstr ""
-"Nevalida projekta \".zip\" dosiero; ĝi ne enhavas dosieron \"project.godot\"."
+"Nevalida projekta \".zip\" dosiero; ĝi ne enhavas dosieron \"project.test game engine\"."
 
 msgid "Valid project found at path."
 msgstr "Valida projekto ĉe tiu indiko."
@@ -3675,8 +3675,8 @@ msgstr "La provizinta dosierindiko ne ekzistas."
 msgid "New Game Project"
 msgstr "Nova luda projekto"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "Ne eblas krei project.godot en projekta dosierindiko."
+msgid "Couldn't create project.test game engine in project path."
+msgstr "Ne eblas krei project.test game engine en projekta dosierindiko."
 
 msgid "Error opening package file, not in ZIP format."
 msgstr "Eraro dum malfermi la pakaĵan dosieron, ne de ZIP formato."
@@ -3717,12 +3717,12 @@ msgstr "Nomo de la projekto"
 msgid "Project Path"
 msgstr "Dosierindiko de la projekto"
 
-msgid "This project was last edited in a different Godot version: "
+msgid "This project was last edited in a different Test Game Engine version: "
 msgstr ""
-"Oni redaktis ĉi tiun projekton je la lasta fojo per alia versio de Godot: "
+"Oni redaktis ĉi tiun projekton je la lasta fojo per alia versio de Test Game Engine: "
 
 msgid "This project uses features unsupported by the current build:"
-msgstr "Ĉi tiu projekto uzas eblojn nedisponeblajn en la nuna versio de Godot:"
+msgstr "Ĉi tiu projekto uzas eblojn nedisponeblajn en la nuna versio de Test Game Engine:"
 
 msgid "Error: Project is missing on the filesystem."
 msgstr "Eraro: La projekto mankas en la dosiersistemo."
@@ -3796,8 +3796,8 @@ msgstr "La etikedo ne devas enhavi sinsekvajn substrekojn aŭ spacetojn."
 msgid "These characters are not allowed in tags: %s."
 msgstr "Etikedoj ne devas enhavi ĉi tiujn signojn: %s"
 
-msgid "About Godot"
-msgstr "Pri Godot"
+msgid "About Test Game Engine"
+msgstr "Pri Test Game Engine"
 
 msgid "Settings"
 msgstr "Agordoj"
@@ -4802,8 +4802,8 @@ msgstr "Konservi fasonon kiel..."
 msgid "Make the script editor floating."
 msgstr "Ŝvebigi la kod-redaktilon."
 
-msgid "Open '%s' in Godot online documentation."
-msgstr "Malfermi «%s» en la enreta dokumentaro de Godot."
+msgid "Open '%s' in Test Game Engine online documentation."
+msgstr "Malfermi «%s» en la enreta dokumentaro de Test Game Engine."
 
 msgid "Open in Online Docs"
 msgstr "Malfermi la enretan dokumentaron"
@@ -4811,8 +4811,8 @@ msgstr "Malfermi la enretan dokumentaron"
 msgid "Online Docs"
 msgstr "Enreta dokumentaro"
 
-msgid "Open Godot online documentation."
-msgstr "Malfermi enretan dokumentaron de Godot."
+msgid "Open Test Game Engine online documentation."
+msgstr "Malfermi enretan dokumentaron de Test Game Engine."
 
 msgid "Find Next"
 msgstr "Trovi la sekvan"
@@ -5135,8 +5135,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Nomo de nova profilo:"
 
-msgid "Godot Feature Profile"
-msgstr "Profilo de funkciaro de Godot"
+msgid "Test Game Engine Feature Profile"
+msgstr "Profilo de funkciaro de Test Game Engine"
 
 msgid "Import Profile(s)"
 msgstr "Enporti profilo(j)n"
@@ -5177,8 +5177,8 @@ msgstr "Ŝanĝi mortzonon de faro"
 msgid "Erase Input Action"
 msgstr "Forigi enigan faron"
 
-msgid "Project Settings (project.godot)"
-msgstr "Projektaj agordoj (project.godot)"
+msgid "Project Settings (project.test game engine)"
+msgstr "Projektaj agordoj (project.test game engine)"
 
 msgid "Input Map"
 msgstr "Eniga mapo"

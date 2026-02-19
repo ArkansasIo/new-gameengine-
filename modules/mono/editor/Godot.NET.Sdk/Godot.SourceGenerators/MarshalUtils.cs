@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     internal static class MarshalUtils
     {
@@ -126,7 +126,7 @@ namespace Godot.SourceGenerators
                     if (typeKind == TypeKind.Struct)
                     {
                         if (type.ContainingAssembly?.Name == "GodotSharp" &&
-                            type.ContainingNamespace?.Name == "Godot")
+                            type.ContainingNamespace?.Name == "Test Game Engine")
                         {
                             return type switch
                             {
@@ -183,7 +183,7 @@ namespace Godot.SourceGenerators
                             return MarshalType.GodotObjectOrDerivedArray;
 
                         if (elementType.ContainingAssembly?.Name == "GodotSharp" &&
-                            elementType.ContainingNamespace?.Name == "Godot")
+                            elementType.ContainingNamespace?.Name == "Test Game Engine")
                         {
                             switch (elementType)
                             {
@@ -215,7 +215,7 @@ namespace Godot.SourceGenerators
                         {
                             switch (type.ContainingNamespace?.Name)
                             {
-                                case "Godot":
+                                case "Test Game Engine":
                                     return type switch
                                     {
                                         { Name: "StringName" } => MarshalType.StringName,
@@ -223,7 +223,7 @@ namespace Godot.SourceGenerators
                                         _ => null
                                     };
                                 case "Collections"
-                                    when type.ContainingNamespace?.FullQualifiedNameOmitGlobal() == "Godot.Collections":
+                                    when type.ContainingNamespace?.FullQualifiedNameOmitGlobal() == "Test Game Engine.Collections":
                                     return type switch
                                     {
                                         { Name: "Dictionary" } =>
@@ -308,7 +308,7 @@ namespace Godot.SourceGenerators
             string c, string d, string e, string f, string g, string h)
             => source.Append(a).Append(b).Append(c).Append(d).Append(e).Append(f).Append(g).Append(h);
 
-        private const string VariantUtils = "global::Godot.NativeInterop.VariantUtils";
+        private const string VariantUtils = "global::Test Game Engine.NativeInterop.VariantUtils";
 
         public static StringBuilder AppendNativeVariantToManagedExpr(this StringBuilder source,
             string inputExpr, ITypeSymbol typeSymbol, MarshalType marshalType)
@@ -320,7 +320,7 @@ namespace Godot.SourceGenerators
                     source.Append(VariantUtils, ".ConvertToSystemArrayOfGodotObject<",
                         ((IArrayTypeSymbol)typeSymbol).ElementType.FullQualifiedNameIncludeGlobal(), ">(",
                         inputExpr, ")"),
-                // We need a special case for generic Godot collections and GodotObjectOrDerived[], because VariantUtils.ConvertTo<T> is slower
+                // We need a special case for generic Test Game Engine collections and GodotObjectOrDerived[], because VariantUtils.ConvertTo<T> is slower
                 MarshalType.GodotGenericDictionary =>
                     source.Append(VariantUtils, ".ConvertToDictionary<",
                         ((INamedTypeSymbol)typeSymbol).TypeArguments[0].FullQualifiedNameIncludeGlobal(), ", ",
@@ -343,7 +343,7 @@ namespace Godot.SourceGenerators
                 // We need a special case for GodotObjectOrDerived[], because it's not supported by VariantUtils.CreateFrom<T>
                 MarshalType.GodotObjectOrDerivedArray =>
                     source.Append(VariantUtils, ".CreateFromSystemArrayOfGodotObject(", inputExpr, ")"),
-                // We need a special case for generic Godot collections and GodotObjectOrDerived[], because VariantUtils.CreateFrom<T> is slower
+                // We need a special case for generic Test Game Engine collections and GodotObjectOrDerived[], because VariantUtils.CreateFrom<T> is slower
                 MarshalType.GodotGenericDictionary =>
                     source.Append(VariantUtils, ".CreateFromDictionary(", inputExpr, ")"),
                 MarshalType.GodotGenericArray =>
@@ -362,7 +362,7 @@ namespace Godot.SourceGenerators
                 MarshalType.GodotObjectOrDerivedArray =>
                     source.Append(inputExpr, ".AsGodotObjectArray<",
                         ((IArrayTypeSymbol)typeSymbol).ElementType.FullQualifiedNameIncludeGlobal(), ">()"),
-                // We need a special case for generic Godot collections and GodotObjectOrDerived[], because Variant.As<T> is slower
+                // We need a special case for generic Test Game Engine collections and GodotObjectOrDerived[], because Variant.As<T> is slower
                 MarshalType.GodotGenericDictionary =>
                     source.Append(inputExpr, ".AsGodotDictionary<",
                         ((INamedTypeSymbol)typeSymbol).TypeArguments[0].FullQualifiedNameIncludeGlobal(), ", ",
@@ -382,11 +382,11 @@ namespace Godot.SourceGenerators
             {
                 // We need a special case for GodotObjectOrDerived[], because it's not supported by Variant.From<T>
                 MarshalType.GodotObjectOrDerivedArray =>
-                    source.Append("global::Godot.Variant.CreateFrom(", inputExpr, ")"),
-                // We need a special case for generic Godot collections, because Variant.From<T> is slower
+                    source.Append("global::Test Game Engine.Variant.CreateFrom(", inputExpr, ")"),
+                // We need a special case for generic Test Game Engine collections, because Variant.From<T> is slower
                 MarshalType.GodotGenericDictionary or MarshalType.GodotGenericArray =>
-                    source.Append("global::Godot.Variant.CreateFrom(", inputExpr, ")"),
-                _ => source.Append("global::Godot.Variant.From<",
+                    source.Append("global::Test Game Engine.Variant.CreateFrom(", inputExpr, ")"),
+                _ => source.Append("global::Test Game Engine.Variant.From<",
                     typeSymbol.FullQualifiedNameIncludeGlobal(), ">(", inputExpr, ")")
             };
         }

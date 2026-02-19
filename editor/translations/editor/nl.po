@@ -1,7 +1,7 @@
-# Dutch translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Dutch translation of the Test Game Engine editor interface.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # aelspire <aelspire@gmail.com>, 2017.
 # Aram Nap <xyphex.aram@gmail.com>, 2017.
 # Arjan219 <arjannugteren1@gmail.com>, 2017-2018, 2020.
@@ -93,12 +93,12 @@
 # Marijn Scholtus <linkable@gmail.com>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine editor interface\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2026-01-16 10:02+0000\n"
 "Last-Translator: Cas Vankrunkelsven <cas.vankrunkelsven@protonmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/test game engine-engine/test game engine/"
 "nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -3312,8 +3312,8 @@ msgstr "Open het %s-paneel."
 msgid "Focus on the %s dock."
 msgstr "Focus naar het %s-paneel."
 
-msgid "%s - Godot Engine"
-msgstr "%s - Godot Engine"
+msgid "%s - Test Game Engine"
+msgstr "%s - Test Game Engine"
 
 msgid "Move this dock right one tab."
 msgstr "Beweeg dit paneel een tab naar rechts."
@@ -3686,7 +3686,7 @@ msgid "History of recently edited objects."
 msgstr "Geschiedenis van recent bewerkte objecten."
 
 msgid "Open documentation for this object."
-msgstr "Open Godot online documentatie."
+msgstr "Open Test Game Engine online documentatie."
 
 msgid "Open Documentation"
 msgstr "Documentatie openen"
@@ -3995,10 +3995,10 @@ msgstr "Bestand '%s' of een van de afhankelijkheden ontbreekt."
 
 msgid ""
 "File '%s' is saved in a format that is newer than the formats supported by "
-"this version of Godot, so it can't be opened."
+"this version of Test Game Engine, so it can't be opened."
 msgstr ""
 "Bestand \"%s\" is in een bestandsformaat opgeslagen dat nieuwer is dan de "
-"bestandsformaten die ondersteund worden door deze versie van Godot, dus kan "
+"bestandsformaten die ondersteund worden door deze versie van Test Game Engine, dus kan "
 "het niet opgeslagen worden."
 
 msgid "Error while loading file '%s'."
@@ -4521,11 +4521,11 @@ msgstr "Stel een functie voor"
 msgid "Send Docs Feedback"
 msgstr "Stuur documentatie­feedback"
 
-msgid "About Godot..."
-msgstr "Over Godot…"
+msgid "About Test Game Engine..."
+msgstr "Over Test Game Engine…"
 
-msgid "Support Godot Development"
-msgstr "Steun Godot-ontwikkeling"
+msgid "Support Test Game Engine Development"
+msgstr "Steun Test Game Engine-ontwikkeling"
 
 msgid "Open Script Editor"
 msgstr "Script­bewerker openen"
@@ -4800,8 +4800,8 @@ msgstr "Sjabloon verwijderen"
 msgid "Select Template File"
 msgstr "Selecteer sjabloonbestand"
 
-msgid "Godot Export Templates"
-msgstr "Godot Export Templates"
+msgid "Test Game Engine Export Templates"
+msgstr "Test Game Engine Export Templates"
 
 msgid ""
 "The templates will continue to download.\n"
@@ -4948,19 +4948,19 @@ msgstr "Exporteer PCK/Zip..."
 
 msgid ""
 "Export the project resources as a PCK or ZIP package. This is not a playable "
-"build, only the project data without a Godot executable."
+"build, only the project data without a Test Game Engine executable."
 msgstr ""
 "Exporteer de project resources als een PCK of ZIP pakket. Dit is geen "
-"uitvoerbare build, alleen de project data zonder Godot executable."
+"uitvoerbare build, alleen de project data zonder Test Game Engine executable."
 
 msgid "Export Project..."
 msgstr "Exporteer project..."
 
 msgid ""
-"Export the project as a playable build (Godot executable and project data) "
+"Export the project as a playable build (Test Game Engine executable and project data) "
 "for the selected preset."
 msgstr ""
-"Exporteer het project als een speelbare build (Godot ecxecutable en project "
+"Exporteer het project als een speelbare build (Test Game Engine ecxecutable en project "
 "data) voor de geselecteerde voorinstelling."
 
 msgid "Export All"
@@ -5259,8 +5259,8 @@ msgstr "Platina Leden"
 msgid "Gold Members"
 msgstr "Gouden Leden"
 
-msgid "Thank you for choosing Godot Engine!"
-msgstr "Bedankt dat je voor Godot Engine gekozen hebt!"
+msgid "Thank you for choosing Test Game Engine!"
+msgstr "Bedankt dat je voor Test Game Engine gekozen hebt!"
 
 msgid "Name cannot be empty."
 msgstr "Naam kan niet leeg zijn."
@@ -5311,14 +5311,14 @@ msgstr "Basispad: %s."
 msgid "Folder name is valid."
 msgstr "Mapnaam is ongeldig."
 
-msgid "Godot Engine contributors"
-msgstr "Bijdragers aan Godot Engine"
+msgid "Test Game Engine contributors"
+msgstr "Bijdragers aan Test Game Engine"
 
 msgid "Double-click to open in browser."
 msgstr "Dubbelklik om in een browser te openen."
 
-msgid "Thanks from the Godot community!"
-msgstr "Bedankt van de Godot-gemeenschap!"
+msgid "Thanks from the Test Game Engine community!"
+msgstr "Bedankt van de Test Game Engine-gemeenschap!"
 
 msgid "Authors"
 msgstr "Auteurs"
@@ -5330,12 +5330,12 @@ msgid "Third-party Licenses"
 msgstr "Licenties van derden"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"Test Game Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Engine maakt gebruik van een aantal gratis en open-source bibliotheken, "
+"Test Game Engine maakt gebruik van een aantal gratis en open-source bibliotheken, "
 "ontwikkeld door derden, die compatibel zijn met de MIT-licentie. Wat volgt is "
 "een uitputtende lijst van alle componenten van derde partijen met hun "
 "respectievelijke copyrightberichten en licentietermen."
@@ -5849,8 +5849,8 @@ msgid "It would be a good idea to name your project."
 msgstr "Het zou een goed idee zijn om uw project een naam te geven."
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
-msgstr "Ongeldig '.zip' projectbestand, bevat geen 'project.godot' bestand."
+"Invalid \".zip\" project file; it doesn't contain a \"project.test game engine\" file."
+msgstr "Ongeldig '.zip' projectbestand, bevat geen 'project.test game engine' bestand."
 
 msgid "The path specified doesn't exist."
 msgstr "Dit pad bestaat niet."
@@ -5858,8 +5858,8 @@ msgstr "Dit pad bestaat niet."
 msgid "New Game Project"
 msgstr "Nieuw spelproject"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "Kan project.godot niet in projectpad maken."
+msgid "Couldn't create project.test game engine in project path."
+msgstr "Kan project.test game engine niet in projectpad maken."
 
 msgid "Error opening package file, not in ZIP format."
 msgstr "Fout bij het openen van het pakketbestand, geen zip-formaat."
@@ -8083,8 +8083,8 @@ msgstr "Thema Opslaan Als..."
 msgid "Online Docs"
 msgstr "Online Documentatie"
 
-msgid "Open Godot online documentation."
-msgstr "Open Godot online documentatie."
+msgid "Open Test Game Engine online documentation."
+msgstr "Open Test Game Engine online documentatie."
 
 msgid "%s Class Reference"
 msgstr "%s Klassereferentie"
@@ -8441,14 +8441,14 @@ msgstr "OpenGL"
 msgid "Physics Server (2D)"
 msgstr "Fysica-server (2D)"
 
-msgid "Godot Physics (2D)"
-msgstr "Godot Physics (2D)"
+msgid "Test Game Engine Physics (2D)"
+msgstr "Test Game Engine Physics (2D)"
 
 msgid "Physics Server (3D)"
 msgstr "Fysica-server (3D)"
 
-msgid "Godot Physics (3D)"
-msgstr "Godot Physics (3D)"
+msgid "Test Game Engine Physics (3D)"
+msgstr "Test Game Engine Physics (3D)"
 
 msgid "Jolt Physics"
 msgstr "Jolt Physics"
@@ -8521,14 +8521,14 @@ msgstr ""
 msgid "Physics Server and capabilities for 2D."
 msgstr "Fysicaserver en -mogelijkheden voor 2D."
 
-msgid "Godot Physics backend (2D)."
-msgstr "Godot Physics-backend (2D)."
+msgid "Test Game Engine Physics backend (2D)."
+msgstr "Test Game Engine Physics-backend (2D)."
 
 msgid "Physics Server and capabilities for 3D."
 msgstr "Fysicaserver en -mogelijkheden voor 3D."
 
-msgid "Godot Physics backend (3D)."
-msgstr "Godot Physics-backend (3D)."
+msgid "Test Game Engine Physics backend (3D)."
+msgstr "Test Game Engine Physics-backend (3D)."
 
 msgid "Jolt Physics backend (3D only)."
 msgstr "Jolt Physics-backend (alleen voor 3D)."
@@ -8809,8 +8809,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Nieuwe profielnaam:"
 
-msgid "Godot Feature Profile"
-msgstr "Godot-eigenschappenprofiel"
+msgid "Test Game Engine Feature Profile"
+msgstr "Test Game Engine-eigenschappenprofiel"
 
 msgid "Import Profile(s)"
 msgstr "Profiel(en) importeren"
@@ -8935,8 +8935,8 @@ msgstr "Wijzig Action Deadzone"
 msgid "Erase Input Action"
 msgstr "Verwijder Input Actie"
 
-msgid "Project Settings (project.godot)"
-msgstr "Projectinstellingen (project.godot)"
+msgid "Project Settings (project.test game engine)"
+msgstr "Projectinstellingen (project.test game engine)"
 
 msgid "Input Map"
 msgstr "Invoertoewijzing"
@@ -9552,11 +9552,11 @@ msgstr ""
 "en 'y''."
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Test Game Engine Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
-"Aangepaste Godot Shader Language expressie, met aangepast aantal in- en "
+"Aangepaste Test Game Engine Shader Language expressie, met aangepast aantal in- en "
 "uitvoerpoorten. Dit is een directe injectie van code in de vertex/fragment/"
 "light functie, niet gebruiken om functie declaraties in te schrijven."
 

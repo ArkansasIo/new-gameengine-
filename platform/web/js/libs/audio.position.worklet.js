@@ -1,11 +1,11 @@
 /**************************************************************************/
-/*  godot.audio.position.worklet.js                                                      */
+/*  test game engine.audio.position.worklet.js                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -63,4 +63,4 @@ class GodotPositionReportingProcessor extends AudioWorkletProcessor {
 	}
 }
 
-registerProcessor('godot-position-reporting-processor', GodotPositionReportingProcessor);
+registerProcessor('test game engine-position-reporting-processor', GodotPositionReportingProcessor);

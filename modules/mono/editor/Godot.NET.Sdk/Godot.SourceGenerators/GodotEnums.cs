@@ -1,8 +1,8 @@
 using System;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
-    // TODO: May need to think about compatibility here. Could Godot change these values between minor versions?
+    // TODO: May need to think about compatibility here. Could Test Game Engine change these values between minor versions?
 
     internal enum VariantType
     {

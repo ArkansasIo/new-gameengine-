@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace Godot
+namespace Test Game Engine
 {
     internal class GodotTraceListener : TraceListener
     {

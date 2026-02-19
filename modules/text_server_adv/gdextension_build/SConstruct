@@ -11,7 +11,7 @@ import methods
 # - CPPDEFINES are for pre-processor defines
 # - LINKFLAGS are for linking flags
 
-env = SConscript("./godot-cpp/SConstruct")
+env = SConscript("./test game engine-cpp/SConstruct")
 env.__class__.disable_warnings = methods.disable_warnings
 
 opts = Variables([], ARGUMENTS)

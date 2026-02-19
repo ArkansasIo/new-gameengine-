@@ -2,10 +2,10 @@
 /*  openxr_interface.cpp                                                  */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -428,7 +428,7 @@ OpenXRInterface::Action *OpenXRInterface::create_action(ActionSet *p_action_set,
 	Action *action = memnew(Action);
 	if (p_action_type == OpenXRAction::OPENXR_ACTION_POSE) {
 		// We can't have dual action names in OpenXR hence we added _pose,
-		// but default, aim and grip and default pose action names in Godot so rename them on the tracker.
+		// but default, aim and grip and default pose action names in Test Game Engine so rename them on the tracker.
 		// NOTE need to decide on whether we should keep the naming convention or rename it on Godots side
 		if (p_action_name == "default_pose") {
 			action->action_name = "default";
@@ -719,7 +719,7 @@ bool OpenXRInterface::initialize() {
 }
 
 void OpenXRInterface::uninitialize() {
-	// Our OpenXR driver will clean itself up properly when Godot exits, so we just do some basic stuff here
+	// Our OpenXR driver will clean itself up properly when Test Game Engine exits, so we just do some basic stuff here
 
 	// end the session if we need to?
 

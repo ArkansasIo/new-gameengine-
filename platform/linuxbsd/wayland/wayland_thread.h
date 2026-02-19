@@ -2,10 +2,10 @@
 /*  wayland_thread.h                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -95,7 +95,7 @@
 
 class WaylandThread {
 public:
-	// Messages used for exchanging information between Godot's and Wayland's thread.
+	// Messages used for exchanging information between Test Game Engine's and Wayland's thread.
 	class Message : public RefCounted {
 		GDSOFTCLASS(Message, RefCounted);
 
@@ -336,7 +336,7 @@ public:
 		WaylandThread *wayland_thread;
 	};
 
-	// "High level" Godot-side screen data.
+	// "High level" Test Game Engine-side screen data.
 	struct ScreenData {
 		// Geometry data.
 		Point2i position;
@@ -464,7 +464,7 @@ public:
 
 		// Used for delta calculations.
 		// NOTE: The wp_pointer_gestures protocol keeps track of the total scale of
-		// the pinch gesture, while godot instead wants its delta.
+		// the pinch gesture, while test game engine instead wants its delta.
 		wl_fixed_t old_pinch_scale = 0;
 
 		struct wl_surface *cursor_surface = nullptr;
@@ -589,7 +589,7 @@ private:
 	};
 
 	// FIXME: Is this the right thing to do?
-	inline static const char *proxy_tag = "godot";
+	inline static const char *proxy_tag = "test game engine";
 
 	Thread events_thread;
 	ThreadData thread_data;
@@ -991,7 +991,7 @@ private:
 		.done = _xdg_activation_token_on_done,
 	};
 
-	// Godot interfaces.
+	// Test Game Engine interfaces.
 	static constexpr struct godot_embedding_compositor_listener godot_embedding_compositor_listener = {
 		.client = _godot_embedding_compositor_on_client,
 	};

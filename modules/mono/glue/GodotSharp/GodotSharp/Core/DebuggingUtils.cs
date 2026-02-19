@@ -4,11 +4,11 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     internal static class DebuggingUtils
     {

@@ -1,4 +1,4 @@
-namespace Godot.Bridge;
+namespace Test Game Engine.Bridge;
 
 public static class AlcReloadCfg
 {

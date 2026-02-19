@@ -7,7 +7,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     internal static class ExtensionMethods
     {

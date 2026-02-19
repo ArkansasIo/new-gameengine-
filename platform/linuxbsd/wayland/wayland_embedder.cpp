@@ -2,10 +2,10 @@
 /*  wayland_embedder.cpp                                                  */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -633,7 +633,7 @@ void WaylandEmbedder::socket_error(int p_socket, uint32_t p_object_id, uint32_t 
 	LocalVector<union wl_argument> args;
 	args.push_back(wl_arg_object(p_object_id));
 	args.push_back(wl_arg_uint(p_code));
-	args.push_back(wl_arg_string(vformat("[Godot Embedder] %s", p_message).utf8().get_data()));
+	args.push_back(wl_arg_string(vformat("[Test Game Engine Embedder] %s", p_message).utf8().get_data()));
 
 	send_wayland_event(p_socket, DISPLAY_ID, wl_display_interface, WL_DISPLAY_ERROR, args);
 
@@ -2783,7 +2783,7 @@ Error WaylandEmbedder::init() {
 
 	int socket_id = 0;
 	while (socket_path.is_empty()) {
-		String test_socket_path = runtime_dir_path + "/godot-wayland-" + itos(socket_id);
+		String test_socket_path = runtime_dir_path + "/test game engine-wayland-" + itos(socket_id);
 		String test_socket_lock_path = test_socket_path + ".lock";
 
 		print_verbose(vformat("Trying to get socket %s", test_socket_path));

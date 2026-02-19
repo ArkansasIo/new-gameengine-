@@ -2,10 +2,10 @@
 /*  os_apple_embedded.mm                                                  */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -808,7 +808,7 @@ Rect2 OS_AppleEmbedded::calculate_boot_screen_rect(const Size2 &p_window_size, c
 	} else if (scalemodestr == "center") {
 		return OS_Unix::calculate_boot_screen_rect(p_window_size, p_imgrect_size);
 	} else {
-		WARN_PRINT(vformat("Boot screen scale mode mismatch between iOS and Godot: %s not supported", scalemodestr));
+		WARN_PRINT(vformat("Boot screen scale mode mismatch between iOS and Test Game Engine: %s not supported", scalemodestr));
 		return OS_Unix::calculate_boot_screen_rect(p_window_size, p_imgrect_size);
 	}
 }

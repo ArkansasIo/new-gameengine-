@@ -2,10 +2,10 @@
 /*  webxr_interface_js.cpp                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -296,7 +296,7 @@ bool WebXRInterfaceJS::initialize() {
 		}
 
 		if (session_mode == "immersive-vr" && !GLES3::Config::get_singleton()->multiview_supported) {
-			emit_signal("session_failed", "Stereo rendering in Godot requires multiview, but this web browser doesn't support it.");
+			emit_signal("session_failed", "Stereo rendering in Test Game Engine requires multiview, but this web browser doesn't support it.");
 			return false;
 		}
 
@@ -753,7 +753,7 @@ void WebXRInterfaceJS::_update_input_source(int p_input_source_id) {
 	if (p_input_source_id < 2) {
 		Ref<XRHandTracker> hand_tracker = hand_trackers[p_input_source_id];
 		if (has_hand_data) {
-			// Transform orientations to match Godot Humanoid skeleton.
+			// Transform orientations to match Test Game Engine Humanoid skeleton.
 			const Basis bone_adjustment(
 					Vector3(-1.0, 0.0, 0.0),
 					Vector3(0.0, 0.0, -1.0),

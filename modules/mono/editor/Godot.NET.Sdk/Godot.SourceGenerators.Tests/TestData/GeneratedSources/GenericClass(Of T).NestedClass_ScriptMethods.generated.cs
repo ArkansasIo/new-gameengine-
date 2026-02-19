@@ -1,5 +1,5 @@
-using Godot;
-using Godot.NativeInterop;
+using Test Game Engine;
+using Test Game Engine.NativeInterop;
 
 partial class GenericClass<T>
 {
@@ -9,7 +9,7 @@ partial class NestedClass
     /// <summary>
     /// Cached StringNames for the methods contained in this class, for fast lookup.
     /// </summary>
-    public new class MethodName : global::Godot.GodotObject.MethodName {
+    public new class MethodName : global::Test Game Engine.GodotObject.MethodName {
     }
 #pragma warning restore CS0109
 }

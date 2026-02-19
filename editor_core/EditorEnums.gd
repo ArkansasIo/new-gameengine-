@@ -1,0 +1,65 @@
+﻿extends RefCounted
+class_name EditorEnums
+
+enum EEditorTabId {
+	LEVEL_EDITOR,
+	BLUEPRINT_EDITOR,
+	MATERIAL_EDITOR,
+	NIAGARA,
+	ANIMATION,
+	SEQUENCER,
+	MODELING,
+	CONTENT_BROWSER,
+	OUTLINER,
+	DETAILS,
+	OUTPUT_LOG
+}
+
+enum EAssetType {
+	STATIC_MESH,
+	MATERIAL,
+	BLUEPRINT,
+	TEXTURE,
+	AUDIO,
+	SCENE,
+	SCRIPT
+}
+
+enum ESelectionKind {
+	NONE,
+	ACTOR,
+	COMPONENT,
+	ASSET,
+	GRAPH_NODE
+}
+
+enum ETransformGizmoMode {
+	TRANSLATE,
+	ROTATE,
+	SCALE,
+	UNIVERSAL
+}
+
+enum ESnapMode {
+	GRID,
+	ANGLE,
+	SURFACE,
+	VERTEX
+}
+
+enum EBuildTask {
+	LIGHTING,
+	NAVIGATION,
+	SHADERS,
+	COOK,
+	PACKAGE,
+	ALL
+}
+
+enum EViewportViewMode {
+	LIT,
+	UNLIT,
+	WIREFRAME,
+	DETAIL_LIGHTING,
+	BUFFER_VIZ
+}

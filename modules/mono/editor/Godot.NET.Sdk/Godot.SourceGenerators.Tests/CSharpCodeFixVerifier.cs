@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.Testing;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Godot.SourceGenerators.Tests;
+namespace Test Game Engine.SourceGenerators.Tests;
 
 public static class CSharpCodeFixVerifier<TCodeFix, TAnalyzer>
     where TCodeFix : CodeFixProvider, new()

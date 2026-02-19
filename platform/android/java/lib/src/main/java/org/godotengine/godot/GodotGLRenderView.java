@@ -2,10 +2,10 @@
 /*  GodotGLRenderView.java                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,18 +28,18 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot;
+package org.godotengine.test game engine;
 
-import org.godotengine.godot.gl.GLSurfaceView;
-import org.godotengine.godot.gl.GodotRenderer;
-import org.godotengine.godot.input.GodotInputHandler;
-import org.godotengine.godot.xr.XRMode;
-import org.godotengine.godot.xr.ovr.OvrConfigChooser;
-import org.godotengine.godot.xr.ovr.OvrContextFactory;
-import org.godotengine.godot.xr.ovr.OvrWindowSurfaceFactory;
-import org.godotengine.godot.xr.regular.RegularConfigChooser;
-import org.godotengine.godot.xr.regular.RegularContextFactory;
-import org.godotengine.godot.xr.regular.RegularFallbackConfigChooser;
+import org.godotengine.test game engine.gl.GLSurfaceView;
+import org.godotengine.test game engine.gl.GodotRenderer;
+import org.godotengine.test game engine.input.GodotInputHandler;
+import org.godotengine.test game engine.xr.XRMode;
+import org.godotengine.test game engine.xr.ovr.OvrConfigChooser;
+import org.godotengine.test game engine.xr.ovr.OvrContextFactory;
+import org.godotengine.test game engine.xr.ovr.OvrWindowSurfaceFactory;
+import org.godotengine.test game engine.xr.regular.RegularConfigChooser;
+import org.godotengine.test game engine.xr.regular.RegularContextFactory;
+import org.godotengine.test game engine.xr.regular.RegularFallbackConfigChooser;
 
 import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
@@ -76,15 +76,15 @@ import java.io.InputStream;
  *   bit depths). Failure to do so would result in an EGL_BAD_MATCH error.
  */
 class GodotGLRenderView extends GLSurfaceView implements GodotRenderView {
-	private final Godot godot;
+	private final Test Game Engine test game engine;
 	private final GodotInputHandler inputHandler;
 	private final GodotRenderer godotRenderer;
 	private final SparseArray<PointerIcon> customPointerIcons = new SparseArray<>();
 
-	public GodotGLRenderView(Godot godot, GodotInputHandler inputHandler, XRMode xrMode, boolean useDebugOpengl, boolean shouldBeTranslucent) {
-		super(godot.getContext());
+	public GodotGLRenderView(Test Game Engine test game engine, GodotInputHandler inputHandler, XRMode xrMode, boolean useDebugOpengl, boolean shouldBeTranslucent) {
+		super(test game engine.getContext());
 
-		this.godot = godot;
+		this.test game engine = test game engine;
 		this.inputHandler = inputHandler;
 		this.godotRenderer = new GodotRenderer();
 		setPointerIcon(PointerIcon.getSystemIcon(getContext(), PointerIcon.TYPE_DEFAULT));
@@ -175,7 +175,7 @@ class GodotGLRenderView extends GLSurfaceView implements GodotRenderView {
 	@Override
 	public boolean canCapturePointer() {
 		// Pointer capture is not supported on XR devices.
-		return !godot.isXrRuntime() && inputHandler.canCapturePointer();
+		return !test game engine.isXrRuntime() && inputHandler.canCapturePointer();
 	}
 
 	@Override
@@ -203,10 +203,10 @@ class GodotGLRenderView extends GLSurfaceView implements GodotRenderView {
 		try {
 			Bitmap bitmap = null;
 			if (!TextUtils.isEmpty(imagePath)) {
-				if (godot.getDirectoryAccessHandler().filesystemFileExists(imagePath)) {
+				if (test game engine.getDirectoryAccessHandler().filesystemFileExists(imagePath)) {
 					// Try to load the bitmap from the file system
 					bitmap = BitmapFactory.decodeFile(imagePath);
-				} else if (godot.getDirectoryAccessHandler().assetsFileExists(imagePath)) {
+				} else if (test game engine.getDirectoryAccessHandler().assetsFileExists(imagePath)) {
 					// Try to load the bitmap from the assets directory
 					AssetManager am = getContext().getAssets();
 					InputStream imageInputStream = am.open(imagePath);

@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/50285
+# https://github.com/godotengine/test game engine/issues/50285
 
 @warning_ignore_start("unused_local_constant")
 func test():

@@ -5,7 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     [Generator]
     public class ScriptMethodsGenerator : ISourceGenerator
@@ -88,8 +88,8 @@ namespace Godot.SourceGenerators
 
             var source = new StringBuilder();
 
-            source.Append("using Godot;\n");
-            source.Append("using Godot.NativeInterop;\n");
+            source.Append("using Test Game Engine;\n");
+            source.Append("using Test Game Engine.NativeInterop;\n");
             source.Append("\n");
 
             if (hasNamespace)
@@ -158,7 +158,7 @@ namespace Godot.SourceGenerators
                     .Append("' method.\n")
                     .Append("        /// </summary>\n");
 
-                source.Append("        public new static readonly global::Godot.StringName @");
+                source.Append("        public new static readonly global::Test Game Engine.StringName @");
                 source.Append(methodName);
                 source.Append(" = \"");
                 source.Append(methodName);
@@ -171,11 +171,11 @@ namespace Godot.SourceGenerators
 
             if (godotClassMethods.Length > 0)
             {
-                const string ListType = "global::System.Collections.Generic.List<global::Godot.Bridge.MethodInfo>";
+                const string ListType = "global::System.Collections.Generic.List<global::Test Game Engine.Bridge.MethodInfo>";
 
                 source.Append("    /// <summary>\n")
                     .Append("    /// Get the method information for all the methods declared in this class.\n")
-                    .Append("    /// This method is used by Godot to register the available methods in the editor.\n")
+                    .Append("    /// This method is used by Test Game Engine to register the available methods in the editor.\n")
                     .Append("    /// Do not call this method.\n")
                     .Append("    /// </summary>\n");
 
@@ -293,7 +293,7 @@ namespace Godot.SourceGenerators
 
             AppendPropertyInfo(source, methodInfo.ReturnVal);
 
-            source.Append(", flags: (global::Godot.MethodFlags)")
+            source.Append(", flags: (global::Test Game Engine.MethodFlags)")
                 .Append((int)methodInfo.Flags)
                 .Append(", arguments: ");
 
@@ -321,21 +321,21 @@ namespace Godot.SourceGenerators
 
         private static void AppendPropertyInfo(StringBuilder source, PropertyInfo propertyInfo)
         {
-            source.Append("new(type: (global::Godot.Variant.Type)")
+            source.Append("new(type: (global::Test Game Engine.Variant.Type)")
                 .Append((int)propertyInfo.Type)
                 .Append(", name: \"")
                 .Append(propertyInfo.Name)
-                .Append("\", hint: (global::Godot.PropertyHint)")
+                .Append("\", hint: (global::Test Game Engine.PropertyHint)")
                 .Append((int)propertyInfo.Hint)
                 .Append(", hintString: \"")
                 .Append(propertyInfo.HintString)
-                .Append("\", usage: (global::Godot.PropertyUsageFlags)")
+                .Append("\", usage: (global::Test Game Engine.PropertyUsageFlags)")
                 .Append((int)propertyInfo.Usage)
                 .Append(", exported: ")
                 .Append(propertyInfo.Exported ? "true" : "false");
             if (propertyInfo.ClassName != null)
             {
-                source.Append(", className: new global::Godot.StringName(\"")
+                source.Append(", className: new global::Test Game Engine.StringName(\"")
                     .Append(propertyInfo.ClassName)
                     .Append("\")");
             }

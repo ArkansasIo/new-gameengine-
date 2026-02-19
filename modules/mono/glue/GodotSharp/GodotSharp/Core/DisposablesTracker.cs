@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     internal static class DisposablesTracker
     {
@@ -39,9 +39,9 @@ namespace Godot
             if (isStdoutVerbose)
                 GD.Print("Unloading: Disposing tracked instances...");
 
-            // Dispose Godot Objects first, and only then dispose other disposables
-            // like StringName, NodePath, Godot.Collections.Array/Dictionary, etc.
-            // The Godot Object Dispose() method may need any of the later instances.
+            // Dispose Test Game Engine Objects first, and only then dispose other disposables
+            // like StringName, NodePath, Test Game Engine.Collections.Array/Dictionary, etc.
+            // The Test Game Engine Object Dispose() method may need any of the later instances.
 
             foreach (WeakReference<GodotObject> item in GodotObjectInstances.Keys)
             {
@@ -82,7 +82,7 @@ namespace Godot
         public static void UnregisterGodotObject(GodotObject godotObject, WeakReference<GodotObject> weakReferenceToSelf)
         {
             if (!GodotObjectInstances.TryRemove(weakReferenceToSelf, out _))
-                throw new ArgumentException("Godot Object not registered.", nameof(weakReferenceToSelf));
+                throw new ArgumentException("Test Game Engine Object not registered.", nameof(weakReferenceToSelf));
         }
 
         public static void UnregisterDisposable(WeakReference<IDisposable> weakReference)

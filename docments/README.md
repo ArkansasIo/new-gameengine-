@@ -14,6 +14,7 @@ This folder contains a complete documentation set for the game engine architectu
 8. [API Design Guidelines](08-api-design-guidelines.md)
 9. [Testing and Quality Strategy](09-testing-quality.md)
 10. [Release and Roadmap](10-release-roadmap.md)
+11. [Editor Architecture](11-editor-architecture.md)
 
 ## How To Use This Set
 

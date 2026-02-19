@@ -1,10 +1,10 @@
 using System;
 using System.Runtime.CompilerServices;
 
-// This file contains extra members for the Mathf class that aren't part of Godot's Core API.
+// This file contains extra members for the Mathf class that aren't part of Test Game Engine's Core API.
 // Math API that is also part of Core should go into Mathf.cs.
 
-namespace Godot
+namespace Test Game Engine
 {
     public static partial class Mathf
     {

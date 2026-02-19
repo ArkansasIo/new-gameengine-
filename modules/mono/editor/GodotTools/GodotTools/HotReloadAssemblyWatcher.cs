@@ -1,4 +1,4 @@
-using Godot;
+using Test Game Engine;
 using GodotTools.Build;
 using GodotTools.Internals;
 using JetBrains.Annotations;

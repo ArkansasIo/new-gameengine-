@@ -2,10 +2,10 @@
 /*  godotsharp_dirs.cpp                                                   */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -168,7 +168,7 @@ private:
 		String platform = _get_platform_name();
 		String arch = Engine::get_singleton()->get_architecture_name();
 		String appname_safe = Path::get_csharp_project_name();
-		String packed_path = "res://.godot/mono/publish/" + arch;
+		String packed_path = "res://.test game engine/mono/publish/" + arch;
 #ifdef ANDROID_ENABLED
 		api_assemblies_dir = packed_path;
 		print_verbose(".NET: Android platform detected. Setting api_assemblies_dir directly to pck path: " + api_assemblies_dir);

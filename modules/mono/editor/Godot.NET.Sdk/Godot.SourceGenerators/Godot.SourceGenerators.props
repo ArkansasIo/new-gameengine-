@@ -1,6 +1,6 @@
 <Project>
   <ItemGroup>
-    <!-- $(GodotProjectDir) is defined by Godot.NET.Sdk -->
+    <!-- $(GodotProjectDir) is defined by Test Game Engine.NET.Sdk -->
     <CompilerVisibleProperty Include="GodotDisabledSourceGenerators" />
     <CompilerVisibleProperty Include="GodotProjectDir" />
     <CompilerVisibleProperty Include="GodotProjectDirBase64" />

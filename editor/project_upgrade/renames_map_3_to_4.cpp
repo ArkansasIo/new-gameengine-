@@ -2,10 +2,10 @@
 /*  renames_map_3_to_4.cpp                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -1320,9 +1320,9 @@ const char *RenamesMap3To4::csharp_signals_renames[][2] = {
 };
 
 const char *RenamesMap3To4::project_settings_renames[][2] = {
-	// Project setting paths in scripts include the category, but in project.godot,
+	// Project setting paths in scripts include the category, but in project.test game engine,
 	// the category is the section delimiter, so we need to support the paths without it.
-	// The project.godot remaps are defined in the project_godot_renames, keep them in sync!
+	// The project.test game engine remaps are defined in the project_godot_renames, keep them in sync!
 	{ "audio/channel_disable_threshold_db", "audio/buses/channel_disable_threshold_db" },
 	{ "audio/channel_disable_time", "audio/buses/channel_disable_time" },
 	{ "audio/default_bus_layout", "audio/buses/default_bus_layout" },

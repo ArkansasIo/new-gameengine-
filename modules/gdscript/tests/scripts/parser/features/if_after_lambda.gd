@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/61231
+# https://github.com/godotengine/test game engine/issues/61231
 
 func test():
 	var my_lambda = func():

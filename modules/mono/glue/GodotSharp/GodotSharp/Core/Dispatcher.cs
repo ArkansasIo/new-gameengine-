@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.InteropServices;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
-namespace Godot
+namespace Test Game Engine
 {
     public static class Dispatcher
     {

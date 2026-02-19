@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Godot.NativeInterop
+namespace Test Game Engine.NativeInterop
 {
     // NOTES:
     // ref structs cannot implement interfaces, but they still work in `using` directives if they declare Dispose()
@@ -98,9 +98,9 @@ namespace Godot.NativeInterop
             set => argument = value;
         }
 
-        public Godot.Variant.Type Expected
+        public Test Game Engine.Variant.Type Expected
         {
-            readonly get => (Godot.Variant.Type)expected;
+            readonly get => (Test Game Engine.Variant.Type)expected;
             set => expected = (int)value;
         }
     }

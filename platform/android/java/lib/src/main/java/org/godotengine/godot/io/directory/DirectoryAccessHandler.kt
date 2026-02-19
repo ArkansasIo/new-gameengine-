@@ -2,10 +2,10 @@
 /*  DirectoryAccessHandler.kt                                             */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,13 +28,13 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.io.directory
+package org.godotengine.test game engine.io.directory
 
 import android.content.Context
 import android.util.Log
-import org.godotengine.godot.Godot
-import org.godotengine.godot.io.StorageScope
-import org.godotengine.godot.io.directory.DirectoryAccessHandler.AccessType.ACCESS_RESOURCES
+import org.godotengine.test game engine.Test Game Engine
+import org.godotengine.test game engine.io.StorageScope
+import org.godotengine.test game engine.io.directory.DirectoryAccessHandler.AccessType.ACCESS_RESOURCES
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock
 
@@ -92,7 +92,7 @@ class DirectoryAccessHandler(context: Context) {
 				// If this is an editor build, 'Resources' refers to the opened project resources
 				// and so we provide a 'Filesystem' directory handler.
 				if (accessType == ACCESS_RESOURCES) {
-					return if (Godot.isEditorBuild()) {
+					return if (Test Game Engine.isEditorBuild()) {
 						ACCESS_FILESYSTEM
 					} else {
 						ACCESS_RESOURCES

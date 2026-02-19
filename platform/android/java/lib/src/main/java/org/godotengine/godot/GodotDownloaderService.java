@@ -2,10 +2,10 @@
 /*  GodotDownloaderService.java                                           */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot;
+package org.godotengine.test game engine;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -56,7 +56,7 @@ public class GodotDownloaderService extends DownloaderService {
 	@Override
 	public String getPublicKey() {
 		SharedPreferences prefs = getApplicationContext().getSharedPreferences("app_data_keys", Context.MODE_PRIVATE);
-		Log.d("GODOT", "getting public key:" + prefs.getString("store_public_key", null));
+		Log.d("TEST GAME ENGINE", "getting public key:" + prefs.getString("store_public_key", null));
 		return prefs.getString("store_public_key", null);
 
 		//return BASE64_PUBLIC_KEY;
@@ -79,7 +79,7 @@ public class GodotDownloaderService extends DownloaderService {
 	 */
 	@Override
 	public String getAlarmReceiverClassName() {
-		Log.d("GODOT", "getAlarmReceiverClassName()");
+		Log.d("TEST GAME ENGINE", "getAlarmReceiverClassName()");
 		return GodotDownloaderAlarmReceiver.class.getName();
 	}
 }

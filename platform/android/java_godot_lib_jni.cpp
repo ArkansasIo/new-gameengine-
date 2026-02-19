@@ -2,10 +2,10 @@
 /*  java_godot_lib_jni.cpp                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -287,8 +287,8 @@ JNIEXPORT jboolean JNICALL Java_org_godotengine_godot_GodotLib_step(JNIEnv *env,
 	}
 
 	if (step.get() == STEP_SETUP) {
-		// Since Godot is initialized on the UI thread, main_thread_id was set to that thread's id,
-		// but for Godot purposes, the main thread is the one running the game loop
+		// Since Test Game Engine is initialized on the UI thread, main_thread_id was set to that thread's id,
+		// but for Test Game Engine purposes, the main thread is the one running the game loop
 		Main::setup2(false); // The logo is shown in the next frame otherwise we run into rendering issues
 		input_handler = new AndroidInputHandler();
 		step.increment();
@@ -518,7 +518,7 @@ JNIEXPORT jobjectArray JNICALL Java_org_godotengine_godot_GodotLib_getRendererIn
 #ifndef XR_DISABLED
 	// When running in XR mode, vulkan initialization must be done by the XR module, so we ensure that the vulkan
 	// global context is reset.
-	// Note: This is temporary workaround to address https://github.com/godotengine/godot/issues/115924
+	// Note: This is temporary workaround to address https://github.com/godotengine/test game engine/issues/115924
 	// A proper fix involves updating the Android init flow so that DisplayServerAndroid can update the Android surface
 	// type (vulkan or opengl) after it's initialized.
 	bool xr_enabled = false;

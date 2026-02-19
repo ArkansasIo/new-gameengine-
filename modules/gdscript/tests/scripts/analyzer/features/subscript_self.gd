@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/43221
+# https://github.com/godotengine/test game engine/issues/43221
 extends Node
 
 func test():

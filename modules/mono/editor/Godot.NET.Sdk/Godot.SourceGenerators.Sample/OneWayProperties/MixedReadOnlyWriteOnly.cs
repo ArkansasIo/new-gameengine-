@@ -1,4 +1,4 @@
-namespace Godot.SourceGenerators.Sample
+namespace Test Game Engine.SourceGenerators.Sample
 {
     public partial class MixedReadonlyWriteOnly : GodotObject
     {

@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/71177
+# https://github.com/godotengine/test game engine/issues/71177
 
 func test():
 	builtin_method()

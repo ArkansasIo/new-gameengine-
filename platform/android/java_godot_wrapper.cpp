@@ -2,10 +2,10 @@
 /*  java_godot_wrapper.cpp                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -34,7 +34,7 @@
 
 // JNIEnv is only valid within the thread it belongs to, in a multi threading environment
 // we can't cache it.
-// For Godot we call most access methods from our thread and we thus get a valid JNIEnv
+// For Test Game Engine we call most access methods from our thread and we thus get a valid JNIEnv
 // from get_jni_env(). For one or two we expect to pass the environment
 
 // TODO we could probably create a base class for this...
@@ -42,8 +42,8 @@
 GodotJavaWrapper::GodotJavaWrapper(JNIEnv *p_env, jobject p_godot_instance) {
 	godot_instance = p_env->NewGlobalRef(p_godot_instance);
 
-	// get info about our Godot class so we can get pointers and stuff...
-	godot_class = jni_find_class(p_env, "org/godotengine/godot/Godot");
+	// get info about our Test Game Engine class so we can get pointers and stuff...
+	godot_class = jni_find_class(p_env, "org/godotengine/test game engine/Test Game Engine");
 	if (godot_class) {
 		godot_class = (jclass)p_env->NewGlobalRef(godot_class);
 	} else {
@@ -51,7 +51,7 @@ GodotJavaWrapper::GodotJavaWrapper(JNIEnv *p_env, jobject p_godot_instance) {
 		return;
 	}
 
-	// get some Godot method pointers...
+	// get some Test Game Engine method pointers...
 	_restart = p_env->GetMethodID(godot_class, "restart", "()V");
 	_finish = p_env->GetMethodID(godot_class, "forceQuit", "(I)Z");
 	_set_keep_screen_on = p_env->GetMethodID(godot_class, "setKeepScreenOn", "(Z)V");
@@ -77,7 +77,7 @@ GodotJavaWrapper::GodotJavaWrapper(JNIEnv *p_env, jobject p_godot_instance) {
 	_on_godot_main_loop_started = p_env->GetMethodID(godot_class, "onGodotMainLoopStarted", "()V");
 	_on_godot_terminating = p_env->GetMethodID(godot_class, "onGodotTerminating", "()V");
 	_create_new_godot_instance = p_env->GetMethodID(godot_class, "createNewGodotInstance", "([Ljava/lang/String;)I");
-	_get_render_view = p_env->GetMethodID(godot_class, "getRenderView", "()Lorg/godotengine/godot/GodotRenderView;");
+	_get_render_view = p_env->GetMethodID(godot_class, "getRenderView", "()Lorg/godotengine/test game engine/GodotRenderView;");
 	_begin_benchmark_measure = p_env->GetMethodID(godot_class, "nativeBeginBenchmarkMeasure", "(Ljava/lang/String;Ljava/lang/String;)V");
 	_end_benchmark_measure = p_env->GetMethodID(godot_class, "nativeEndBenchmarkMeasure", "(Ljava/lang/String;Ljava/lang/String;)V");
 	_dump_benchmark = p_env->GetMethodID(godot_class, "nativeDumpBenchmark", "(Ljava/lang/String;)V");
@@ -90,11 +90,11 @@ GodotJavaWrapper::GodotJavaWrapper(JNIEnv *p_env, jobject p_godot_instance) {
 	_set_window_color = p_env->GetMethodID(godot_class, "setWindowColor", "(Ljava/lang/String;)V");
 	_on_editor_workspace_selected = p_env->GetMethodID(godot_class, "nativeOnEditorWorkspaceSelected", "(Ljava/lang/String;)V");
 	_get_activity = p_env->GetMethodID(godot_class, "getActivity", "()Landroid/app/Activity;");
-	_build_env_connect = p_env->GetMethodID(godot_class, "nativeBuildEnvConnect", "(Lorg/godotengine/godot/variant/Callable;)Z");
+	_build_env_connect = p_env->GetMethodID(godot_class, "nativeBuildEnvConnect", "(Lorg/godotengine/test game engine/variant/Callable;)Z");
 	_build_env_disconnect = p_env->GetMethodID(godot_class, "nativeBuildEnvDisconnect", "()V");
-	_build_env_execute = p_env->GetMethodID(godot_class, "nativeBuildEnvExecute", "(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/godotengine/godot/variant/Callable;Lorg/godotengine/godot/variant/Callable;)I");
+	_build_env_execute = p_env->GetMethodID(godot_class, "nativeBuildEnvExecute", "(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/godotengine/test game engine/variant/Callable;Lorg/godotengine/test game engine/variant/Callable;)I");
 	_build_env_cancel = p_env->GetMethodID(godot_class, "nativeBuildEnvCancel", "(I)V");
-	_build_env_clean_project = p_env->GetMethodID(godot_class, "nativeBuildEnvCleanProject", "(Ljava/lang/String;Ljava/lang/String;Lorg/godotengine/godot/variant/Callable;)V");
+	_build_env_clean_project = p_env->GetMethodID(godot_class, "nativeBuildEnvCleanProject", "(Ljava/lang/String;Ljava/lang/String;Lorg/godotengine/test game engine/variant/Callable;)V");
 }
 
 GodotJavaWrapper::~GodotJavaWrapper() {

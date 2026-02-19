@@ -1,6 +1,6 @@
 using System;
 
-namespace Godot
+namespace Test Game Engine
 {
     public partial class PackedScene
     {

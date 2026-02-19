@@ -2,10 +2,10 @@
 /*  midi_driver_coremidi.mm                                               */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -60,7 +60,7 @@ Error MIDIDriverCoreMidi::open() {
 	ERR_FAIL_COND_V_MSG(client || core_midi_closed, FAILED,
 			"MIDIDriverCoreMidi cannot be reopened.");
 
-	CFStringRef name = CFStringCreateWithCString(nullptr, "Godot", kCFStringEncodingASCII);
+	CFStringRef name = CFStringCreateWithCString(nullptr, "Test Game Engine", kCFStringEncodingASCII);
 	OSStatus result = MIDIClientCreate(name, nullptr, nullptr, &client);
 	CFRelease(name);
 	if (result != noErr) {
@@ -68,7 +68,7 @@ Error MIDIDriverCoreMidi::open() {
 		return ERR_CANT_OPEN;
 	}
 
-	result = MIDIInputPortCreate(client, CFSTR("Godot Input"), MIDIDriverCoreMidi::read, (void *)this, &port_in);
+	result = MIDIInputPortCreate(client, CFSTR("Test Game Engine Input"), MIDIDriverCoreMidi::read, (void *)this, &port_in);
 	if (result != noErr) {
 		ERR_PRINT("MIDIInputPortCreate failed, code: " + itos(result));
 		return ERR_CANT_OPEN;

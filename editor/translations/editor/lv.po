@@ -1,7 +1,7 @@
-# Latvian translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Latvian translation of the Test Game Engine editor interface.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Gustavs Porietis (pg829-) <porietisgustavs@gmail.com>, 2018.
 # Martch Zagorski <martchzagorski@gmail.com>, 2018, 2020.
 # Jānis Ondzuls <janisond@inbox.lv>, 2020.
@@ -18,13 +18,13 @@
 # "A Thousand Ships (she/her)" <over999ships@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine editor interface\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-10 05:35+0000\n"
 "Last-Translator: M E <gruffy7932@gmail.com>\n"
-"Language-Team: Latvian <https://hosted.weblate.org/projects/godot-engine/"
-"godot/lv/>\n"
+"Language-Team: Latvian <https://hosted.weblate.org/projects/test game engine-engine/"
+"test game engine/lv/>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2084,8 +2084,8 @@ msgstr "Ieteikt Iespēju"
 msgid "Send Docs Feedback"
 msgstr "Sūtīt dokumentu atsauksmi"
 
-msgid "Support Godot Development"
-msgstr "Atbalstīt Godot izstrādi"
+msgid "Support Test Game Engine Development"
+msgstr "Atbalstīt Test Game Engine izstrādi"
 
 msgid "Open Script Editor"
 msgstr "Atvērt skriptu redaktoru"
@@ -2393,11 +2393,11 @@ msgstr "Zelta Sponsori"
 msgid "Silver Sponsors"
 msgstr "Sudraba Sponsors"
 
-msgid "Godot Engine contributors"
-msgstr "Godot Dzinēja ieguldītāji"
+msgid "Test Game Engine contributors"
+msgstr "Test Game Engine Dzinēja ieguldītāji"
 
-msgid "Thanks from the Godot community!"
-msgstr "Paldies no Godot sabiedrības!"
+msgid "Thanks from the Test Game Engine community!"
+msgstr "Paldies no Test Game Engine sabiedrības!"
 
 msgid "Authors"
 msgstr "Autori"
@@ -2409,12 +2409,12 @@ msgid "Third-party Licenses"
 msgstr "Trešās partijas Licences"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"Test Game Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Konstruktors paļaujas uz citiem trešās partijas brīvajām un atvērtā "
+"Test Game Engine Konstruktors paļaujas uz citiem trešās partijas brīvajām un atvērtā "
 "avota bibliotēkām, kuras ir saderīgas ar to MIT licences nosacījumiem. "
 "Sekojošais ir saraksts ar šīm trešās partijas komponentēm ar to autortiesību "
 "apgalvojumiem un licences nosacījumiem."
@@ -3367,8 +3367,8 @@ msgstr "Saglabāt motīvu kā..."
 msgid "Online Docs"
 msgstr "Tiešsaistes Dokumenti"
 
-msgid "Open Godot online documentation."
-msgstr "Atvērt Godot tiešsaistes dokumentāciju."
+msgid "Open Test Game Engine online documentation."
+msgstr "Atvērt Test Game Engine tiešsaistes dokumentāciju."
 
 msgid "Unsaved file."
 msgstr "Nesaglabāts fails."
@@ -3802,8 +3802,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Jaunais profila nosaukums:"
 
-msgid "Godot Feature Profile"
-msgstr "Godot iespēju profils"
+msgid "Test Game Engine Feature Profile"
+msgstr "Test Game Engine iespēju profils"
 
 msgid "Import Profile(s)"
 msgstr "Importēt profilu(s)"
@@ -3817,8 +3817,8 @@ msgstr "Vispārēji"
 msgid "Unicode"
 msgstr "Unicode"
 
-msgid "Project Settings (project.godot)"
-msgstr "Projekta iestatījumi (project.godot)"
+msgid "Project Settings (project.test game engine)"
+msgstr "Projekta iestatījumi (project.test game engine)"
 
 msgid "Input Map"
 msgstr "Ievade"

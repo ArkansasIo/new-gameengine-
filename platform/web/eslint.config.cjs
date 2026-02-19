@@ -7,7 +7,7 @@ const pluginReference = require('eslint-plugin-html');
 const stylistic = require('@stylistic/eslint-plugin');
 
 if (process && process.env && process.env.npm_command && !fs.existsSync('./platform/web/eslint.config.cjs')) {
-	throw Error('eslint must be run from the Godot project root folder');
+	throw Error('eslint must be run from the Test Game Engine project root folder');
 }
 
 const emscriptenGlobals = {
@@ -133,7 +133,7 @@ module.exports = [
 			globals: {
 				...globals.browser,
 				'Features': true,
-				'Godot': true,
+				'Test Game Engine': true,
 				'InternalConfig': true,
 				'Preloader': true,
 			},

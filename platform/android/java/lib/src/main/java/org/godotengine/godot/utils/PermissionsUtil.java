@@ -2,10 +2,10 @@
 /*  PermissionsUtil.java                                                  */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,9 +28,9 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.utils;
+package org.godotengine.test game engine.utils;
 
-import org.godotengine.godot.Godot;
+import org.godotengine.test game engine.Test Game Engine;
 
 import android.Manifest;
 import android.app.Activity;
@@ -160,7 +160,7 @@ public final class PermissionsUtil {
 
 			case "CAMERA":
 				permissions.add(Manifest.permission.CAMERA);
-				if (Godot.getInstance(activity).hasFeature("horizonos")) {
+				if (Test Game Engine.getInstance(activity).hasFeature("horizonos")) {
 					// On HorizonOS, these permissions are required to get access to all the device's cameras.
 					permissions.add("horizonos.permission.AVATAR_CAMERA");
 					permissions.add("horizonos.permission.HEADSET_CAMERA");

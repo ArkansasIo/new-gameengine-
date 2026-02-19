@@ -4,16 +4,16 @@ using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 using System.Diagnostics;
 using System.ComponentModel;
 
 #nullable enable
 
-namespace Godot.Collections
+namespace Test Game Engine.Collections
 {
     /// <summary>
-    /// Wrapper around Godot's Array class, an array of Variant
+    /// Wrapper around Test Game Engine's Array class, an array of Variant
     /// typed elements allocated in the engine in C++. Useful when
     /// interfacing with the engine. Otherwise prefer .NET collections
     /// such as <see cref="System.Array"/> or <see cref="List{T}"/>.
@@ -48,7 +48,7 @@ namespace Godot.Collections
         /// The <paramref name="collection"/> is <see langword="null"/>.
         /// </exception>
         /// <param name="collection">The collection of elements to construct from.</param>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(IEnumerable<Variant> collection) : this()
         {
             ArgumentNullException.ThrowIfNull(collection);
@@ -64,7 +64,7 @@ namespace Godot.Collections
         /// The <paramref name="array"/> is <see langword="null"/>.
         /// </exception>
         /// <param name="array">The objects to put in the new array.</param>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(Variant[] array)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -86,7 +86,7 @@ namespace Godot.Collections
         /// <exception cref="ArgumentNullException">
         /// The <paramref name="span"/> is <see langword="null"/>.
         /// </exception>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(scoped ReadOnlySpan<StringName> span)
         {
             NativeValue = (godot_array.movable)NativeFuncs.godotsharp_array_new();
@@ -110,7 +110,7 @@ namespace Godot.Collections
         /// <exception cref="ArgumentNullException">
         /// The <paramref name="span"/> is <see langword="null"/>.
         /// </exception>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(scoped ReadOnlySpan<NodePath> span)
         {
             NativeValue = (godot_array.movable)NativeFuncs.godotsharp_array_new();
@@ -134,7 +134,7 @@ namespace Godot.Collections
         /// <exception cref="ArgumentNullException">
         /// The <paramref name="span"/> is <see langword="null"/>.
         /// </exception>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(scoped ReadOnlySpan<Rid> span)
         {
             NativeValue = (godot_array.movable)NativeFuncs.godotsharp_array_new();
@@ -158,7 +158,7 @@ namespace Godot.Collections
         /// <exception cref="ArgumentNullException">
         /// The <paramref name="span"/> is <see langword="null"/>.
         /// </exception>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(scoped ReadOnlySpan<GodotObject> span)
         {
             NativeValue = (godot_array.movable)NativeFuncs.godotsharp_array_new();
@@ -221,7 +221,7 @@ namespace Godot.Collections
         /// setting.
         /// </summary>
         /// <param name="deep">If <see langword="true"/>, performs a deep copy.</param>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array Duplicate(bool deep = false)
         {
             godot_array newArray;
@@ -241,7 +241,7 @@ namespace Godot.Collections
         /// </summary>
         /// <example>
         /// <code>
-        /// var array = new Godot.Collections.Array();
+        /// var array = new Test Game Engine.Collections.Array();
         /// array.Resize(10);
         /// array.Fill(0); // Initialize the 10 elements to 0.
         /// </code>
@@ -292,7 +292,7 @@ namespace Godot.Collections
         /// </summary>
         /// <example>
         /// <code>
-        /// var array = new Godot.Collections.Array { 1, 2, 3, 4 };
+        /// var array = new Test Game Engine.Collections.Array { 1, 2, 3, 4 };
         /// GD.Print(array.PickRandom()); // Prints either of the four numbers.
         /// </code>
         /// </example>
@@ -452,7 +452,7 @@ namespace Godot.Collections
         /// </summary>
         /// <example>
         /// <code>
-        /// var strings = new Godot.Collections.Array { "string1", "string2", "string10", "string11" };
+        /// var strings = new Test Game Engine.Collections.Array { "string1", "string2", "string10", "string11" };
         /// strings.Sort();
         /// GD.Print(strings); // Prints [string1, string10, string11, string2]
         /// </code>
@@ -475,7 +475,7 @@ namespace Godot.Collections
         /// </summary>
         /// <param name="left">The first array.</param>
         /// <param name="right">The second array.</param>
-        /// <returns>A new Godot Array with the contents of both arrays.</returns>
+        /// <returns>A new Test Game Engine Array with the contents of both arrays.</returns>
         public static Array operator +(Array left, Array right)
         {
             if (left == null)
@@ -567,7 +567,7 @@ namespace Godot.Collections
             if (collection == null)
                 throw new ArgumentNullException(nameof(collection), "Value cannot be null.");
 
-            // If the collection is another Godot Array, we can add the items
+            // If the collection is another Test Game Engine Array, we can add the items
             // with a single interop call.
             if (collection is Array array)
             {
@@ -678,7 +678,7 @@ namespace Godot.Collections
         /// </summary>
         /// <example>
         /// <code>
-        /// var arr = new Godot.Collections.Array { "inside", 7 };
+        /// var arr = new Test Game Engine.Collections.Array { "inside", 7 };
         /// GD.Print(arr.Contains("inside")); // True
         /// GD.Print(arr.Contains("outside")); // False
         /// GD.Print(arr.Contains(7)); // True
@@ -1032,7 +1032,7 @@ namespace Godot.Collections
     }
 
     /// <summary>
-    /// Typed wrapper around Godot's Array class, an array of <typeparamref name="T"/>
+    /// Typed wrapper around Test Game Engine's Array class, an array of <typeparamref name="T"/>
     /// annotated, Variant typed elements allocated in the engine in C++.
     /// Useful when interfacing with the engine. Otherwise prefer .NET collections
     /// such as arrays or <see cref="List{T}"/>.
@@ -1097,7 +1097,7 @@ namespace Godot.Collections
         /// <summary>
         /// Constructs a new empty <see cref="Array{T}"/>.
         /// </summary>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array()
         {
             _underlyingArray = new Array();
@@ -1111,7 +1111,7 @@ namespace Godot.Collections
         /// The <paramref name="collection"/> is <see langword="null"/>.
         /// </exception>
         /// <param name="collection">The collection of elements to construct from.</param>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(IEnumerable<T> collection)
         {
             ArgumentNullException.ThrowIfNull(collection);
@@ -1130,7 +1130,7 @@ namespace Godot.Collections
         /// The <paramref name="array"/> is <see langword="null"/>.
         /// </exception>
         /// <param name="array">The items to put in the new array.</param>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(T[] array)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -1149,7 +1149,7 @@ namespace Godot.Collections
         /// The <paramref name="array"/> is <see langword="null"/>.
         /// </exception>
         /// <param name="array">The untyped array to construct from.</param>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array(Array array)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -1165,7 +1165,7 @@ namespace Godot.Collections
         /// Converts this typed <see cref="Array{T}"/> to an untyped <see cref="Array"/>.
         /// </summary>
         /// <param name="from">The typed array to convert.</param>
-        /// <returns>A new Godot Array, or <see langword="null"/> if <see paramref="from"/> was null.</returns>
+        /// <returns>A new Test Game Engine Array, or <see langword="null"/> if <see paramref="from"/> was null.</returns>
         [return: NotNullIfNotNull("from")]
         public static explicit operator Array?(Array<T>? from)
         {
@@ -1176,7 +1176,7 @@ namespace Godot.Collections
         /// Duplicates this <see cref="Array{T}"/>.
         /// </summary>
         /// <param name="deep">If <see langword="true"/>, performs a deep copy.</param>
-        /// <returns>A new Godot Array.</returns>
+        /// <returns>A new Test Game Engine Array.</returns>
         public Array<T> Duplicate(bool deep = false)
         {
             return new Array<T>(_underlyingArray.Duplicate(deep));
@@ -1193,7 +1193,7 @@ namespace Godot.Collections
         /// </summary>
         /// <example>
         /// <code>
-        /// var array = new Godot.Collections.Array&lt;int&gt;();
+        /// var array = new Test Game Engine.Collections.Array&lt;int&gt;();
         /// array.Resize(10);
         /// array.Fill(0); // Initialize the 10 elements to 0.
         /// </code>
@@ -1244,7 +1244,7 @@ namespace Godot.Collections
         /// </summary>
         /// <example>
         /// <code>
-        /// var array = new Godot.Collections.Array&lt;int&gt; { 1, 2, 3, 4 };
+        /// var array = new Test Game Engine.Collections.Array&lt;int&gt; { 1, 2, 3, 4 };
         /// GD.Print(array.PickRandom()); // Prints either of the four numbers.
         /// </code>
         /// </example>
@@ -1379,7 +1379,7 @@ namespace Godot.Collections
         /// </summary>
         /// <example>
         /// <code>
-        /// var strings = new Godot.Collections.Array&lt;string&gt; { "string1", "string2", "string10", "string11" };
+        /// var strings = new Test Game Engine.Collections.Array&lt;string&gt; { "string1", "string2", "string10", "string11" };
         /// strings.Sort();
         /// GD.Print(strings); // Prints [string1, string10, string11, string2]
         /// </code>
@@ -1399,7 +1399,7 @@ namespace Godot.Collections
         /// </summary>
         /// <param name="left">The first array.</param>
         /// <param name="right">The second array.</param>
-        /// <returns>A new Godot Array with the contents of both arrays.</returns>
+        /// <returns>A new Test Game Engine Array with the contents of both arrays.</returns>
         public static Array<T> operator +(Array<T> left, Array<T> right)
         {
             if (left == null)
@@ -1639,7 +1639,7 @@ namespace Godot.Collections
             if (collection == null)
                 throw new ArgumentNullException(nameof(collection), "Value cannot be null.");
 
-            // If the collection is another Godot Array, we can add the items
+            // If the collection is another Test Game Engine Array, we can add the items
             // with a single interop call.
             if (collection is Array array)
             {
@@ -1762,7 +1762,7 @@ namespace Godot.Collections
         /// </summary>
         /// <example>
         /// <code>
-        /// var arr = new Godot.Collections.Array&lt;string&gt; { "inside", "7" };
+        /// var arr = new Test Game Engine.Collections.Array&lt;string&gt; { "inside", "7" };
         /// GD.Print(arr.Contains("inside")); // True
         /// GD.Print(arr.Contains("outside")); // False
         /// GD.Print(arr.Contains(7)); // False

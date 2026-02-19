@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 #pragma warning disable CS0169
 #pragma warning disable CS0414
 
-namespace Godot.SourceGenerators.Sample
+namespace Test Game Engine.SourceGenerators.Sample
 {
     [SuppressMessage("ReSharper", "BuiltInTypeReferenceStyle")]
     [SuppressMessage("ReSharper", "RedundantNameQualifier")]
@@ -27,7 +27,7 @@ namespace Godot.SourceGenerators.Sample
         [Export] private Double _fieldDouble = 10;
         [Export] private String _fieldString = "foo";
 
-        // Godot structs
+        // Test Game Engine structs
         [Export] private Vector2 _fieldVector2 = new(10f, 10f);
         [Export] private Vector2I _fieldVector2I = Vector2I.Up;
         [Export] private Rect2 _fieldRect2 = new(new Vector2(10f, 10f), new Vector2(10f, 10f));
@@ -94,25 +94,25 @@ namespace Godot.SourceGenerators.Sample
 
         // Classes
         [Export] private GodotObject _fieldGodotObjectOrDerived;
-        [Export] private Godot.Texture _fieldGodotResourceTexture;
+        [Export] private Test Game Engine.Texture _fieldGodotResourceTexture;
         [Export] private StringName _fieldStringName = new StringName("foo");
         [Export] private NodePath _fieldNodePath = new NodePath("foo");
         [Export] private Rid _fieldRid;
 
         [Export]
-        private Godot.Collections.Dictionary _fieldGodotDictionary =
+        private Test Game Engine.Collections.Dictionary _fieldGodotDictionary =
             new() { { "foo", 10 }, { Vector2.Up, Colors.Chocolate } };
 
         [Export]
-        private Godot.Collections.Array _fieldGodotArray =
+        private Test Game Engine.Collections.Array _fieldGodotArray =
             new() { "foo", 10, Vector2.Up, Colors.Chocolate };
 
         [Export]
-        private Godot.Collections.Dictionary<string, bool> _fieldGodotGenericDictionary =
+        private Test Game Engine.Collections.Dictionary<string, bool> _fieldGodotGenericDictionary =
             new() { { "foo", true }, { "bar", false } };
 
         [Export]
-        private Godot.Collections.Array<int> _fieldGodotGenericArray =
+        private Test Game Engine.Collections.Array<int> _fieldGodotGenericArray =
             new() { 0, 1, 2, 3, 4, 5, 6 };
     }
 }

@@ -1,6 +1,6 @@
-using Godot;
+using Test Game Engine;
 
-namespace Godot.SourceGenerators.Sample
+namespace Test Game Engine.SourceGenerators.Sample
 {
     public partial class ExportedComplexStrings : Node
     {

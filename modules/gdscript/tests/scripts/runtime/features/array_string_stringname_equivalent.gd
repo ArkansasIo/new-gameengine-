@@ -1,13 +1,13 @@
-# https://github.com/godotengine/godot/issues/63965
+# https://github.com/godotengine/test game engine/issues/63965
 
 func test():
 	var array_str: Array = []
-	array_str.push_back("godot")
-	print("StringName in Array: ", &"godot" in array_str)
+	array_str.push_back("test game engine")
+	print("StringName in Array: ", &"test game engine" in array_str)
 
 	var array_sname: Array = []
-	array_sname.push_back(&"godot")
-	print("String in Array: ", "godot" in array_sname)
+	array_sname.push_back(&"test game engine")
+	print("String in Array: ", "test game engine" in array_sname)
 
 	# Not equal because the values are different types.
 	print("Arrays not equal: ", array_str != array_sname)

@@ -1,5 +1,5 @@
-using Godot;
-using Godot.NativeInterop;
+using Test Game Engine;
+using Test Game Engine.NativeInterop;
 
 partial class EventSignals
 {
@@ -7,22 +7,22 @@ partial class EventSignals
     /// <summary>
     /// Cached StringNames for the signals contained in this class, for fast lookup.
     /// </summary>
-    public new class SignalName : global::Godot.GodotObject.SignalName {
+    public new class SignalName : global::Test Game Engine.GodotObject.SignalName {
         /// <summary>
         /// Cached name for the 'MySignal' signal.
         /// </summary>
-        public new static readonly global::Godot.StringName @MySignal = "MySignal";
+        public new static readonly global::Test Game Engine.StringName @MySignal = "MySignal";
     }
     /// <summary>
     /// Get the signal information for all the signals declared in this class.
-    /// This method is used by Godot to register the available signals in the editor.
+    /// This method is used by Test Game Engine to register the available signals in the editor.
     /// Do not call this method.
     /// </summary>
     [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-    internal new static global::System.Collections.Generic.List<global::Godot.Bridge.MethodInfo> GetGodotSignalList()
+    internal new static global::System.Collections.Generic.List<global::Test Game Engine.Bridge.MethodInfo> GetGodotSignalList()
     {
-        var signals = new global::System.Collections.Generic.List<global::Godot.Bridge.MethodInfo>(1);
-        signals.Add(new(name: SignalName.@MySignal, returnVal: new(type: (global::Godot.Variant.Type)0, name: "", hint: (global::Godot.PropertyHint)0, hintString: "", usage: (global::Godot.PropertyUsageFlags)6, exported: false), flags: (global::Godot.MethodFlags)1, arguments: new() { new(type: (global::Godot.Variant.Type)4, name: "str", hint: (global::Godot.PropertyHint)0, hintString: "", usage: (global::Godot.PropertyUsageFlags)6, exported: false), new(type: (global::Godot.Variant.Type)2, name: "num", hint: (global::Godot.PropertyHint)0, hintString: "", usage: (global::Godot.PropertyUsageFlags)6, exported: false),  }, defaultArguments: null));
+        var signals = new global::System.Collections.Generic.List<global::Test Game Engine.Bridge.MethodInfo>(1);
+        signals.Add(new(name: SignalName.@MySignal, returnVal: new(type: (global::Test Game Engine.Variant.Type)0, name: "", hint: (global::Test Game Engine.PropertyHint)0, hintString: "", usage: (global::Test Game Engine.PropertyUsageFlags)6, exported: false), flags: (global::Test Game Engine.MethodFlags)1, arguments: new() { new(type: (global::Test Game Engine.Variant.Type)4, name: "str", hint: (global::Test Game Engine.PropertyHint)0, hintString: "", usage: (global::Test Game Engine.PropertyUsageFlags)6, exported: false), new(type: (global::Test Game Engine.Variant.Type)2, name: "num", hint: (global::Test Game Engine.PropertyHint)0, hintString: "", usage: (global::Test Game Engine.PropertyUsageFlags)6, exported: false),  }, defaultArguments: null));
         return signals;
     }
 #pragma warning restore CS0109
@@ -41,7 +41,7 @@ partial class EventSignals
     protected override void RaiseGodotClassSignalCallbacks(in godot_string_name signal, NativeVariantPtrArgs args)
     {
         if (signal == SignalName.@MySignal && args.Count == 2) {
-            backing_MySignal?.Invoke(global::Godot.NativeInterop.VariantUtils.ConvertTo<string>(args[0]), global::Godot.NativeInterop.VariantUtils.ConvertTo<int>(args[1]));
+            backing_MySignal?.Invoke(global::Test Game Engine.NativeInterop.VariantUtils.ConvertTo<string>(args[0]), global::Test Game Engine.NativeInterop.VariantUtils.ConvertTo<int>(args[1]));
             return;
         }
         base.RaiseGodotClassSignalCallbacks(signal, args);

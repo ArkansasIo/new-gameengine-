@@ -1,8 +1,8 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
-namespace Godot.Bridge;
+namespace Test Game Engine.Bridge;
 
 public sealed class GodotSerializationInfo : IDisposable
 {

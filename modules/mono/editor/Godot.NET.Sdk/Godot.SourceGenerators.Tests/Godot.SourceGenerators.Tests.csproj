@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -39,7 +39,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\glue\GodotSharp\GodotSharp\GodotSharp.csproj" />
-    <ProjectReference Include="..\Godot.SourceGenerators\Godot.SourceGenerators.csproj" />
+    <ProjectReference Include="..\Test Game Engine.SourceGenerators\Test Game Engine.SourceGenerators.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,10 +2,10 @@
 /*  GodotEditText.java                                                    */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,9 +28,9 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.input;
+package org.godotengine.test game engine.input;
 
-import org.godotengine.godot.*;
+import org.godotengine.test game engine.*;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -239,7 +239,7 @@ public class GodotEditText extends EditText {
 			return mRenderView.getInputHandler().onKeyDown(keyCode, keyEvent);
 		}
 
-		// pass event to godot in special cases
+		// pass event to test game engine in special cases
 		if (needHandlingInGodot(keyCode, keyEvent) && mRenderView.getInputHandler().onKeyDown(keyCode, keyEvent)) {
 			return true;
 		} else {

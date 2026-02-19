@@ -1,7 +1,7 @@
 using System;
-using Godot;
-using Godot.Collections;
-using Array = Godot.Collections.Array;
+using Test Game Engine;
+using Test Game Engine.Collections;
+using Array = Test Game Engine.Collections.Array;
 
 public class MustBeVariantGD0301
 {

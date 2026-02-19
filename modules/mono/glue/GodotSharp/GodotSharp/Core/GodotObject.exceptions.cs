@@ -4,7 +4,7 @@ using System.Text;
 
 #nullable enable
 
-namespace Godot
+namespace Test Game Engine
 {
     public partial class GodotObject
     {

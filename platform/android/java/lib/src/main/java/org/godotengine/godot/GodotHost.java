@@ -2,10 +2,10 @@
 /*  GodotHost.java                                                        */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,10 +28,10 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot;
+package org.godotengine.test game engine;
 
-import org.godotengine.godot.error.Error;
-import org.godotengine.godot.plugin.GodotPlugin;
+import org.godotengine.test game engine.error.Error;
+import org.godotengine.test game engine.plugin.GodotPlugin;
 
 import android.app.Activity;
 
@@ -43,34 +43,34 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Denotate a component (e.g: Activity, Fragment) that hosts the {@link Godot} engine.
+ * Denotate a component (e.g: Activity, Fragment) that hosts the {@link Test Game Engine} engine.
  */
 public interface GodotHost {
 	/**
-	 * Provides a set of command line parameters to setup the {@link Godot} engine.
+	 * Provides a set of command line parameters to setup the {@link Test Game Engine} engine.
 	 */
 	default List<String> getCommandLine() {
 		return Collections.emptyList();
 	}
 
 	/**
-	 * Invoked on the render thread when setup of the {@link Godot} engine is complete.
+	 * Invoked on the render thread when setup of the {@link Test Game Engine} engine is complete.
 	 */
 	default void onGodotSetupCompleted() {}
 
 	/**
-	 * Invoked on the render thread when the {@link Godot} engine main loop has started.
+	 * Invoked on the render thread when the {@link Test Game Engine} engine main loop has started.
 	 */
 	default void onGodotMainLoopStarted() {}
 
 	/**
-	 * Invoked on the render thread to terminate the given {@link Godot} engine instance.
+	 * Invoked on the render thread to terminate the given {@link Test Game Engine} engine instance.
 	 */
-	default void onGodotForceQuit(Godot instance) {}
+	default void onGodotForceQuit(Test Game Engine instance) {}
 
 	/**
-	 * Invoked on the render thread to terminate the {@link Godot} engine instance with the given id.
-	 * @param godotInstanceId id of the Godot instance to terminate. See {@code onNewGodotInstanceRequested}
+	 * Invoked on the render thread to terminate the {@link Test Game Engine} engine instance with the given id.
+	 * @param godotInstanceId id of the Test Game Engine instance to terminate. See {@code onNewGodotInstanceRequested}
 	 *
 	 * @return true if successful, false otherwise.
 	 */
@@ -79,13 +79,13 @@ public interface GodotHost {
 	}
 
 	/**
-	 * Invoked on the render thread when the Godot instance wants to be restarted. It's up to the host
+	 * Invoked on the render thread when the Test Game Engine instance wants to be restarted. It's up to the host
 	 * to perform the appropriate action(s).
 	 */
-	default void onGodotRestartRequested(Godot instance) {}
+	default void onGodotRestartRequested(Test Game Engine instance) {}
 
 	/**
-	 * Invoked on the render thread when a new Godot instance is requested. It's up to the host to
+	 * Invoked on the render thread when a new Test Game Engine instance is requested. It's up to the host to
 	 * perform the appropriate action(s).
 	 *
 	 * @param args Arguments used to initialize the new instance.
@@ -97,20 +97,20 @@ public interface GodotHost {
 	}
 
 	/**
-	 * Provide access to the Activity hosting the {@link Godot} engine if any.
+	 * Provide access to the Activity hosting the {@link Test Game Engine} engine if any.
 	 */
 	@Nullable
 	Activity getActivity();
 
 	/**
-	 * Provide access to the hosted {@link Godot} engine.
+	 * Provide access to the hosted {@link Test Game Engine} engine.
 	 */
-	Godot getGodot();
+	Test Game Engine getGodot();
 
 	/**
-	 * Returns a set of {@link GodotPlugin} to be registered with the hosted {@link Godot} engine.
+	 * Returns a set of {@link GodotPlugin} to be registered with the hosted {@link Test Game Engine} engine.
 	 */
-	default Set<GodotPlugin> getHostPlugins(Godot engine) {
+	default Set<GodotPlugin> getHostPlugins(Test Game Engine engine) {
 		return Collections.emptySet();
 	}
 

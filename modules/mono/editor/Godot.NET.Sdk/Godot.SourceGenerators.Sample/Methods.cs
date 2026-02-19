@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Godot.SourceGenerators.Sample;
+namespace Test Game Engine.SourceGenerators.Sample;
 
 [SuppressMessage("ReSharper", "RedundantNameQualifier")]
 public partial class Methods : GodotObject

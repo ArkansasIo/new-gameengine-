@@ -2,10 +2,10 @@
 /*  profiling.h                                                           */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -36,7 +36,7 @@
 // See the "No profiling" branch at the bottom for a short description of the functions.
 
 // To configure / use the profiler, use the --profiler_path and other --profiler_* arguments
-// when compiling Godot. You can also find details in the SCSub file (in this folder).
+// when compiling Test Game Engine. You can also find details in the SCSub file (in this folder).
 
 // Note: It is highly recommended to avoid including this header in other header files.
 //       Prefer including it in .cpp files only. The reason is that we want to keep
@@ -101,13 +101,13 @@ void godot_cleanup_profiler();
 #include "core/typedefs.h"
 
 PERFETTO_DEFINE_CATEGORIES(
-		perfetto::Category("godot")
-				.SetDescription("All Godot Events"), );
+		perfetto::Category("test game engine")
+				.SetDescription("All Test Game Engine Events"), );
 
 // See PERFETTO_INTERNAL_SCOPED_EVENT_FINALIZER
 struct PerfettoGroupedEventEnder {
 	_FORCE_INLINE_ void _end_now() {
-		TRACE_EVENT_END("godot");
+		TRACE_EVENT_END("test game engine");
 	}
 
 	_FORCE_INLINE_ ~PerfettoGroupedEventEnder() {
@@ -116,14 +116,14 @@ struct PerfettoGroupedEventEnder {
 };
 
 #define GodotProfileFrameMark // TODO
-#define GodotProfileZone(m_zone_name) TRACE_EVENT("godot", m_zone_name);
+#define GodotProfileZone(m_zone_name) TRACE_EVENT("test game engine", m_zone_name);
 #define GodotProfileZoneGroupedFirst(m_group_name, m_zone_name) \
-	TRACE_EVENT_BEGIN("godot", m_zone_name); \
+	TRACE_EVENT_BEGIN("test game engine", m_zone_name); \
 	PerfettoGroupedEventEnder __godot_perfetto_zone_##m_group_name
 #define GodotProfileZoneGroupedEndEarly(m_group_name, m_zone_name) __godot_perfetto_zone_##m_group_name.~PerfettoGroupedEventEnder()
 #define GodotProfileZoneGrouped(m_group_name, m_zone_name) \
 	__godot_perfetto_zone_##m_group_name._end_now(); \
-	TRACE_EVENT_BEGIN("godot", m_zone_name);
+	TRACE_EVENT_BEGIN("test game engine", m_zone_name);
 
 #define GodotProfileZoneScript(m_ptr, m_file, m_function, m_name, m_line)
 #define GodotProfileZoneScriptSystemCall(m_ptr, m_file, m_function, m_name, m_line)

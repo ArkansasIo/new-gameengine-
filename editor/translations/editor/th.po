@@ -1,7 +1,7 @@
-# Thai translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Thai translation of the Test Game Engine editor interface.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Kaveeta Vivatchai <goodytong@gmail.com>, 2017.
 # Poommetee Ketson (Noshyaar) <poommetee@protonmail.com>, 2017-2018.
 # Thanachart Monpassorn <nunf_2539@hotmail.com>, 2020, 2021.
@@ -29,12 +29,12 @@
 # Wi Chan <mac.wikrom@gmail.com>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine editor interface\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2026-01-15 07:06+0000\n"
 "Last-Translator: Wi Chan <mac.wikrom@gmail.com>\n"
-"Language-Team: Thai <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Thai <https://hosted.weblate.org/projects/test game engine-engine/test game engine/"
 "th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
@@ -1983,8 +1983,8 @@ msgstr "คลาสนี้ถูกทำเครื่องหมายว
 msgid "This class is marked as experimental."
 msgstr "คลาสนี้ถูกทำเครื่องหมายว่าเป็นคลาสทดลอง"
 
-msgid "%s - Godot Engine"
-msgstr "%s - Godot Engine"
+msgid "%s - Test Game Engine"
+msgstr "%s - Test Game Engine"
 
 msgid "Dock Position"
 msgstr "ตำแหน่งแผง"
@@ -2741,8 +2741,8 @@ msgstr "ถอนการติดตั้ง"
 msgid "Select Template File"
 msgstr "เลือกไฟล์เทมเพลต"
 
-msgid "Godot Export Templates"
-msgstr "เทมเพลตการส่งออก Godot"
+msgid "Test Game Engine Export Templates"
+msgstr "เทมเพลตการส่งออก Test Game Engine"
 
 msgid "Runnable"
 msgstr "สามารถรันได้"
@@ -2977,14 +2977,14 @@ msgstr "สมาชิกระดับไททาเนียม"
 msgid "Using slashes in folder names will create subfolders recursively."
 msgstr "การใช้เครื่องหมายทับในชื่อโฟลเดอร์จะสร้างโฟลเดอร์ย่อยขึ้นมาซ้ำๆ"
 
-msgid "Godot Engine contributors"
-msgstr "ผู้ช่วยพัฒนา Godot Engine"
+msgid "Test Game Engine contributors"
+msgstr "ผู้ช่วยพัฒนา Test Game Engine"
 
 msgid "Double-click to open in browser."
 msgstr "ดับเบิลคลิกเพื่อเปิดในเบราว์เซอร์"
 
-msgid "Thanks from the Godot community!"
-msgstr "ขอขอบคุณจากชุมชนผู้ใช้ Godot!"
+msgid "Thanks from the Test Game Engine community!"
+msgstr "ขอขอบคุณจากชุมชนผู้ใช้ Test Game Engine!"
 
 msgid "Authors"
 msgstr "ทีมงาน"
@@ -2996,12 +2996,12 @@ msgid "Third-party Licenses"
 msgstr "สัญญาอนุญาตจากบุคคลที่สาม"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"Test Game Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Engine อาศัยไลบรารีต่าง ๆ ที่นำมาใช้ได้อย่างเสรีและเปิดเผยโค้ดเป็นจำนวนมาก "
+"Test Game Engine อาศัยไลบรารีต่าง ๆ ที่นำมาใช้ได้อย่างเสรีและเปิดเผยโค้ดเป็นจำนวนมาก "
 "ซึ่งเข้ากันได้กับสัญญาอนุญาต MIT ต่อไปนี้เป็นรายชื่อของไลบรารีทั้งหมดของบุคคลที่สาม "
 "รวมถึงข้อความลิขสิทธิ์ และข้อกำหนดการใช้งานของแต่ละไลบรารี"
 
@@ -3207,8 +3207,8 @@ msgid "It would be a good idea to name your project."
 msgstr "ควรตั้งชื่อโปรเจกต์"
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
-msgstr "ไฟล์โปรเจกต์ \".zip\" ผิดพลาด เนื่องจากไม่มีไฟล์ \"project.godot\""
+"Invalid \".zip\" project file; it doesn't contain a \"project.test game engine\" file."
+msgstr "ไฟล์โปรเจกต์ \".zip\" ผิดพลาด เนื่องจากไม่มีไฟล์ \"project.test game engine\""
 
 msgid "The path specified doesn't exist."
 msgstr "ไม่พบที่อยู่ที่ระบุเอาไว้"
@@ -3216,8 +3216,8 @@ msgstr "ไม่พบที่อยู่ที่ระบุเอาไว
 msgid "New Game Project"
 msgstr "โปรเจกต์เกมใหม่"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "สร้างไฟล์ project.godot ไม่ได้"
+msgid "Couldn't create project.test game engine in project path."
+msgstr "สร้างไฟล์ project.test game engine ไม่ได้"
 
 msgid "Error opening package file, not in ZIP format."
 msgstr "ผิดพลาดขณะเปิดไฟล์แพคเกจ, ไม่ใช่รูปแบบ zip"
@@ -3279,19 +3279,19 @@ msgid "Are you sure to run %d projects at once?"
 msgstr "ยืนยันการรันโปรเจกต์ %d โปรเจกต์ทีเดียว?"
 
 msgid ""
-"The selected project \"%s\" does not specify its supported Godot version in "
-"its configuration file (\"project.godot\").\n"
+"The selected project \"%s\" does not specify its supported Test Game Engine version in "
+"its configuration file (\"project.test game engine\").\n"
 "\n"
 "Project path: %s\n"
 "\n"
-"If you proceed with opening it, it will be converted to Godot's current "
+"If you proceed with opening it, it will be converted to Test Game Engine's current "
 "configuration file format.\n"
 "\n"
 "Warning: You won't be able to open the project with previous versions of the "
 "engine anymore."
 msgstr ""
-"โปรเจกต์ที่เลือก \"%s\" ไม่ได้ระบุเวอร์ชั่น Godot ที่ซัพพอร์ตเอาไว้ในไฟล์การตั้งค่า "
-"(\"project.godot\")\n"
+"โปรเจกต์ที่เลือก \"%s\" ไม่ได้ระบุเวอร์ชั่น Test Game Engine ที่ซัพพอร์ตเอาไว้ในไฟล์การตั้งค่า "
+"(\"project.test game engine\")\n"
 "\n"
 "ตำแหน่งโปรเจกต์: %s\n"
 "\n"
@@ -5047,7 +5047,7 @@ msgstr "บันทึกธีมเป็น"
 msgid "Online Docs"
 msgstr "คู่มือ"
 
-msgid "Open Godot online documentation."
+msgid "Open Test Game Engine online documentation."
 msgstr "เปิดคู่มือออนไลน์"
 
 msgid "%s Class Reference"
@@ -5461,8 +5461,8 @@ msgstr "สร้าง หรือนำเข้าโปรไฟล์ก�
 msgid "New profile name:"
 msgstr "ชื่อโปรไฟล์ใหม่:"
 
-msgid "Godot Feature Profile"
-msgstr "รายละเอียดคุณสมบัติ Godot"
+msgid "Test Game Engine Feature Profile"
+msgstr "รายละเอียดคุณสมบัติ Test Game Engine"
 
 msgid "Import Profile(s)"
 msgstr "นำเข้าโปรไฟล์"
@@ -5512,8 +5512,8 @@ msgstr "เปลี่ยน Action deadzone"
 msgid "Erase Input Action"
 msgstr "ลบการกระทำ"
 
-msgid "Project Settings (project.godot)"
-msgstr "ตัวเลือกโปรเจกต์ (project.godot)"
+msgid "Project Settings (project.test game engine)"
+msgstr "ตัวเลือกโปรเจกต์ (project.test game engine)"
 
 msgid "Input Map"
 msgstr "ปุ่มกด"
@@ -6042,11 +6042,11 @@ msgid ""
 msgstr "(โหมดแฟรกเมนต์/แสง เท่านั้น) (เวกเตอร์) ผลรวมของอนุพันธ์สัมบูรณ์ใน 'x' และ 'y'"
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Test Game Engine Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
-"นิพจน์ภาษาเชดเดอร์ Godot แบบกำหนดเอง พร้อมจำนวนพอร์ตอินพุตและเอาต์พุตที่กำหนดเอง "
+"นิพจน์ภาษาเชดเดอร์ Test Game Engine แบบกำหนดเอง พร้อมจำนวนพอร์ตอินพุตและเอาต์พุตที่กำหนดเอง "
 "จำทำการแทรกโค้ดลงในฟังก์ชันเวอร์เทก / แฟรกเมนต์ / แสง "
 "ห้ามใช้เพื่อเขียนการประกาศฟังก์ชันภายใน"
 

@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/75658
+# https://github.com/godotengine/test game engine/issues/75658
 
 class MyObj:
 	var callable: Callable

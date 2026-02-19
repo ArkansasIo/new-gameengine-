@@ -1,11 +1,11 @@
 /**************************************************************************/
-/*  Godot.kt                                                              */
+/*  Test Game Engine.kt                                                              */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot
+package org.godotengine.test game engine
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -56,27 +56,27 @@ import androidx.core.view.WindowInsetsAnimationCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.google.android.vending.expansion.downloader.*
-import org.godotengine.godot.error.Error
-import org.godotengine.godot.input.GodotEditText
-import org.godotengine.godot.input.GodotInputHandler
-import org.godotengine.godot.io.FilePicker
-import org.godotengine.godot.io.directory.DirectoryAccessHandler
-import org.godotengine.godot.io.file.FileAccessHandler
-import org.godotengine.godot.plugin.AndroidRuntimePlugin
-import org.godotengine.godot.plugin.GodotPlugin
-import org.godotengine.godot.plugin.GodotPluginRegistry
-import org.godotengine.godot.tts.GodotTTS
-import org.godotengine.godot.utils.DialogUtils
-import org.godotengine.godot.utils.GodotNetUtils
-import org.godotengine.godot.utils.PermissionsUtil
-import org.godotengine.godot.utils.PermissionsUtil.requestPermission
-import org.godotengine.godot.utils.beginBenchmarkMeasure
-import org.godotengine.godot.utils.benchmarkFile
-import org.godotengine.godot.utils.dumpBenchmark
-import org.godotengine.godot.utils.endBenchmarkMeasure
-import org.godotengine.godot.utils.useBenchmark
-import org.godotengine.godot.variant.Callable as GodotCallable
-import org.godotengine.godot.xr.XRMode
+import org.godotengine.test game engine.error.Error
+import org.godotengine.test game engine.input.GodotEditText
+import org.godotengine.test game engine.input.GodotInputHandler
+import org.godotengine.test game engine.io.FilePicker
+import org.godotengine.test game engine.io.directory.DirectoryAccessHandler
+import org.godotengine.test game engine.io.file.FileAccessHandler
+import org.godotengine.test game engine.plugin.AndroidRuntimePlugin
+import org.godotengine.test game engine.plugin.GodotPlugin
+import org.godotengine.test game engine.plugin.GodotPluginRegistry
+import org.godotengine.test game engine.tts.GodotTTS
+import org.godotengine.test game engine.utils.DialogUtils
+import org.godotengine.test game engine.utils.GodotNetUtils
+import org.godotengine.test game engine.utils.PermissionsUtil
+import org.godotengine.test game engine.utils.PermissionsUtil.requestPermission
+import org.godotengine.test game engine.utils.beginBenchmarkMeasure
+import org.godotengine.test game engine.utils.benchmarkFile
+import org.godotengine.test game engine.utils.dumpBenchmark
+import org.godotengine.test game engine.utils.endBenchmarkMeasure
+import org.godotengine.test game engine.utils.useBenchmark
+import org.godotengine.test game engine.variant.Callable as GodotCallable
+import org.godotengine.test game engine.xr.XRMode
 import java.io.File
 import java.io.FileInputStream
 import java.io.InputStream
@@ -94,17 +94,17 @@ import java.util.concurrent.atomic.AtomicReference
  * Can be hosted by [Activity], [Fragment] or [Service] android components, so long as its
  * lifecycle methods are properly invoked.
  */
-class Godot private constructor(val context: Context) {
+class Test Game Engine private constructor(val context: Context) {
 
 	companion object {
-		private val TAG = Godot::class.java.simpleName
+		private val TAG = Test Game Engine::class.java.simpleName
 
-		@Volatile private var INSTANCE: Godot? = null
+		@Volatile private var INSTANCE: Test Game Engine? = null
 
 		@JvmStatic
-		fun getInstance(context: Context): Godot {
+		fun getInstance(context: Context): Test Game Engine {
 			return INSTANCE ?: synchronized(this) {
-				INSTANCE ?: Godot(context.applicationContext).also { INSTANCE = it }
+				INSTANCE ?: Test Game Engine(context.applicationContext).also { INSTANCE = it }
 			}
 		}
 
@@ -217,7 +217,7 @@ class Godot private constructor(val context: Context) {
 	fun getActivity() = primaryHost?.activity
 
 	/**
-	 * Start initialization of the Godot engine.
+	 * Start initialization of the Test Game Engine engine.
 	 *
 	 * This must be followed by [onInitRenderView] to complete initialization of the engine.
 	 *
@@ -238,11 +238,11 @@ class Godot private constructor(val context: Context) {
 		darkMode = (config.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
 		orientation = config.orientation
 
-		beginBenchmarkMeasure("Startup", "Godot::initEngine")
+		beginBenchmarkMeasure("Startup", "Test Game Engine::initEngine")
 		try {
 			this.primaryHost = host
 
-			Log.v(TAG, "Initializing Godot plugin registry")
+			Log.v(TAG, "Initializing Test Game Engine plugin registry")
 			val runtimePlugins = mutableSetOf<GodotPlugin>(AndroidRuntimePlugin(this))
 			runtimePlugins.addAll(hostPlugins)
 			GodotPluginRegistry.initializePluginRegistry(this, runtimePlugins)
@@ -346,19 +346,19 @@ class Godot private constructor(val context: Context) {
 					fileAccessHandler,
 					useApkExpansion,
 				)
-				Log.v(TAG, "Godot native layer initialization completed: $nativeLayerInitializeCompleted")
+				Log.v(TAG, "Test Game Engine native layer initialization completed: $nativeLayerInitializeCompleted")
 			}
 
 			if (nativeLayerInitializeCompleted && !nativeLayerSetupCompleted) {
 				nativeLayerSetupCompleted = GodotLib.setup(commandLine.toTypedArray(), tts)
 				if (!nativeLayerSetupCompleted) {
-					throw IllegalStateException("Unable to setup the Godot engine! Aborting...")
+					throw IllegalStateException("Unable to setup the Test Game Engine engine! Aborting...")
 				} else {
-					Log.v(TAG, "Godot native layer setup completed")
+					Log.v(TAG, "Test Game Engine native layer setup completed")
 				}
 			}
 		} finally {
-			endBenchmarkMeasure("Startup", "Godot::initEngine")
+			endBenchmarkMeasure("Startup", "Test Game Engine::initEngine")
 		}
 		return isNativeInitialized()
 	}
@@ -516,9 +516,9 @@ class Godot private constructor(val context: Context) {
 	 * This must be preceded by [initEngine] to properly initialize the engine.
 	 *
 	 * @param host The [GodotHost] that's initializing the render views
-	 * @param providedContainerLayout Optional argument; if provided, this is reused to host the Godot's render views
+	 * @param providedContainerLayout Optional argument; if provided, this is reused to host the Test Game Engine's render views
 	 *
-	 * @return A [FrameLayout] instance containing Godot's render views if initialization is successful, null otherwise.
+	 * @return A [FrameLayout] instance containing Test Game Engine's render views if initialization is successful, null otherwise.
 	 *
 	 * @throws IllegalStateException if [initEngine] has not been called
 	 */
@@ -528,7 +528,7 @@ class Godot private constructor(val context: Context) {
 			throw IllegalStateException("initEngine(...) must be invoked successfully prior to initializing the render view")
 		}
 
-		beginBenchmarkMeasure("Startup", "Godot::onInitRenderView")
+		beginBenchmarkMeasure("Startup", "Test Game Engine::onInitRenderView")
 		Log.v(TAG, "OnInitRenderView: $host")
 		try {
 			this.primaryHost = host
@@ -651,7 +651,7 @@ class Godot private constructor(val context: Context) {
 				setKeepScreenOn(java.lang.Boolean.parseBoolean(GodotLib.getGlobal("display/window/energy_saving/keep_screen_on")))
 			}
 
-			// Include the returned non-null views in the Godot view hierarchy.
+			// Include the returned non-null views in the Test Game Engine view hierarchy.
 			for (plugin in pluginRegistry.allPlugins) {
 				val pluginView = plugin.onMainCreate(activity)
 				if (pluginView != null) {
@@ -669,7 +669,7 @@ class Godot private constructor(val context: Context) {
 				containerLayout = null
 			}
 
-			endBenchmarkMeasure("Startup", "Godot::onInitRenderView")
+			endBenchmarkMeasure("Startup", "Test Game Engine::onInitRenderView")
 		}
 		return containerLayout
 	}
@@ -814,12 +814,12 @@ class Godot private constructor(val context: Context) {
 	}
 
 	/**
-	 * Invoked on the render thread when the Godot setup is complete.
+	 * Invoked on the render thread when the Test Game Engine setup is complete.
 	 */
 	private fun onGodotSetupCompleted() {
 		Log.v(TAG, "OnGodotSetupCompleted")
 
-		// These properties are defined after Godot setup completion, so we retrieve them here.
+		// These properties are defined after Test Game Engine setup completion, so we retrieve them here.
 		val longPressEnabled = java.lang.Boolean.parseBoolean(GodotLib.getGlobal("input_devices/pointing/android/enable_long_press_as_right_click"))
 		val panScaleEnabled = java.lang.Boolean.parseBoolean(GodotLib.getGlobal("input_devices/pointing/android/enable_pan_and_scale_gestures"))
 		val rotaryInputAxisValue = GodotLib.getGlobal("input_devices/pointing/android/rotary_input_scroll_axis")
@@ -847,7 +847,7 @@ class Godot private constructor(val context: Context) {
 	}
 
 	/**
-	 * Invoked on the render thread when the Godot main loop has started.
+	 * Invoked on the render thread when the Test Game Engine main loop has started.
 	 */
 	private fun onGodotMainLoopStarted() {
 		Log.v(TAG, "OnGodotMainLoopStarted")
@@ -1072,7 +1072,7 @@ class Godot private constructor(val context: Context) {
 	}
 
 	/**
-	 * Destroys the Godot Engine and kill the process it's running in.
+	 * Destroys the Test Game Engine and kill the process it's running in.
 	 */
 	@JvmOverloads
 	fun destroyAndKillProcess(destroyRunnable: Runnable? = null) {
@@ -1171,12 +1171,12 @@ class Godot private constructor(val context: Context) {
 	}
 
 	/**
-	 * Returns true if this is the Godot editor.
+	 * Returns true if this is the Test Game Engine editor.
 	 */
 	fun isEditorHint() = isEditorBuild() && GodotLib.isEditorHint()
 
 	/**
-	 * Returns true if this is the Godot project manager.
+	 * Returns true if this is the Test Game Engine project manager.
 	 */
 	fun isProjectManagerHint() = isEditorBuild() && GodotLib.isProjectManagerHint()
 

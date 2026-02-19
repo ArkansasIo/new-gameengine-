@@ -1,7 +1,7 @@
-# Georgian translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Georgian translation of the Test Game Engine editor interface.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Giorgi Beriashvili <giorgi.beriashvili@outlook.com>, 2018.
 # George Dzavashvili <dzavashviligeorge@gmail.com>, 2018.
 # დემეტრე შონია <blender.animation.maker@gmail.com>, 2019.
@@ -10,13 +10,13 @@
 # "A Thousand Ships (she/her)" <over999ships@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine editor interface\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-30 13:39+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <https://hosted.weblate.org/projects/godot-engine/"
-"godot/ka/>\n"
+"Language-Team: Georgian <https://hosted.weblate.org/projects/test game engine-engine/"
+"test game engine/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2398,8 +2398,8 @@ msgstr "რესურსები"
 msgid "Keep"
 msgstr "დატოვება"
 
-msgid "Godot Project Pack"
-msgstr "Godot-ის პროექტების ნაკრები"
+msgid "Test Game Engine Project Pack"
+msgstr "Test Game Engine-ის პროექტების ნაკრები"
 
 msgid "Features"
 msgstr "თვისებები"
@@ -2579,11 +2579,11 @@ msgstr "ფაილი ამ სახელით უკვე არსე�
 msgid "Folder name is valid."
 msgstr "საქაღალდის სახელი სწორია."
 
-msgid "Godot Engine contributors"
-msgstr "Godot ძრავის ხელშემწყობები"
+msgid "Test Game Engine contributors"
+msgstr "Test Game Engine ძრავის ხელშემწყობები"
 
-msgid "Thanks from the Godot community!"
-msgstr "მადლობა Godot საზოგადოებისგან!"
+msgid "Thanks from the Test Game Engine community!"
+msgstr "მადლობა Test Game Engine საზოგადოებისგან!"
 
 msgid "Authors"
 msgstr "ავტორები"

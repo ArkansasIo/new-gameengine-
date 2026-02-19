@@ -2,10 +2,10 @@
 /*  AndroidRuntimePlugin.kt                                               */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,21 +28,21 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.plugin
+package org.godotengine.test game engine.plugin
 
 import android.content.Intent
 import android.util.Log
 import androidx.core.net.toUri
 
-import org.godotengine.godot.Godot
-import org.godotengine.godot.variant.Callable
+import org.godotengine.test game engine.Test Game Engine
+import org.godotengine.test game engine.variant.Callable
 
 /**
- * Built-in Godot Android plugin used to provide access to the Android runtime capabilities.
+ * Built-in Test Game Engine Android plugin used to provide access to the Android runtime capabilities.
  *
  * @see <a href="https://docs.godotengine.org/en/latest/tutorials/platform/android/javaclasswrapper_and_androidruntimeplugin.html">Integrating with Android APIs</a>
  */
-class AndroidRuntimePlugin(godot: Godot) : GodotPlugin(godot) {
+class AndroidRuntimePlugin(test game engine: Test Game Engine) : GodotPlugin(test game engine) {
 	private val TAG = AndroidRuntimePlugin::class.java.simpleName
 
 	override fun getPluginName() = "AndroidRuntime"
@@ -60,7 +60,7 @@ class AndroidRuntimePlugin(godot: Godot) : GodotPlugin(godot) {
 	public override fun getActivity() = super.getActivity()
 
 	/**
-	 * Utility method used to create [Runnable] from Godot [Callable].
+	 * Utility method used to create [Runnable] from Test Game Engine [Callable].
 	 */
 	@UsedByGodot
 	fun createRunnableFromGodotCallable(godotCallable: Callable): Runnable {
@@ -68,7 +68,7 @@ class AndroidRuntimePlugin(godot: Godot) : GodotPlugin(godot) {
 	}
 
 	/**
-	 * Utility method used to create [java.util.concurrent.Callable] from Godot [Callable].
+	 * Utility method used to create [java.util.concurrent.Callable] from Test Game Engine [Callable].
 	 */
 	@UsedByGodot
 	fun createCallableFromGodotCallable(godotCallable: Callable): java.util.concurrent.Callable<Any> {

@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/62957
+# https://github.com/godotengine/test game engine/issues/62957
 
 func test():
 	var dict = {

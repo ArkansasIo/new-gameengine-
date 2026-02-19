@@ -4,20 +4,20 @@ partial class ExportedProperties2
 #if TOOLS
     /// <summary>
     /// Get the default values for all properties declared in this class.
-    /// This method is used by Godot to determine the value that will be
+    /// This method is used by Test Game Engine to determine the value that will be
     /// used by the inspector when resetting properties.
     /// Do not call this method.
     /// </summary>
     [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-    internal new static global::System.Collections.Generic.Dictionary<global::Godot.StringName, global::Godot.Variant> GetGodotPropertyDefaultValues()
+    internal new static global::System.Collections.Generic.Dictionary<global::Test Game Engine.StringName, global::Test Game Engine.Variant> GetGodotPropertyDefaultValues()
     {
-        var values = new global::System.Collections.Generic.Dictionary<global::Godot.StringName, global::Godot.Variant>(3);
+        var values = new global::System.Collections.Generic.Dictionary<global::Test Game Engine.StringName, global::Test Game Engine.Variant>(3);
         int __Health_default_value = default;
-        values.Add(PropertyName.@Health, global::Godot.Variant.From<int>(__Health_default_value));
-        global::Godot.Resource __SubResource_default_value = default;
-        values.Add(PropertyName.@SubResource, global::Godot.Variant.From<global::Godot.Resource>(__SubResource_default_value));
+        values.Add(PropertyName.@Health, global::Test Game Engine.Variant.From<int>(__Health_default_value));
+        global::Test Game Engine.Resource __SubResource_default_value = default;
+        values.Add(PropertyName.@SubResource, global::Test Game Engine.Variant.From<global::Test Game Engine.Resource>(__SubResource_default_value));
         string[] __Strings_default_value = default;
-        values.Add(PropertyName.@Strings, global::Godot.Variant.From<string[]>(__Strings_default_value));
+        values.Add(PropertyName.@Strings, global::Test Game Engine.Variant.From<string[]>(__Strings_default_value));
         return values;
     }
 #endif // TOOLS

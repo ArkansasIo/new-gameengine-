@@ -5,7 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     [Generator]
     public class ScriptSerializationGenerator : ISourceGenerator
@@ -75,8 +75,8 @@ namespace Godot.SourceGenerators
 
             var source = new StringBuilder();
 
-            source.Append("using Godot;\n");
-            source.Append("using Godot.NativeInterop;\n");
+            source.Append("using Test Game Engine;\n");
+            source.Append("using Test Game Engine.NativeInterop;\n");
             source.Append("\n");
 
             if (hasNamespace)
@@ -122,7 +122,7 @@ namespace Godot.SourceGenerators
                 .Cast<IFieldSymbol>();
 
             // TODO: We should still restore read-only properties after reloading assembly. Two possible ways: reflection or turn RestoreGodotObjectData into a constructor overload.
-            // Ignore properties without a getter, without a setter or with an init-only setter. Godot properties must be both readable and writable.
+            // Ignore properties without a getter, without a setter or with an init-only setter. Test Game Engine properties must be both readable and writable.
             var godotClassProperties = propertySymbols.Where(property => !(property.IsReadOnly || property.IsWriteOnly || property.SetMethod!.IsInitOnly))
                 .WhereIsGodotCompatibleType(typeCache)
                 .ToArray();
@@ -160,7 +160,7 @@ namespace Godot.SourceGenerators
             source.Append("    /// <inheritdoc/>\n");
             source.Append("    [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]\n");
             source.Append(
-                "    protected override void SaveGodotObjectData(global::Godot.Bridge.GodotSerializationInfo info)\n    {\n");
+                "    protected override void SaveGodotObjectData(global::Test Game Engine.Bridge.GodotSerializationInfo info)\n    {\n");
             source.Append("        base.SaveGodotObjectData(info);\n");
 
             // Save properties
@@ -209,7 +209,7 @@ namespace Godot.SourceGenerators
             source.Append("    /// <inheritdoc/>\n");
             source.Append("    [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]\n");
             source.Append(
-                "    protected override void RestoreGodotObjectData(global::Godot.Bridge.GodotSerializationInfo info)\n    {\n");
+                "    protected override void RestoreGodotObjectData(global::Test Game Engine.Bridge.GodotSerializationInfo info)\n    {\n");
             source.Append("        base.RestoreGodotObjectData(info);\n");
 
             // Restore properties

@@ -1,16 +1,16 @@
-# Irish translation of the Godot Engine properties.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Irish translation of the Test Game Engine properties.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Rónán Quill <ronan085@gmail.com>, 2019, 2020.
 # Aindriú Mac Giolla Eoin <aindriu80@gmail.com>, 2024, 2025, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine properties\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "PO-Revision-Date: 2026-01-21 18:57+0000\n"
 "Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@gmail.com>\n"
-"Language-Team: Irish <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: Irish <https://hosted.weblate.org/projects/test game engine-engine/test game engine-"
 "properties/ga/>\n"
 "Language: ga\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3779,8 +3779,8 @@ msgstr "Rianaigh Cruacha Glaonna i gCónaí"
 msgid "Always Track Local Variables"
 msgstr "Rianaigh Athróga Áitiúla i gCónaí"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Athainmníodh i Godot 4 Hint"
+msgid "Renamed in Test Game Engine 4 Hint"
+msgstr "Athainmníodh i Test Game Engine 4 Hint"
 
 msgid "Unassigned Variable"
 msgstr "Samhail Rindreála"
@@ -4187,11 +4187,11 @@ msgstr "Solas"
 msgid "Visible"
 msgstr "Infheicthe"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF a Slonn Godot"
+msgid "glTF to Test Game Engine Expression"
+msgstr "glTF a Slonn Test Game Engine"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot go glTF Slonn"
+msgid "Test Game Engine to glTF Expression"
+msgstr "Test Game Engine go glTF Slonn"
 
 msgid "Node Paths"
 msgstr "Cosáin Nód"
@@ -4211,8 +4211,8 @@ msgstr "Ailt"
 msgid "Roots"
 msgstr "Fréamhacha"
 
-msgid "Godot Bone Node"
-msgstr "Nód Cnámh Godot"
+msgid "Test Game Engine Bone Node"
+msgstr "Nód Cnámh Test Game Engine"
 
 msgid "Skin Root"
 msgstr "Fréamh an Chraicinn"
@@ -4223,8 +4223,8 @@ msgstr "Ailt Bhunaidh"
 msgid "Non Joints"
 msgstr "Neamh-Ailt"
 
-msgid "Godot Skin"
-msgstr "Craiceann Godot"
+msgid "Test Game Engine Skin"
+msgstr "Craiceann Test Game Engine"
 
 msgid "Src Image"
 msgstr "Íomhá Src"
@@ -5462,8 +5462,8 @@ msgstr "Deilbhín 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Méid Linn Snámha Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Méid Linn Snámha Godot"
+msgid "Test Game Engine Pool Size"
+msgstr "Méid Linn Snámha Test Game Engine"
 
 msgid "Windows"
 msgstr "Windows"

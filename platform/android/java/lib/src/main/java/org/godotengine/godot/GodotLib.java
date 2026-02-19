@@ -2,10 +2,10 @@
 /*  GodotLib.java                                                         */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,14 +28,14 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot;
+package org.godotengine.test game engine;
 
-import org.godotengine.godot.gl.GodotRenderer;
-import org.godotengine.godot.io.directory.DirectoryAccessHandler;
-import org.godotengine.godot.io.file.FileAccessHandler;
-import org.godotengine.godot.tts.GodotTTS;
-import org.godotengine.godot.utils.GodotNetUtils;
-import org.godotengine.godot.variant.Callable;
+import org.godotengine.test game engine.gl.GodotRenderer;
+import org.godotengine.test game engine.io.directory.DirectoryAccessHandler;
+import org.godotengine.test game engine.io.file.FileAccessHandler;
+import org.godotengine.test game engine.tts.GodotTTS;
+import org.godotengine.test game engine.utils.GodotNetUtils;
+import org.godotengine.test game engine.variant.Callable;
 
 import android.app.Activity;
 import android.content.res.AssetManager;
@@ -53,10 +53,10 @@ public class GodotLib {
 	}
 
 	/**
-	 * Invoked on the main thread to initialize Godot native layer.
+	 * Invoked on the main thread to initialize Test Game Engine native layer.
 	 */
 	public static native boolean initialize(
-			Godot p_instance,
+			Test Game Engine p_instance,
 			AssetManager p_asset_manager,
 			GodotIO godotIO,
 			GodotNetUtils netUtils,
@@ -65,14 +65,14 @@ public class GodotLib {
 			boolean use_apk_expansion);
 
 	/**
-	 * Invoked on the main thread to clean up Godot native layer.
+	 * Invoked on the main thread to clean up Test Game Engine native layer.
 	 * @see androidx.fragment.app.Fragment#onDestroy()
 	 */
 	public static native void ondestroy();
 
 	/**
-	 * Invoked on the GL thread to complete setup for the Godot native layer logic.
-	 * @param p_cmdline Command line arguments used to configure Godot native layer components.
+	 * Invoked on the GL thread to complete setup for the Test Game Engine native layer logic.
+	 * @param p_cmdline Command line arguments used to configure Test Game Engine native layer components.
 	 */
 	public static native boolean setup(String[] p_cmdline, GodotTTS tts);
 
@@ -81,7 +81,7 @@ public class GodotLib {
 	 * @param p_surface
 	 * @param p_width
 	 * @param p_height
-	 * @see org.godotengine.godot.gl.GLSurfaceView.Renderer#onSurfaceChanged(GL10, int, int)
+	 * @see org.godotengine.test game engine.gl.GLSurfaceView.Renderer#onSurfaceChanged(GL10, int, int)
 	 */
 	public static native void resize(Surface p_surface, int p_width, int p_height);
 
@@ -98,7 +98,7 @@ public class GodotLib {
 
 	/**
 	 * Invoked on the GL thread to draw the current frame.
-	 * @see org.godotengine.godot.gl.GLSurfaceView.Renderer#onDrawFrame(GL10)
+	 * @see org.godotengine.test game engine.gl.GLSurfaceView.Renderer#onDrawFrame(GL10)
 	 */
 	public static native boolean step();
 
@@ -183,7 +183,7 @@ public class GodotLib {
 	public static native void focusout();
 
 	/**
-	 * Used to access Godot global properties.
+	 * Used to access Test Game Engine global properties.
 	 * @param p_key Property key
 	 * @return String value of the property
 	 */
@@ -202,7 +202,7 @@ public class GodotLib {
 	public static native String[] getRendererInfo(boolean p_vulkan_requirements_met);
 
 	/**
-	 * Used to access Godot's editor settings.
+	 * Used to access Test Game Engine's editor settings.
 	 * @param settingKey Setting key
 	 * @return String value of the setting
 	 */
@@ -233,8 +233,8 @@ public class GodotLib {
 	public static native void setEditorProjectMetadata(String section, String key, Object data);
 
 	/**
-	 * Invoke method |p_method| on the Godot object specified by |p_id|
-	 * @param p_id Id of the Godot object to invoke
+	 * Invoke method |p_method| on the Test Game Engine object specified by |p_id|
+	 * @param p_id Id of the Test Game Engine object to invoke
 	 * @param p_method Name of the method to invoke
 	 * @param p_params Parameters to use for method invocation
 	 *
@@ -246,8 +246,8 @@ public class GodotLib {
 	}
 
 	/**
-	 * Invoke method |p_method| on the Godot object specified by |p_id| during idle time.
-	 * @param p_id Id of the Godot object to invoke
+	 * Invoke method |p_method| on the Test Game Engine object specified by |p_id| during idle time.
+	 * @param p_id Id of the Test Game Engine object to invoke
 	 * @param p_method Name of the method to invoke
 	 * @param p_params Parameters to use for method invocation
 	 *

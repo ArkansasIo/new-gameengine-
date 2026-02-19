@@ -2,10 +2,10 @@
 /*  gradle_export_util.h                                                  */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -60,7 +60,7 @@ static const int APP_CATEGORY_VIDEO = 8;
 static const int APP_CATEGORY_UNDEFINED = 9;
 
 // Supported XR modes.
-// This should match the entries in 'platform/android/java/lib/src/main/java/org/godotengine/godot/xr/XRMode.java'
+// This should match the entries in 'platform/android/java/lib/src/main/java/org/godotengine/test game engine/xr/XRMode.java'
 static const int XR_MODE_REGULAR = 0;
 static const int XR_MODE_OPENXR = 1;
 

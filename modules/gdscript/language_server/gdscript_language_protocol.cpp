@@ -2,10 +2,10 @@
 /*  gdscript_language_protocol.cpp                                        */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -192,7 +192,7 @@ Dictionary GDScriptLanguageProtocol::initialize(const Dictionary &p_params) {
 	LSP::InitializeResult ret;
 
 	{
-		// Warn if the workspace root does not match with the project that is currently open in Godot,
+		// Warn if the workspace root does not match with the project that is currently open in Test Game Engine,
 		// since it might lead to unexpected behavior, like wrong warnings about duplicate class names.
 
 		String root;
@@ -207,7 +207,7 @@ Dictionary GDScriptLanguageProtocol::initialize(const Dictionary &p_params) {
 		if (ProjectSettings::get_singleton()->localize_path(root) != "res://") {
 			LSP::ShowMessageParams params{
 				LSP::MessageType::Warning,
-				"The GDScript Language Server might not work correctly with other projects than the one opened in Godot."
+				"The GDScript Language Server might not work correctly with other projects than the one opened in Test Game Engine."
 			};
 			notify_client("window/showMessage", params.to_json());
 		}

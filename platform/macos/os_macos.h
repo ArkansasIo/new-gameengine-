@@ -2,10 +2,10 @@
 /*  os_macos.h                                                            */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -180,7 +180,7 @@ class OS_MacOS_NSApp : public OS_MacOS {
 	void terminate();
 
 public:
-	void start_main(); // Initializes and runs Godot main loop.
+	void start_main(); // Initializes and runs Test Game Engine main loop.
 	void cleanup();
 	bool os_should_terminate() const { return should_terminate; }
 	int get_cmd_argc() const { return argc; }

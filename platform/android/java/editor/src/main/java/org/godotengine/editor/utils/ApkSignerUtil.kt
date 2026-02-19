@@ -2,10 +2,10 @@
 /*  ApkSignerUtil.kt                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -36,8 +36,8 @@ import android.util.Log
 import com.android.apksig.ApkSigner
 import com.android.apksig.ApkVerifier
 import org.bouncycastle.jce.provider.BouncyCastleProvider
-import org.godotengine.godot.error.Error
-import org.godotengine.godot.io.file.FileAccessHandler
+import org.godotengine.test game engine.error.Error
+import org.godotengine.test game engine.io.file.FileAccessHandler
 import java.io.File
 import java.security.KeyStore
 import java.security.PrivateKey

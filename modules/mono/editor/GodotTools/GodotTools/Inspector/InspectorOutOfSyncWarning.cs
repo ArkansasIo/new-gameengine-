@@ -1,4 +1,4 @@
-using Godot;
+using Test Game Engine;
 using GodotTools.Internals;
 
 namespace GodotTools.Inspector

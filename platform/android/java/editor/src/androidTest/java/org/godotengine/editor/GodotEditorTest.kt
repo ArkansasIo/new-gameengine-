@@ -2,10 +2,10 @@
 /*  GodotEditorTest.kt                                                    */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -34,7 +34,7 @@ import android.content.ComponentName
 import android.content.Intent
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.godotengine.godot.GodotActivity.Companion.EXTRA_COMMAND_LINE_PARAMS
+import org.godotengine.test game engine.GodotActivity.Companion.EXTRA_COMMAND_LINE_PARAMS
 import org.junit.Test
 import org.junit.runner.RunWith
 import kotlin.test.assertEquals
@@ -43,7 +43,7 @@ import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 /**
- * Instrumented test for the Godot editor.
+ * Instrumented test for the Test Game Engine editor.
  */
 @RunWith(AndroidJUnit4::class)
 class GodotEditorTest {

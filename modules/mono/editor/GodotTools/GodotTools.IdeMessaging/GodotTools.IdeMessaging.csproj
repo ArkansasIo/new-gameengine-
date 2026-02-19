@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ProjectGuid>{92600954-25F0-4291-8E11-1FEE9FC4BE20}</ProjectGuid>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,15 +7,15 @@
     <PackageId>GodotTools.IdeMessaging</PackageId>
     <Version>1.1.2</Version>
     <AssemblyVersion>$(Version)</AssemblyVersion>
-    <Authors>Godot Engine contributors</Authors>
+    <Authors>Test Game Engine contributors</Authors>
     <Company />
-    <PackageTags>godot</PackageTags>
-    <RepositoryUrl>https://github.com/godotengine/godot/tree/master/modules/mono/editor/GodotTools/GodotTools.IdeMessaging</RepositoryUrl>
+    <PackageTags>test game engine</PackageTags>
+    <RepositoryUrl>https://github.com/godotengine/test game engine/tree/master/modules/mono/editor/GodotTools/GodotTools.IdeMessaging</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright (c) Godot Engine contributors</Copyright>
+    <Copyright>Copyright (c) Test Game Engine contributors</Copyright>
     <Description>
-This library enables communication with the Godot Engine editor (the version with .NET support).
-It's intended for use in IDEs/editors plugins for a better experience working with Godot C# projects.
+This library enables communication with the Test Game Engine editor (the version with .NET support).
+It's intended for use in IDEs/editors plugins for a better experience working with Test Game Engine C# projects.
 
 A client using this library is only compatible with servers of the same major version and of a lower or equal minor version.
     </Description>

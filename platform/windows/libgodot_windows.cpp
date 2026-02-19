@@ -2,10 +2,10 @@
 /*  libgodot_windows.cpp                                                  */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -40,7 +40,7 @@ static OS_Windows *os = nullptr;
 static GodotInstance *instance = nullptr;
 
 GDExtensionObjectPtr libgodot_create_godot_instance(int p_argc, char *p_argv[], GDExtensionInitializationFunction p_init_func) {
-	ERR_FAIL_COND_V_MSG(instance != nullptr, nullptr, "Only one Godot Instance may be created at a time.");
+	ERR_FAIL_COND_V_MSG(instance != nullptr, nullptr, "Only one Test Game Engine Instance may be created at a time.");
 
 	os = new OS_Windows(GetModuleHandle(nullptr));
 
@@ -64,7 +64,7 @@ void libgodot_destroy_godot_instance(GDExtensionObjectPtr p_godot_instance) {
 	if (instance == godot_instance) {
 		godot_instance->stop();
 		memdelete(godot_instance);
-		// Note: When Godot Engine supports reinitialization, clear the instance pointer here.
+		// Note: When Test Game Engine supports reinitialization, clear the instance pointer here.
 		//instance = nullptr;
 		Main::cleanup();
 	}

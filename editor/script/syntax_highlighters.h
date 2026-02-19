@@ -2,10 +2,10 @@
 /*  syntax_highlighters.h                                                 */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -131,10 +131,10 @@ public:
 	virtual Dictionary _get_line_syntax_highlighting_impl(int p_line) override { return highlighter->get_line_syntax_highlighting(p_line); }
 
 	// While not explicitly designed for those formats, this highlighter happens
-	// to handle TSCN, TRES, `project.godot` well. We can expose it in case the
+	// to handle TSCN, TRES, `project.test game engine` well. We can expose it in case the
 	// user opens one of these using the script editor (which can be done using
 	// the All Files filter).
-	virtual PackedStringArray _get_supported_languages() const override { return PackedStringArray{ "ini", "cfg", "tscn", "tres", "godot" }; }
+	virtual PackedStringArray _get_supported_languages() const override { return PackedStringArray{ "ini", "cfg", "tscn", "tres", "test game engine" }; }
 	virtual String _get_name() const override { return TTR("ConfigFile"); }
 
 	virtual Ref<EditorSyntaxHighlighter> _create() const override;

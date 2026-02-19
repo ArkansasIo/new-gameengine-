@@ -8,9 +8,9 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
-namespace Godot
+namespace Test Game Engine
 {
     internal static class DelegateUtils
     {
@@ -792,10 +792,10 @@ namespace Godot
                     [typeof(StringName)] = (in godot_variant variant) => VariantUtils.ConvertTo<StringName>(variant),
                     [typeof(NodePath)] = (in godot_variant variant) => VariantUtils.ConvertTo<NodePath>(variant),
                     [typeof(Rid)] = (in godot_variant variant) => VariantUtils.ConvertTo<Rid>(variant),
-                    [typeof(Godot.Collections.Dictionary)] = (in godot_variant variant) =>
-                        VariantUtils.ConvertTo<Godot.Collections.Dictionary>(variant),
-                    [typeof(Godot.Collections.Array)] =
-                        (in godot_variant variant) => VariantUtils.ConvertTo<Godot.Collections.Array>(variant),
+                    [typeof(Test Game Engine.Collections.Dictionary)] = (in godot_variant variant) =>
+                        VariantUtils.ConvertTo<Test Game Engine.Collections.Dictionary>(variant),
+                    [typeof(Test Game Engine.Collections.Array)] =
+                        (in godot_variant variant) => VariantUtils.ConvertTo<Test Game Engine.Collections.Array>(variant),
                     [typeof(Variant)] = (in godot_variant variant) => VariantUtils.ConvertTo<Variant>(variant),
                 };
 
@@ -863,29 +863,29 @@ namespace Godot
                 {
                     var genericTypeDef = type.GetGenericTypeDefinition();
 
-                    if (genericTypeDef == typeof(Godot.Collections.Dictionary<,>))
+                    if (genericTypeDef == typeof(Test Game Engine.Collections.Dictionary<,>))
                     {
-                        var ctor = type.GetConstructor(new[] { typeof(Godot.Collections.Dictionary) });
+                        var ctor = type.GetConstructor(new[] { typeof(Test Game Engine.Collections.Dictionary) });
 
                         if (ctor == null)
                             throw new InvalidOperationException("Dictionary constructor not found");
 
                         return ctor.Invoke(new object?[]
                         {
-                            VariantUtils.ConvertTo<Godot.Collections.Dictionary>(variant)
+                            VariantUtils.ConvertTo<Test Game Engine.Collections.Dictionary>(variant)
                         });
                     }
 
-                    if (genericTypeDef == typeof(Godot.Collections.Array<>))
+                    if (genericTypeDef == typeof(Test Game Engine.Collections.Array<>))
                     {
-                        var ctor = type.GetConstructor(new[] { typeof(Godot.Collections.Array) });
+                        var ctor = type.GetConstructor(new[] { typeof(Test Game Engine.Collections.Array) });
 
                         if (ctor == null)
                             throw new InvalidOperationException("Array constructor not found");
 
                         return ctor.Invoke(new object?[]
                         {
-                            VariantUtils.ConvertTo<Godot.Collections.Array>(variant)
+                            VariantUtils.ConvertTo<Test Game Engine.Collections.Array>(variant)
                         });
                     }
                 }

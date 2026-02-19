@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		1F1575711F582BE20003B888 /* dylibs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dylibs; path = "$binary/dylibs"; sourceTree = "<group>"; };
-		DEADBEEF1F582BE20003B888 /* $binary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = godot; path = "$binary.xcframework"; sourceTree = "<group>"; };
+		DEADBEEF1F582BE20003B888 /* $binary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = test game engine; path = "$binary.xcframework"; sourceTree = "<group>"; };
 		$modules_fileref
 		90B4C2AA2680BC560039117A /* dummy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dummy.h"; sourceTree = "<group>"; };
 		90B4C2B52680C7E90039117A /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "dummy.swift"; sourceTree = "<group>"; };

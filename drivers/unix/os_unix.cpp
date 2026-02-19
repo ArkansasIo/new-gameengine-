@@ -2,10 +2,10 @@
 /*  os_unix.cpp                                                           */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -1221,7 +1221,7 @@ void UnixTerminalLogger::log_error(const char *p_function, const char *p_file, i
 	}
 
 	// Disable color codes if stdout is not a TTY.
-	// This prevents Godot from writing ANSI escape codes when redirecting
+	// This prevents Test Game Engine from writing ANSI escape codes when redirecting
 	// stdout and stderr to a file.
 	const bool tty = isatty(fileno(stdout));
 	const char *gray = tty ? "\E[0;90m" : "";

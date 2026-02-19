@@ -5,7 +5,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public sealed class MustBeVariantAnalyzer : DiagnosticAnalyzer

@@ -2,10 +2,10 @@
 /*  AssetsDirectoryAccess.kt                                              */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,15 +28,15 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.io.directory
+package org.godotengine.test game engine.io.directory
 
 import android.content.Context
 import android.util.Log
 import android.util.SparseArray
-import org.godotengine.godot.io.StorageScope
-import org.godotengine.godot.io.directory.DirectoryAccessHandler.Companion.INVALID_DIR_ID
-import org.godotengine.godot.io.directory.DirectoryAccessHandler.Companion.STARTING_DIR_ID
-import org.godotengine.godot.io.file.AssetData
+import org.godotengine.test game engine.io.StorageScope
+import org.godotengine.test game engine.io.directory.DirectoryAccessHandler.Companion.INVALID_DIR_ID
+import org.godotengine.test game engine.io.directory.DirectoryAccessHandler.Companion.STARTING_DIR_ID
+import org.godotengine.test game engine.io.file.AssetData
 import java.io.File
 import java.io.IOException
 

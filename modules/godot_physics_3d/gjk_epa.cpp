@@ -2,10 +2,10 @@
 /*  gjk_epa.cpp                                                           */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -75,10 +75,10 @@ GJK-EPA collision solver by Nathanael Presson, 2008
 #define EPA_MAX_VERTICES	128
 #define EPA_MAX_FACES		(EPA_MAX_VERTICES*2)
 #define EPA_MAX_ITERATIONS	255
-// -- GODOT start --
+// -- TEST GAME ENGINE start --
 //#define EPA_ACCURACY		((real_t)0.0001)
 #define EPA_ACCURACY		((real_t)0.00001)
-// -- GODOT end --
+// -- TEST GAME ENGINE end --
 #define EPA_FALLBACK		(10*EPA_ACCURACY)
 #define EPA_PLANE_EPS		((real_t)0.00001)
 #define EPA_INSIDE_EPS		((real_t)0.01)
@@ -802,10 +802,10 @@ struct	GJK
 					append(m_stock,face);
 					return(nullptr);
 				}
-				// -- GODOT start --
+				// -- TEST GAME ENGINE start --
 				//m_status=m_stock.root?eStatus::OutOfVertices:eStatus::OutOfFaces;
 				m_status=eStatus::OutOfFaces;
-				// -- GODOT end --
+				// -- TEST GAME ENGINE end --
 				return(nullptr);
 			}
 			sFace*				findbest()

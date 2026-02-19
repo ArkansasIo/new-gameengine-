@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
-using Godot;
-using Godot.Collections;
+using Test Game Engine;
+using Test Game Engine.Collections;
 using GodotTools.Internals;
 using Path = System.IO.Path;
 
@@ -20,7 +20,7 @@ namespace GodotTools.Build
         public bool OnlyClean { get; private set; }
 
         // TODO Use List once we have proper serialization
-        public Godot.Collections.Array CustomProperties { get; private set; } = new();
+        public Test Game Engine.Collections.Array CustomProperties { get; private set; } = new();
 
         public string LogsDirPath => GodotSharpDirs.LogsDirPathFor(Solution, Configuration);
 
@@ -52,7 +52,7 @@ namespace GodotTools.Build
             return hash.ToHashCode();
         }
 
-        // Needed for instantiation from Godot, after reloading assemblies
+        // Needed for instantiation from Test Game Engine, after reloading assemblies
         private BuildInfo()
         {
             Solution = string.Empty;

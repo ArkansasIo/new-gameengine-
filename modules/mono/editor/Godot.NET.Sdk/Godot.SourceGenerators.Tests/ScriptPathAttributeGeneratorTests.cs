@@ -7,16 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Godot.SourceGenerators.Tests;
+namespace Test Game Engine.SourceGenerators.Tests;
 
 public class ScriptPathAttributeGeneratorTests
 {
     private static (string, SourceText) MakeAssemblyScriptTypesGeneratedSource(ICollection<string> types)
     {
         return (
-            Path.Combine("Godot.SourceGenerators", "Godot.SourceGenerators.ScriptPathAttributeGenerator", "AssemblyScriptTypes.generated.cs"),
+            Path.Combine("Test Game Engine.SourceGenerators", "Test Game Engine.SourceGenerators.ScriptPathAttributeGenerator", "AssemblyScriptTypes.generated.cs"),
             SourceText.From($$"""
-            [assembly:Godot.AssemblyHasScriptsAttribute(new System.Type[] {{{string.Join(", ", types.Select(type => $"typeof({type})"))}}})]
+            [assembly:Test Game Engine.AssemblyHasScriptsAttribute(new System.Type[] {{{string.Join(", ", types.Select(type => $"typeof({type})"))}}})]
 
             """, Encoding.UTF8)
         );

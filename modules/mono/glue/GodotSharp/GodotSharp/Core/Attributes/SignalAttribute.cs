@@ -1,6 +1,6 @@
 using System;
 
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// Declares a <see langword="delegate"/> as a signal. This allows any connected

@@ -2,10 +2,10 @@
 /*  GodotFragment.java                                                    */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,11 +28,11 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot;
+package org.godotengine.test game engine;
 
-import org.godotengine.godot.error.Error;
-import org.godotengine.godot.plugin.GodotPlugin;
-import org.godotengine.godot.utils.BenchmarkUtils;
+import org.godotengine.test game engine.error.Error;
+import org.godotengine.test game engine.plugin.GodotPlugin;
+import org.godotengine.test game engine.utils.BenchmarkUtils;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -71,7 +71,7 @@ import java.util.Locale;
 import java.util.Set;
 
 /**
- * Base fragment for Android apps intending to use Godot for part of the app's UI.
+ * Base fragment for Android apps intending to use Test Game Engine for part of the app's UI.
  */
 public class GodotFragment extends Fragment implements IDownloaderClient, GodotHost {
 	private static final String TAG = GodotFragment.class.getSimpleName();
@@ -94,7 +94,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 
 	@Nullable
 	private GodotHost parentHost;
-	private Godot godot;
+	private Test Game Engine test game engine;
 
 	private void setState(int newState) {
 		if (mState != newState) {
@@ -109,8 +109,8 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 	}
 
 	@Override
-	public Godot getGodot() {
-		return godot;
+	public Test Game Engine getGodot() {
+		return test game engine;
 	}
 
 	@Override
@@ -126,7 +126,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 	@Override
 	public void onDetach() {
 		if (godotContainerLayout != null && godotContainerLayout.getParent() != null) {
-			Log.d(TAG, "Cleaning up Godot container layout during detach.");
+			Log.d(TAG, "Cleaning up Test Game Engine container layout during detach.");
 			((ViewGroup)godotContainerLayout.getParent()).removeView(godotContainerLayout);
 		}
 
@@ -138,21 +138,21 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
-		godot.onConfigurationChanged(newConfig);
+		test game engine.onConfigurationChanged(newConfig);
 	}
 
 	@CallSuper
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		godot.onActivityResult(requestCode, resultCode, data);
+		test game engine.onActivityResult(requestCode, resultCode, data);
 	}
 
 	@CallSuper
 	@Override
 	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-		godot.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		test game engine.onRequestPermissionsResult(requestCode, permissions, grantResults);
 	}
 
 	@Override
@@ -167,10 +167,10 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 		super.onCreate(icicle);
 
 		if (parentHost != null) {
-			godot = parentHost.getGodot();
+			test game engine = parentHost.getGodot();
 		}
-		if (godot == null) {
-			godot = Godot.getInstance(requireContext());
+		if (test game engine == null) {
+			test game engine = Test Game Engine.getInstance(requireContext());
 		}
 		performEngineInitialization();
 		BenchmarkUtils.endBenchmarkMeasure("Startup", "GodotFragment::onCreate");
@@ -178,11 +178,11 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 
 	private void performEngineInitialization() {
 		try {
-			if (!godot.initEngine(this, getCommandLine(), getHostPlugins(godot))) {
-				throw new IllegalStateException("Unable to initialize Godot engine");
+			if (!test game engine.initEngine(this, getCommandLine(), getHostPlugins(test game engine))) {
+				throw new IllegalStateException("Unable to initialize Test Game Engine engine");
 			}
 
-			godotContainerLayout = godot.onInitRenderView(this);
+			godotContainerLayout = test game engine.onInitRenderView(this);
 			if (godotContainerLayout == null) {
 				throw new IllegalStateException("Unable to initialize engine render view");
 			}
@@ -191,7 +191,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 			final String errorMessage = TextUtils.isEmpty(e.getMessage())
 					? getString(R.string.error_engine_setup_message)
 					: e.getMessage();
-			godot.alert(errorMessage, getString(R.string.text_error_title), godot::destroyAndKillProcess);
+			test game engine.alert(errorMessage, getString(R.string.text_error_title), test game engine::destroyAndKillProcess);
 		} catch (IllegalArgumentException ignored) {
 			final Activity activity = getActivity();
 			Intent notifierIntent = new Intent(activity, activity.getClass());
@@ -238,7 +238,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 		}
 
 		if (godotContainerLayout != null && godotContainerLayout.getParent() != null) {
-			Log.w(TAG, "Godot container layout already has a parent, removing it.");
+			Log.w(TAG, "Test Game Engine container layout already has a parent, removing it.");
 			((ViewGroup)godotContainerLayout.getParent()).removeView(godotContainerLayout);
 		}
 
@@ -248,11 +248,11 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 	@Override
 	public void onDestroy() {
 		if (godotContainerLayout != null && godotContainerLayout.getParent() != null) {
-			Log.w(TAG, "Removing Godot container layout from parent during destruction.");
+			Log.w(TAG, "Removing Test Game Engine container layout from parent during destruction.");
 			((ViewGroup)godotContainerLayout.getParent()).removeView(godotContainerLayout);
 		}
 
-		godot.onDestroy(this);
+		test game engine.onDestroy(this);
 		super.onDestroy();
 	}
 
@@ -260,57 +260,57 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 	public void onPause() {
 		super.onPause();
 
-		if (!godot.isInitialized()) {
+		if (!test game engine.isInitialized()) {
 			if (null != mDownloaderClientStub) {
 				mDownloaderClientStub.disconnect(getActivity());
 			}
 			return;
 		}
 
-		godot.onPause(this);
+		test game engine.onPause(this);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		if (!godot.isInitialized()) {
+		if (!test game engine.isInitialized()) {
 			if (null != mDownloaderClientStub) {
 				mDownloaderClientStub.disconnect(getActivity());
 			}
 			return;
 		}
 
-		godot.onStop(this);
+		test game engine.onStop(this);
 	}
 
 	@Override
 	public void onStart() {
 		super.onStart();
-		if (!godot.isInitialized()) {
+		if (!test game engine.isInitialized()) {
 			if (null != mDownloaderClientStub) {
 				mDownloaderClientStub.connect(getActivity());
 			}
 			return;
 		}
 
-		godot.onStart(this);
+		test game engine.onStart(this);
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
-		if (!godot.isInitialized()) {
+		if (!test game engine.isInitialized()) {
 			if (null != mDownloaderClientStub) {
 				mDownloaderClientStub.connect(getActivity());
 			}
 			return;
 		}
 
-		godot.onResume(this);
+		test game engine.onResume(this);
 	}
 
 	public void onBackPressed() {
-		godot.onBackPressed();
+		test game engine.onBackPressed();
 	}
 
 	/**
@@ -430,7 +430,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 	}
 
 	@Override
-	public void onGodotForceQuit(Godot instance) {
+	public void onGodotForceQuit(Test Game Engine instance) {
 		if (parentHost != null) {
 			parentHost.onGodotForceQuit(instance);
 		}
@@ -442,7 +442,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 	}
 
 	@Override
-	public void onGodotRestartRequested(Godot instance) {
+	public void onGodotRestartRequested(Test Game Engine instance) {
 		if (parentHost != null) {
 			parentHost.onGodotRestartRequested(instance);
 		}
@@ -458,7 +458,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 
 	@Override
 	@CallSuper
-	public Set<GodotPlugin> getHostPlugins(Godot engine) {
+	public Set<GodotPlugin> getHostPlugins(Test Game Engine engine) {
 		if (parentHost != null) {
 			return parentHost.getHostPlugins(engine);
 		}

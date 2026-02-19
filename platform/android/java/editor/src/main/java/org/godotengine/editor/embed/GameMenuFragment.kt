@@ -2,10 +2,10 @@
 /*  GameMenuFragment.kt                                                   */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -47,7 +47,7 @@ import androidx.fragment.app.Fragment
 import org.godotengine.editor.BaseGodotEditor
 import org.godotengine.editor.BaseGodotEditor.Companion.SNACKBAR_SHOW_DURATION_MS
 import org.godotengine.editor.R
-import org.godotengine.godot.utils.DialogUtils
+import org.godotengine.test game engine.utils.DialogUtils
 
 /**
  * Implements the game menu interface for the Android editor.

@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Godot</string>
+	<string>Test Game Engine</string>
 	<key>CFBundleName</key>
-	<string>Godot</string>
+	<string>Test Game Engine</string>
 	<key>CFBundleIconFile</key>
 	<string>GodotLG.icns</string>
 	<key>CFBundleIconName</key>
 	<string>GodotLG</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.godotengine.godot</string>
+	<string>org.godotengine.test game engine</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$short_version</string>
 	<key>CFBundleSignature</key>
-	<string>godot</string>
+	<string>test game engine</string>
 	<key>CFBundleVersion</key>
 	<string>$version</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -31,7 +31,7 @@
 	<key>NSRequiresAquaSystemAppearance</key>
 	<false/>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2007-present Juan Linietsky, Ariel Manzur &amp; Godot Engine contributors</string>
+	<string>© 2007-present Juan Linietsky, Ariel Manzur &amp; Test Game Engine contributors</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
@@ -68,11 +68,11 @@
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>public.godot</string>
+				<string>public.test game engine</string>
 			</array>
 			<key>NSExportableTypes</key>
 			<array>
-				<string>public.godot</string>
+				<string>public.test game engine</string>
 			</array>
 		</dict>
 	</array>
@@ -84,7 +84,7 @@
 			<key>UTTypeReferenceURL</key>
 			<string></string>
 			<key>UTTypeDescription</key>
-			<string>Godot Engine scene</string>
+			<string>Test Game Engine scene</string>
 			<key>UTTypeIconFile</key>
 			<string>Scene.icns</string>
 			<key>UTTypeConformsTo</key>
@@ -100,7 +100,7 @@
 					<string>escn</string>
 				</array>
 				<key>public.mime-type</key>
-				<string>application/x-godot-scene</string>
+				<string>application/x-test game engine-scene</string>
 			</dict>
 		</dict>
 		<dict>
@@ -132,7 +132,7 @@
 			<key>UTTypeReferenceURL</key>
 			<string></string>
 			<key>UTTypeDescription</key>
-			<string>Godot Engine resource</string>
+			<string>Test Game Engine resource</string>
 			<key>UTTypeIconFile</key>
 			<string>Resource.icns</string>
 			<key>UTTypeConformsTo</key>
@@ -147,7 +147,7 @@
 					<string>tres</string>
 				</array>
 				<key>public.mime-type</key>
-				<string>application/x-godot-resource</string>
+				<string>application/x-test game engine-resource</string>
 			</dict>
 		</dict>
 		<dict>
@@ -156,7 +156,7 @@
 			<key>UTTypeReferenceURL</key>
 			<string></string>
 			<key>UTTypeDescription</key>
-			<string>Godot Engine shader</string>
+			<string>Test Game Engine shader</string>
 			<key>UTTypeIconFile</key>
 			<string>Shader.icns</string>
 			<key>UTTypeConformsTo</key>
@@ -170,16 +170,16 @@
 					<string>gdshader</string>
 				</array>
 				<key>public.mime-type</key>
-				<string>application/x-godot-shader</string>
+				<string>application/x-test game engine-shader</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>public.godot</string>
+			<string>public.test game engine</string>
 			<key>UTTypeReferenceURL</key>
 			<string></string>
 			<key>UTTypeDescription</key>
-			<string>Godot Engine project</string>
+			<string>Test Game Engine project</string>
 			<key>UTTypeIconFile</key>
 			<string>Project.icns</string>
 			<key>UTTypeConformsTo</key>
@@ -190,10 +190,10 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>godot</string>
+					<string>test game engine</string>
 				</array>
 				<key>public.mime-type</key>
-				<string>application/x-godot-project</string>
+				<string>application/x-test game engine-project</string>
 			</dict>
 		</dict>
 	</array>

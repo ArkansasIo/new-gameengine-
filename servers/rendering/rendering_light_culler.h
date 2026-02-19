@@ -2,10 +2,10 @@
 /*  rendering_light_culler.h                                              */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -110,7 +110,7 @@ private:
 		const Vector3 *frustum_points = nullptr;
 	};
 
-	// Same order as godot.
+	// Same order as test game engine.
 	enum PlaneOrder {
 		PLANE_NEAR,
 		PLANE_FAR,
@@ -121,7 +121,7 @@ private:
 		PLANE_TOTAL,
 	};
 
-	// Same order as godot.
+	// Same order as test game engine.
 	enum PointOrder {
 		PT_FAR_LEFT_TOP,
 		PT_FAR_LEFT_BOTTOM,

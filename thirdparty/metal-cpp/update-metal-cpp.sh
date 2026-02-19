@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# metal-cpp update script for Godot
+# metal-cpp update script for Test Game Engine
 #
 # metal-cpp source: https://developer.apple.com/metal/cpp/
 # This version includes Metal 4 APIs (macOS 26 / iOS 26).
@@ -29,10 +29,10 @@ else
 fi
 
 # =============================================================================
-# Apply Godot-specific patches
+# Apply Test Game Engine-specific patches
 # =============================================================================
 
-echo "Applying Godot compatibility patches..."
+echo "Applying Test Game Engine compatibility patches..."
 
 # Apply patch files (idempotent)
 PATCH_DIR="$SCRIPT_DIR/patches"

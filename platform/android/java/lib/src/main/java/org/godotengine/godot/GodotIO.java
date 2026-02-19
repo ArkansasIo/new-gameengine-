@@ -2,10 +2,10 @@
 /*  GodotIO.java                                                          */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,10 +28,10 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot;
+package org.godotengine.test game engine;
 
-import org.godotengine.godot.error.Error;
-import org.godotengine.godot.input.GodotEditText;
+import org.godotengine.test game engine.error.Error;
+import org.godotengine.test game engine.input.GodotEditText;
 
 import android.app.Activity;
 import android.content.Context;
@@ -65,7 +65,7 @@ import java.util.Locale;
 public class GodotIO {
 	private static final String TAG = GodotIO.class.getSimpleName();
 
-	private final Godot godot;
+	private final Test Game Engine test game engine;
 
 	private final String uniqueId;
 	GodotEditText edit;
@@ -78,9 +78,9 @@ public class GodotIO {
 	final int SCREEN_SENSOR_PORTRAIT = 5;
 	final int SCREEN_SENSOR = 6;
 
-	GodotIO(Godot godot) {
-		this.godot = godot;
-		String androidId = Settings.Secure.getString(godot.getContext().getContentResolver(),
+	GodotIO(Test Game Engine test game engine) {
+		this.test game engine = test game engine;
+		String androidId = Settings.Secure.getString(test game engine.getContext().getContentResolver(),
 				Settings.Secure.ANDROID_ID);
 		if (androidId == null) {
 			androidId = "";
@@ -90,9 +90,9 @@ public class GodotIO {
 	}
 
 	private Context getContext() {
-		Context context = godot.getActivity();
+		Context context = test game engine.getActivity();
 		if (context == null) {
-			context = godot.getContext();
+			context = test game engine.getContext();
 		}
 		return context;
 	}
@@ -198,13 +198,13 @@ public class GodotIO {
 	}
 
 	public double getScreenRefreshRate(double fallback) {
-		Activity activity = godot.getActivity();
+		Activity activity = test game engine.getActivity();
 
 		Display display = null;
 		if (activity != null) {
 			display = activity.getWindowManager().getDefaultDisplay();
 		} else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-			display = godot.getContext().getDisplay();
+			display = test game engine.getContext().getDisplay();
 		}
 
 		if (display != null) {
@@ -218,15 +218,15 @@ public class GodotIO {
 		int[] result = new int[4];
 
 		View topView = null;
-		if (godot.getActivity() != null) {
-			topView = godot.getActivity().getWindow().getDecorView();
-		} else if (godot.getRenderView() != null) {
-			topView = godot.getRenderView().getView();
+		if (test game engine.getActivity() != null) {
+			topView = test game engine.getActivity().getWindow().getDecorView();
+		} else if (test game engine.getRenderView() != null) {
+			topView = test game engine.getRenderView().getView();
 		}
 
 		if (topView != null) {
 			int insetTypes;
-			if (godot.isInImmersiveMode()) {
+			if (test game engine.isInImmersiveMode()) {
 				insetTypes = WindowInsetsCompat.Type.displayCutout();
 			} else {
 				insetTypes = WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout();
@@ -236,7 +236,7 @@ public class GodotIO {
 				WindowInsetsCompat insetsCompat = WindowInsetsCompat.toWindowInsetsCompat(topView.getRootWindowInsets(), topView);
 				Insets insets = insetsCompat.getInsets(insetTypes);
 
-				if (godot.isInEdgeToEdgeMode() || godot.isInImmersiveMode()) {
+				if (test game engine.isInEdgeToEdgeMode() || test game engine.isInImmersiveMode()) {
 					result[0] = insets.left;
 					result[1] = insets.top;
 				} else {
@@ -258,10 +258,10 @@ public class GodotIO {
 		}
 
 		View topView = null;
-		if (godot.getActivity() != null) {
-			topView = godot.getActivity().getWindow().getDecorView();
-		} else if (godot.getRenderView() != null) {
-			topView = godot.getRenderView().getView();
+		if (test game engine.getActivity() != null) {
+			topView = test game engine.getActivity().getWindow().getDecorView();
+		} else if (test game engine.getRenderView() != null) {
+			topView = test game engine.getRenderView().getView();
 		}
 
 		if (topView == null) {
@@ -304,7 +304,7 @@ public class GodotIO {
 	}
 
 	public void setScreenOrientation(int p_orientation) {
-		final Activity activity = godot.getActivity();
+		final Activity activity = test game engine.getActivity();
 		if (activity == null) {
 			return;
 		}
@@ -335,7 +335,7 @@ public class GodotIO {
 	}
 
 	public int getScreenOrientation() {
-		final Activity activity = godot.getActivity();
+		final Activity activity = test game engine.getActivity();
 		if (activity == null) {
 			return -1;
 		}
@@ -371,13 +371,13 @@ public class GodotIO {
 	}
 
 	public int getDisplayRotation() {
-		Activity activity = godot.getActivity();
+		Activity activity = test game engine.getActivity();
 
 		Display display = null;
 		if (activity != null) {
 			display = activity.getWindowManager().getDefaultDisplay();
 		} else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-			display = godot.getContext().getDisplay();
+			display = test game engine.getContext().getDisplay();
 		}
 
 		if (display != null) {

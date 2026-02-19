@@ -1,7 +1,7 @@
-# Greek translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Greek translation of the Test Game Engine editor interface.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # George Tsiamasiotis <gtsiam@windowslive.com>, 2017-2018, 2019, 2020, 2021.
 # Georgios Katsanakis <geo.elgeo@gmail.com>, 2019.
 # Overloaded <manoschool@yahoo.gr>, 2019.
@@ -36,12 +36,12 @@
 # Durondal <p16sias@ionio.gr>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine editor interface\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2026-01-18 16:02+0000\n"
 "Last-Translator: Durondal <p16sias@ionio.gr>\n"
-"Language-Team: Greek <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Greek <https://hosted.weblate.org/projects/test game engine-engine/test game engine/"
 "el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -3243,11 +3243,11 @@ msgstr "Αναφορά Σφάλματος"
 msgid "Send Docs Feedback"
 msgstr "Αποστολή Σχολίων Τεκμηρίωσης"
 
-msgid "About Godot..."
-msgstr "Σχετικά με την Godot..."
+msgid "About Test Game Engine..."
+msgstr "Σχετικά με την Test Game Engine..."
 
-msgid "Support Godot Development"
-msgstr "Υποστηρίξτε την ανάπτυξη του Godot"
+msgid "Support Test Game Engine Development"
+msgstr "Υποστηρίξτε την ανάπτυξη του Test Game Engine"
 
 msgid "Open Script Editor"
 msgstr "Άνοιγμα Επεξεργαστή Δεσμών Ενεργειών"
@@ -3516,8 +3516,8 @@ msgstr ""
 msgid "Select Template File"
 msgstr "Επιλογή Αρχείου Προτύπων"
 
-msgid "Godot Export Templates"
-msgstr "Προτύπων Εξαγωγής Godot"
+msgid "Test Game Engine Export Templates"
+msgstr "Προτύπων Εξαγωγής Test Game Engine"
 
 msgid "Runnable"
 msgstr "Εκτελέσιμο"
@@ -3800,8 +3800,8 @@ msgstr "Μέλη Διαμάντια"
 msgid "Titanium Members"
 msgstr "Μέλη Τιτανίου"
 
-msgid "Thank you for choosing Godot Engine!"
-msgstr "Σας ευχαριστούμε που επιλέξατε την μηχανή Godot!"
+msgid "Thank you for choosing Test Game Engine!"
+msgstr "Σας ευχαριστούμε που επιλέξατε την μηχανή Test Game Engine!"
 
 msgid "Name cannot be empty."
 msgstr "Το όνομα δεν μπορεί να είναι κενό."
@@ -3815,11 +3815,11 @@ msgstr "Ήδη υπαρκτό όνομα κίνησης."
 msgid "Base path: %s"
 msgstr "Βασική διαδρομή: %s"
 
-msgid "Godot Engine contributors"
-msgstr "Συνεισφέροντες στην Godot Engine"
+msgid "Test Game Engine contributors"
+msgstr "Συνεισφέροντες στην Test Game Engine"
 
-msgid "Thanks from the Godot community!"
-msgstr "Ευχαριστίες από την κοινότητα της Godot!"
+msgid "Thanks from the Test Game Engine community!"
+msgstr "Ευχαριστίες από την κοινότητα της Test Game Engine!"
 
 msgid "Authors"
 msgstr "Συγγραφείς"
@@ -3831,12 +3831,12 @@ msgid "Third-party Licenses"
 msgstr "Άδειες τρίτων κατασκευαστών"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"Test Game Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Η μηχανή Godot βασίζεται σε μια σειρά από δωρεάν και ανοιχτού κώδικα "
+"Η μηχανή Test Game Engine βασίζεται σε μια σειρά από δωρεάν και ανοιχτού κώδικα "
 "βιβλιοθήκες τρίτων κατασκευαστών, όλες συμβατές με τους όρους της άδειας MIT. "
 "Ακολουθεί μία εκτενής λίστα με όλα τα σχετικά συστατικά της μηχανής μαζί με "
 "όλες τις αντοίστοιχες δηλώσεις προστασίας πνευματικών δικαιωμάτων και τους "
@@ -4153,8 +4153,8 @@ msgid "It would be a good idea to name your project."
 msgstr "Είναι καλή ιδέα να ονομάσετε το έργο σας."
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
-msgstr "Άκυρο αρχείο έργου «.zip»: Δεν περιέχει αρχείο «project.godot»."
+"Invalid \".zip\" project file; it doesn't contain a \"project.test game engine\" file."
+msgstr "Άκυρο αρχείο έργου «.zip»: Δεν περιέχει αρχείο «project.test game engine»."
 
 msgid "The path specified doesn't exist."
 msgstr "Η ορισμένη διαδρομή δεν υπάρχει."
@@ -4162,8 +4162,8 @@ msgstr "Η ορισμένη διαδρομή δεν υπάρχει."
 msgid "New Game Project"
 msgstr "Νέο έργο παιχνιδιού"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "Δεν ήταν δυνατή η δημιουργία του project.godot στη διαδρομή έργου."
+msgid "Couldn't create project.test game engine in project path."
+msgstr "Δεν ήταν δυνατή η δημιουργία του project.test game engine στη διαδρομή έργου."
 
 msgid "Error opening package file, not in ZIP format."
 msgstr "Σφάλμα ανοίγματος αρχείου πακέτου, δεν είναι σε μορφή ZIP."
@@ -6264,8 +6264,8 @@ msgstr "Αποθήκευση θέματος ως..."
 msgid "Online Docs"
 msgstr "Ηλεκτρονική τεκμηρίωση"
 
-msgid "Open Godot online documentation."
-msgstr "Άνοιγμα ηλεκτρονικής τεκμηρίωσης της Godot."
+msgid "Open Test Game Engine online documentation."
+msgstr "Άνοιγμα ηλεκτρονικής τεκμηρίωσης της Test Game Engine."
 
 msgid "%s Class Reference"
 msgstr "Αναφορά Κλάσης %s"
@@ -6646,8 +6646,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Νέο όνομα προφίλ:"
 
-msgid "Godot Feature Profile"
-msgstr "Προφίλ Χαρακτηριστικών του Godot"
+msgid "Test Game Engine Feature Profile"
+msgstr "Προφίλ Χαρακτηριστικών του Test Game Engine"
 
 msgid "Import Profile(s)"
 msgstr "Εισαγωγή Προφίλ"
@@ -6703,8 +6703,8 @@ msgstr "Αλλαγή Νεκρής Ζώνης Ενέργειας"
 msgid "Erase Input Action"
 msgstr "Διαγραφή ενέργειας εισόδου"
 
-msgid "Project Settings (project.godot)"
-msgstr "Ρυθμίσεις έργου (project.godot)"
+msgid "Project Settings (project.test game engine)"
+msgstr "Ρυθμίσεις έργου (project.test game engine)"
 
 msgid "Input Map"
 msgstr "Χάρτης εισόδου"
@@ -7267,11 +7267,11 @@ msgstr ""
 "«x» και «y»."
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Test Game Engine Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
-"Προσαρμοσμένη έκφραση γλώσσας σκίασης της Godot, με προσαρμοσμένο αριθμό "
+"Προσαρμοσμένη έκφραση γλώσσας σκίασης της Test Game Engine, με προσαρμοσμένο αριθμό "
 "εισόδων και εξόδων. Αυτό είναι μία άμεση παρεμβολή κώδικα στην συνάρτηση "
 "κορυφής/τμήματος/φωτός, μην γράψετε μέσα ορισμούς συναρτήσεων."
 

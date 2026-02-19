@@ -1,4 +1,4 @@
-namespace Godot
+namespace Test Game Engine
 {
     /// <summary>
     /// Represents a signal defined in an object.

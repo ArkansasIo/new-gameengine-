@@ -2,10 +2,10 @@
 /*  environment_storage.h                                                 */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -63,7 +63,7 @@ private:
 
 	// Environment
 	struct Environment {
-		// Note, we capture and store all environment parameters received from Godot here.
+		// Note, we capture and store all environment parameters received from Test Game Engine here.
 		// Not all renderers support all effects and should just ignore the bits they don't support.
 
 		// Background

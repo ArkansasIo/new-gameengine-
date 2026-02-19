@@ -1,7 +1,7 @@
-# French translation of the Godot Engine properties.
-# Copyright (c) 2014-present Godot Engine contributors.
+# French translation of the Test Game Engine properties.
+# Copyright (c) 2014-present Test Game Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Test Game Engine source code.
 # Antoine Carrier <ac.g392@gmail.com>, 2017-2018.
 # ARocherVj <a.rocher.vj@gmail.com>, 2017.
 # Arthur Templé <tuturtemple@gmail.com>, 2018.
@@ -161,12 +161,12 @@
 # Posemartonis <weblate.drainage895@passmail.net>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Project-Id-Version: Test Game Engine properties\n"
+"Report-Msgid-Bugs-To: https://github.com/godotengine/test game engine\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2026-01-19 09:52+0000\n"
 "Last-Translator: Posemartonis <weblate.drainage895@passmail.net>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: French <https://hosted.weblate.org/projects/test game engine-engine/test game engine-"
 "properties/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -3936,8 +3936,8 @@ msgstr "Toujours suivre les piles d'appel"
 msgid "Always Track Local Variables"
 msgstr "Toujours suivre les variables locales"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Indice de renommage dans Godot 4"
+msgid "Renamed in Test Game Engine 4 Hint"
+msgstr "Indice de renommage dans Test Game Engine 4"
 
 msgid "Unassigned Variable"
 msgstr "Variable non assignée"
@@ -4341,11 +4341,11 @@ msgstr "Lumière"
 msgid "Visible"
 msgstr "Visible"
 
-msgid "glTF to Godot Expression"
-msgstr "Expression glTF vers Godot"
+msgid "glTF to Test Game Engine Expression"
+msgstr "Expression glTF vers Test Game Engine"
 
-msgid "Godot to glTF Expression"
-msgstr "Expression Godot vers glTF"
+msgid "Test Game Engine to glTF Expression"
+msgstr "Expression Test Game Engine vers glTF"
 
 msgid "Node Paths"
 msgstr "Chemins de nœud"
@@ -4365,8 +4365,8 @@ msgstr "Jointures"
 msgid "Roots"
 msgstr "Racines"
 
-msgid "Godot Bone Node"
-msgstr "Nœud d'os de Godot"
+msgid "Test Game Engine Bone Node"
+msgstr "Nœud d'os de Test Game Engine"
 
 msgid "Skin Root"
 msgstr "Racine de l'enveloppe"
@@ -4377,8 +4377,8 @@ msgstr "Jointure à l'original"
 msgid "Non Joints"
 msgstr "Non jointures"
 
-msgid "Godot Skin"
-msgstr "Enveloppe Godot"
+msgid "Test Game Engine Skin"
+msgstr "Enveloppe Test Game Engine"
 
 msgid "Src Image"
 msgstr "Image source"
@@ -5613,8 +5613,8 @@ msgstr "Icône 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Place allouée pour Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Taille de Pool de Godot"
+msgid "Test Game Engine Pool Size"
+msgstr "Taille de Pool de Test Game Engine"
 
 msgid "Windows"
 msgstr "Windows"

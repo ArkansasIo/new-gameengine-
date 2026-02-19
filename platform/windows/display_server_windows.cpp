@@ -2,10 +2,10 @@
 /*  display_server_windows.cpp                                            */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -810,7 +810,7 @@ Error DisplayServerWindows::_file_dialog_with_options_show(const String &p_title
 
 	String appname;
 	if (Engine::get_singleton()->is_editor_hint()) {
-		appname = "Godot.GodotEditor." + String(GODOT_VERSION_BRANCH);
+		appname = "Test Game Engine.GodotEditor." + String(GODOT_VERSION_BRANCH);
 	} else {
 		String name = GLOBAL_GET("application/config/name");
 		String version = GLOBAL_GET("application/config/version");
@@ -824,7 +824,7 @@ Error DisplayServerWindows::_file_dialog_with_options_show(const String &p_title
 			}
 		}
 		clean_app_name = clean_app_name.substr(0, 120 - version.length()).trim_suffix(".");
-		appname = "Godot." + clean_app_name + "." + version;
+		appname = "Test Game Engine." + clean_app_name + "." + version;
 	}
 
 	FileDialogData *fd = memnew(FileDialogData);
@@ -1710,7 +1710,7 @@ void DisplayServerWindows::screen_set_keep_on(bool p_enable) {
 	}
 
 	if (p_enable) {
-		const String reason = "Godot Engine running with display/window/energy_saving/keep_screen_on = true";
+		const String reason = "Test Game Engine running with display/window/energy_saving/keep_screen_on = true";
 		Char16String reason_utf16 = reason.utf16();
 		REASON_CONTEXT context;
 		context.Version = POWER_REQUEST_CONTEXT_VERSION;
@@ -3495,7 +3495,7 @@ Error DisplayServerWindows::embed_process(WindowID p_window, OS::ProcessID p_pid
 		p_visible = false;
 	}
 
-	// In Godot, the window position is offset by the screen's origin coordinates.
+	// In Test Game Engine, the window position is offset by the screen's origin coordinates.
 	// We need to adjust for this when a screen is positioned in the negative space
 	// (e.g., a screen to the left of the main screen).
 	const Rect2i adjusted_rect = Rect2i(p_rect.position + _get_screens_origin(), p_rect.size);
@@ -3971,7 +3971,7 @@ Key DisplayServerWindows::keyboard_get_keycode_from_physical(Key p_keycode) cons
 	// Unlike a similar Linux/BSD check which matches full Latin-1 range,
 	// we limit these to ASCII to fix some layouts, including Arabic ones
 	if (char_code >= 32 && char_code <= 127) {
-		// Godot uses 'braces' instead of 'brackets'
+		// Test Game Engine uses 'braces' instead of 'brackets'
 		if (char_code == (unsigned int)Key::BRACKETLEFT || char_code == (unsigned int)Key::BRACKETRIGHT) {
 			char_code += 32;
 		}
@@ -7028,7 +7028,7 @@ Error DisplayServerWindows::_create_window(WindowID p_window_id, WindowMode p_mo
 			PROPVARIANT val;
 			String appname;
 			if (Engine::get_singleton()->is_editor_hint()) {
-				appname = "Godot.GodotEditor." + String(GODOT_VERSION_FULL_CONFIG);
+				appname = "Test Game Engine.GodotEditor." + String(GODOT_VERSION_FULL_CONFIG);
 			} else {
 				String name = GLOBAL_GET("application/config/name");
 				String version = GLOBAL_GET("application/config/version");
@@ -7042,7 +7042,7 @@ Error DisplayServerWindows::_create_window(WindowID p_window_id, WindowMode p_mo
 					}
 				}
 				clean_app_name = clean_app_name.substr(0, 120 - version.length()).trim_suffix(".");
-				appname = "Godot." + clean_app_name + "." + version;
+				appname = "Test Game Engine." + clean_app_name + "." + version;
 			}
 			InitPropVariantFromString((PCWSTR)appname.utf16().get_data(), &val);
 			prop_store->SetValue(PKEY_AppUserModel_ID, val);
@@ -7612,7 +7612,7 @@ DisplayServerWindows::DisplayServerWindows(const String &p_rendering_driver, Win
 
 	String appname;
 	if (Engine::get_singleton()->is_editor_hint()) {
-		appname = "Godot.GodotEditor." + String(GODOT_VERSION_FULL_CONFIG);
+		appname = "Test Game Engine.GodotEditor." + String(GODOT_VERSION_FULL_CONFIG);
 	} else {
 		String name = GLOBAL_GET("application/config/name");
 		String version = GLOBAL_GET("application/config/version");
@@ -7626,7 +7626,7 @@ DisplayServerWindows::DisplayServerWindows(const String &p_rendering_driver, Win
 			}
 		}
 		clean_app_name = clean_app_name.substr(0, 120 - version.length()).trim_suffix(".");
-		appname = "Godot." + clean_app_name + "." + version;
+		appname = "Test Game Engine." + clean_app_name + "." + version;
 
 #ifndef TOOLS_ENABLED
 		// Set for exported projects only.

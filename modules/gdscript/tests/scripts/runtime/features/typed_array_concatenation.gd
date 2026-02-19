@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/72948
+# https://github.com/godotengine/test game engine/issues/72948
 
 class Example:
 	extends RefCounted

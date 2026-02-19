@@ -2,10 +2,10 @@
 /*  renderer_compositor_rd.cpp                                            */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -347,7 +347,7 @@ RendererCompositorRD::RendererCompositorRD() {
 		}
 
 		// Check if a directory exists for the shader cache to pull shaders from as read-only. This is used on exported projects with baked shaders.
-		String shader_cache_res_dir = "res://.godot/shader_cache";
+		String shader_cache_res_dir = "res://.test game engine/shader_cache";
 		Ref<DirAccess> res_da = DirAccess::open(shader_cache_res_dir);
 		if (res_da.is_valid()) {
 			ShaderRD::set_shader_cache_res_dir(shader_cache_res_dir);

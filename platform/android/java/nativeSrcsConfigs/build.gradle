@@ -9,7 +9,7 @@ android {
     buildToolsVersion versions.buildTools
     ndkVersion versions.ndkVersion
 
-    namespace = "org.godotengine.godot"
+    namespace = "org.godotengine.test game engine"
 
     defaultConfig {
         minSdkVersion versions.minSdk

@@ -50,9 +50,9 @@ import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-// -- GODOT start --
+// -- TEST GAME ENGINE start --
 import android.annotation.SuppressLint;
-// -- GODOT end --
+// -- TEST GAME ENGINE end --
 
 import java.io.File;
 

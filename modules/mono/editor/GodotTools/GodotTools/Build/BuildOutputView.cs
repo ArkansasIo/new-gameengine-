@@ -1,4 +1,4 @@
-using Godot;
+using Test Game Engine;
 using static GodotTools.Internals.Globals;
 
 namespace GodotTools.Build

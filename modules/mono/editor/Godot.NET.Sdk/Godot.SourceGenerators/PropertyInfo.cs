@@ -1,4 +1,4 @@
-namespace Godot.SourceGenerators
+namespace Test Game Engine.SourceGenerators
 {
     internal readonly struct PropertyInfo
     {

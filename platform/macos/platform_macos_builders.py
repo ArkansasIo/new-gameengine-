@@ -12,7 +12,7 @@ def generate_bundle(target, source, env):
 
     if env.editor_build:
         # Editor bundle.
-        prefix = "godot." + env["platform"] + "." + env["target"]
+        prefix = "test game engine." + env["platform"] + "." + env["target"]
         if env.dev_build:
             prefix += ".dev"
         if env["precision"] == "double":
@@ -41,7 +41,7 @@ def generate_bundle(target, source, env):
         if not os.path.isdir(app_dir + "/Contents/MacOS"):
             os.mkdir(app_dir + "/Contents/MacOS")
         if target_bin != "":
-            shutil.copy(target_bin, app_dir + "/Contents/MacOS/Godot")
+            shutil.copy(target_bin, app_dir + "/Contents/MacOS/Test Game Engine")
         if "mono" in env.module_version_string:
             shutil.copytree(env.Dir("#bin/GodotSharp").abspath, app_dir + "/Contents/Resources/GodotSharp")
         version = get_build_version(False)
@@ -73,9 +73,9 @@ def generate_bundle(target, source, env):
 
     else:
         # Template bundle.
-        app_prefix = "godot." + env["platform"]
-        rel_prefix = "godot." + env["platform"] + "." + "template_release"
-        dbg_prefix = "godot." + env["platform"] + "." + "template_debug"
+        app_prefix = "test game engine." + env["platform"]
+        rel_prefix = "test game engine." + env["platform"] + "." + "template_release"
+        dbg_prefix = "test game engine." + env["platform"] + "." + "template_debug"
         if env.dev_build:
             app_prefix += ".dev"
             rel_prefix += ".dev"

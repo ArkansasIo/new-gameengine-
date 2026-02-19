@@ -2,10 +2,10 @@
 /*  GodotService.kt                                                       */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.service
+package org.godotengine.test game engine.service
 
 import android.app.Service
 import android.content.Intent
@@ -48,16 +48,16 @@ import android.widget.FrameLayout
 import androidx.annotation.CallSuper
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
-import org.godotengine.godot.Godot
-import org.godotengine.godot.GodotHost
-import org.godotengine.godot.R
+import org.godotengine.test game engine.Test Game Engine
+import org.godotengine.test game engine.GodotHost
+import org.godotengine.test game engine.R
 import java.lang.ref.WeakReference
 
 /**
- * Specialized [Service] implementation able to host a Godot engine instance.
+ * Specialized [Service] implementation able to host a Test Game Engine engine instance.
  *
  * When used remotely (from another process), this component lacks access to an [android.app.Activity]
- * instance, and as such it does not have full access to the set of Godot UI capabilities.
+ * instance, and as such it does not have full access to the set of Test Game Engine UI capabilities.
  *
  * Limitations: As of version 4.5, use of vulkan + swappy causes [GodotService] to crash as swappy requires an Activity
  * context. So [GodotService] should be used with OpenGL or with Vulkan with swappy disabled.
@@ -207,7 +207,7 @@ open class GodotService : Service() {
 
 						var currentViewHost = viewHost
 						if (currentViewHost != null) {
-							Log.i(TAG, "Attached Godot engine to SurfaceControlViewHost")
+							Log.i(TAG, "Attached Test Game Engine engine to SurfaceControlViewHost")
 							service.listener?.onEngineStatusUpdate(
 								EngineStatus.SCVH_CREATED,
 								bundleOf(KEY_SURFACE_PACKAGE to currentViewHost.surfacePackage)
@@ -222,9 +222,9 @@ open class GodotService : Service() {
 							return
 						}
 
-						val godotContainerLayout = service.godot.containerLayout
+						val godotContainerLayout = service.test game engine.containerLayout
 						if (godotContainerLayout == null) {
-							Log.e(TAG, "Invalid godot layout.. Aborting")
+							Log.e(TAG, "Invalid test game engine layout.. Aborting")
 							service.listener?.onEngineError(EngineError.SCVH_CREATION_FAILED)
 							return
 						}
@@ -240,7 +240,7 @@ open class GodotService : Service() {
 						currentViewHost = SurfaceControlViewHost(service, display, hostToken).apply {
 							setView(godotContainerLayout, width, height)
 
-							Log.i(TAG, "Attached Godot engine to SurfaceControlViewHost")
+							Log.i(TAG, "Attached Test Game Engine engine to SurfaceControlViewHost")
 							service.listener?.onEngineStatusUpdate(
 								EngineStatus.SCVH_CREATED,
 								bundleOf(KEY_SURFACE_PACKAGE to surfacePackage)
@@ -259,7 +259,7 @@ open class GodotService : Service() {
 
 	private inner class GodotServiceHost : GodotHost {
 		override fun getActivity() = null
-		override fun getGodot() = this@GodotService.godot
+		override fun getGodot() = this@GodotService.test game engine
 		override fun getCommandLine() = commandLineParams
 
 		override fun runOnHostThread(action: Runnable) {
@@ -270,16 +270,16 @@ open class GodotService : Service() {
 			}
 		}
 
-		override fun onGodotForceQuit(instance: Godot) {
-			if (instance === godot) {
-				Log.d(TAG, "Force quitting Godot service")
+		override fun onGodotForceQuit(instance: Test Game Engine) {
+			if (instance === test game engine) {
+				Log.d(TAG, "Force quitting Test Game Engine service")
 				forceQuitService()
 			}
 		}
 
-		override fun onGodotRestartRequested(instance: Godot) {
-			if (instance === godot) {
-				Log.d(TAG, "Restarting Godot service")
+		override fun onGodotRestartRequested(instance: Test Game Engine) {
+			if (instance === test game engine) {
+				Log.d(TAG, "Restarting Test Game Engine service")
 				listener?.onEngineRestartRequested()
 			}
 		}
@@ -290,7 +290,7 @@ open class GodotService : Service() {
 	private val messenger = Messenger(handler)
 	private val godotHost = GodotServiceHost()
 
-	private val godot: Godot by lazy { Godot.getInstance(applicationContext) }
+	private val test game engine: Test Game Engine by lazy { Test Game Engine.getInstance(applicationContext) }
 	private var listener: RemoteListener? = null
 
 	override fun onCreate() {
@@ -320,12 +320,12 @@ open class GodotService : Service() {
 	private fun performEngineInitialization(): Boolean {
 		Log.d(TAG, "Performing engine initialization")
 		try {
-			// Initialize the Godot instance
-			if (!godot.initEngine(godotHost, godotHost.commandLine, godotHost.getHostPlugins(godot))) {
-				throw IllegalStateException("Unable to initialize Godot engine layer")
+			// Initialize the Test Game Engine instance
+			if (!test game engine.initEngine(godotHost, godotHost.commandLine, godotHost.getHostPlugins(test game engine))) {
+				throw IllegalStateException("Unable to initialize Test Game Engine engine layer")
 			}
 
-			if (godot.onInitRenderView(godotHost) == null) {
+			if (test game engine.onInitRenderView(godotHost) == null) {
 				throw IllegalStateException("Unable to initialize engine render view")
 			}
 			return true
@@ -337,7 +337,7 @@ open class GodotService : Service() {
 			} else {
 				e.message!!
 			}
-			godot.alert(errorMessage, getString(R.string.text_error_title)) { godot.destroyAndKillProcess() }
+			test game engine.alert(errorMessage, getString(R.string.text_error_title)) { test game engine.destroyAndKillProcess() }
 			return false
 		}
 	}
@@ -363,23 +363,23 @@ open class GodotService : Service() {
 	}
 
 	private fun initEngine(args: Array<String>?): FrameLayout? {
-		if (!godot.isInitialized()) {
+		if (!test game engine.isInitialized()) {
 			if (!args.isNullOrEmpty()) {
 				updateCommandLineParams(args.asList())
 			}
 
 			if (!performEngineInitialization()) {
-				Log.e(TAG, "Unable to initialize Godot engine")
+				Log.e(TAG, "Unable to initialize Test Game Engine engine")
 				return null
 			} else {
 				Log.i(TAG, "Engine initialization complete!")
 			}
 		}
-		val godotContainerLayout = godot.containerLayout
+		val godotContainerLayout = test game engine.containerLayout
 		if (godotContainerLayout == null) {
 			listener?.onEngineError(EngineError.INIT_FAILED)
 		} else {
-			Log.i(TAG, "Initialized Godot engine")
+			Log.i(TAG, "Initialized Test Game Engine engine")
 			listener?.onEngineStatusUpdate(EngineStatus.INITIALIZED)
 		}
 
@@ -387,37 +387,37 @@ open class GodotService : Service() {
 	}
 
 	private fun startEngine() {
-		if (!godot.isInitialized()) {
-			Log.e(TAG, "Attempting to start uninitialized Godot engine instance")
+		if (!test game engine.isInitialized()) {
+			Log.e(TAG, "Attempting to start uninitialized Test Game Engine engine instance")
 			return
 		}
 
-		Log.d(TAG, "Starting Godot engine")
-		godot.onStart(godotHost)
-		godot.onResume(godotHost)
+		Log.d(TAG, "Starting Test Game Engine engine")
+		test game engine.onStart(godotHost)
+		test game engine.onResume(godotHost)
 
 		listener?.onEngineStatusUpdate(EngineStatus.STARTED)
 	}
 
 	private fun stopEngine() {
-		if (!godot.isInitialized()) {
-			Log.e(TAG, "Attempting to stop uninitialized Godot engine instance")
+		if (!test game engine.isInitialized()) {
+			Log.e(TAG, "Attempting to stop uninitialized Test Game Engine engine instance")
 			return
 		}
 
-		Log.d(TAG, "Stopping Godot engine")
-		godot.onPause(godotHost)
-		godot.onStop(godotHost)
+		Log.d(TAG, "Stopping Test Game Engine engine")
+		test game engine.onPause(godotHost)
+		test game engine.onStop(godotHost)
 
 		listener?.onEngineStatusUpdate(EngineStatus.STOPPED)
 	}
 
 	private fun destroyEngine() {
-		if (!godot.isInitialized()) {
+		if (!test game engine.isInitialized()) {
 			return
 		}
 
-		godot.onDestroy(godotHost)
+		test game engine.onDestroy(godotHost)
 
 		listener?.onEngineStatusUpdate(EngineStatus.DESTROYED)
 		listener = null

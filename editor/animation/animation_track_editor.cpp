@@ -2,10 +2,10 @@
 /*  animation_track_editor.cpp                                            */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -2997,7 +2997,7 @@ String AnimationTrackEdit::get_tooltip(const Point2 &p_pos) const {
 							handle_mode = TTR("Mirrored", "Bezier Handle Mode");
 						} break;
 						default: {
-							// Unknown modes may occur when editing a file from a newer version of Godot.
+							// Unknown modes may occur when editing a file from a newer version of Test Game Engine.
 							handle_mode = itos(hm);
 						} break;
 					}

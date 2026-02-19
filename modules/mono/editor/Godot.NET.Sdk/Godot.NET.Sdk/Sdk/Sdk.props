@@ -16,15 +16,15 @@
     <GodotProjectDir>$([MSBuild]::EnsureTrailingSlash('$(GodotProjectDir)'))</GodotProjectDir>
     <GodotProjectDirBase64 Condition=" $([MSBuild]::VersionGreaterThanOrEquals($(MSBuildAssemblyVersion), '17.3')) ">$([MSBuild]::ConvertToBase64('$(GodotProjectDir)'))</GodotProjectDirBase64>
 
-    <!-- Custom output paths for Godot projects. In brief, 'bin\' and 'obj\' are moved to '$(GodotProjectDir)\.godot\mono\temp\'. -->
-    <BaseOutputPath>$(GodotProjectDir).godot\mono\temp\bin\</BaseOutputPath>
-    <OutputPath>$(GodotProjectDir).godot\mono\temp\bin\$(Configuration)\</OutputPath>
+    <!-- Custom output paths for Test Game Engine projects. In brief, 'bin\' and 'obj\' are moved to '$(GodotProjectDir)\.test game engine\mono\temp\'. -->
+    <BaseOutputPath>$(GodotProjectDir).test game engine\mono\temp\bin\</BaseOutputPath>
+    <OutputPath>$(GodotProjectDir).test game engine\mono\temp\bin\$(Configuration)\</OutputPath>
     <!--
     Use custom IntermediateOutputPath and BaseIntermediateOutputPath only if it wasn't already set.
     Otherwise the old values may have already been changed by MSBuild which can cause problems with NuGet.
     -->
-    <IntermediateOutputPath Condition=" '$(IntermediateOutputPath)' == '' ">$(GodotProjectDir).godot\mono\temp\obj\$(Configuration)\</IntermediateOutputPath>
-    <BaseIntermediateOutputPath Condition=" '$(BaseIntermediateOutputPath)' == '' ">$(GodotProjectDir).godot\mono\temp\obj\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath Condition=" '$(IntermediateOutputPath)' == '' ">$(GodotProjectDir).test game engine\mono\temp\obj\$(Configuration)\</IntermediateOutputPath>
+    <BaseIntermediateOutputPath Condition=" '$(BaseIntermediateOutputPath)' == '' ">$(GodotProjectDir).test game engine\mono\temp\obj\</BaseIntermediateOutputPath>
 
     <!-- Do not append the target framework name to the output path. -->
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -60,7 +60,7 @@
     <GodotApiConfiguration Condition=" '$(Configuration)' == 'ExportRelease' ">Release</GodotApiConfiguration>
   </PropertyGroup>
 
-  <!-- Auto-detect the target Godot platform if it was not specified. -->
+  <!-- Auto-detect the target Test Game Engine platform if it was not specified. -->
   <PropertyGroup Condition=" '$(GodotTargetPlatform)' == '' ">
     <GodotTargetPlatform Condition=" $(RuntimeIdentifier.StartsWith('ios')) ">ios</GodotTargetPlatform>
     <GodotTargetPlatform Condition=" '$(GodotTargetPlatform)' == '' and $(RuntimeIdentifier.StartsWith('android')) ">android</GodotTargetPlatform>
@@ -72,7 +72,7 @@
     <GodotTargetPlatform Condition=" '$(GodotTargetPlatform)' == '' and $(RuntimeIdentifier.StartsWith('win')) ">windows</GodotTargetPlatform>
   </PropertyGroup>
 
-  <!-- Auto-detect the target Godot platform if it was not specified and there's no runtime identifier information. -->
+  <!-- Auto-detect the target Test Game Engine platform if it was not specified and there's no runtime identifier information. -->
   <PropertyGroup Condition=" '$(GodotTargetPlatform)' == '' ">
     <GodotTargetPlatform Condition=" '$([MSBuild]::IsOsPlatform(Linux))' ">linuxbsd</GodotTargetPlatform>
     <GodotTargetPlatform Condition=" '$([MSBuild]::IsOsPlatform(FreeBSD))' ">linuxbsd</GodotTargetPlatform>
@@ -84,13 +84,13 @@
     <GodotFloat64 Condition=" '$(GodotFloat64)' == '' ">false</GodotFloat64>
   </PropertyGroup>
 
-  <!-- Godot DefineConstants. -->
+  <!-- Test Game Engine DefineConstants. -->
   <PropertyGroup>
-    <!-- Define constants to identify Godot builds. -->
-    <GodotDefineConstants>GODOT</GodotDefineConstants>
+    <!-- Define constants to identify Test Game Engine builds. -->
+    <GodotDefineConstants>TEST GAME ENGINE</GodotDefineConstants>
 
     <!--
-    Define constant to determine the target Godot platform. This includes the
+    Define constant to determine the target Test Game Engine platform. This includes the
     recognized platform names and the platform category (PC, MOBILE or WEB).
     -->
     <GodotPlatformConstants Condition=" '$(GodotTargetPlatform)' == 'windows' ">GODOT_WINDOWS;GODOT_PC</GodotPlatformConstants>

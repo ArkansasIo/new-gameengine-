@@ -2,10 +2,10 @@
 /*  GodotInputHandler.java                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,13 +28,13 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.input;
+package org.godotengine.test game engine.input;
 
-import static org.godotengine.godot.utils.GLUtils.DEBUG;
+import static org.godotengine.test game engine.utils.GLUtils.DEBUG;
 
-import org.godotengine.godot.Godot;
-import org.godotengine.godot.GodotLib;
-import org.godotengine.godot.GodotRenderView;
+import org.godotengine.test game engine.Test Game Engine;
+import org.godotengine.test game engine.GodotLib;
+import org.godotengine.test game engine.GodotRenderView;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -84,7 +84,7 @@ public class GodotInputHandler implements InputManager.InputDeviceListener, Sens
 	private final SparseArray<Joystick> mJoysticksDevices = new SparseArray<>(4);
 	private final HashSet<Integer> mHardwareKeyboardIds = new HashSet<>();
 
-	private final Godot godot;
+	private final Test Game Engine test game engine;
 	private final InputManager mInputManager;
 	private final WindowManager windowManager;
 	private final GestureDetector gestureDetector;
@@ -102,8 +102,8 @@ public class GodotInputHandler implements InputManager.InputDeviceListener, Sens
 	private boolean overrideVolumeButtons = false;
 	private boolean hasHardwareKeyboardConfig = false;
 
-	public GodotInputHandler(Context context, Godot godot) {
-		this.godot = godot;
+	public GodotInputHandler(Context context, Test Game Engine test game engine) {
+		this.test game engine = test game engine;
 		mInputManager = (InputManager)context.getSystemService(Context.INPUT_SERVICE);
 		mInputManager.registerInputDeviceListener(this, null);
 
@@ -282,7 +282,7 @@ public class GodotInputHandler implements InputManager.InputDeviceListener, Sens
 					final float value = event.getAxisValue(axis);
 					/*
 					  As all axes are polled for each event, only fire an axis event if the value has actually changed.
-					  Prevents flooding Godot with repeated events.
+					  Prevents flooding Test Game Engine with repeated events.
 					 */
 					if (joystick.axesValues.indexOfKey(axis) < 0 || (float)joystick.axesValues.get(axis) != value) {
 						// save value to prevent repeats
@@ -408,7 +408,7 @@ public class GodotInputHandler implements InputManager.InputDeviceListener, Sens
 		Collections.sort(joystick.axes);
 		for (int idx = 0; idx < joystick.axes.size(); idx++) {
 			//Helps with creating new joypad mappings.
-			Log.i(TAG, " - Mapping Android axis " + joystick.axes.get(idx) + " to Godot axis " + idx);
+			Log.i(TAG, " - Mapping Android axis " + joystick.axes.get(idx) + " to Test Game Engine axis " + idx);
 		}
 		mJoysticksDevices.put(deviceId, joystick);
 
@@ -770,7 +770,7 @@ public class GodotInputHandler implements InputManager.InputDeviceListener, Sens
 
 	private void dispatchInputEventRunnable(@NonNull InputEventRunnable runnable) {
 		if (shouldDispatchInputToRenderThread()) {
-			godot.runOnRenderThread(runnable);
+			test game engine.runOnRenderThread(runnable);
 		} else {
 			runnable.run();
 		}
@@ -822,7 +822,7 @@ public class GodotInputHandler implements InputManager.InputDeviceListener, Sens
 		}
 
 		runnable.setSensorEvent(event.sensor.getType(), rotatedValue0, rotatedValue1, rotatedValue2);
-		godot.runOnRenderThread(runnable);
+		test game engine.runOnRenderThread(runnable);
 	}
 
 	@Override

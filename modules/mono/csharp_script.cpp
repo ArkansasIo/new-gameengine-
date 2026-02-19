@@ -2,10 +2,10 @@
 /*  csharp_script.cpp                                                     */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -352,7 +352,7 @@ Vector<String> CSharpLanguage::get_string_delimiters() const {
 static String get_base_class_name(const String &p_base_class_name, const String p_class_name) {
 	String base_class = pascal_to_pascal_case(p_base_class_name);
 	if (p_class_name == base_class) {
-		base_class = "Godot." + base_class;
+		base_class = "Test Game Engine." + base_class;
 	}
 	return base_class;
 }
@@ -1375,11 +1375,11 @@ void CSharpLanguage::tie_native_managed_to_unmanaged(GCHandleIntPtr p_gchandle_i
 	MonoGCHandleData gchandle = MonoGCHandleData(p_gchandle_intptr,
 			p_ref_counted ? gdmono::GCHandleType::WEAK_HANDLE : gdmono::GCHandleType::STRONG_HANDLE);
 
-	// If it's just a wrapper Godot class and not a custom inheriting class, then attach a
+	// If it's just a wrapper Test Game Engine class and not a custom inheriting class, then attach a
 	// script binding instead. One of the advantages of this is that if a script is attached
 	// later and it's not a C# script, then the managed object won't have to be disposed.
 	// Another reason for doing this is that this instance could outlive CSharpLanguage, which would
-	// be problematic when using a script. See: https://github.com/godotengine/godot/issues/25621
+	// be problematic when using a script. See: https://github.com/godotengine/test game engine/issues/25621
 
 	if (p_ref_counted) {
 		// Unsafe refcount increment. The managed instance also counts as a reference.
@@ -1922,7 +1922,7 @@ void CSharpInstance::notification(int p_notification, bool p_reversed) {
 			// The RefCounted wouldn't have reached 0 otherwise, since the managed side
 			// references it and Dispose() needs to be called to release it.
 			// However, this means C# RefCounted scripts can't receive NOTIFICATION_PREDELETE, but
-			// this is likely the case with GDScript as well: https://github.com/godotengine/godot/issues/6784
+			// this is likely the case with GDScript as well: https://github.com/godotengine/test game engine/issues/6784
 			return;
 		}
 	} else if (p_notification == Object::NOTIFICATION_PREDELETE_CLEANUP) {

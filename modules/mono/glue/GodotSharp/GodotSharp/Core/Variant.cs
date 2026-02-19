@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.CompilerServices;
-using Godot.NativeInterop;
+using Test Game Engine.NativeInterop;
 
-namespace Godot;
+namespace Test Game Engine;
 
 #nullable enable
 
@@ -92,7 +92,7 @@ public partial struct Variant : IDisposable
         new(NativeFuncs.godotsharp_variant_new_copy(nativeValueToOwn));
 
     /// <summary>
-    /// Constructs a new <see cref="Godot.NativeInterop.godot_variant"/> from this instance.
+    /// Constructs a new <see cref="Test Game Engine.NativeInterop.godot_variant"/> from this instance.
     /// The caller is responsible of disposing the new instance to avoid memory leaks.
     /// </summary>
     public godot_variant CopyNativeVariant() =>

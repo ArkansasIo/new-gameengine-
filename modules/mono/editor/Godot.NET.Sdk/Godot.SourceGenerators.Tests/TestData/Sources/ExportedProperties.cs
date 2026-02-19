@@ -1,6 +1,6 @@
-using Godot;
+using Test Game Engine;
 using System;
-using static Godot.Mathf;
+using static Test Game Engine.Mathf;
 
 public partial class ExportedProperties(string primaryCtorParameter) : GodotObject
 {
@@ -145,7 +145,7 @@ public partial class ExportedProperties(string primaryCtorParameter) : GodotObje
     [Export] private Double PropertyDouble { get; set; } = 10;
     [Export] private String PropertyString { get; set; } = "foo";
 
-    // Godot structs
+    // Test Game Engine structs
     [Export] private Vector2 PropertyVector2 { get; set; } = new(10f, 10f);
     [Export] private Vector2I PropertyVector2I { get; set; } = Vector2I.Up;
     [Export] private Rect2 PropertyRect2 { get; set; } = new(new Vector2(10f, 10f), new Vector2(10f, 10f));
@@ -206,21 +206,21 @@ public partial class ExportedProperties(string primaryCtorParameter) : GodotObje
 
     // Classes
     [Export] private GodotObject PropertyGodotObjectOrDerived { get; set; }
-    [Export] private Godot.Texture PropertyGodotResourceTexture { get; set; }
-    [Export] private Godot.Texture PropertyGodotResourceTextureWithInitializer { get; set; } = new() { ResourceName = "" };
+    [Export] private Test Game Engine.Texture PropertyGodotResourceTexture { get; set; }
+    [Export] private Test Game Engine.Texture PropertyGodotResourceTextureWithInitializer { get; set; } = new() { ResourceName = "" };
     [Export] private StringName PropertyStringName { get; set; } = new StringName("foo");
     [Export] private NodePath PropertyNodePath { get; set; } = new NodePath("foo");
     [Export] private Rid PropertyRid { get; set; }
 
     [Export]
-    private Godot.Collections.Dictionary PropertyGodotDictionary { get; set; } = new() { { "foo", 10 }, { Vector2.Up, Colors.Chocolate } };
+    private Test Game Engine.Collections.Dictionary PropertyGodotDictionary { get; set; } = new() { { "foo", 10 }, { Vector2.Up, Colors.Chocolate } };
 
     [Export]
-    private Godot.Collections.Array PropertyGodotArray { get; set; } = new() { "foo", 10, Vector2.Up, Colors.Chocolate };
+    private Test Game Engine.Collections.Array PropertyGodotArray { get; set; } = new() { "foo", 10, Vector2.Up, Colors.Chocolate };
 
     [Export]
-    private Godot.Collections.Dictionary<string, bool> PropertyGodotGenericDictionary { get; set; } = new() { { "foo", true }, { "bar", false } };
+    private Test Game Engine.Collections.Dictionary<string, bool> PropertyGodotGenericDictionary { get; set; } = new() { { "foo", true }, { "bar", false } };
 
     [Export]
-    private Godot.Collections.Array<int> PropertyGodotGenericArray { get; set; } = new() { 0, 1, 2, 3, 4, 5, 6 };
+    private Test Game Engine.Collections.Array<int> PropertyGodotGenericArray { get; set; } = new() { 0, 1, 2, 3, 4, 5, 6 };
 }

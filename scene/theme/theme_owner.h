@@ -2,7 +2,7 @@
 /*  theme_owner.h                                                         */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
 // ...existing code...
@@ -30,8 +30,8 @@
 
 #pragma once
 
-#include "../core/object/object.h"
-#include "../resources/theme.h"
+#include "core/object/object.h"
+#include "scene/resources/theme.h"
 
 class Control;
 class Node;

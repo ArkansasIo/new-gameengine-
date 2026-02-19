@@ -2,10 +2,10 @@
 /*  openxr_spatial_entity_extension.cpp                                   */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -963,7 +963,7 @@ PackedVector2Array OpenXRSpatialEntityExtension::get_vector2_buffer(RID p_spatia
 	}
 
 #ifdef REAL_T_IS_DOUBLE
-	// OpenXR XrVector2f is using floats, Godot Vector2 is using double, so we need to do a copy.
+	// OpenXR XrVector2f is using floats, Test Game Engine Vector2 is using double, so we need to do a copy.
 	LocalVector<XrVector2f> buffer;
 	buffer.resize(count);
 
@@ -1013,7 +1013,7 @@ PackedVector3Array OpenXRSpatialEntityExtension::get_vector3_buffer(RID p_spatia
 	}
 
 #ifdef REAL_T_IS_DOUBLE
-	// OpenXR XrVector3f is using floats, Godot Vector3 is using double, so we need to do a copy.
+	// OpenXR XrVector3f is using floats, Test Game Engine Vector3 is using double, so we need to do a copy.
 	LocalVector<XrVector3f> buffer;
 	buffer.resize(count);
 

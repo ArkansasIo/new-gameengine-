@@ -2,10 +2,10 @@
 /*  RemoteGodotFragment.kt                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package org.godotengine.godot.service
+package org.godotengine.test game engine.service
 
 import android.content.ComponentName
 import android.content.Context
@@ -49,14 +49,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import org.godotengine.godot.GodotHost
-import org.godotengine.godot.R
-import org.godotengine.godot.service.GodotService.EngineStatus.*
-import org.godotengine.godot.service.GodotService.EngineError.*
+import org.godotengine.test game engine.GodotHost
+import org.godotengine.test game engine.R
+import org.godotengine.test game engine.service.GodotService.EngineStatus.*
+import org.godotengine.test game engine.service.GodotService.EngineError.*
 import java.lang.ref.WeakReference
 
 /**
- * Godot [Fragment] component showcasing how to drive rendering from another process using a [GodotService] instance.
+ * Test Game Engine [Fragment] component showcasing how to drive rendering from another process using a [GodotService] instance.
  */
 @RequiresApi(Build.VERSION_CODES.R)
 class RemoteGodotFragment: Fragment() {
@@ -89,7 +89,7 @@ class RemoteGodotFragment: Fragment() {
 			Log.d(TAG, "Connected to service $name")
 			serviceMessenger = Messenger(service)
 
-			// Initialize the Godot engine
+			// Initialize the Test Game Engine engine
 			initGodotEngine()
 		}
 
@@ -297,7 +297,7 @@ class RemoteGodotFragment: Fragment() {
 				replyTo = messengerForReply
 			})
 		} catch (e: RemoteException) {
-			Log.e(TAG, "Unable to initialize Godot engine", e)
+			Log.e(TAG, "Unable to initialize Test Game Engine engine", e)
 		}
 	}
 
@@ -311,7 +311,7 @@ class RemoteGodotFragment: Fragment() {
 				replyTo = messengerForReply
 			})
 		} catch (e: RemoteException) {
-			Log.e(TAG, "Unable to start Godot engine", e)
+			Log.e(TAG, "Unable to start Test Game Engine engine", e)
 		}
 	}
 
@@ -325,7 +325,7 @@ class RemoteGodotFragment: Fragment() {
 				replyTo = messengerForReply
 			})
 		} catch (e: RemoteException) {
-			Log.e(TAG, "Unable to stop Godot engine", e)
+			Log.e(TAG, "Unable to stop Test Game Engine engine", e)
 		}
 	}
 

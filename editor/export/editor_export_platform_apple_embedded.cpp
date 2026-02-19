@@ -2,10 +2,10 @@
 /*  editor_export_platform_apple_embedded.cpp                             */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -1105,7 +1105,7 @@ Error EditorExportPlatformAppleEmbedded::_convert_to_framework(const String &p_s
 }
 
 void EditorExportPlatformAppleEmbedded::_add_assets_to_project(const String &p_out_dir, const Ref<EditorExportPreset> &p_preset, Vector<uint8_t> &p_project_data, const Vector<AppleEmbeddedExportAsset> &p_additional_assets) {
-	// that is just a random number, we just need Godot IDs not to clash with
+	// that is just a random number, we just need Test Game Engine IDs not to clash with
 	// existing IDs in the project.
 	PbxId current_id = { 0x58938401, 0, 0 };
 	String pbx_files;
@@ -1210,7 +1210,7 @@ Error EditorExportPlatformAppleEmbedded::_copy_asset(const Ref<EditorExportPrese
 		return ERR_FILE_NOT_FOUND;
 	}
 
-	String base_dir = p_asset.get_base_dir().replace("res://", "").replace(".godot/mono/temp/bin/", "");
+	String base_dir = p_asset.get_base_dir().replace("res://", "").replace(".test game engine/mono/temp/bin/", "");
 	String asset = p_asset.ends_with("/") ? p_asset.left(-1) : p_asset;
 	String destination_dir;
 	String destination;
@@ -1581,7 +1581,7 @@ Error EditorExportPlatformAppleEmbedded::_export_apple_embedded_plugins(const Re
 		plugin_format["initialization"] = plugin_initialization_cpp_code;
 		plugin_format["deinitialization"] = plugin_deinitialization_cpp_code;
 
-		String plugin_cpp_code = "\n// Godot Plugins\n"
+		String plugin_cpp_code = "\n// Test Game Engine Plugins\n"
 								 "void godot_apple_embedded_plugins_initialize();\n"
 								 "void godot_apple_embedded_plugins_deinitialize();\n"
 								 "// Exported Plugins\n\n"
@@ -1709,7 +1709,7 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 					for (String n = da->get_next(); !n.is_empty(); n = da->get_next()) {
 						if (!n.begins_with(".")) { // Ignore ".", ".." and hidden files.
 							if (da->current_is_dir()) {
-								if (n == "dylibs" || n == "Images.xcassets" || n.ends_with(".lproj") || n == "godot-publish-dotnet" || n.ends_with(".xcframework") || n.ends_with(".framework")) {
+								if (n == "dylibs" || n == "Images.xcassets" || n.ends_with(".lproj") || n == "test game engine-publish-dotnet" || n.ends_with(".xcframework") || n.ends_with(".framework")) {
 									expected_files++;
 								}
 							} else {
@@ -1927,7 +1927,7 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 
 	const String project_name = get_project_setting(p_preset, "application/config/name");
 	const Dictionary appnames = get_project_setting(p_preset, "application/config/name_localized");
-	const StringName domain_name = "godot.project_name_localization";
+	const StringName domain_name = "test game engine.project_name_localization";
 	Ref<TranslationDomain> domain = TranslationServer::get_singleton()->get_or_add_domain(domain_name);
 	TranslationServer::get_singleton()->load_project_translations(domain);
 	const Vector<String> locales = domain->get_loaded_locales();
@@ -2409,7 +2409,7 @@ void EditorExportPlatformAppleEmbedded::_check_for_changes_poll_thread(void *ud)
 			args.push_back("-j");
 			args.push_back("-");
 			args.push_back("-q");
-			// Add a timeout, so the process doesn't hang indefinitely, which can prevent Godot shutting down.
+			// Add a timeout, so the process doesn't hang indefinitely, which can prevent Test Game Engine shutting down.
 			args.push_back("--timeout");
 			args.push_back("5");
 			args.push_back("--filter");

@@ -2,10 +2,10 @@
 /*  GodotAppInstrumentedTestPlugin.kt                                     */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -28,21 +28,21 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-package com.godot.game.test
+package com.test game engine.game.test
 
 import android.util.Log
 import android.widget.Toast
-import org.godotengine.godot.Godot
-import org.godotengine.godot.plugin.GodotPlugin
-import org.godotengine.godot.plugin.UsedByGodot
-import org.godotengine.godot.plugin.SignalInfo
+import org.godotengine.test game engine.Test Game Engine
+import org.godotengine.test game engine.plugin.GodotPlugin
+import org.godotengine.test game engine.plugin.UsedByGodot
+import org.godotengine.test game engine.plugin.SignalInfo
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CountDownLatch
 
 /**
  * [GodotPlugin] used to drive instrumented tests.
  */
-class GodotAppInstrumentedTestPlugin(godot: Godot) : GodotPlugin(godot) {
+class GodotAppInstrumentedTestPlugin(test game engine: Test Game Engine) : GodotPlugin(test game engine) {
 
 	companion object {
 		private val TAG = GodotAppInstrumentedTestPlugin::class.java.simpleName
@@ -77,14 +77,14 @@ class GodotAppInstrumentedTestPlugin(godot: Godot) : GodotPlugin(godot) {
 	}
 
 	/**
-	 * Used by the instrumented test to wait until the Godot main loop is up and running.
+	 * Used by the instrumented test to wait until the Test Game Engine main loop is up and running.
 	 */
 	internal fun waitForGodotMainLoopStarted() {
 		// Wait on the CountDownLatch for `onGodotMainLoopStarted`
 		try {
 			latches[MAIN_LOOP_STARTED_LATCH_KEY]?.await()
 		} catch (e: InterruptedException) {
-			Log.e(TAG, "Unable to wait for Godot main loop started event.", e)
+			Log.e(TAG, "Unable to wait for Test Game Engine main loop started event.", e)
 		}
 	}
 

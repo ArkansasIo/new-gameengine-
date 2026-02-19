@@ -2,10 +2,10 @@
 /*  rendering_device_driver_metal3.cpp                                    */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -97,7 +97,7 @@ Error RenderingDeviceDriverMetal::_create_device() {
 
 	device_queue = NS::TransferPtr(device->newCommandQueue());
 	ERR_FAIL_NULL_V(device_queue.get(), ERR_CANT_CREATE);
-	device_queue->setLabel(MTLSTR("Godot Main Command Queue"));
+	device_queue->setLabel(MTLSTR("Test Game Engine Main Command Queue"));
 
 	return OK;
 }

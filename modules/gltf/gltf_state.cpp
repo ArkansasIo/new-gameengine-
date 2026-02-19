@@ -2,10 +2,10 @@
 /*  gltf_state.cpp                                                        */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             TEST GAME ENGINE                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present Test Game Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -142,7 +142,7 @@ void GLTFState::_bind_methods() {
 	BIND_ENUM_CONSTANT(HANDLE_BINARY_IMAGE_MODE_EMBED_AS_UNCOMPRESSED);
 
 #ifndef DISABLE_DEPRECATED
-	// Deprecated non-type-safe versions for backward compatibility, remove in Godot 5.0.
+	// Deprecated non-type-safe versions for backward compatibility, remove in Test Game Engine 5.0.
 	ClassDB::bind_method(D_METHOD("get_handle_binary_image"), &GLTFState::get_handle_binary_image);
 	ClassDB::bind_method(D_METHOD("set_handle_binary_image", "method"), &GLTFState::set_handle_binary_image);
 	ADD_PROPERTY(PropertyInfo(Variant::INT, "handle_binary_image", PROPERTY_HINT_ENUM, "Discard All Textures,Extract Textures,Embed as Basis Universal,Embed as Uncompressed", PROPERTY_USAGE_INTERNAL), "set_handle_binary_image", "get_handle_binary_image"); // enum as int

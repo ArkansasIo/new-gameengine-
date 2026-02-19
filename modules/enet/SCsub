@@ -33,7 +33,7 @@ if env["builtin_enet"]:
     env.modules_sources += thirdparty_obj
 
 
-# Godot source files
+# Test Game Engine source files
 
 module_obj = []
 
