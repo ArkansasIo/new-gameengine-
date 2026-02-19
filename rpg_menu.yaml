@@ -1,0 +1,111 @@
+WorldSceneTools:
+  - SceneManager
+  - WorldStreamer
+  - TerrainGenerator
+EntityObjectSystems:
+  - ECS
+  - ObjectSpawner
+  - InteractionSystem
+LevelMapCreation:
+  - TilemapEditor
+  - TerrainSculptor
+  - DungeonGenerator
+CharacterCreatureTools:
+  - CharacterCreator
+  - RaceClassTemplates
+  - EquipmentPreview
+  - StatAttributeEditor
+NPCAITools:
+  - BehaviorTreeEditor
+  - DialogueRules
+  - ScheduleRoutines
+  - FactionReputationLogic
+CombatSystemTools:
+  - CombatFramework
+  - DamageMitigation
+  - HitDetection
+  - AbilityExecution
+  - CooldownResource
+  - ThreatAggroSystem
+InventoryItemSystems:
+  - ItemDatabaseEditor
+  - EquipmentSlotManager
+  - CraftingRecipeEditor
+  - LootTableGenerator
+  - CurrencyEconomySystem
+QuestNarrativeTools:
+  - QuestChainEditor
+  - ObjectiveTracking
+  - TriggerConditions
+  - BranchingOutcomes
+  - ReputationImpact
+  - DialogueTreeEditor
+GameplayLogicScripting:
+  - VisualScripting
+  - EventTriggers
+  - StateMachines
+  - QuestScripting
+  - PuzzleLogic
+  - CodeScripting
+ProgressionSystems:
+  - XPCurveEditor
+  - LevelProgression
+  - SkillTreeEditor
+  - AttributeGrowth
+  - PrestigeSystems
+  - MasterySystems
+  - PassiveBonusSystems
+AISimulationTools:
+  - Pathfinding
+  - UtilityAI
+  - TacticalCombatAI
+  - CrowdSimulation
+  - WorldSimulation
+SavePersistenceTools:
+  - SaveLoadSystem
+  - ProfileStorage
+  - WorldStatePersistence
+  - CloudSaveSupport
+UIHUDTools:
+  - HUDLayoutEditor
+  - InventoryUIBuilder
+  - DialogueUIDesigner
+  - QuestTrackerUI
+  - SkillTreeUI
+AudioFeedbackTools:
+  - CombatSoundTriggers
+  - AmbientAudioZones
+  - VoiceDialogueAudio
+  - MusicLayering
+VFXPresentationTools:
+  - SpellParticleEditor
+  - LightingMoodPresets
+  - CameraCinematicTools
+  - CutsceneEditor
+MultiplayerMMOTools:
+  - Networking
+  - ReplicationSync
+  - ChatSocialSystems
+  - PartyGuildSystems
+  - ZoneInstancing
+  - MatchmakingRaids
+  - AuctionHouse
+SocialCommunityTools:
+  - FriendLists
+  - PartyRaidManagement
+  - GuildClanManagement
+  - LFGSystem
+  - ChatEmotesMail
+SecurityLiveOpsTools:
+  - AntiCheatModeration
+  - GMCommandConsole
+  - PlayerReporting
+  - ServerMonitoring
+  - HotfixDeployment
+AdvancedTools:
+  - ProceduralDungeons
+  - ProceduralLoot
+  - ProceduralQuests
+  - ProceduralWorldSeeds
+  - ModEditor
+  - AssetImporterExporter
