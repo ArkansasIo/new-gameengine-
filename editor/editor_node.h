@@ -141,6 +141,13 @@ public:
 	enum MenuOptions {
 		// Scene menu.
 		SCENE_NEW_SCENE,
+			// Edit menu context-aware actions
+			EDIT_CUT,
+			EDIT_COPY,
+			EDIT_PASTE,
+			EDIT_DUPLICATE,
+			EDIT_DELETE,
+			EDIT_SELECT_ALL,
 		SCENE_NEW_INHERITED_SCENE,
 		SCENE_OPEN_SCENE,
 		SCENE_OPEN_PREV,

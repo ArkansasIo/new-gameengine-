@@ -3303,6 +3303,69 @@ void EditorNode::_menu_option_confirm(int p_option, bool p_confirmed) {
 	}
 
 	switch (p_option) {
+				// Context-aware Edit actions
+				case EDIT_CUT:
+				case EDIT_COPY:
+				case EDIT_PASTE:
+				case EDIT_DUPLICATE:
+				case EDIT_DELETE:
+				case EDIT_SELECT_ALL: {
+					// Determine context: Script, Scene, Inspector
+					bool handled = false;
+					// Script context
+					if (ScriptEditor::get_singleton() && ScriptEditor::get_singleton()->is_visible()) {
+						switch (p_option) {
+							case EDIT_CUT:
+								ScriptEditor::get_singleton()->cut(); handled = true; break;
+							case EDIT_COPY:
+								ScriptEditor::get_singleton()->copy(); handled = true; break;
+							case EDIT_PASTE:
+								ScriptEditor::get_singleton()->paste(); handled = true; break;
+							case EDIT_DUPLICATE:
+								ScriptEditor::get_singleton()->duplicate(); handled = true; break;
+							case EDIT_DELETE:
+								ScriptEditor::get_singleton()->delete_selection(); handled = true; break;
+							case EDIT_SELECT_ALL:
+								ScriptEditor::get_singleton()->select_all(); handled = true; break;
+						}
+					}
+					// Scene context
+					if (!handled && editor_main_screen && editor_main_screen->get_selected_screen() == EditorMainScreen::EDITOR_2D) {
+						Node *scene_root = editor_data.get_edited_scene_root();
+						if (scene_root) {
+							switch (p_option) {
+								case EDIT_CUT:
+									scene_tabs->cut_selected_nodes(); handled = true; break;
+								case EDIT_COPY:
+									scene_tabs->copy_selected_nodes(); handled = true; break;
+								case EDIT_PASTE:
+									scene_tabs->paste_nodes(); handled = true; break;
+								case EDIT_DUPLICATE:
+									scene_tabs->duplicate_selected_nodes(); handled = true; break;
+								case EDIT_DELETE:
+									scene_tabs->delete_selected_nodes(); handled = true; break;
+								case EDIT_SELECT_ALL:
+									scene_tabs->select_all_nodes(); handled = true; break;
+							}
+						}
+					}
+					// Inspector context
+					if (!handled && InspectorDock::get_inspector_singleton() && InspectorDock::get_inspector_singleton()->is_visible()) {
+						switch (p_option) {
+							case EDIT_COPY:
+								InspectorDock::get_inspector_singleton()->copy_property(); handled = true; break;
+							case EDIT_PASTE:
+								InspectorDock::get_inspector_singleton()->paste_property(); handled = true; break;
+							case EDIT_DELETE:
+								InspectorDock::get_inspector_singleton()->delete_property(); handled = true; break;
+							case EDIT_SELECT_ALL:
+								InspectorDock::get_inspector_singleton()->select_all_properties(); handled = true; break;
+						}
+					}
+					if (!handled) {
+						log->add_message(TTR("No valid context for Edit action."), EditorLog::MSG_TYPE_EDITOR);
+					}
+				} break;
 		case SCENE_NEW_SCENE: {
 			new_scene();
 

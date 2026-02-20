@@ -330,6 +330,15 @@ EditorThemeManager::ThemeConfiguration EditorThemeManager::_create_theme_config(
 			} else if (config.preset == "Breeze Dark") {
 				preset_accent_color = Color(0.239, 0.682, 0.914);
 				preset_base_color = Color(0.1255, 0.1373, 0.149);
+			} else if (config.preset == "Cobalt") {
+				preset_accent_color = Color(0.024, 0.714, 0.831);
+				preset_base_color = Color(0.059, 0.090, 0.165);
+			} else if (config.preset == "Dracula") {
+				preset_accent_color = Color(0.741, 0.576, 0.976);
+				preset_base_color = Color(0.157, 0.165, 0.212);
+			} else if (config.preset == "Evergreen") {
+				preset_accent_color = Color(0.278, 0.827, 0.514);
+				preset_base_color = Color(0.059, 0.114, 0.110);
 			} else if (config.preset == "Test Game Engine 2") {
 				preset_accent_color = Color(0.53, 0.67, 0.89);
 				preset_base_color = Color(0.24, 0.23, 0.27);
@@ -341,11 +350,26 @@ EditorThemeManager::ThemeConfiguration EditorThemeManager::_create_theme_config(
 			} else if (config.preset == "Gray") {
 				preset_accent_color = Color(0.44, 0.73, 0.98);
 				preset_base_color = Color(0.24, 0.24, 0.24);
+			} else if (config.preset == "Gruvbox Dark") {
+				preset_accent_color = Color(0.984, 0.741, 0.184);
+				preset_base_color = Color(0.157, 0.141, 0.125);
 			} else if (config.preset == "Light") {
 				preset_accent_color = Color(0.18, 0.50, 1.00);
 				preset_base_color = Color(0.9, 0.9, 0.9);
 				preset_contrast = light_contrast;
 				preset_icon_saturation = 1;
+			} else if (config.preset == "Monokai") {
+				preset_accent_color = Color(0.651, 0.886, 0.180);
+				preset_base_color = Color(0.152, 0.152, 0.137);
+			} else if (config.preset == "Nord") {
+				preset_accent_color = Color(0.533, 0.753, 0.816);
+				preset_base_color = Color(0.180, 0.204, 0.251);
+			} else if (config.preset == "One Dark") {
+				preset_accent_color = Color(0.388, 0.639, 0.945);
+				preset_base_color = Color(0.157, 0.173, 0.204);
+			} else if (config.preset == "Rose Pine") {
+				preset_accent_color = Color(0.780, 0.702, 0.839);
+				preset_base_color = Color(0.098, 0.090, 0.141);
 			} else if (config.preset == "Solarized (Dark)") {
 				preset_accent_color = Color(0.15, 0.55, 0.82);
 				preset_base_color = Color(0.03, 0.21, 0.26);
@@ -354,6 +378,9 @@ EditorThemeManager::ThemeConfiguration EditorThemeManager::_create_theme_config(
 				preset_accent_color = Color(0.15, 0.55, 0.82);
 				preset_base_color = Color(0.89, 0.86, 0.79);
 				preset_contrast = light_contrast;
+			} else if (config.preset == "Tokyo Night") {
+				preset_accent_color = Color(0.478, 0.659, 0.992);
+				preset_base_color = Color(0.102, 0.110, 0.169);
 			} else { // Default
 				preset_accent_color = Color(0.337, 0.62, 1.0);
 				preset_base_color = Color(0.161, 0.161, 0.161);

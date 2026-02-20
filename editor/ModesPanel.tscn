@@ -1,6 +1,74 @@
 [gd_scene load_steps=2 format=2]
 
 [node name="ModesPanel" type="Panel"]
+[node name="AIPanel" type="Panel" parent="."]
+rect_min_size = Vector2(400, 120)
+
+[node name="AIChat" type="VBoxContainer" parent="AIPanel"]
+# Placeholder for AI chat, intent detection, smart templates, multi-turn conversation
+
+[node name="ErrorListPanel" type="Panel" parent="."]
+rect_min_size = Vector2(400, 120)
+
+[node name="ErrorList" type="VBoxContainer" parent="ErrorListPanel"]
+# Placeholder for error detection, real-time feedback, error descriptions, fixes
+[node name="StatusBar" type="HBoxContainer" parent="."]
+rect_min_size = Vector2(1200, 32)
+
+[node name="CompileBar" type="Label" parent="StatusBar"]
+text = "Compile Status: Ready"
+
+[node name="ErrorReporter" type="Label" parent="StatusBar"]
+text = "No errors detected"
+
+[node name="ConnectionHints" type="Label" parent="StatusBar"]
+text = "Hints: Drag to connect nodes"
+
+[node name="SelectionInfo" type="Label" parent="StatusBar"]
+text = "Selected: 0 nodes"
+
+[node name="ZoomDisplay" type="Label" parent="StatusBar"]
+text = "Zoom: 100%"
+[node name="MainPanels" type="HSplitContainer" parent="."]
+rect_min_size = Vector2(1200, 600)
+
+[node name="NodePalettePanel" type="Panel" parent="MainPanels"]
+rect_min_size = Vector2(220, 600)
+
+[node name="NodePalette" type="VBoxContainer" parent="NodePalettePanel"]
+# Placeholder for node palette, templates, search/filter, popular section
+
+[node name="CanvasPanel" type="Panel" parent="MainPanels"]
+rect_min_size = Vector2(760, 600)
+
+[node name="BlueprintCanvas" type="Control" parent="CanvasPanel"]
+# Placeholder for node rendering, pin system, drag/drop, selection, connections, zoom/pan, grid
+
+[node name="DetailsPanel" type="Panel" parent="MainPanels"]
+rect_min_size = Vector2(220, 600)
+
+[node name="InspectorPanel" type="VBoxContainer" parent="DetailsPanel"]
+# Placeholder for property editing, collapsible sections, pin info
+[node name="MenuBar" type="HBoxContainer" parent="."]
+[node name="MenuSearch" type="LineEdit" parent="MenuBar"]
+rect_min_size = Vector2(200, 32)
+placeholder_text = "Search menus (Ctrl+Shift+F)"
+rect_min_size = Vector2(800, 32)
+
+[node name="FileMenu" type="MenuButton" parent="MenuBar"]
+text = "File"
+
+[node name="EditMenu" type="MenuButton" parent="MenuBar"]
+text = "Edit"
+
+[node name="ViewMenu" type="MenuButton" parent="MenuBar"]
+text = "View"
+
+[node name="ToolsMenu" type="MenuButton" parent="MenuBar"]
+text = "Tools"
+
+[node name="HelpMenu" type="MenuButton" parent="MenuBar"]
+text = "Help"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 rect_min_size = Vector2(400, 80)
