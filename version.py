@@ -1,9 +1,0 @@
-short_name = "test game engine"
-name = "Test Game Engine"
-major = 4
-minor = 7
-patch = 0
-status = "dev"
-module_config = ""
-website = "https://godotengine.org"
-docs = "latest"
