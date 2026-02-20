@@ -3,8 +3,8 @@
 # It delegates the build to the main SConstruct in the Arcane  Forge subdirectory.
 
 try:
-	from SCons.Script import SConscript
+	from SCons.Script import SConscript  # type: ignore
 except ImportError:
-	import SCons
+	import SCons  # type: ignore
 	SConscript = SCons.Script.SConscript
 SConscript('Arcane  Forge/SConstruct')
